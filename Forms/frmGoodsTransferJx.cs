@@ -621,18 +621,20 @@ namespace cf_pad.Forms
             //Run(dtPrint);
             //return;
             string strReportPath = "";
-            if (Application.StartupPath.Substring(0, Application.StartupPath.LastIndexOf("\\")).LastIndexOf("\\") > 0)
-            {
-                //MessageBox.Show(Application.StartupPath);
-                strReportPath = Application.StartupPath;
-                strReportPath = Application.StartupPath.Substring(0, Application.StartupPath.Substring(0,
-                    Application.StartupPath.LastIndexOf("\\")).LastIndexOf("\\"));
-            }
-            else
-                strReportPath = Application.StartupPath;
+            //if (Application.StartupPath.Substring(0, Application.StartupPath.LastIndexOf("\\")).LastIndexOf("\\") > 0)
+            //{
+            //    strReportPath = Application.StartupPath;
+            //    strReportPath = Application.StartupPath.Substring(0, Application.StartupPath.Substring(0,
+            //        Application.StartupPath.LastIndexOf("\\")).LastIndexOf("\\"));
+            //}
+            //else
+            //    strReportPath = Application.StartupPath;
+            strReportPath = Application.StartupPath;
+            //MessageBox.Show(strReportPath);
             this.reportViewer1.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local;
             this.reportViewer1.LocalReport.EnableExternalImages = true;
             string fileName = strReportPath + @"\Reports\" + "rptGoodsTransferJx.rdlc";
+            //MessageBox.Show(fileName);
             this.reportViewer1.LocalReport.ReportPath = fileName;
             this.reportViewer1.LocalReport.DataSources.Clear();
             //向報表傳遞多個參數

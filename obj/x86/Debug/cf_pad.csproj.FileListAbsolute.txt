@@ -128,7 +128,6 @@ C:\workspace\cf_pad\bin\Debug\DevExpress.Sparkline.v14.2.Core.dll
 C:\workspace\cf_pad\bin\Debug\DevExpress.XtraBars.v14.2.dll
 C:\workspace\cf_pad\bin\Debug\DevExpress.XtraTreeList.v14.2.dll
 C:\workspace\cf_pad\bin\Debug\DevExpress.XtraGauges.v14.2.Core.dll
-C:\workspace\cf_pad\bin\Debug\CFPublic.pdb
 C:\workspace\cf_pad\bin\Debug\DevExpress.Data.v14.2.xml
 C:\workspace\cf_pad\bin\Debug\DevExpress.PivotGrid.v14.2.Core.xml
 C:\workspace\cf_pad\bin\Debug\DevExpress.Printing.v14.2.Core.xml
@@ -214,3 +213,5 @@ C:\workspace\cf_pad\bin\Debug\de\DevExpress.XtraGauges.v14.2.Core.resources.dll
 C:\workspace\cf_pad\bin\Debug\es\DevExpress.XtraGauges.v14.2.Core.resources.dll
 C:\workspace\cf_pad\bin\Debug\ja\DevExpress.XtraGauges.v14.2.Core.resources.dll
 C:\workspace\cf_pad\bin\Debug\ru\DevExpress.XtraGauges.v14.2.Core.resources.dll
+C:\Workspace\cf_pad\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Workspace\cf_pad\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll

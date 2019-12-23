@@ -66,7 +66,9 @@ namespace cf_pad
 
         private void BTNExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Dispose();
+            Application.Exit();
+            //this.Close();
         }
 
         private void BTN1_Click(object sender, EventArgs e)
