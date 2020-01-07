@@ -84,11 +84,11 @@
             this.BTNNOSTART = new System.Windows.Forms.Button();
             this.BTNNOCOMP = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSave = new System.Windows.Forms.Button();
             this.btnFind = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnRedo = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.btnRedo = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.lblDept = new System.Windows.Forms.Label();
             this.txtDifficulty_level = new System.Windows.Forms.TextBox();
             this.txtEnd_run = new System.Windows.Forms.TextBox();
@@ -836,18 +836,6 @@
             this.panel1.Size = new System.Drawing.Size(1024, 88);
             this.panel1.TabIndex = 1;
             // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.Lime;
-            this.btnSave.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnSave.Location = new System.Drawing.Point(454, 3);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(149, 80);
-            this.btnSave.TabIndex = 0;
-            this.btnSave.Text = "儲存(&S)";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // btnFind
             // 
             this.btnFind.BackColor = System.Drawing.Color.Yellow;
@@ -859,30 +847,6 @@
             this.btnFind.Text = "記錄查詢(&F)";
             this.btnFind.UseVisualStyleBackColor = false;
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click_1);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnDelete.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnDelete.Location = new System.Drawing.Point(302, 3);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(149, 80);
-            this.btnDelete.TabIndex = 0;
-            this.btnDelete.Text = "刪除(&D)";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
-            // 
-            // btnRedo
-            // 
-            this.btnRedo.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnRedo.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnRedo.Location = new System.Drawing.Point(153, 3);
-            this.btnRedo.Name = "btnRedo";
-            this.btnRedo.Size = new System.Drawing.Size(149, 80);
-            this.btnRedo.TabIndex = 0;
-            this.btnRedo.Text = "此單再續(&R)";
-            this.btnRedo.UseVisualStyleBackColor = false;
-            this.btnRedo.Click += new System.EventHandler(this.btnRedo_Click);
             // 
             // btnExit
             // 
@@ -896,6 +860,42 @@
             this.btnExit.Text = "退出(&X)";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
+            // 
+            // btnRedo
+            // 
+            this.btnRedo.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnRedo.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnRedo.Location = new System.Drawing.Point(153, 3);
+            this.btnRedo.Name = "btnRedo";
+            this.btnRedo.Size = new System.Drawing.Size(149, 80);
+            this.btnRedo.TabIndex = 0;
+            this.btnRedo.Text = "此單再續(&R)";
+            this.btnRedo.UseVisualStyleBackColor = false;
+            this.btnRedo.Click += new System.EventHandler(this.btnRedo_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnDelete.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnDelete.Location = new System.Drawing.Point(302, 3);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(149, 80);
+            this.btnDelete.TabIndex = 0;
+            this.btnDelete.Text = "刪除(&D)";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.Lime;
+            this.btnSave.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnSave.Location = new System.Drawing.Point(454, 3);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(149, 80);
+            this.btnSave.TabIndex = 0;
+            this.btnSave.Text = "儲存(&S)";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // lblDept
             // 
@@ -1796,7 +1796,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(30, 3);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1024, 945);
+            this.tabControl1.Size = new System.Drawing.Size(1024, 936);
             this.tabControl1.TabIndex = 3;
             // 
             // tabPage1
@@ -1810,7 +1810,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 104);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1016, 837);
+            this.tabPage1.Size = new System.Drawing.Size(1016, 828);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "記錄編輯";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -2007,7 +2007,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1024, 1033);
+            this.ClientSize = new System.Drawing.Size(1024, 1024);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);

@@ -545,9 +545,13 @@ namespace cf_pad.CLS
 
         public static void Call_imput()
         {
-            dynamic file = "C:\\Program Files\\Common Files\\microsoft shared\\ink\\TabTip.exe";
-            if (System.IO.File.Exists(file))
-                System.Diagnostics.Process.Start(file);//"TabTip.exe"
+            dynamic file = "C:\\hvk\\hvk.exe";
+            if (!System.IO.File.Exists(file))
+            {
+                file = "C:\\Program Files\\Common Files\\microsoft shared\\ink\\TabTip.exe";
+                if (System.IO.File.Exists(file))
+                    System.Diagnostics.Process.Start(file);//"TabTip.exe"
+            }
         }
 
         /// <summary>
