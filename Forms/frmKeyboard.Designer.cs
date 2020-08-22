@@ -43,7 +43,9 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox_barCode = new System.Windows.Forms.TextBox();
             this.buttonX2 = new System.Windows.Forms.Button();
+            this.picQR = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_lst)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picQR)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -161,18 +163,30 @@
             // 
             // buttonX2
             // 
-            this.buttonX2.Location = new System.Drawing.Point(407, 41);
+            this.buttonX2.Location = new System.Drawing.Point(361, 44);
             this.buttonX2.Name = "buttonX2";
             this.buttonX2.Size = new System.Drawing.Size(75, 23);
             this.buttonX2.TabIndex = 13;
             this.buttonX2.Text = "button2";
             this.buttonX2.UseVisualStyleBackColor = true;
+            this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
+            // 
+            // picQR
+            // 
+            this.picQR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picQR.Location = new System.Drawing.Point(737, 370);
+            this.picQR.Name = "picQR";
+            this.picQR.Size = new System.Drawing.Size(169, 163);
+            this.picQR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picQR.TabIndex = 14;
+            this.picQR.TabStop = false;
             // 
             // frmKeyboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(962, 509);
+            this.ClientSize = new System.Drawing.Size(1038, 602);
+            this.Controls.Add(this.picQR);
             this.Controls.Add(this.buttonX2);
             this.Controls.Add(this.textBox_barCode);
             this.Controls.Add(this.textBox8);
@@ -193,6 +207,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmKeyboard_FormClosed);
             this.Load += new System.EventHandler(this.frmKeyboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_lst)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picQR)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,5 +230,6 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox_barCode;
         private System.Windows.Forms.Button buttonX2;
+        private System.Windows.Forms.PictureBox picQR;
     }
 }
