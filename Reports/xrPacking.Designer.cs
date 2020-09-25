@@ -321,10 +321,10 @@
             // 
             this.xrLabel2.Dpi = 254F;
             this.xrLabel2.Font = new System.Drawing.Font("SimSun", 16F, System.Drawing.FontStyle.Bold);
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(213.9374F, 48.66508F);
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(186.9374F, 48.66508F);
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel2.SizeF = new System.Drawing.SizeF(302.9375F, 73.00166F);
+            this.xrLabel2.SizeF = new System.Drawing.SizeF(355.9375F, 73.00166F);
             this.xrLabel2.StylePriority.UseFont = false;
             this.xrLabel2.StylePriority.UseTextAlignment = false;
             this.xrLabel2.Text = "[mo_id]";
@@ -335,7 +335,7 @@
             this.xrLabel1.CanGrow = false;
             this.xrLabel1.Dpi = 254F;
             this.xrLabel1.Font = new System.Drawing.Font("Code 128", 36F);
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(519.8123F, 14.77083F);
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(546.8123F, 14.77083F);
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.xrLabel1.SizeF = new System.Drawing.SizeF(634.1461F, 134.5417F);
@@ -349,7 +349,7 @@
             // 
             this.xrPictureBox1.Dpi = 254F;
             this.xrPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("xrPictureBox1.Image")));
-            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(57.56249F, 16.77083F);
+            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(29.56249F, 16.77083F);
             this.xrPictureBox1.Name = "xrPictureBox1";
             this.xrPictureBox1.SizeF = new System.Drawing.SizeF(151.3749F, 122.8959F);
             this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
