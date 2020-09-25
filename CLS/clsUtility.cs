@@ -7,6 +7,7 @@ using System.IO;
 using System.Windows.Forms;
 using ZXing;
 using System.Drawing;
+using ThoughtWorks.QRCode.Codec;
 
 namespace cf_pad.CLS
 {
@@ -709,6 +710,22 @@ namespace cf_pad.CLS
             return img;
         }
 
+
+        public Bitmap QRCodeImage(string strMsg)
+        {
+            string strEncode = "https://crm.chingfung.com:8443/art/Artwork/ProductCard/" + strMsg.Trim();
+            //实例化一个生成二维码的对象
+            QRCodeEncoder qrEncoder = new QRCodeEncoder();
+            //设置二维码的编码模式
+            qrEncoder.QRCodeEncodeMode = QRCodeEncoder.ENCODE_MODE.BYTE;
+            //二维码像素宽度
+            qrEncoder.QRCodeScale = 4;
+            //设置版本
+            qrEncoder.QRCodeVersion = 0;
+            //根据内容生成二维码图像
+            Bitmap image = qrEncoder.Encode(strEncode, Encoding.UTF8);
+            return image;
+        }
 
     }
 }

@@ -43,9 +43,11 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox_barCode = new System.Windows.Forms.TextBox();
             this.buttonX2 = new System.Windows.Forms.Button();
-            this.picQR = new System.Windows.Forms.PictureBox();
+            this.picQR1 = new System.Windows.Forms.PictureBox();
+            this.picQR2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_lst)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picQR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picQR1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picQR2)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -88,28 +90,28 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(384, 237);
+            this.textBox3.Location = new System.Drawing.Point(351, 253);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 22);
             this.textBox3.TabIndex = 4;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(388, 289);
+            this.textBox4.Location = new System.Drawing.Point(355, 305);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 22);
             this.textBox4.TabIndex = 5;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(384, 328);
+            this.textBox5.Location = new System.Drawing.Point(351, 344);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 22);
             this.textBox5.TabIndex = 6;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(383, 367);
+            this.textBox6.Location = new System.Drawing.Point(350, 383);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(201, 22);
             this.textBox6.TabIndex = 7;
@@ -130,6 +132,7 @@
             this.button1.TabIndex = 9;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dgv_lst
             // 
@@ -171,22 +174,33 @@
             this.buttonX2.UseVisualStyleBackColor = true;
             this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
             // 
-            // picQR
+            // picQR1
             // 
-            this.picQR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picQR.Location = new System.Drawing.Point(737, 370);
-            this.picQR.Name = "picQR";
-            this.picQR.Size = new System.Drawing.Size(169, 163);
-            this.picQR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picQR.TabIndex = 14;
-            this.picQR.TabStop = false;
+            this.picQR1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picQR1.Location = new System.Drawing.Point(568, 383);
+            this.picQR1.Name = "picQR1";
+            this.picQR1.Size = new System.Drawing.Size(169, 163);
+            this.picQR1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picQR1.TabIndex = 14;
+            this.picQR1.TabStop = false;
+            // 
+            // picQR2
+            // 
+            this.picQR2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picQR2.Location = new System.Drawing.Point(743, 383);
+            this.picQR2.Name = "picQR2";
+            this.picQR2.Size = new System.Drawing.Size(169, 163);
+            this.picQR2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picQR2.TabIndex = 15;
+            this.picQR2.TabStop = false;
             // 
             // frmKeyboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1038, 602);
-            this.Controls.Add(this.picQR);
+            this.Controls.Add(this.picQR2);
+            this.Controls.Add(this.picQR1);
             this.Controls.Add(this.buttonX2);
             this.Controls.Add(this.textBox_barCode);
             this.Controls.Add(this.textBox8);
@@ -207,7 +221,8 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmKeyboard_FormClosed);
             this.Load += new System.EventHandler(this.frmKeyboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_lst)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picQR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picQR1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picQR2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,6 +245,7 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox_barCode;
         private System.Windows.Forms.Button buttonX2;
-        private System.Windows.Forms.PictureBox picQR;
+        private System.Windows.Forms.PictureBox picQR1;
+        private System.Windows.Forms.PictureBox picQR2;
     }
 }

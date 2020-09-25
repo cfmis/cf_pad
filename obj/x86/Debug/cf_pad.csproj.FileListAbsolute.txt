@@ -215,3 +215,12 @@ C:\workspace\cf_pad\bin\Debug\ja\DevExpress.XtraGauges.v14.2.Core.resources.dll
 C:\workspace\cf_pad\bin\Debug\ru\DevExpress.XtraGauges.v14.2.Core.resources.dll
 C:\Workspace\cf_pad\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
 C:\Workspace\cf_pad\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Workspace\cf_pad\bin\Debug\zxing.dll
+C:\Workspace\cf_pad\bin\Debug\zxing.presentation.dll
+C:\Workspace\cf_pad\bin\Debug\zxing.pdb
+C:\Workspace\cf_pad\bin\Debug\zxing.xml
+C:\Workspace\cf_pad\bin\Debug\zxing.presentation.pdb
+C:\Workspace\cf_pad\bin\Debug\zxing.presentation.xml
+C:\Workspace\cf_pad\obj\x86\Debug\cf_pad.exe.licenses
+C:\Workspace\cf_pad\bin\Debug\ThoughtWorks.QRCode.dll
+C:\Workspace\cf_pad\obj\x86\Debug\cf_pad.csprojResolveAssemblyReference.cache

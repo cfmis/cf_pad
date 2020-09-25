@@ -15,8 +15,8 @@ namespace cf_pad
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
 
             Application.Run(new frmLogin());
             if (frmMainPad.isRunMain == true)
@@ -31,7 +31,7 @@ namespace cf_pad
             //Application.Run(new frmGoodsTransferJx());
             //Application.Run(new frmTransferRecords());
             //Application.Run(new frmPackingLabel());
-            //Application.Run(new frmTransfer());
+            //Application.Run(new frmKeyboard());
 
             //student st = new student();
             //st.Code = "S01";

@@ -50,6 +50,8 @@
             this.txtBarCode = new System.Windows.Forms.TextBox();
             this.lblNet_weiht = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblCustomer_color_id = new System.Windows.Forms.Label();
+            this.lblCustomer_color = new System.Windows.Forms.Label();
             this.rchGoods_desc = new System.Windows.Forms.RichTextBox();
             this.lblMo_id_barcode = new System.Windows.Forms.Label();
             this.lblMo_id = new System.Windows.Forms.Label();
@@ -64,8 +66,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.lblCustomer_color_id = new System.Windows.Forms.Label();
-            this.lblCustomer_color = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -73,8 +73,8 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.cmbCrossUnit);
             this.panel1.Controls.Add(this.cmbNetUnit);
@@ -101,41 +101,41 @@
             // 
             // cmbCrossUnit
             // 
-            this.cmbCrossUnit.Font = new System.Drawing.Font("PMingLiU", 26F);
+            this.cmbCrossUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F);
             this.cmbCrossUnit.FormattingEnabled = true;
             this.cmbCrossUnit.Location = new System.Drawing.Point(741, 208);
             this.cmbCrossUnit.Name = "cmbCrossUnit";
-            this.cmbCrossUnit.Size = new System.Drawing.Size(71, 43);
+            this.cmbCrossUnit.Size = new System.Drawing.Size(71, 47);
             this.cmbCrossUnit.TabIndex = 6;
             this.cmbCrossUnit.Text = "KG";
             // 
             // cmbNetUnit
             // 
-            this.cmbNetUnit.Font = new System.Drawing.Font("PMingLiU", 26F);
+            this.cmbNetUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F);
             this.cmbNetUnit.FormattingEnabled = true;
             this.cmbNetUnit.Location = new System.Drawing.Point(498, 208);
             this.cmbNetUnit.Name = "cmbNetUnit";
-            this.cmbNetUnit.Size = new System.Drawing.Size(73, 43);
+            this.cmbNetUnit.Size = new System.Drawing.Size(73, 47);
             this.cmbNetUnit.TabIndex = 4;
             this.cmbNetUnit.Text = "KG";
             // 
             // cmbQty
             // 
-            this.cmbQty.Font = new System.Drawing.Font("PMingLiU", 26F);
+            this.cmbQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F);
             this.cmbQty.FormattingEnabled = true;
             this.cmbQty.Location = new System.Drawing.Point(256, 208);
             this.cmbQty.Name = "cmbQty";
-            this.cmbQty.Size = new System.Drawing.Size(85, 43);
+            this.cmbQty.Size = new System.Drawing.Size(85, 47);
             this.cmbQty.TabIndex = 2;
             this.cmbQty.Text = "PCS";
             // 
             // txtQty
             // 
-            this.txtQty.Font = new System.Drawing.Font("PMingLiU", 22F);
+            this.txtQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
             this.txtQty.Location = new System.Drawing.Point(137, 208);
             this.txtQty.MaxLength = 10;
             this.txtQty.Name = "txtQty";
-            this.txtQty.Size = new System.Drawing.Size(119, 43);
+            this.txtQty.Size = new System.Drawing.Size(119, 41);
             this.txtQty.TabIndex = 1;
             this.txtQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNet_weiht_KeyPress);
@@ -144,21 +144,21 @@
             // lblQty
             // 
             this.lblQty.AutoSize = true;
-            this.lblQty.Font = new System.Drawing.Font("PMingLiU", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblQty.ForeColor = System.Drawing.Color.Black;
             this.lblQty.Location = new System.Drawing.Point(83, 219);
             this.lblQty.Name = "lblQty";
-            this.lblQty.Size = new System.Drawing.Size(54, 22);
+            this.lblQty.Size = new System.Drawing.Size(56, 26);
             this.lblQty.TabIndex = 47;
             this.lblQty.Text = "數量";
             // 
             // txtCross_weiht
             // 
-            this.txtCross_weiht.Font = new System.Drawing.Font("PMingLiU", 22F);
+            this.txtCross_weiht.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
             this.txtCross_weiht.Location = new System.Drawing.Point(643, 208);
             this.txtCross_weiht.MaxLength = 10;
             this.txtCross_weiht.Name = "txtCross_weiht";
-            this.txtCross_weiht.Size = new System.Drawing.Size(98, 43);
+            this.txtCross_weiht.Size = new System.Drawing.Size(98, 41);
             this.txtCross_weiht.TabIndex = 3;
             this.txtCross_weiht.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCross_weiht.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCross_weiht_KeyPress);
@@ -166,33 +166,33 @@
             // lblRoss_weiht
             // 
             this.lblRoss_weiht.AutoSize = true;
-            this.lblRoss_weiht.Font = new System.Drawing.Font("PMingLiU", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblRoss_weiht.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblRoss_weiht.ForeColor = System.Drawing.Color.Black;
             this.lblRoss_weiht.Location = new System.Drawing.Point(587, 219);
             this.lblRoss_weiht.Name = "lblRoss_weiht";
-            this.lblRoss_weiht.Size = new System.Drawing.Size(54, 22);
+            this.lblRoss_weiht.Size = new System.Drawing.Size(56, 26);
             this.lblRoss_weiht.TabIndex = 45;
             this.lblRoss_weiht.Text = "毛重";
             this.lblRoss_weiht.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtNet_weiht
             // 
-            this.txtNet_weiht.Font = new System.Drawing.Font("PMingLiU", 22F);
+            this.txtNet_weiht.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
             this.txtNet_weiht.Location = new System.Drawing.Point(398, 208);
             this.txtNet_weiht.MaxLength = 10;
             this.txtNet_weiht.Name = "txtNet_weiht";
-            this.txtNet_weiht.Size = new System.Drawing.Size(100, 43);
+            this.txtNet_weiht.Size = new System.Drawing.Size(100, 41);
             this.txtNet_weiht.TabIndex = 2;
             this.txtNet_weiht.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtNet_weiht.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNet_weiht_KeyPress);
             // 
             // txtPrints
             // 
-            this.txtPrints.Font = new System.Drawing.Font("PMingLiU", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtPrints.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtPrints.Location = new System.Drawing.Point(512, 22);
             this.txtPrints.MaxLength = 3;
             this.txtPrints.Name = "txtPrints";
-            this.txtPrints.Size = new System.Drawing.Size(77, 49);
+            this.txtPrints.Size = new System.Drawing.Size(77, 47);
             this.txtPrints.TabIndex = 8;
             this.txtPrints.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPrints.Click += new System.EventHandler(this.txtPrints_Click);
@@ -202,10 +202,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("PMingLiU", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label1.Location = new System.Drawing.Point(397, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 24);
+            this.label1.Size = new System.Drawing.Size(115, 29);
             this.label1.TabIndex = 42;
             this.label1.Text = "列印份數:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -215,10 +215,10 @@
             this.chkAutoPrint.AutoSize = true;
             this.chkAutoPrint.Checked = true;
             this.chkAutoPrint.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkAutoPrint.Font = new System.Drawing.Font("PMingLiU", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.chkAutoPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.chkAutoPrint.Location = new System.Drawing.Point(653, 32);
             this.chkAutoPrint.Name = "chkAutoPrint";
-            this.chkAutoPrint.Size = new System.Drawing.Size(125, 28);
+            this.chkAutoPrint.Size = new System.Drawing.Size(128, 33);
             this.chkAutoPrint.TabIndex = 4;
             this.chkAutoPrint.Text = "自動列印";
             this.chkAutoPrint.UseVisualStyleBackColor = true;
@@ -226,7 +226,7 @@
             // 
             // lblItem_total
             // 
-            this.lblItem_total.Font = new System.Drawing.Font("PMingLiU", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblItem_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblItem_total.ForeColor = System.Drawing.Color.Blue;
             this.lblItem_total.Location = new System.Drawing.Point(775, 153);
             this.lblItem_total.Name = "lblItem_total";
@@ -236,7 +236,7 @@
             // 
             // btnPrintView
             // 
-            this.btnPrintView.Font = new System.Drawing.Font("PMingLiU", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnPrintView.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnPrintView.Location = new System.Drawing.Point(258, 3);
             this.btnPrintView.Name = "btnPrintView";
             this.btnPrintView.Size = new System.Drawing.Size(122, 80);
@@ -247,7 +247,7 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.Font = new System.Drawing.Font("PMingLiU", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnPrint.Location = new System.Drawing.Point(131, 3);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(122, 80);
@@ -258,7 +258,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Font = new System.Drawing.Font("PMingLiU", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnExit.ForeColor = System.Drawing.Color.Red;
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExit.Location = new System.Drawing.Point(5, 3);
@@ -273,19 +273,19 @@
             // 
             this.cmbItems.BackColor = System.Drawing.Color.GhostWhite;
             this.cmbItems.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbItems.Font = new System.Drawing.Font("PMingLiU", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.cmbItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cmbItems.FormattingEnabled = true;
             this.cmbItems.Location = new System.Drawing.Point(256, 149);
             this.cmbItems.MaxLength = 18;
             this.cmbItems.Name = "cmbItems";
-            this.cmbItems.Size = new System.Drawing.Size(514, 43);
+            this.cmbItems.Size = new System.Drawing.Size(514, 47);
             this.cmbItems.TabIndex = 0;
             this.cmbItems.SelectedIndexChanged += new System.EventHandler(this.cmbItems_SelectedIndexChanged);
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.lblBarcode);
             this.panel3.Controls.Add(this.txtBarCode);
+            this.panel3.Controls.Add(this.lblBarcode);
             this.panel3.Location = new System.Drawing.Point(3, 89);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(803, 56);
@@ -294,11 +294,11 @@
             // lblBarcode
             // 
             this.lblBarcode.AutoSize = true;
-            this.lblBarcode.Font = new System.Drawing.Font("PMingLiU", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblBarcode.ForeColor = System.Drawing.Color.DarkViolet;
             this.lblBarcode.Location = new System.Drawing.Point(126, 14);
             this.lblBarcode.Name = "lblBarcode";
-            this.lblBarcode.Size = new System.Drawing.Size(126, 22);
+            this.lblBarcode.Size = new System.Drawing.Size(128, 26);
             this.lblBarcode.TabIndex = 0;
             this.lblBarcode.Text = "條碼掃描區:";
             // 
@@ -306,30 +306,30 @@
             // 
             this.txtBarCode.BackColor = System.Drawing.Color.Plum;
             this.txtBarCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtBarCode.Font = new System.Drawing.Font("PMingLiU", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtBarCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtBarCode.Location = new System.Drawing.Point(253, 3);
             this.txtBarCode.Name = "txtBarCode";
-            this.txtBarCode.Size = new System.Drawing.Size(514, 49);
+            this.txtBarCode.Size = new System.Drawing.Size(514, 47);
             this.txtBarCode.TabIndex = 0;
             this.txtBarCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBarCode_KeyDown);
             // 
             // lblNet_weiht
             // 
             this.lblNet_weiht.AutoSize = true;
-            this.lblNet_weiht.Font = new System.Drawing.Font("PMingLiU", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblNet_weiht.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblNet_weiht.ForeColor = System.Drawing.Color.Black;
             this.lblNet_weiht.Location = new System.Drawing.Point(344, 219);
             this.lblNet_weiht.Name = "lblNet_weiht";
-            this.lblNet_weiht.Size = new System.Drawing.Size(54, 22);
+            this.lblNet_weiht.Size = new System.Drawing.Size(56, 26);
             this.lblNet_weiht.TabIndex = 1;
             this.lblNet_weiht.Text = "凈重";
             this.lblNet_weiht.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.lblCustomer_color_id);
@@ -350,13 +350,34 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Location = new System.Drawing.Point(2, 266);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(818, 612);
+            this.panel2.Size = new System.Drawing.Size(818, 469);
             this.panel2.TabIndex = 3;
+            // 
+            // lblCustomer_color_id
+            // 
+            this.lblCustomer_color_id.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblCustomer_color_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblCustomer_color_id.Location = new System.Drawing.Point(256, 321);
+            this.lblCustomer_color_id.Name = "lblCustomer_color_id";
+            this.lblCustomer_color_id.Size = new System.Drawing.Size(555, 40);
+            this.lblCustomer_color_id.TabIndex = 58;
+            this.lblCustomer_color_id.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblCustomer_color
+            // 
+            this.lblCustomer_color.AutoSize = true;
+            this.lblCustomer_color.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.lblCustomer_color.Location = new System.Drawing.Point(15, 321);
+            this.lblCustomer_color.Name = "lblCustomer_color";
+            this.lblCustomer_color.Size = new System.Drawing.Size(259, 39);
+            this.lblCustomer_color.TabIndex = 57;
+            this.lblCustomer_color.Text = "CUST. COLOR:";
+            this.lblCustomer_color.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // rchGoods_desc
             // 
             this.rchGoods_desc.BackColor = System.Drawing.Color.Gainsboro;
-            this.rchGoods_desc.Font = new System.Drawing.Font("PMingLiU", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rchGoods_desc.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rchGoods_desc.Location = new System.Drawing.Point(256, 411);
             this.rchGoods_desc.Name = "rchGoods_desc";
             this.rchGoods_desc.Size = new System.Drawing.Size(555, 183);
@@ -375,7 +396,7 @@
             // lblMo_id
             // 
             this.lblMo_id.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblMo_id.Font = new System.Drawing.Font("PMingLiU", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblMo_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblMo_id.Location = new System.Drawing.Point(256, 92);
             this.lblMo_id.Name = "lblMo_id";
             this.lblMo_id.Size = new System.Drawing.Size(555, 42);
@@ -385,7 +406,7 @@
             // lblCustomer
             // 
             this.lblCustomer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblCustomer.Font = new System.Drawing.Font("PMingLiU", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblCustomer.Location = new System.Drawing.Point(256, 139);
             this.lblCustomer.Name = "lblCustomer";
             this.lblCustomer.Size = new System.Drawing.Size(555, 42);
@@ -395,7 +416,7 @@
             // lblPO_style
             // 
             this.lblPO_style.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblPO_style.Font = new System.Drawing.Font("PMingLiU", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblPO_style.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblPO_style.Location = new System.Drawing.Point(256, 186);
             this.lblPO_style.Name = "lblPO_style";
             this.lblPO_style.Size = new System.Drawing.Size(555, 42);
@@ -405,7 +426,7 @@
             // lblGoods_id
             // 
             this.lblGoods_id.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblGoods_id.Font = new System.Drawing.Font("PMingLiU", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblGoods_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblGoods_id.Location = new System.Drawing.Point(256, 365);
             this.lblGoods_id.Name = "lblGoods_id";
             this.lblGoods_id.Size = new System.Drawing.Size(555, 40);
@@ -415,7 +436,7 @@
             // lblOc_no
             // 
             this.lblOc_no.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblOc_no.Font = new System.Drawing.Font("PMingLiU", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblOc_no.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblOc_no.Location = new System.Drawing.Point(256, 232);
             this.lblOc_no.Name = "lblOc_no";
             this.lblOc_no.Size = new System.Drawing.Size(555, 40);
@@ -425,7 +446,7 @@
             // lblCode
             // 
             this.lblCode.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblCode.Font = new System.Drawing.Font("PMingLiU", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblCode.Location = new System.Drawing.Point(256, 276);
             this.lblCode.Name = "lblCode";
             this.lblCode.Size = new System.Drawing.Size(555, 40);
@@ -435,10 +456,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("PMingLiU", 25F);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.label2.Location = new System.Drawing.Point(52, 139);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(198, 34);
+            this.label2.Size = new System.Drawing.Size(222, 39);
             this.label2.TabIndex = 41;
             this.label2.Text = "CUSTOMER:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -446,10 +467,10 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("PMingLiU", 25F);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.label7.Location = new System.Drawing.Point(18, 406);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(233, 34);
+            this.label7.Size = new System.Drawing.Size(266, 39);
             this.label7.TabIndex = 46;
             this.label7.Text = "GOODS DESC.:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -457,10 +478,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("PMingLiU", 25F);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.label3.Location = new System.Drawing.Point(3, 189);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(248, 34);
+            this.label3.Size = new System.Drawing.Size(270, 39);
             this.label3.TabIndex = 42;
             this.label3.Text = "PO NO / STYLE:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -468,10 +489,10 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("PMingLiU", 25F);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.label6.Location = new System.Drawing.Point(92, 365);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(159, 34);
+            this.label6.Size = new System.Drawing.Size(180, 39);
             this.label6.TabIndex = 45;
             this.label6.Text = "CF CODE:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -479,10 +500,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("PMingLiU", 25F);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.label4.Location = new System.Drawing.Point(128, 232);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 34);
+            this.label4.Size = new System.Drawing.Size(137, 39);
             this.label4.TabIndex = 43;
             this.label4.Text = "OC NO:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -490,40 +511,19 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("PMingLiU", 25F);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.label5.Location = new System.Drawing.Point(36, 276);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(210, 34);
+            this.label5.Size = new System.Drawing.Size(237, 39);
             this.label5.TabIndex = 44;
             this.label5.Text = "CUST. CODE:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblCustomer_color_id
-            // 
-            this.lblCustomer_color_id.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblCustomer_color_id.Font = new System.Drawing.Font("PMingLiU", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblCustomer_color_id.Location = new System.Drawing.Point(256, 321);
-            this.lblCustomer_color_id.Name = "lblCustomer_color_id";
-            this.lblCustomer_color_id.Size = new System.Drawing.Size(555, 40);
-            this.lblCustomer_color_id.TabIndex = 58;
-            this.lblCustomer_color_id.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblCustomer_color
-            // 
-            this.lblCustomer_color.AutoSize = true;
-            this.lblCustomer_color.Font = new System.Drawing.Font("PMingLiU", 25F);
-            this.lblCustomer_color.Location = new System.Drawing.Point(15, 321);
-            this.lblCustomer_color.Name = "lblCustomer_color";
-            this.lblCustomer_color.Size = new System.Drawing.Size(231, 34);
-            this.lblCustomer_color.TabIndex = 57;
-            this.lblCustomer_color.Text = "CUST. COLOR:";
-            this.lblCustomer_color.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // frmPackingLabel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(822, 885);
+            this.ClientSize = new System.Drawing.Size(822, 742);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "frmPackingLabel";

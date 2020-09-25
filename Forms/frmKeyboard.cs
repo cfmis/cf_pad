@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using cf_pad.CLS;
 using CFPublic;
 using ZXing;
+using ThoughtWorks.QRCode.Codec;
 
 //using System.Reflection;
 //using DevExpress.XtraEditors;
@@ -179,7 +180,7 @@ namespace cf_pad.Forms
 
         private void buttonX2_Click(object sender, EventArgs e)
         {
-            picQR.Image=GenByZXingNet(textBox6.Text.Trim());
+            picQR2.Image=GenByZXingNet(textBox6.Text.Trim());
 
         }
 
@@ -309,5 +310,27 @@ namespace cf_pad.Forms
              return img;
          }
 
-}
+        private void button1_Click(object sender, EventArgs e)
+        {
+            picQR1.Image=CodeImage(textBox6.Text.Trim());
+            
+        }
+
+        private Bitmap CodeImage(string str)
+        {
+            //实例化一个生成二维码的对象
+            QRCodeEncoder qrEncoder = new QRCodeEncoder();
+            //设置二维码的编码模式
+            qrEncoder.QRCodeEncodeMode = QRCodeEncoder.ENCODE_MODE.BYTE;
+            //二维码像素宽度
+            qrEncoder.QRCodeScale = 4;
+            //设置版本
+            qrEncoder.QRCodeVersion = 0;
+            //根据内容生成二维码图像
+            Bitmap image = qrEncoder.Encode(str, Encoding.UTF8);
+            return image;
+        }
+
+
+    }
 }
