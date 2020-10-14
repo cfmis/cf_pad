@@ -213,7 +213,8 @@ namespace cf_pad.Forms
                             return;
                         }
                         
-                        /*2019-11-21 暫時取消外發QC狀態是否OK的檢查
+                        //*2019-11-21 暫時取消外發QC狀態是否OK的檢查
+                        //2020.10.14電鍍要求進行控制
                         if (dtStock.Rows[0]["iqc_result"].ToString() == "1")
                         {                            
                             picqc_result1.Visible = true; //打勾的圖片
@@ -226,10 +227,10 @@ namespace cf_pad.Forms
                             txtLot.Text = "";
                             txtQty.Text = "";
                             txtSec_qty.Text = "";
-                            MessageBox.Show("當前頁數之貨品外發電鍍IQC檢查通不過!不可以進行后續的操作!", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                            MessageBox.Show("當前頁數的貨品外發電鍍IQC檢查通不過(或尚未Q貨)!不可以進行后續的操作!", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                             return;
                         }
-                        */
+                        //
 
                         if (dgvDetails.RowCount == 0) //第一筆記錄時設置負責部門和接收部門
                         {
