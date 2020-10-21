@@ -55,6 +55,11 @@ namespace cf_pad.Forms
             }
         }
 
+        private void frmPrintArtwork_Load(object sender, EventArgs e)
+        {
+            txtArtwork.Focus();
+        }
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();

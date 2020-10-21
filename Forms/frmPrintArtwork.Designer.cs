@@ -145,6 +145,7 @@
             this.Name = "frmPrintArtwork";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPrintArtwork";
+            this.Load += new System.EventHandler(this.frmPrintArtwork_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picArtwork)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
