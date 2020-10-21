@@ -391,3 +391,5 @@ D:\Workspace\cf_pad\obj\x86\Debug\cf_pad.csproj.GenerateResource.Cache
 D:\Workspace\cf_pad\obj\x86\Debug\cf_pad.exe.licenses
 D:\Workspace\cf_pad\obj\x86\Debug\RdlCompile.cache
 D:\Workspace\cf_pad\obj\x86\Debug\RdlCompile.compiled
+D:\Workspace\cf_pad\obj\x86\Debug\cf_pad.Forms.frmPrintArtwork.resources
+D:\Workspace\cf_pad\obj\x86\Debug\cf_pad.Reports.xrArtwork.resources

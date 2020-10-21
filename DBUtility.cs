@@ -32,7 +32,7 @@ namespace cf_pad
 		private static byte[] Keys = { 0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF };
         
 		//数据库连接字符串
-		public static string connectionString = System.Configuration.ConfigurationManager.AppSettings["conn_string_dgsql1"]; // DGSQL1 
+		public static string connectionString = System.Configuration.ConfigurationManager.AppSettings["conn_string_dgsql1"]; // DGSQL2 
 		//public static string connectionString = GetConnectionString("DGSQL1"); // DGSQL1 
 		public static string conn_str_dgerp2 = System.Configuration.ConfigurationManager.AppSettings["conn_string_dgerp2"];  // DGERP2 
 		public static string dgcf_pad_connectionString = System.Configuration.ConfigurationManager.AppSettings["conn_db_for_wm"]; // For PAD

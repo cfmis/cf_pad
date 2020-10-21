@@ -52,7 +52,7 @@
             // 
             // btn_close
             // 
-            this.btn_close.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_close.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btn_close.Image = ((System.Drawing.Image)(resources.GetObject("btn_close.Image")));
             this.btn_close.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_close.Location = new System.Drawing.Point(439, 372);
@@ -66,7 +66,7 @@
             // 
             // btn_ok
             // 
-            this.btn_ok.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_ok.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btn_ok.Image = ((System.Drawing.Image)(resources.GetObject("btn_ok.Image")));
             this.btn_ok.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_ok.Location = new System.Drawing.Point(293, 372);
@@ -80,27 +80,27 @@
             // 
             // lblPassword
             // 
-            this.lblPassword.Font = new System.Drawing.Font("新細明體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblPassword.Location = new System.Drawing.Point(246, 280);
+            this.lblPassword.Font = new System.Drawing.Font("PMingLiU", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblPassword.Location = new System.Drawing.Point(246, 274);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(81, 23);
+            this.lblPassword.Size = new System.Drawing.Size(81, 35);
             this.lblPassword.TabIndex = 35;
             this.lblPassword.Text = "密碼:";
             this.lblPassword.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblUserid
             // 
-            this.lblUserid.Font = new System.Drawing.Font("新細明體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblUserid.Location = new System.Drawing.Point(246, 169);
+            this.lblUserid.Font = new System.Drawing.Font("PMingLiU", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblUserid.Location = new System.Drawing.Point(246, 159);
             this.lblUserid.Name = "lblUserid";
-            this.lblUserid.Size = new System.Drawing.Size(81, 21);
+            this.lblUserid.Size = new System.Drawing.Size(81, 33);
             this.lblUserid.TabIndex = 33;
             this.lblUserid.Text = "賬號:";
             this.lblUserid.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtPassword
             // 
-            this.txtPassword.Font = new System.Drawing.Font("新細明體", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtPassword.Font = new System.Drawing.Font("PMingLiU", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtPassword.Location = new System.Drawing.Point(336, 266);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
@@ -111,7 +111,7 @@
             // 
             // txtUserName
             // 
-            this.txtUserName.Font = new System.Drawing.Font("新細明體", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtUserName.Font = new System.Drawing.Font("PMingLiU", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtUserName.Location = new System.Drawing.Point(336, 210);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.ReadOnly = true;
@@ -122,7 +122,7 @@
             // txtUserid
             // 
             this.txtUserid.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtUserid.Font = new System.Drawing.Font("新細明體", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtUserid.Font = new System.Drawing.Font("PMingLiU", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtUserid.Location = new System.Drawing.Point(336, 153);
             this.txtUserid.Name = "txtUserid";
             this.txtUserid.Size = new System.Drawing.Size(223, 49);
@@ -133,7 +133,7 @@
             // cmbLanguage
             // 
             this.cmbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbLanguage.Font = new System.Drawing.Font("新細明體", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.cmbLanguage.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cmbLanguage.FormattingEnabled = true;
             this.cmbLanguage.ItemHeight = 32;
             this.cmbLanguage.Items.AddRange(new object[] {
@@ -190,10 +190,10 @@
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("新細明體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(246, 334);
+            this.label1.Font = new System.Drawing.Font("PMingLiU", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Location = new System.Drawing.Point(246, 324);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 21);
+            this.label1.Size = new System.Drawing.Size(81, 33);
             this.label1.TabIndex = 43;
             this.label1.Text = "語言:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -202,7 +202,7 @@
             // 
             this.txtBarCode.BackColor = System.Drawing.Color.LightSalmon;
             this.txtBarCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBarCode.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtBarCode.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtBarCode.Location = new System.Drawing.Point(336, 118);
             this.txtBarCode.Name = "txtBarCode";
             this.txtBarCode.PasswordChar = '*';
@@ -212,7 +212,7 @@
             // 
             // btnImput
             // 
-            this.btnImput.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnImput.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnImput.Image = ((System.Drawing.Image)(resources.GetObject("btnImput.Image")));
             this.btnImput.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnImput.Location = new System.Drawing.Point(2, 372);

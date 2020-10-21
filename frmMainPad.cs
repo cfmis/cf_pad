@@ -170,8 +170,9 @@ namespace cf_pad
             RunNewForm("Forms.frmQcOut");//外發IQC檢驗(新)
         }
 
-     
-
-
+        private void btnPrintArtwork_Click(object sender, EventArgs e)
+        {
+            RunNewForm("Forms.frmPrintArtwork");//圖樣列印
+        }
     }
 }
