@@ -212,9 +212,10 @@ namespace cf_pad.Forms
                             dgvDetails.Rows[dgvDetails.Rows.Count - 1].Selected = true; //選中整行  
                             return;
                         }
-                        
+
                         //*2019-11-21 暫時取消外發QC狀態是否OK的檢查
                         //2020.10.14電鍍要求進行控制
+                        //職取消控制,存儲過程usp_plate_transfer也要改,即QC結果改為1
                         if (dtStock.Rows[0]["iqc_result"].ToString() == "1")
                         {                            
                             picqc_result1.Visible = true; //打勾的圖片

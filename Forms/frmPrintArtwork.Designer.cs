@@ -57,7 +57,7 @@
             // 
             this.txtArtwork.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtArtwork.Font = new System.Drawing.Font("PMingLiU", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtArtwork.Location = new System.Drawing.Point(152, 27);
+            this.txtArtwork.Location = new System.Drawing.Point(271, 21);
             this.txtArtwork.MaxLength = 9;
             this.txtArtwork.Name = "txtArtwork";
             this.txtArtwork.Size = new System.Drawing.Size(213, 49);
@@ -67,18 +67,19 @@
             // 
             // lblMo_id
             // 
-            this.lblMo_id.AutoSize = true;
+            this.lblMo_id.AllowDrop = true;
             this.lblMo_id.Font = new System.Drawing.Font("PMingLiU", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblMo_id.Location = new System.Drawing.Point(25, 30);
+            this.lblMo_id.Location = new System.Drawing.Point(71, 21);
             this.lblMo_id.Name = "lblMo_id";
-            this.lblMo_id.Size = new System.Drawing.Size(94, 35);
+            this.lblMo_id.Size = new System.Drawing.Size(196, 47);
             this.lblMo_id.TabIndex = 0;
-            this.lblMo_id.Text = "圖樣:";
+            this.lblMo_id.Text = "圖樣編號:";
+            this.lblMo_id.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // picArtwork
             // 
             this.picArtwork.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picArtwork.Location = new System.Drawing.Point(92, 98);
+            this.picArtwork.Location = new System.Drawing.Point(92, 87);
             this.picArtwork.Name = "picArtwork";
             this.picArtwork.Size = new System.Drawing.Size(588, 577);
             this.picArtwork.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
