@@ -95,7 +95,7 @@
             // btnPrintArtwork
             // 
             this.btnPrintArtwork.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.btnPrintArtwork.Location = new System.Drawing.Point(496, 643);
+            this.btnPrintArtwork.Location = new System.Drawing.Point(261, 643);
             this.btnPrintArtwork.Name = "btnPrintArtwork";
             this.btnPrintArtwork.Size = new System.Drawing.Size(214, 74);
             this.btnPrintArtwork.TabIndex = 32;
@@ -134,6 +134,7 @@
             this.btnTakeMoSample.TabIndex = 29;
             this.btnTakeMoSample.Text = "提倉單";
             this.btnTakeMoSample.UseVisualStyleBackColor = true;
+            this.btnTakeMoSample.Visible = false;
             this.btnTakeMoSample.Click += new System.EventHandler(this.btnTakeMoSample_Click);
             // 
             // btnStoreIssue
