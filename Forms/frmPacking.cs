@@ -23,6 +23,7 @@ namespace cf_pad.Forms
         {
             InitializeComponent();
 
+            dtReport.Columns.Add("it_customer", typeof(String));
             dtReport.Columns.Add("mo_id", typeof(String));
             dtReport.Columns.Add("mo_id_barcode", typeof(String));
             dtReport.Columns.Add("name_cust", typeof(String));
@@ -98,6 +99,7 @@ namespace cf_pad.Forms
                     else
                     {
                         lblMo_id_barcode.Text = "";
+                        lblIt_customer.Text = "";
                         lblMo_id.Text = "";
                         lblCustomer.Text = "";
                         lblPO_style.Text = "";
@@ -135,7 +137,7 @@ namespace cf_pad.Forms
         private void Select_Item(string pGoods_id)
         {
             DataRow[] dr = dtLabel.Select(string.Format("goods_id='{0}'", pGoods_id));
-
+            lblIt_customer.Text = dr[0]["it_customer"].ToString();
             lblMo_id.Text = dr[0]["mo_id"].ToString();
             lblMo_id_barcode.Text = dr[0]["mo_id_barcode"].ToString();
             lblCustomer.Text = dr[0]["name_cust"].ToString();
@@ -188,6 +190,7 @@ namespace cf_pad.Forms
                 for (int i = 0; i < print_total; i++)
                 {
                     DataRow newRow = dtReport.NewRow();
+                    newRow["it_customer"] = lblIt_customer.Text;
                     newRow["mo_id"] = lblMo_id.Text;
                     newRow["mo_id_barcode"] = lblMo_id_barcode.Text;
                     newRow["name_cust"] = lblCustomer.Text;

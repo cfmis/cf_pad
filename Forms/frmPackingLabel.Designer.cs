@@ -46,8 +46,8 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.cmbItems = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lblBarcode = new System.Windows.Forms.Label();
             this.txtBarCode = new System.Windows.Forms.TextBox();
+            this.lblBarcode = new System.Windows.Forms.Label();
             this.lblNet_weiht = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblCustomer_color_id = new System.Windows.Forms.Label();
@@ -66,6 +66,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.lblIt_customer = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -291,17 +292,6 @@
             this.panel3.Size = new System.Drawing.Size(803, 56);
             this.panel3.TabIndex = 4;
             // 
-            // lblBarcode
-            // 
-            this.lblBarcode.AutoSize = true;
-            this.lblBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblBarcode.ForeColor = System.Drawing.Color.DarkViolet;
-            this.lblBarcode.Location = new System.Drawing.Point(126, 14);
-            this.lblBarcode.Name = "lblBarcode";
-            this.lblBarcode.Size = new System.Drawing.Size(128, 26);
-            this.lblBarcode.TabIndex = 0;
-            this.lblBarcode.Text = "條碼掃描區:";
-            // 
             // txtBarCode
             // 
             this.txtBarCode.BackColor = System.Drawing.Color.Plum;
@@ -312,6 +302,17 @@
             this.txtBarCode.Size = new System.Drawing.Size(514, 47);
             this.txtBarCode.TabIndex = 0;
             this.txtBarCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBarCode_KeyDown);
+            // 
+            // lblBarcode
+            // 
+            this.lblBarcode.AutoSize = true;
+            this.lblBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblBarcode.ForeColor = System.Drawing.Color.DarkViolet;
+            this.lblBarcode.Location = new System.Drawing.Point(126, 14);
+            this.lblBarcode.Name = "lblBarcode";
+            this.lblBarcode.Size = new System.Drawing.Size(128, 26);
+            this.lblBarcode.TabIndex = 0;
+            this.lblBarcode.Text = "條碼掃描區:";
             // 
             // lblNet_weiht
             // 
@@ -332,6 +333,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.lblIt_customer);
             this.panel2.Controls.Add(this.lblCustomer_color_id);
             this.panel2.Controls.Add(this.lblCustomer_color);
             this.panel2.Controls.Add(this.rchGoods_desc);
@@ -519,6 +521,17 @@
             this.label5.Text = "CUST. CODE:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // lblIt_customer
+            // 
+            this.lblIt_customer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblIt_customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblIt_customer.Location = new System.Drawing.Point(59, 88);
+            this.lblIt_customer.Name = "lblIt_customer";
+            this.lblIt_customer.Size = new System.Drawing.Size(172, 42);
+            this.lblIt_customer.TabIndex = 59;
+            this.lblIt_customer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblIt_customer.Visible = false;
+            // 
             // frmPackingLabel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -579,5 +592,6 @@
         private System.Windows.Forms.ComboBox cmbQty;
         private System.Windows.Forms.Label lblCustomer_color_id;
         private System.Windows.Forms.Label lblCustomer_color;
+        private System.Windows.Forms.Label lblIt_customer;
     }
 }
