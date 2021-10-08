@@ -168,6 +168,7 @@
             this.lblKG = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
+            this.cmbJob_type = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblcont_work = new System.Windows.Forms.Label();
@@ -200,7 +201,6 @@
             this.tp1Mer = new System.Windows.Forms.TabPage();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.cmbJob_type = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -224,9 +224,9 @@
             // 
             // chkcont_work1
             // 
-            this.chkcont_work1.Font = new System.Drawing.Font("新細明體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.chkcont_work1.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.chkcont_work1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.chkcont_work1.Location = new System.Drawing.Point(17, 1);
+            this.chkcont_work1.Location = new System.Drawing.Point(17, 4);
             this.chkcont_work1.Name = "chkcont_work1";
             this.chkcont_work1.Size = new System.Drawing.Size(74, 23);
             this.chkcont_work1.TabIndex = 5;
@@ -422,9 +422,9 @@
             // 
             // chkcont_work2
             // 
-            this.chkcont_work2.Font = new System.Drawing.Font("新細明體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.chkcont_work2.Font = new System.Drawing.Font("新細明體", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.chkcont_work2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.chkcont_work2.Location = new System.Drawing.Point(105, 1);
+            this.chkcont_work2.Location = new System.Drawing.Point(105, 4);
             this.chkcont_work2.Name = "chkcont_work2";
             this.chkcont_work2.Size = new System.Drawing.Size(74, 23);
             this.chkcont_work2.TabIndex = 6;
@@ -1730,30 +1730,30 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel5.Controls.Add(this.txtJob_type);
+            this.panel5.Controls.Add(this.lblPrd_Run_qty);
+            this.panel5.Controls.Add(this.lblStart_run);
             this.panel5.Controls.Add(this.txtDifficulty_level);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.lblPer_hour_qty);
             this.panel5.Controls.Add(this.lblWork_code);
             this.panel5.Controls.Add(this.txtWork_code);
-            this.panel5.Controls.Add(this.txtRow_qty);
             this.panel5.Controls.Add(this.txtper_Standrad_qty);
             this.panel5.Controls.Add(this.lblRow_qty);
             this.panel5.Controls.Add(this.lblStandard_per_qty);
             this.panel5.Controls.Add(this.lblDifficulty_level);
             this.panel5.Controls.Add(this.txtPer_Convert_qty);
-            this.panel5.Controls.Add(this.txtPrd_Run_qty);
-            this.panel5.Controls.Add(this.lblPrd_Run_qty);
             this.panel5.Controls.Add(this.lblSpeed_lever);
-            this.panel5.Controls.Add(this.txtSpeed_lever);
             this.panel5.Controls.Add(this.txtEnd_run);
             this.panel5.Controls.Add(this.lblWork_class);
             this.panel5.Controls.Add(this.lblEnd_run);
             this.panel5.Controls.Add(this.txtWork_class);
             this.panel5.Controls.Add(this.txtStart_run);
             this.panel5.Controls.Add(this.cmbJob_type);
-            this.panel5.Controls.Add(this.lblStart_run);
             this.panel5.Controls.Add(this.lblJob_type);
+            this.panel5.Controls.Add(this.txtPrd_Run_qty);
+            this.panel5.Controls.Add(this.txtRow_qty);
+            this.panel5.Controls.Add(this.txtSpeed_lever);
+            this.panel5.Controls.Add(this.txtJob_type);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(3, 222);
             this.panel5.Name = "panel5";
@@ -1770,6 +1770,18 @@
             this.label5.TabIndex = 43;
             this.label5.Text = "要留意這些控件有重疊的";
             this.label5.Visible = false;
+            // 
+            // cmbJob_type
+            // 
+            this.cmbJob_type.DropDownWidth = 220;
+            this.cmbJob_type.Font = new System.Drawing.Font("新細明體", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.cmbJob_type.FormattingEnabled = true;
+            this.cmbJob_type.Location = new System.Drawing.Point(91, 38);
+            this.cmbJob_type.Name = "cmbJob_type";
+            this.cmbJob_type.Size = new System.Drawing.Size(179, 27);
+            this.cmbJob_type.TabIndex = 44;
+            this.cmbJob_type.Visible = false;
+            this.cmbJob_type.SelectedIndexChanged += new System.EventHandler(this.cmbJob_type_SelectedIndexChanged);
             // 
             // panel3
             // 
@@ -2097,18 +2109,6 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(202, 32);
             this.panel10.TabIndex = 5;
-            // 
-            // cmbJob_type
-            // 
-            this.cmbJob_type.DropDownWidth = 220;
-            this.cmbJob_type.Font = new System.Drawing.Font("新細明體", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.cmbJob_type.FormattingEnabled = true;
-            this.cmbJob_type.Location = new System.Drawing.Point(91, 38);
-            this.cmbJob_type.Name = "cmbJob_type";
-            this.cmbJob_type.Size = new System.Drawing.Size(179, 27);
-            this.cmbJob_type.TabIndex = 44;
-            this.cmbJob_type.Visible = false;
-            this.cmbJob_type.SelectedIndexChanged += new System.EventHandler(this.cmbJob_type_SelectedIndexChanged);
             // 
             // frmPrdSchedule
             // 

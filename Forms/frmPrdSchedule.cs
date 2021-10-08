@@ -31,7 +31,7 @@ namespace cf_pad.Forms
         private product_records objModel;
         private int record_id = -1;//未完成記錄的ID，若查找到，則說明未完成，在保存時，執行更新操作
         private int BarCodeMinLength = 4;//這個為測試用，如果是正常的制單條碼，長度為10
-
+        private string wipDep = "";
 
         public frmPrdSchedule()
         {
@@ -275,21 +275,47 @@ namespace cf_pad.Forms
         }
         private void txtmo_id_Leave(object sender, EventArgs e)
         {
+
             cmbGoods_id.Text = "";
             txtgoods_desc.Text = "";
             cmbGoods_id.Items.Clear();
 
-            string dep = cmbProductDept.SelectedValue.ToString();
-            if (dep == "104")//如果是104幫102加工的，則將部門改成102來提取記錄
-                dep = "102";
-            dtMo_item = clsProductionSchedule.getItemByMo(txtmo_id.Text.Trim(), dep);
+            //處理一些本部門幫其它部門生產的單
+            string dep = cmbProductDept.SelectedValue.ToString();//txtWipDep.Text.Trim();//
+            string Prd_mo = txtmo_id.Text.Trim();
+            string orgDep = dep;
+            //if (orgDep == "104")//如果是104幫102加工的，則將部門改成102來提取記錄
+            //    dep = "102";
+            dtMo_item = clsProductionSchedule.getItemByMo(Prd_mo, dep);
+            if (orgDep == "302" || orgDep == "105" || orgDep == "102")//如果是洗油的，本部門沒有流程，可能是幫其它部門做的
+            {
+                if (orgDep == "302")
+                    dep = "322";
+                else if (orgDep == "102")
+                    dep = "122";
+                else if (orgDep == "105")
+                    dep = "125";
+                DataTable dtMo_item1 = clsProductionSchedule.getItemByMo(Prd_mo, dep);
+                if (dtMo_item1.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dtMo_item1.Rows.Count; i++)
+                    {
+                        dtMo_item.Rows.Add(dtMo_item1.Rows[i].ItemArray);  //添加数据行
+                    }
+                }
+
+            }
             if (dtMo_item.Rows.Count > 0)
             {
                 for (int i = 0; i < dtMo_item.Rows.Count; i++)
                 {
-                    cmbGoods_id.Items.Add(dtMo_item.Rows[i]["goods_id"].ToString());
+                    cmbGoods_id.Items.Add(dtMo_item.Rows[i]["goods_id"].ToString());//dep + "--" + 
                 }
+                cmbGoods_id.SelectedIndex = 0;
             }
+
+
+
         }
 
         //獲取制單編號資料，并綁定物料編號
@@ -1592,7 +1618,8 @@ namespace cf_pad.Forms
                 {
                     txtFindMo.Text = dtBarCode.Rows[0]["mo_id"].ToString();
                     txtBarCodeItem.Text = dtBarCode.Rows[0]["goods_id"].ToString();
-                    cmbProductDept.Text = dtBarCode.Rows[0]["wp_id"].ToString();
+                    wipDep = dtBarCode.Rows[0]["wp_id"].ToString().Trim();
+                    cmbProductDept.Text = wipDep;
                     SetControlVisible();//設置控件可見
                     getMoDataSource();//從生產表或排期表或流程中獲取記錄
                     fill_txt_kg_pcs();//更新每Kg對應數量
@@ -1638,10 +1665,12 @@ namespace cf_pad.Forms
                 ClearPartOfText();
                 record_id = -1;
                 string goods_item = "";
+
                 //如果在生產的記錄中找不到記錄,則在安排的計劃中查找
                 DataTable dtArrange = clsProductionSchedule.getDataFromArrangeByMo(cmbProductDept.SelectedValue.ToString(), txtFindMo.Text.Trim(), txtBarCodeItem.Text);
                 //從流程中提取物料描述、原料描述
-                DataTable dtItem = clsProductionSchedule.GetMo_dataById(txtFindMo.Text.Trim(), cmbProductDept.SelectedValue.ToString(), txtBarCodeItem.Text);
+                //cmbProductDept.SelectedValue.ToString()
+                DataTable dtItem = clsProductionSchedule.GetMo_dataById(txtFindMo.Text.Trim(), wipDep, txtBarCodeItem.Text);
                 if (dtItem.Rows.Count == 0)
                 {
                     MessageBox.Show("該物料的流程記錄不存在!");
@@ -2547,8 +2576,13 @@ namespace cf_pad.Forms
         private void cmbGoods_id_Leave(object sender, EventArgs e)
         {
             txtFindMo.Text = txtmo_id.Text;
-            txtBarCodeItem.Text = cmbGoods_id.Text;
-            
+            string goods_id = cmbGoods_id.Text.Trim();
+            txtBarCodeItem.Text = goods_id;
+            if (dtMo_item.Rows.Count > 0)
+            {
+                DataRow[] drs = dtMo_item.Select("goods_id= '" + goods_id + "'");
+                wipDep = drs[0]["wp_id"].ToString();
+            }
             getMoDataSource();//從生產表或排期表或流程中獲取記錄
 
         }
