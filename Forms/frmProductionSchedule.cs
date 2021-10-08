@@ -212,7 +212,7 @@ namespace cf_pad.Forms
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
+            } 
         }
         private void txtmo_id_Leave(object sender, EventArgs e)
         {
