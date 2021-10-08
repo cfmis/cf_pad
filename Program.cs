@@ -25,7 +25,7 @@ namespace cf_pad
                 Application.Run(new frmMainPad());
             }
 
-            //Application.Run(new frmTransfer());
+            //Application.Run(new frmPrintArtwork());
             //Application.Run(new frmProductionSchedule());
             //Application.Run(new frmPrdSchedule());
             //Application.Run(new frmProductQtyConfirm());

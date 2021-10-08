@@ -16,7 +16,16 @@ namespace cf_pad.Reports
 
         private void Detail_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
-
+            string strCust_id= GetCurrentColumnValue("it_customer").ToString();
+            if(strCust_id != "DO-S0467")
+            {
+                xrLabel17.Visible = false;
+            }
+            else
+            {
+                //2021/04/29號要求,DO-S0467客戶要求顯示“country of origin :China ”內容
+                xrLabel17.Visible = true;
+            }
         }
 
         private void xrPictureBox2_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
