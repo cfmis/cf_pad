@@ -1,0 +1,11 @@
+
+bin/
+obj/
+BusinessRulerClass/
+.vs/
+DataAccess/
+
+Program.cs
+
+Properties/licenses.licx
+
