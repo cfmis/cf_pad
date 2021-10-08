@@ -249,7 +249,7 @@
             // 
             this.txtMatDesc.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtMatDesc.Font = new System.Drawing.Font("新細明體", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtMatDesc.Location = new System.Drawing.Point(60, 75);
+            this.txtMatDesc.Location = new System.Drawing.Point(60, 74);
             this.txtMatDesc.Name = "txtMatDesc";
             this.txtMatDesc.Size = new System.Drawing.Size(501, 46);
             this.txtMatDesc.TabIndex = 36;
@@ -268,7 +268,7 @@
             // 
             this.txtToDep.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtToDep.Font = new System.Drawing.Font("新細明體", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtToDep.Location = new System.Drawing.Point(654, 75);
+            this.txtToDep.Location = new System.Drawing.Point(654, 74);
             this.txtToDep.Name = "txtToDep";
             this.txtToDep.Size = new System.Drawing.Size(101, 46);
             this.txtToDep.TabIndex = 36;
@@ -472,7 +472,7 @@
             // 
             this.lblToDep.Font = new System.Drawing.Font("新細明體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblToDep.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblToDep.Location = new System.Drawing.Point(594, 76);
+            this.lblToDep.Location = new System.Drawing.Point(594, 75);
             this.lblToDep.Name = "lblToDep";
             this.lblToDep.Size = new System.Drawing.Size(55, 46);
             this.lblToDep.TabIndex = 0;
@@ -1276,7 +1276,7 @@
             this.dgvAndSingle.RowHeadersWidth = 46;
             this.dgvAndSingle.RowTemplate.Height = 100;
             this.dgvAndSingle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvAndSingle.Size = new System.Drawing.Size(1016, 728);
+            this.dgvAndSingle.Size = new System.Drawing.Size(1016, 719);
             this.dgvAndSingle.TabIndex = 33;
             this.dgvAndSingle.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAndSingle_CellClick);
             // 
@@ -1822,7 +1822,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 104);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1016, 837);
+            this.tabPage2.Size = new System.Drawing.Size(1016, 828);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "記錄查詢";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1860,7 +1860,7 @@
             this.dgvDetails.Name = "dgvDetails";
             this.dgvDetails.RowHeadersWidth = 50;
             this.dgvDetails.RowTemplate.Height = 120;
-            this.dgvDetails.Size = new System.Drawing.Size(1010, 728);
+            this.dgvDetails.Size = new System.Drawing.Size(1010, 719);
             this.dgvDetails.TabIndex = 32;
             this.dgvDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetails_CellClick);
             this.dgvDetails.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetails_CellLeave);
@@ -1987,7 +1987,7 @@
             this.tabPage3.Controls.Add(this.groupBox2);
             this.tabPage3.Location = new System.Drawing.Point(4, 104);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1016, 837);
+            this.tabPage3.Size = new System.Drawing.Size(1016, 828);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "並單記錄";
             this.tabPage3.UseVisualStyleBackColor = true;

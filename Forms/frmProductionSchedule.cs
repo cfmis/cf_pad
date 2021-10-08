@@ -219,7 +219,7 @@ namespace cf_pad.Forms
             cmbGoods_id.Text = "";
             txtgoods_desc.Text = "";
             if (txtmo_id.Text != "" && cmbProductDept.Text != "")
-                GetMo_itme("");
+                GetMo_itme(""); 
         }
 
         //獲取制單編號資料，并綁定物料編號
