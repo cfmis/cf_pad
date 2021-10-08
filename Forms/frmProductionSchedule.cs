@@ -219,33 +219,61 @@ namespace cf_pad.Forms
             cmbGoods_id.Text = "";
             txtgoods_desc.Text = "";
             if (txtmo_id.Text != "" && cmbProductDept.Text != "")
-            {
                 GetMo_itme("");
-            }
         }
 
         //獲取制單編號資料，并綁定物料編號
         private void GetMo_itme(string item)
         {
             cmbGoods_id.Items.Clear();
-            try
+            //string dep = cmbProductDept.SelectedValue.ToString();
+            //if (dep == "104")//如果是104幫102加工的，則將部門改成102來提取記錄
+            //    dep = "102";
+            //dtMo_item = clsProductionSchedule.GetMo_dataById(txtmo_id.Text.Trim(), dep, item);
+            //if (dtMo_item.Rows.Count > 0)
+            //{
+            //    for (int i = 0; i < dtMo_item.Rows.Count; i++)
+            //    {
+            //        cmbGoods_id.Items.Add(dtMo_item.Rows[i]["goods_id"].ToString());
+            //    }
+            //}
+
+
+            //處理一些本部門幫其它部門生產的單
+            string dep = cmbProductDept.SelectedValue.ToString();//txtWipDep.Text.Trim();//
+            string Prd_mo = txtmo_id.Text.Trim();
+            string orgDep = dep;
+            //if (orgDep == "104")//如果是104幫102加工的，則將部門改成102來提取記錄
+            //    dep = "102";
+            dtMo_item = clsProductionSchedule.GetMo_dataById(Prd_mo, dep, item);
+            if (orgDep == "302" || orgDep == "105" || orgDep == "102")//如果是洗油的，本部門沒有流程，可能是幫其它部門做的
             {
-                string dep = cmbProductDept.SelectedValue.ToString();
-                if (dep == "104")//如果是104幫102加工的，則將部門改成102來提取記錄
-                    dep = "102";
-                dtMo_item = clsProductionSchedule.GetMo_dataById(txtmo_id.Text.Trim(), dep, item);
-                if (dtMo_item.Rows.Count > 0)
+                if (orgDep == "302")
+                    dep = "322";
+                else if (orgDep == "102")
+                    dep = "122";
+                else if (orgDep == "105")
+                    dep = "125";
+                DataTable dtMo_item1 = clsProductionSchedule.GetMo_dataById(Prd_mo, dep, item);
+                if (dtMo_item1.Rows.Count > 0)
                 {
-                    for (int i = 0; i < dtMo_item.Rows.Count; i++)
+                    for (int i = 0; i < dtMo_item1.Rows.Count; i++)
                     {
-                        cmbGoods_id.Items.Add(dtMo_item.Rows[i]["goods_id"].ToString());
+                        dtMo_item.Rows.Add(dtMo_item1.Rows[i].ItemArray);  //添加数据行
                     }
                 }
+
             }
-            catch (Exception ex)
+            if (dtMo_item.Rows.Count > 0)
             {
-                MessageBox.Show(ex.Message);
+                for (int i = 0; i < dtMo_item.Rows.Count; i++)
+                {
+                    cmbGoods_id.Items.Add(dtMo_item.Rows[i]["goods_id"].ToString());//dep + "--" + 
+                }
+                cmbGoods_id.SelectedIndex = 0;
             }
+
+
         }
 
         //查詢未完成的記錄，並重新賦值，便於重新輸入完整資料
