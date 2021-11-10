@@ -279,7 +279,11 @@ namespace cf_pad.CLS
                 }
                 else
                 {
-                    if ((barcode_length == 15 && barcode.Substring(0, 3) == "DAA") || (barcode_length == 15 && barcode.Substring(0, 3) == "DAB"))//倉庫發貨的條碼
+                    if ((barcode_length == 15 && barcode.Substring(0, 3) == "DAA")
+                        || (barcode_length == 15 && barcode.Substring(0, 3) == "DAB")
+                         || (barcode_length == 15 && barcode.Substring(0, 3) == "LAA")
+                         || (barcode_length == 15 && barcode.Substring(0, 3) == "LAB")
+                         )//倉庫發貨的條碼
                     {
                         dr["doc_id"] = barcode.Substring(0, 11);//貨倉發貨：條形碼按單據編號查詢
                         dr["doc_seq"] = barcode.Substring(11, 4) + "h";

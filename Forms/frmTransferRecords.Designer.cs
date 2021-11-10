@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnShow = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
@@ -79,11 +79,11 @@
             this.txtIn_dept = new System.Windows.Forms.TextBox();
             this.txtBarCode = new System.Windows.Forms.TextBox();
             this.txtSeq_id = new System.Windows.Forms.TextBox();
-            this.btnSync = new System.Windows.Forms.Button();
             this.lblSeq_id = new System.Windows.Forms.Label();
             this.btnShowMo = new System.Windows.Forms.Button();
             this.btnShowDate = new System.Windows.Forms.Button();
             this.btnShowId = new System.Windows.Forms.Button();
+            this.btnSync = new System.Windows.Forms.Button();
             this.txtVendor = new System.Windows.Forms.TextBox();
             this.txtGoods_name = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -420,7 +420,6 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.palShowCont);
             this.splitContainer1.Panel1.Controls.Add(this.pal501);
             this.splitContainer1.Panel1.Controls.Add(this.btnCountQty);
             this.splitContainer1.Panel1.Controls.Add(this.txtPerQty);
@@ -461,6 +460,7 @@
             this.splitContainer1.Panel1.Controls.Add(this.txtColorName);
             this.splitContainer1.Panel1.Controls.Add(this.txtTransfer_id);
             this.splitContainer1.Panel1.Controls.Add(this.picItem);
+            this.splitContainer1.Panel1.Controls.Add(this.palShowCont);
             // 
             // splitContainer1.Panel2
             // 
@@ -818,18 +818,6 @@
             this.txtSeq_id.TabIndex = 1;
             this.txtSeq_id.Visible = false;
             // 
-            // btnSync
-            // 
-            this.btnSync.BackColor = System.Drawing.Color.Cyan;
-            this.btnSync.Location = new System.Drawing.Point(382, 4);
-            this.btnSync.Name = "btnSync";
-            this.btnSync.Size = new System.Drawing.Size(150, 53);
-            this.btnSync.TabIndex = 34;
-            this.btnSync.Text = "同步";
-            this.btnSync.UseVisualStyleBackColor = false;
-            this.btnSync.Visible = false;
-            this.btnSync.Click += new System.EventHandler(this.btnSync_Click);
-            // 
             // lblSeq_id
             // 
             this.lblSeq_id.AutoSize = true;
@@ -876,6 +864,18 @@
             this.btnShowId.UseVisualStyleBackColor = false;
             this.btnShowId.Visible = false;
             this.btnShowId.Click += new System.EventHandler(this.btnShowId_Click);
+            // 
+            // btnSync
+            // 
+            this.btnSync.BackColor = System.Drawing.Color.Cyan;
+            this.btnSync.Location = new System.Drawing.Point(382, 4);
+            this.btnSync.Name = "btnSync";
+            this.btnSync.Size = new System.Drawing.Size(150, 53);
+            this.btnSync.TabIndex = 34;
+            this.btnSync.Text = "同步";
+            this.btnSync.UseVisualStyleBackColor = false;
+            this.btnSync.Visible = false;
+            this.btnSync.Click += new System.EventHandler(this.btnSync_Click);
             // 
             // txtVendor
             // 
@@ -1603,14 +1603,14 @@
             this.dgvMerge.AllowUserToAddRows = false;
             this.dgvMerge.AllowUserToDeleteRows = false;
             this.dgvMerge.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.PaleTurquoise;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Coral;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMerge.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Coral;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMerge.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMerge.ColumnHeadersHeight = 70;
             this.dgvMerge.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvMerge.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1650,7 +1650,7 @@
             this.dgvMerge.Name = "dgvMerge";
             this.dgvMerge.RowHeadersWidth = 30;
             this.dgvMerge.RowTemplate.Height = 120;
-            this.dgvMerge.Size = new System.Drawing.Size(1061, 262);
+            this.dgvMerge.Size = new System.Drawing.Size(1061, 268);
             this.dgvMerge.TabIndex = 1;
             // 
             // RecState
