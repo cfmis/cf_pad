@@ -1,0 +1,380 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CFPublic.Fakes</name>
+    </assembly>
+    <members>
+        <member name="T:CFPublic.Fakes.ShimBardCodeHooK">
+            <summary>Shim type of CFPublic.BardCodeHooK</summary>
+        </member>
+        <member name="M:CFPublic.Fakes.ShimBardCodeHooK.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:CFPublic.Fakes.ShimBardCodeHooK.#ctor(CFPublic.BardCodeHooK)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:CFPublic.Fakes.ShimBardCodeHooK.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimBardCodeHooK.AllInstances.BarCodeEventAddBardCodeHooKBardCodeDeletegate">
+            <summary>Sets the shim of BardCodeHooK.add_BarCodeEvent(BardCodeDeletegate value)</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimBardCodeHooK.AllInstances.BarCodeEventRemoveBardCodeHooKBardCodeDeletegate">
+            <summary>Sets the shim of BardCodeHooK.remove_BarCodeEvent(BardCodeDeletegate value)</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimBardCodeHooK.AllInstances.KeyboardHookProcInt32Int32IntPtr">
+            <summary>Sets the shim of BardCodeHooK.KeyboardHookProc(Int32 nCode, Int32 wParam, IntPtr lParam)</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimBardCodeHooK.AllInstances.Start">
+            <summary>Sets the shim of BardCodeHooK.Start()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimBardCodeHooK.AllInstances.Stop">
+            <summary>Sets the shim of BardCodeHooK.Stop()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimBardCodeHooK.BarCodeEventAddBardCodeHooKBardCodeDeletegate">
+            <summary>Sets the shim of BardCodeHooK.add_BarCodeEvent(BardCodeDeletegate value)</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimBardCodeHooK.BarCodeEventRemoveBardCodeHooKBardCodeDeletegate">
+            <summary>Sets the shim of BardCodeHooK.remove_BarCodeEvent(BardCodeDeletegate value)</summary>
+        </member>
+        <member name="M:CFPublic.Fakes.ShimBardCodeHooK.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:CFPublic.Fakes.ShimBardCodeHooK.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimBardCodeHooK.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimBardCodeHooK.Constructor">
+            <summary>Sets the shim of BardCodeHooK.BardCodeHooK()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimBardCodeHooK.KeyboardHookProcInt32Int32IntPtr">
+            <summary>Sets the shim of BardCodeHooK.KeyboardHookProc(Int32 nCode, Int32 wParam, IntPtr lParam)</summary>
+        </member>
+        <member name="T:CFPublic.Fakes.ShimBardCodeHooK.ShimBarCodes">
+            <summary>Shim type of CFPublic.BardCodeHooK+BarCodes</summary>
+        </member>
+        <member name="M:CFPublic.Fakes.ShimBardCodeHooK.ShimBarCodes.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="T:CFPublic.Fakes.ShimBardCodeHooK.ShimBarCodes.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="M:CFPublic.Fakes.ShimBardCodeHooK.ShimBarCodes.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:CFPublic.Fakes.ShimBardCodeHooK.ShimBarCodes.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimBardCodeHooK.ShimBarCodes.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimBardCodeHooK.Start">
+            <summary>Sets the shim of BardCodeHooK.Start()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimBardCodeHooK.Stop">
+            <summary>Sets the shim of BardCodeHooK.Stop()</summary>
+        </member>
+        <member name="T:CFPublic.Fakes.ShimScanerHook">
+            <summary>Shim type of CFPublic.ScanerHook</summary>
+        </member>
+        <member name="M:CFPublic.Fakes.ShimScanerHook.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:CFPublic.Fakes.ShimScanerHook.#ctor(CFPublic.ScanerHook)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:CFPublic.Fakes.ShimScanerHook.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.AllInstances.KeyboardHookProcInt32Int32IntPtr">
+            <summary>Sets the shim of ScanerHook.KeyboardHookProc(Int32 nCode, Int32 wParam, IntPtr lParam)</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.AllInstances.ScanerEventAddScanerHookScanerDelegate">
+            <summary>Sets the shim of ScanerHook.add_ScanerEvent(ScanerDelegate value)</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.AllInstances.ScanerEventRemoveScanerHookScanerDelegate">
+            <summary>Sets the shim of ScanerHook.remove_ScanerEvent(ScanerDelegate value)</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.AllInstances.Start">
+            <summary>Sets the shim of ScanerHook.Start()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.AllInstances.Stop">
+            <summary>Sets the shim of ScanerHook.Stop()</summary>
+        </member>
+        <member name="M:CFPublic.Fakes.ShimScanerHook.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:CFPublic.Fakes.ShimScanerHook.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.Constructor">
+            <summary>Sets the shim of ScanerHook.ScanerHook()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.KeyboardHookProcInt32Int32IntPtr">
+            <summary>Sets the shim of ScanerHook.KeyboardHookProc(Int32 nCode, Int32 wParam, IntPtr lParam)</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.ScanerEventAddScanerHookScanerDelegate">
+            <summary>Sets the shim of ScanerHook.add_ScanerEvent(ScanerDelegate value)</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.ScanerEventRemoveScanerHookScanerDelegate">
+            <summary>Sets the shim of ScanerHook.remove_ScanerEvent(ScanerDelegate value)</summary>
+        </member>
+        <member name="T:CFPublic.Fakes.ShimScanerHook.ShimEventMsg">
+            <summary>Shim type of CFPublic.ScanerHook+EventMsg</summary>
+        </member>
+        <member name="M:CFPublic.Fakes.ShimScanerHook.ShimEventMsg.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="T:CFPublic.Fakes.ShimScanerHook.ShimEventMsg.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="M:CFPublic.Fakes.ShimScanerHook.ShimEventMsg.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:CFPublic.Fakes.ShimScanerHook.ShimEventMsg.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.ShimEventMsg.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="T:CFPublic.Fakes.ShimScanerHook.ShimScanerCodes">
+            <summary>Shim type of CFPublic.ScanerHook+ScanerCodes</summary>
+        </member>
+        <member name="M:CFPublic.Fakes.ShimScanerHook.ShimScanerCodes.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:CFPublic.Fakes.ShimScanerHook.ShimScanerCodes.#ctor(CFPublic.ScanerHook.ScanerCodes)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.ShimScanerCodes.AddScanerHookEventMsg">
+            <summary>Sets the shim of ScanerCodes.Add(EventMsg msg)</summary>
+        </member>
+        <member name="T:CFPublic.Fakes.ShimScanerHook.ShimScanerCodes.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.ShimScanerCodes.AllInstances.AddScanerHookEventMsg">
+            <summary>Sets the shim of ScanerCodes.Add(EventMsg msg)</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.ShimScanerCodes.AllInstances.CurrentCharGet">
+            <summary>Sets the shim of ScanerCodes.get_CurrentChar()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.ShimScanerCodes.AllInstances.CurrentKeyGet">
+            <summary>Sets the shim of ScanerCodes.get_CurrentKey()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.ShimScanerCodes.AllInstances.EventGet">
+            <summary>Sets the shim of ScanerCodes.get_Event()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.ShimScanerCodes.AllInstances.KeyDownCountGet">
+            <summary>Sets the shim of ScanerCodes.get_KeyDownCount()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.ShimScanerCodes.AllInstances.KeyDownsGet">
+            <summary>Sets the shim of ScanerCodes.get_KeyDowns()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.ShimScanerCodes.AllInstances.KeyboardStateGet">
+            <summary>Sets the shim of ScanerCodes.get_KeyboardState()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.ShimScanerCodes.AllInstances.LastInputGet">
+            <summary>Sets the shim of ScanerCodes.get_LastInput()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.ShimScanerCodes.AllInstances.ResultGet">
+            <summary>Sets the shim of ScanerCodes.get_Result()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.ShimScanerCodes.AllInstances.ShiftCharStringBooleanByteArray">
+            <summary>Sets the shim of ScanerCodes.ShiftChar(String k, Boolean isShiftDown, Byte[] state)</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.ShimScanerCodes.AllInstances.isShiftGet">
+            <summary>Sets the shim of ScanerCodes.get_isShift()</summary>
+        </member>
+        <member name="M:CFPublic.Fakes.ShimScanerHook.ShimScanerCodes.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:CFPublic.Fakes.ShimScanerHook.ShimScanerCodes.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.ShimScanerCodes.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.ShimScanerCodes.Constructor">
+            <summary>Sets the shim of ScanerCodes.ScanerCodes()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.ShimScanerCodes.CurrentCharGet">
+            <summary>Sets the shim of ScanerCodes.get_CurrentChar()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.ShimScanerCodes.CurrentKeyGet">
+            <summary>Sets the shim of ScanerCodes.get_CurrentKey()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.ShimScanerCodes.EventGet">
+            <summary>Sets the shim of ScanerCodes.get_Event()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.ShimScanerCodes.KeyDownCountGet">
+            <summary>Sets the shim of ScanerCodes.get_KeyDownCount()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.ShimScanerCodes.KeyDownsGet">
+            <summary>Sets the shim of ScanerCodes.get_KeyDowns()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.ShimScanerCodes.KeyboardStateGet">
+            <summary>Sets the shim of ScanerCodes.get_KeyboardState()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.ShimScanerCodes.LastInputGet">
+            <summary>Sets the shim of ScanerCodes.get_LastInput()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.ShimScanerCodes.ResultGet">
+            <summary>Sets the shim of ScanerCodes.get_Result()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.ShimScanerCodes.ShiftCharStringBooleanByteArray">
+            <summary>Sets the shim of ScanerCodes.ShiftChar(String k, Boolean isShiftDown, Byte[] state)</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.ShimScanerCodes.isShiftGet">
+            <summary>Sets the shim of ScanerCodes.get_isShift()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.Start">
+            <summary>Sets the shim of ScanerHook.Start()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.ShimScanerHook.Stop">
+            <summary>Sets the shim of ScanerHook.Stop()</summary>
+        </member>
+        <member name="T:CFPublic.Fakes.Shimstudent">
+            <summary>Shim type of CFPublic.student</summary>
+        </member>
+        <member name="M:CFPublic.Fakes.Shimstudent.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:CFPublic.Fakes.Shimstudent.#ctor(CFPublic.student)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.Shimstudent.AgeGet">
+            <summary>Sets the shim of student.get_Age()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.Shimstudent.AgeSetInt32">
+            <summary>Sets the shim of student.set_Age(Int32 value)</summary>
+        </member>
+        <member name="T:CFPublic.Fakes.Shimstudent.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.Shimstudent.AllInstances.AgeGet">
+            <summary>Sets the shim of student.get_Age()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.Shimstudent.AllInstances.AgeSetInt32">
+            <summary>Sets the shim of student.set_Age(Int32 value)</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.Shimstudent.AllInstances.CodeGet">
+            <summary>Sets the shim of student.get_Code()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.Shimstudent.AllInstances.CodeSetString">
+            <summary>Sets the shim of student.set_Code(String value)</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.Shimstudent.AllInstances.NameGet">
+            <summary>Sets the shim of student.get_Name()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.Shimstudent.AllInstances.NameSetString">
+            <summary>Sets the shim of student.set_Name(String value)</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.Shimstudent.AllInstances.Sex1Get">
+            <summary>Sets the shim of student.get_Sex1()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.Shimstudent.AllInstances.SexSetString">
+            <summary>Sets the shim of student.set_Sex(String value)</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.Shimstudent.AllInstances.jiafaInt32Int32">
+            <summary>Sets the shim of student.jiafa(Int32 a, Int32 b)</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.Shimstudent.AllInstances.jianfaInt32Int32">
+            <summary>Sets the shim of student.jianfa(Int32 a, Int32 b)</summary>
+        </member>
+        <member name="M:CFPublic.Fakes.Shimstudent.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:CFPublic.Fakes.Shimstudent.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.Shimstudent.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.Shimstudent.CodeGet">
+            <summary>Sets the shim of student.get_Code()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.Shimstudent.CodeSetString">
+            <summary>Sets the shim of student.set_Code(String value)</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.Shimstudent.Constructor">
+            <summary>Sets the shim of student.student()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.Shimstudent.NameGet">
+            <summary>Sets the shim of student.get_Name()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.Shimstudent.NameSetString">
+            <summary>Sets the shim of student.set_Name(String value)</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.Shimstudent.Sex1Get">
+            <summary>Sets the shim of student.get_Sex1()</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.Shimstudent.SexSetString">
+            <summary>Sets the shim of student.set_Sex(String value)</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.Shimstudent.jiafaInt32Int32">
+            <summary>Sets the shim of student.jiafa(Int32 a, Int32 b)</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.Shimstudent.jianfaInt32Int32">
+            <summary>Sets the shim of student.jianfa(Int32 a, Int32 b)</summary>
+        </member>
+        <member name="T:CFPublic.Fakes.StubBardCodeHooK">
+            <summary>Stub type of CFPublic.BardCodeHooK</summary>
+        </member>
+        <member name="M:CFPublic.Fakes.StubBardCodeHooK.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.StubBardCodeHooK.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="M:CFPublic.Fakes.StubBardCodeHooK.InitializeStub">
+            <summary>Initializes a new instance of type StubBardCodeHooK</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.StubBardCodeHooK.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.StubBardCodeHooK.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:CFPublic.Fakes.StubScanerHook">
+            <summary>Stub type of CFPublic.ScanerHook</summary>
+        </member>
+        <member name="M:CFPublic.Fakes.StubScanerHook.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.StubScanerHook.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="M:CFPublic.Fakes.StubScanerHook.InitializeStub">
+            <summary>Initializes a new instance of type StubScanerHook</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.StubScanerHook.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.StubScanerHook.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:CFPublic.Fakes.Stubstudent">
+            <summary>Stub type of CFPublic.student</summary>
+        </member>
+        <member name="M:CFPublic.Fakes.Stubstudent.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.Stubstudent.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="M:CFPublic.Fakes.Stubstudent.InitializeStub">
+            <summary>Initializes a new instance of type Stubstudent</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.Stubstudent.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:CFPublic.Fakes.Stubstudent.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+    </members>
+</doc>

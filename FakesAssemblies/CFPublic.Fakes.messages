@@ -1,0 +1,5 @@
+D:\Workspace\cf_pad\Fakes\CFPublic.fakes : warning : Cannot generate shim for CFPublic.ScanerHook+HookProc: type is a delegate.
+D:\Workspace\cf_pad\Fakes\CFPublic.fakes : warning : Cannot generate shim for CFPublic.ScanerHook+ScanerDelegate: type is a delegate.
+D:\Workspace\cf_pad\Fakes\CFPublic.fakes : warning : Cannot generate shim for CFPublic.BardCodeHooK+BardCodeDeletegate: type is a delegate.
+D:\Workspace\cf_pad\Fakes\CFPublic.fakes : warning : Cannot generate shim for CFPublic.BardCodeHooK+EventMsg: type is not visible to exported or assembly(CFPublic.Fakes).
+D:\Workspace\cf_pad\Fakes\CFPublic.fakes : warning : Cannot generate shim for CFPublic.BardCodeHooK+HookProc: type is a delegate.
