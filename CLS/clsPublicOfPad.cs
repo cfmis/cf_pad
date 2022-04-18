@@ -270,7 +270,11 @@ namespace cf_pad.CLS
                         dr["doc_id"] = barcode.Substring(0, 13);
                         dr["doc_seq"] = barcode.Substring(13, 4) + "h";
                     }
-                    else//條形碼按單據編號查詢
+                    else if(barcode.Substring(0, 2) == "LT")//JX移交單按單據編號查詢的條形碼
+                    {
+                        dr["doc_id"] = barcode.Substring(0, 13);
+                        dr["doc_seq"] = barcode.Substring(13, 4) + "l";
+                    } else//條形碼按單據編號查詢
                     {
                         dr["doc_id"] = barcode.Substring(0, 13);
                         dr["doc_seq"] = barcode.Substring(13, 4) + "h";

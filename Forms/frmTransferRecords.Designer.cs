@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnShow = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
@@ -420,7 +420,6 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.palShowCont);
             this.splitContainer1.Panel1.Controls.Add(this.pal501);
             this.splitContainer1.Panel1.Controls.Add(this.btnCountQty);
             this.splitContainer1.Panel1.Controls.Add(this.txtPerQty);
@@ -461,6 +460,7 @@
             this.splitContainer1.Panel1.Controls.Add(this.txtColorName);
             this.splitContainer1.Panel1.Controls.Add(this.txtTransfer_id);
             this.splitContainer1.Panel1.Controls.Add(this.picItem);
+            this.splitContainer1.Panel1.Controls.Add(this.palShowCont);
             // 
             // splitContainer1.Panel2
             // 
@@ -1603,14 +1603,14 @@
             this.dgvMerge.AllowUserToAddRows = false;
             this.dgvMerge.AllowUserToDeleteRows = false;
             this.dgvMerge.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.PaleTurquoise;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Coral;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMerge.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Coral;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMerge.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMerge.ColumnHeadersHeight = 70;
             this.dgvMerge.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvMerge.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
