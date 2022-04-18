@@ -420,6 +420,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.palShowCont);
             this.splitContainer1.Panel1.Controls.Add(this.pal501);
             this.splitContainer1.Panel1.Controls.Add(this.btnCountQty);
             this.splitContainer1.Panel1.Controls.Add(this.txtPerQty);
@@ -460,7 +461,6 @@
             this.splitContainer1.Panel1.Controls.Add(this.txtColorName);
             this.splitContainer1.Panel1.Controls.Add(this.txtTransfer_id);
             this.splitContainer1.Panel1.Controls.Add(this.picItem);
-            this.splitContainer1.Panel1.Controls.Add(this.palShowCont);
             // 
             // splitContainer1.Panel2
             // 

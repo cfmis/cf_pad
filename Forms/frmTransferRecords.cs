@@ -1128,7 +1128,7 @@ namespace cf_pad.Forms
                 //lblIn_dep.Visible = false;
                 txtIn_dept.Visible = false;
                 txtOut_dept.Visible = false;
-                lblTrFlag.Visible = false;
+                lblTrFlag.Visible = false; 
             }
             else
             {
