@@ -46,8 +46,9 @@
     <ApplicationIcon>stm.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CFPublic">
-      <HintPath>..\CFPublic\bin\Debug\CFPublic.dll</HintPath>
+    <Reference Include="CFPublic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\CFPublic.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Charts.v14.2.Core, Version=14.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -100,6 +101,9 @@
     <Reference Include="DevExpress.XtraReports.v14.2, Version=14.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Program Files (x86)\DevExpress 14.2\Components\Bin\Framework\DevExpress.XtraReports.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <HintPath>DLL\Microsoft.ReportViewer.Common.dll</HintPath>
@@ -579,6 +583,7 @@
     <None Include="dgcf_padDataSet.xss">
       <DependentUpon>dgcf_padDataSet.xsd</DependentUpon>
     </None>
+    <Fakes Include="Fakes\CFPublic.fakes" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
