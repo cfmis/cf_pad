@@ -22,8 +22,7 @@ namespace cf_pad.Forms
         public bool blPermission =false;
         public frmIpqcReport()
         {
-            InitializeComponent();
-                 
+            InitializeComponent();                 
         }
 
         private void frmIpqcReport_FormClosed(object sender, FormClosedEventArgs e)
@@ -141,8 +140,7 @@ namespace cf_pad.Forms
                     MessageBox.Show("請輸入檢驗人!", "系統提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     cmbWorker.Focus();
                     return;
-                }
-                
+                }                
                 const string sql_i =
                     @"Insert into dbo.qc_report_finish(qc_date,mo_id,goods_id,goods_name,order_qty,sample_qty,ac,re,qty_ng,qc_size,qc_color,qc_logo,qc_result,remark,artwork,create_by,create_date,qc_by,proofread_status)
                   Values(convert(date,getdate(),120),@mo_id,@goods_id,@goods_name,@order_qty,@sample_qty,@ac,@re,@qty_ng,@qc_size,@qc_color,@qc_logo,@qc_result,@remark,@artwork,@create_by,getdate(),@qc_by,@proofread_status)";
