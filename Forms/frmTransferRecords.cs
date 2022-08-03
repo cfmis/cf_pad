@@ -467,7 +467,7 @@ namespace cf_pad.Forms
             {
                 for (int i = 0; i < listDetail.Count; i++)
                 {
-                    if (listDetail[i].id.Substring(0, 3) == "DAA" || listDetail[i].id.Substring(0, 3) == "DAB")//如果是貨倉發貨
+                    if (listDetail[i].id.Substring(0, 3) == "DAA" || listDetail[i].id.Substring(0, 3) == "DAB" || listDetail[i].id.Substring(0, 3) == "LAA" || listDetail[i].id.Substring(0, 3) == "LAB")//如果是貨倉發貨
                         st_tr = 2;
                     Result = clsPrdTransfer.SaveTransferMostly(st_tr, listDetail[i].id, txtIn_dept.Text.Trim(), txtOut_dept.Text.Trim(), _userid);
                     if (Result == 0)
@@ -532,7 +532,7 @@ namespace cf_pad.Forms
                 {
                     //填充主表實體類
                     int st_tr=1;
-                    if (objDetails.id.Substring(0, 3) == "DAA" || objDetails.id.Substring(0, 3) == "DAB")//如果是貨倉發貨
+                    if (objDetails.id.Substring(0, 3) == "DAA" || objDetails.id.Substring(0, 3) == "DAB" || objDetails.id.Substring(0, 3) == "LAA" || objDetails.id.Substring(0, 3) == "LAB")//如果是貨倉發貨
                         st_tr = 2;
                     int MostlyResult = clsPrdTransfer.SaveTransferMostly(st_tr, objDetails.id, txtIn_dept.Text.Trim(), txtOut_dept.Text.Trim(), _userid);
 
@@ -1128,7 +1128,7 @@ namespace cf_pad.Forms
                 //lblIn_dep.Visible = false;
                 txtIn_dept.Visible = false;
                 txtOut_dept.Visible = false;
-                lblTrFlag.Visible = false;
+                lblTrFlag.Visible = false; 
             }
             else
             {
