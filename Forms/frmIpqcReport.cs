@@ -242,12 +242,12 @@ namespace cf_pad.Forms
 
                 if (save_flag)
                 {
+                    //重新刷新已保存的數據
                     string strMo = dtReport.Rows[0]["mo_id"].ToString();
                     string strSql = GetFindSqlStr(strMo);
                     dtReport = clsPublicOfPad.ExecuteSqlReturnDataTable(strSql);
                     dgvDetails.DataSource = dtReport;
                     Operation_info("數 據 保 存 成 功!", Color.Blue);
-
                 }
                 else
                 {                   
