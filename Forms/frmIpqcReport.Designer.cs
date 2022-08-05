@@ -28,26 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle120 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle127 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle128 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle136 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIpqcReport));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle121 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle122 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle123 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle124 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle125 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle126 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle129 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle130 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle131 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle132 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle133 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle134 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle135 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tbc = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pnlCheckColor = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.chkCheckColor = new System.Windows.Forms.CheckBox();
             this.cmbWorker = new System.Windows.Forms.ComboBox();
             this.chkResult = new System.Windows.Forms.CheckBox();
             this.lblSaveinfo = new System.Windows.Forms.Label();
@@ -74,37 +77,6 @@
             this.mskDat2 = new System.Windows.Forms.MaskedTextBox();
             this.mskDat1 = new System.Windows.Forms.MaskedTextBox();
             this.dgvDetails2 = new System.Windows.Forms.DataGridView();
-            this.btnDel = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSet = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.chkCheckColor = new System.Windows.Forms.CheckBox();
-            this.pnlCheckColor = new System.Windows.Forms.Panel();
-            this.flag_select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.mo_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.goods_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.order_qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sample_qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.re = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qty_ng = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qc_size = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qc_color = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qc_logo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qc_result = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qc_by = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.goods_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.check_color = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.artwork = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mo_id2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proofread_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.check_color_desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qcdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.seqno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.qc_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -128,14 +100,42 @@
             this.checkcolor = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.moid2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProofreadStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSet = new System.Windows.Forms.Button();
+            this.flag_select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.mo_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.goods_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.order_qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sample_qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.re = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qty_ng = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qc_size = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qc_color = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qc_logo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qc_result = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qc_by = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.goods_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.check_color = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.artwork = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mo_id2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proofread_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.check_color_desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qcdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.seqno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbc.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.pnlCheckColor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_artwork)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetails)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetails2)).BeginInit();
             this.panel1.SuspendLayout();
-            this.pnlCheckColor.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbc
@@ -180,12 +180,45 @@
             this.tabPage1.Text = "數據錄入";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // pnlCheckColor
+            // 
+            this.pnlCheckColor.Controls.Add(this.label8);
+            this.pnlCheckColor.Controls.Add(this.chkCheckColor);
+            this.pnlCheckColor.Location = new System.Drawing.Point(134, 224);
+            this.pnlCheckColor.Name = "pnlCheckColor";
+            this.pnlCheckColor.Size = new System.Drawing.Size(692, 46);
+            this.pnlCheckColor.TabIndex = 23;
+            this.pnlCheckColor.Visible = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(8, 8);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(279, 32);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "此頁數需要對顏色";
+            // 
+            // chkCheckColor
+            // 
+            this.chkCheckColor.AutoSize = true;
+            this.chkCheckColor.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.chkCheckColor.Location = new System.Drawing.Point(338, 4);
+            this.chkCheckColor.Name = "chkCheckColor";
+            this.chkCheckColor.Size = new System.Drawing.Size(309, 36);
+            this.chkCheckColor.TabIndex = 22;
+            this.chkCheckColor.Text = "QC已完成確認對色";
+            this.chkCheckColor.UseVisualStyleBackColor = true;
+            this.chkCheckColor.CheckedChanged += new System.EventHandler(this.chkCheckColor_CheckedChanged);
+            // 
             // cmbWorker
             // 
             this.cmbWorker.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbWorker.Font = new System.Drawing.Font("PMingLiU", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cmbWorker.FormattingEnabled = true;
-            this.cmbWorker.Location = new System.Drawing.Point(135, 60);
+            this.cmbWorker.Location = new System.Drawing.Point(135, 56);
             this.cmbWorker.Name = "cmbWorker";
             this.cmbWorker.Size = new System.Drawing.Size(431, 55);
             this.cmbWorker.TabIndex = 20;
@@ -193,11 +226,11 @@
             // chkResult
             // 
             this.chkResult.Font = new System.Drawing.Font("SimSun", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkResult.Location = new System.Drawing.Point(15, 112);
+            this.chkResult.Location = new System.Drawing.Point(15, 91);
             this.chkResult.Name = "chkResult";
-            this.chkResult.Size = new System.Drawing.Size(98, 146);
+            this.chkResult.Size = new System.Drawing.Size(98, 127);
             this.chkResult.TabIndex = 18;
-            this.chkResult.Text = "統一設置檢驗結果";
+            this.chkResult.Text = "設置檢驗結果";
             this.chkResult.UseVisualStyleBackColor = true;
             this.chkResult.CheckedChanged += new System.EventHandler(this.chkResult_CheckedChanged);
             // 
@@ -209,7 +242,7 @@
             this.lblSaveinfo.Font = new System.Drawing.Font("PMingLiU", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblSaveinfo.ForeColor = System.Drawing.Color.Blue;
             this.lblSaveinfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblSaveinfo.Location = new System.Drawing.Point(140, 187);
+            this.lblSaveinfo.Location = new System.Drawing.Point(140, 167);
             this.lblSaveinfo.Name = "lblSaveinfo";
             this.lblSaveinfo.Size = new System.Drawing.Size(600, 49);
             this.lblSaveinfo.TabIndex = 16;
@@ -244,7 +277,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("PMingLiU", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label7.ForeColor = System.Drawing.Color.DarkViolet;
-            this.label7.Location = new System.Drawing.Point(28, 64);
+            this.label7.Location = new System.Drawing.Point(28, 57);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(93, 27);
             this.label7.TabIndex = 1;
@@ -254,7 +287,7 @@
             // 
             this.chkSelectAll.AutoSize = true;
             this.chkSelectAll.Font = new System.Drawing.Font("SimSun", 24F);
-            this.chkSelectAll.Location = new System.Drawing.Point(16, 266);
+            this.chkSelectAll.Location = new System.Drawing.Point(16, 225);
             this.chkSelectAll.Name = "chkSelectAll";
             this.chkSelectAll.Size = new System.Drawing.Size(98, 37);
             this.chkSelectAll.TabIndex = 17;
@@ -265,11 +298,11 @@
             // richGoods_name
             // 
             this.richGoods_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richGoods_name.Font = new System.Drawing.Font("PMingLiU", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.richGoods_name.Location = new System.Drawing.Point(135, 181);
+            this.richGoods_name.Font = new System.Drawing.Font("PMingLiU", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.richGoods_name.Location = new System.Drawing.Point(135, 163);
             this.richGoods_name.Name = "richGoods_name";
             this.richGoods_name.ReadOnly = true;
-            this.richGoods_name.Size = new System.Drawing.Size(613, 69);
+            this.richGoods_name.Size = new System.Drawing.Size(613, 58);
             this.richGoods_name.TabIndex = 14;
             this.richGoods_name.TabStop = false;
             this.richGoods_name.Text = "";
@@ -277,9 +310,9 @@
             // pic_artwork
             // 
             this.pic_artwork.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pic_artwork.Location = new System.Drawing.Point(572, 5);
+            this.pic_artwork.Location = new System.Drawing.Point(575, 2);
             this.pic_artwork.Name = "pic_artwork";
-            this.pic_artwork.Size = new System.Drawing.Size(176, 173);
+            this.pic_artwork.Size = new System.Drawing.Size(173, 159);
             this.pic_artwork.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_artwork.TabIndex = 13;
             this.pic_artwork.TabStop = false;
@@ -287,10 +320,10 @@
             // lblGoods_id
             // 
             this.lblGoods_id.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblGoods_id.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblGoods_id.Location = new System.Drawing.Point(135, 121);
+            this.lblGoods_id.Font = new System.Drawing.Font("PMingLiU", 20F);
+            this.lblGoods_id.Location = new System.Drawing.Point(135, 114);
             this.lblGoods_id.Name = "lblGoods_id";
-            this.lblGoods_id.Size = new System.Drawing.Size(431, 55);
+            this.lblGoods_id.Size = new System.Drawing.Size(431, 47);
             this.lblGoods_id.TabIndex = 11;
             this.lblGoods_id.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -298,13 +331,13 @@
             // 
             this.dgvDetails.AllowUserToAddRows = false;
             this.dgvDetails.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle120.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.dgvDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle120;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.dgvDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle35;
             this.dgvDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDetails.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvDetails.ColumnHeadersHeight = 80;
+            this.dgvDetails.ColumnHeadersHeight = 65;
             this.dgvDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.flag_select,
@@ -330,20 +363,20 @@
             this.check_color_desc,
             this.qcdate,
             this.seqno});
-            this.dgvDetails.Location = new System.Drawing.Point(1, 312);
+            this.dgvDetails.Location = new System.Drawing.Point(1, 271);
             this.dgvDetails.Name = "dgvDetails";
-            dataGridViewCellStyle127.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle127.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle127.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle127.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle127.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle127.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle127.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle127;
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle42.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle42.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle42.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle42;
             this.dgvDetails.RowHeadersWidth = 25;
             this.dgvDetails.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.dgvDetails.RowTemplate.Height = 60;
-            this.dgvDetails.Size = new System.Drawing.Size(899, 443);
+            this.dgvDetails.Size = new System.Drawing.Size(899, 484);
             this.dgvDetails.TabIndex = 9;
             this.dgvDetails.SelectionChanged += new System.EventHandler(this.dgvDetails_SelectionChanged);
             // 
@@ -514,8 +547,8 @@
             // 
             this.dgvDetails2.AllowUserToAddRows = false;
             this.dgvDetails2.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle128.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.dgvDetails2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle128;
+            dataGridViewCellStyle43.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.dgvDetails2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle43;
             this.dgvDetails2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -548,19 +581,239 @@
             this.ProofreadStatus});
             this.dgvDetails2.Location = new System.Drawing.Point(1, 133);
             this.dgvDetails2.Name = "dgvDetails2";
-            dataGridViewCellStyle136.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle136.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle136.Font = new System.Drawing.Font("PMingLiU", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle136.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle136.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle136.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle136.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetails2.RowHeadersDefaultCellStyle = dataGridViewCellStyle136;
+            dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle51.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle51.Font = new System.Drawing.Font("PMingLiU", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle51.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle51.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle51.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle51.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetails2.RowHeadersDefaultCellStyle = dataGridViewCellStyle51;
             this.dgvDetails2.RowHeadersWidth = 25;
             this.dgvDetails2.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.dgvDetails2.RowTemplate.Height = 120;
             this.dgvDetails2.Size = new System.Drawing.Size(898, 630);
             this.dgvDetails2.TabIndex = 10;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "flag_select";
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle44.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle44.NullValue = false;
+            this.dataGridViewCheckBoxColumn1.DefaultCellStyle = dataGridViewCellStyle44;
+            this.dataGridViewCheckBoxColumn1.Frozen = true;
+            this.dataGridViewCheckBoxColumn1.HeaderText = "選擇";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewCheckBoxColumn1.Visible = false;
+            this.dataGridViewCheckBoxColumn1.Width = 40;
+            // 
+            // qc_date
+            // 
+            this.qc_date.DataPropertyName = "qc_date";
+            this.qc_date.HeaderText = "日期";
+            this.qc_date.Name = "qc_date";
+            this.qc_date.ReadOnly = true;
+            this.qc_date.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "mo_id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "頁數編號";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn1.Width = 110;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "goods_name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "產品描述";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "order_qty";
+            this.dataGridViewTextBoxColumn3.HeaderText = "訂單";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn3.Width = 65;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "sample_qty";
+            this.dataGridViewTextBoxColumn4.HeaderText = "抽樣";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn4.Width = 40;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "ac";
+            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle45;
+            this.dataGridViewTextBoxColumn5.HeaderText = "AC";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn5.Width = 35;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "re";
+            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle46;
+            this.dataGridViewTextBoxColumn6.HeaderText = "RE";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn6.Width = 35;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "qty_ng";
+            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle47.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle47.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle47.Format = "N0";
+            dataGridViewCellStyle47.NullValue = null;
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle47;
+            this.dataGridViewTextBoxColumn7.HeaderText = "不良數";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn7.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "qc_size";
+            this.dataGridViewTextBoxColumn8.HeaderText = "尺寸";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn8.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "qc_color";
+            this.dataGridViewTextBoxColumn9.HeaderText = "顏色";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn9.Width = 60;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "qc_logo";
+            this.dataGridViewTextBoxColumn10.HeaderText = "LOGO";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn10.Width = 90;
+            // 
+            // dataGridViewCheckBoxColumn2
+            // 
+            this.dataGridViewCheckBoxColumn2.DataPropertyName = "qc_result";
+            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle48.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle48.NullValue = false;
+            this.dataGridViewCheckBoxColumn2.DefaultCellStyle = dataGridViewCellStyle48;
+            this.dataGridViewCheckBoxColumn2.HeaderText = "檢驗結果是否OK";
+            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
+            this.dataGridViewCheckBoxColumn2.ReadOnly = true;
+            this.dataGridViewCheckBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCheckBoxColumn2.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "remark";
+            dataGridViewCellStyle49.BackColor = System.Drawing.Color.White;
+            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle49;
+            this.dataGridViewTextBoxColumn11.HeaderText = "備註";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // qc_by1
+            // 
+            this.qc_by1.DataPropertyName = "qc_by";
+            this.qc_by1.HeaderText = "工號";
+            this.qc_by1.Name = "qc_by1";
+            this.qc_by1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "goods_id";
+            this.dataGridViewTextBoxColumn12.HeaderText = "goods_id";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.dataGridViewTextBoxColumn12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn12.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "artwork";
+            this.dataGridViewTextBoxColumn13.HeaderText = "artwork";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn14.HeaderText = "id";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.Visible = false;
+            // 
+            // seq_no
+            // 
+            this.seq_no.DataPropertyName = "seq_no";
+            this.seq_no.HeaderText = "seq_no";
+            this.seq_no.Name = "seq_no";
+            this.seq_no.Visible = false;
+            // 
+            // check_color_desc2
+            // 
+            this.check_color_desc2.DataPropertyName = "check_color_desc";
+            this.check_color_desc2.FillWeight = 80F;
+            this.check_color_desc2.HeaderText = "對色描述";
+            this.check_color_desc2.Name = "check_color_desc2";
+            this.check_color_desc2.ReadOnly = true;
+            this.check_color_desc2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // checkcolor
+            // 
+            this.checkcolor.DataPropertyName = "check_color";
+            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle50.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle50.NullValue = false;
+            this.checkcolor.DefaultCellStyle = dataGridViewCellStyle50;
+            this.checkcolor.HeaderText = "是否已對色";
+            this.checkcolor.Name = "checkcolor";
+            this.checkcolor.ReadOnly = true;
+            this.checkcolor.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // moid2
+            // 
+            this.moid2.DataPropertyName = "mo_id2";
+            this.moid2.HeaderText = "mo_id2";
+            this.moid2.Name = "moid2";
+            this.moid2.ReadOnly = true;
+            this.moid2.Visible = false;
+            // 
+            // ProofreadStatus
+            // 
+            this.ProofreadStatus.DataPropertyName = "proofread_status";
+            this.ProofreadStatus.HeaderText = "ProofreadStatus";
+            this.ProofreadStatus.Name = "ProofreadStatus";
+            this.ProofreadStatus.ReadOnly = true;
+            this.ProofreadStatus.Visible = false;
             // 
             // btnDel
             // 
@@ -624,46 +877,13 @@
             this.btnSet.UseVisualStyleBackColor = true;
             this.btnSet.Click += new System.EventHandler(this.btnSet_Click);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("PMingLiU", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(8, 11);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(303, 35);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "此頁數需要對顏色";
-            // 
-            // chkCheckColor
-            // 
-            this.chkCheckColor.AutoSize = true;
-            this.chkCheckColor.Font = new System.Drawing.Font("PMingLiU", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.chkCheckColor.Location = new System.Drawing.Point(338, 7);
-            this.chkCheckColor.Name = "chkCheckColor";
-            this.chkCheckColor.Size = new System.Drawing.Size(334, 39);
-            this.chkCheckColor.TabIndex = 22;
-            this.chkCheckColor.Text = "QC已完成確認對色";
-            this.chkCheckColor.UseVisualStyleBackColor = true;
-            this.chkCheckColor.CheckedChanged += new System.EventHandler(this.chkCheckColor_CheckedChanged);
-            // 
-            // pnlCheckColor
-            // 
-            this.pnlCheckColor.Controls.Add(this.label8);
-            this.pnlCheckColor.Controls.Add(this.chkCheckColor);
-            this.pnlCheckColor.Location = new System.Drawing.Point(134, 253);
-            this.pnlCheckColor.Name = "pnlCheckColor";
-            this.pnlCheckColor.Size = new System.Drawing.Size(692, 55);
-            this.pnlCheckColor.TabIndex = 23;
-            this.pnlCheckColor.Visible = false;
-            // 
             // flag_select
             // 
             this.flag_select.DataPropertyName = "flag_select";
-            dataGridViewCellStyle121.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle121.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle121.NullValue = false;
-            this.flag_select.DefaultCellStyle = dataGridViewCellStyle121;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle36.NullValue = false;
+            this.flag_select.DefaultCellStyle = dataGridViewCellStyle36;
             this.flag_select.Frozen = true;
             this.flag_select.HeaderText = "選擇";
             this.flag_select.Name = "flag_select";
@@ -710,8 +930,8 @@
             // ac
             // 
             this.ac.DataPropertyName = "ac";
-            dataGridViewCellStyle122.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ac.DefaultCellStyle = dataGridViewCellStyle122;
+            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ac.DefaultCellStyle = dataGridViewCellStyle37;
             this.ac.HeaderText = "AC";
             this.ac.Name = "ac";
             this.ac.ReadOnly = true;
@@ -721,8 +941,8 @@
             // re
             // 
             this.re.DataPropertyName = "re";
-            dataGridViewCellStyle123.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.re.DefaultCellStyle = dataGridViewCellStyle123;
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.re.DefaultCellStyle = dataGridViewCellStyle38;
             this.re.HeaderText = "RE";
             this.re.Name = "re";
             this.re.ReadOnly = true;
@@ -732,12 +952,12 @@
             // qty_ng
             // 
             this.qty_ng.DataPropertyName = "qty_ng";
-            dataGridViewCellStyle124.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle124.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle124.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle124.Format = "N0";
-            dataGridViewCellStyle124.NullValue = null;
-            this.qty_ng.DefaultCellStyle = dataGridViewCellStyle124;
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle39.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle39.Format = "N0";
+            dataGridViewCellStyle39.NullValue = null;
+            this.qty_ng.DefaultCellStyle = dataGridViewCellStyle39;
             this.qty_ng.HeaderText = "不良數";
             this.qty_ng.Name = "qty_ng";
             this.qty_ng.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -773,11 +993,11 @@
             // qc_result
             // 
             this.qc_result.DataPropertyName = "qc_result";
-            dataGridViewCellStyle125.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle125.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle125.NullValue = false;
-            this.qc_result.DefaultCellStyle = dataGridViewCellStyle125;
-            this.qc_result.HeaderText = "檢驗結果是否OK";
+            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle40.NullValue = false;
+            this.qc_result.DefaultCellStyle = dataGridViewCellStyle40;
+            this.qc_result.HeaderText = "檢驗是否OK";
             this.qc_result.Name = "qc_result";
             this.qc_result.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.qc_result.Width = 70;
@@ -785,8 +1005,8 @@
             // remark
             // 
             this.remark.DataPropertyName = "remark";
-            dataGridViewCellStyle126.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.remark.DefaultCellStyle = dataGridViewCellStyle126;
+            dataGridViewCellStyle41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.remark.DefaultCellStyle = dataGridViewCellStyle41;
             this.remark.HeaderText = "備註";
             this.remark.Name = "remark";
             this.remark.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -870,226 +1090,6 @@
             this.seqno.ReadOnly = true;
             this.seqno.Visible = false;
             // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "flag_select";
-            dataGridViewCellStyle129.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle129.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle129.NullValue = false;
-            this.dataGridViewCheckBoxColumn1.DefaultCellStyle = dataGridViewCellStyle129;
-            this.dataGridViewCheckBoxColumn1.Frozen = true;
-            this.dataGridViewCheckBoxColumn1.HeaderText = "選擇";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewCheckBoxColumn1.Visible = false;
-            this.dataGridViewCheckBoxColumn1.Width = 40;
-            // 
-            // qc_date
-            // 
-            this.qc_date.DataPropertyName = "qc_date";
-            this.qc_date.HeaderText = "日期";
-            this.qc_date.Name = "qc_date";
-            this.qc_date.ReadOnly = true;
-            this.qc_date.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "mo_id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "頁數編號";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn1.Width = 110;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "goods_name";
-            this.dataGridViewTextBoxColumn2.HeaderText = "產品描述";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn2.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "order_qty";
-            this.dataGridViewTextBoxColumn3.HeaderText = "訂單";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn3.Width = 65;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "sample_qty";
-            this.dataGridViewTextBoxColumn4.HeaderText = "抽樣";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn4.Width = 40;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "ac";
-            dataGridViewCellStyle130.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle130;
-            this.dataGridViewTextBoxColumn5.HeaderText = "AC";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn5.Width = 35;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "re";
-            dataGridViewCellStyle131.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle131;
-            this.dataGridViewTextBoxColumn6.HeaderText = "RE";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn6.Width = 35;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "qty_ng";
-            dataGridViewCellStyle132.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle132.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle132.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle132.Format = "N0";
-            dataGridViewCellStyle132.NullValue = null;
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle132;
-            this.dataGridViewTextBoxColumn7.HeaderText = "不良數";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn7.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "qc_size";
-            this.dataGridViewTextBoxColumn8.HeaderText = "尺寸";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn8.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "qc_color";
-            this.dataGridViewTextBoxColumn9.HeaderText = "顏色";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn9.Width = 60;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "qc_logo";
-            this.dataGridViewTextBoxColumn10.HeaderText = "LOGO";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn10.Width = 90;
-            // 
-            // dataGridViewCheckBoxColumn2
-            // 
-            this.dataGridViewCheckBoxColumn2.DataPropertyName = "qc_result";
-            dataGridViewCellStyle133.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle133.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle133.NullValue = false;
-            this.dataGridViewCheckBoxColumn2.DefaultCellStyle = dataGridViewCellStyle133;
-            this.dataGridViewCheckBoxColumn2.HeaderText = "檢驗結果是否OK";
-            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
-            this.dataGridViewCheckBoxColumn2.ReadOnly = true;
-            this.dataGridViewCheckBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCheckBoxColumn2.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "remark";
-            dataGridViewCellStyle134.BackColor = System.Drawing.Color.White;
-            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle134;
-            this.dataGridViewTextBoxColumn11.HeaderText = "備註";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            this.dataGridViewTextBoxColumn11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // qc_by1
-            // 
-            this.qc_by1.DataPropertyName = "qc_by";
-            this.qc_by1.HeaderText = "工號";
-            this.qc_by1.Name = "qc_by1";
-            this.qc_by1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "goods_id";
-            this.dataGridViewTextBoxColumn12.HeaderText = "goods_id";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            this.dataGridViewTextBoxColumn12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn12.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "artwork";
-            this.dataGridViewTextBoxColumn13.HeaderText = "artwork";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            this.dataGridViewTextBoxColumn13.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn14.HeaderText = "id";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.Visible = false;
-            // 
-            // seq_no
-            // 
-            this.seq_no.DataPropertyName = "seq_no";
-            this.seq_no.HeaderText = "seq_no";
-            this.seq_no.Name = "seq_no";
-            this.seq_no.Visible = false;
-            // 
-            // check_color_desc2
-            // 
-            this.check_color_desc2.DataPropertyName = "check_color_desc";
-            this.check_color_desc2.FillWeight = 80F;
-            this.check_color_desc2.HeaderText = "對色描述";
-            this.check_color_desc2.Name = "check_color_desc2";
-            this.check_color_desc2.ReadOnly = true;
-            this.check_color_desc2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // checkcolor
-            // 
-            this.checkcolor.DataPropertyName = "check_color";
-            dataGridViewCellStyle135.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle135.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle135.NullValue = false;
-            this.checkcolor.DefaultCellStyle = dataGridViewCellStyle135;
-            this.checkcolor.HeaderText = "是否已對色";
-            this.checkcolor.Name = "checkcolor";
-            this.checkcolor.ReadOnly = true;
-            this.checkcolor.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // moid2
-            // 
-            this.moid2.DataPropertyName = "mo_id2";
-            this.moid2.HeaderText = "mo_id2";
-            this.moid2.Name = "moid2";
-            this.moid2.ReadOnly = true;
-            this.moid2.Visible = false;
-            // 
-            // ProofreadStatus
-            // 
-            this.ProofreadStatus.DataPropertyName = "proofread_status";
-            this.ProofreadStatus.HeaderText = "ProofreadStatus";
-            this.ProofreadStatus.Name = "ProofreadStatus";
-            this.ProofreadStatus.ReadOnly = true;
-            this.ProofreadStatus.Visible = false;
-            // 
             // frmIpqcReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1104,14 +1104,14 @@
             this.tbc.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.pnlCheckColor.ResumeLayout(false);
+            this.pnlCheckColor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_artwork)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetails)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetails2)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.pnlCheckColor.ResumeLayout(false);
-            this.pnlCheckColor.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1154,29 +1154,6 @@
         private System.Windows.Forms.Panel pnlCheckColor;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.CheckBox chkCheckColor;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn flag_select;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mo_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn goods_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn order_qty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sample_qty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ac;
-        private System.Windows.Forms.DataGridViewTextBoxColumn re;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qty_ng;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qc_size;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qc_color;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qc_logo;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn qc_result;
-        private System.Windows.Forms.DataGridViewTextBoxColumn remark;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qc_by;
-        private System.Windows.Forms.DataGridViewTextBoxColumn goods_id;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn check_color;
-        private System.Windows.Forms.DataGridViewTextBoxColumn artwork;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mo_id2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn proofread_status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn check_color_desc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qcdate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn seqno;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn qc_date;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
@@ -1200,5 +1177,28 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn checkcolor;
         private System.Windows.Forms.DataGridViewTextBoxColumn moid2;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProofreadStatus;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn flag_select;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mo_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn goods_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn order_qty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sample_qty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ac;
+        private System.Windows.Forms.DataGridViewTextBoxColumn re;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qty_ng;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qc_size;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qc_color;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qc_logo;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn qc_result;
+        private System.Windows.Forms.DataGridViewTextBoxColumn remark;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qc_by;
+        private System.Windows.Forms.DataGridViewTextBoxColumn goods_id;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn check_color;
+        private System.Windows.Forms.DataGridViewTextBoxColumn artwork;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mo_id2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proofread_status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn check_color_desc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qcdate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn seqno;
     }
 }
