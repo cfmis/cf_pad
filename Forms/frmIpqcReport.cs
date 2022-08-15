@@ -140,7 +140,19 @@ namespace cf_pad.Forms
                     MessageBox.Show("請輸入檢驗人!", "系統提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     cmbWorker.Focus();
                     return;
-                }                
+                }      
+                if(pnlCheckColor.Visible == true)
+                {
+                    if (!chkCheckColor.Checked)
+                    {
+                        if (MessageBox.Show("注意:當前頁數未完成確認對色,是否繼續保當前資料?", "提示信息", MessageBoxButtons.YesNo, MessageBoxIcon.Information,
+                            MessageBoxDefaultButton.Button2) == DialogResult.No)
+                        {
+                            return;
+                        }
+                    }
+                }
+                 
                 const string sql_i =
                     @"Insert into dbo.qc_report_finish(qc_date,mo_id,goods_id,goods_name,order_qty,sample_qty,ac,re,qty_ng,qc_size,qc_color,qc_logo,qc_result,remark,artwork,create_by,create_date,qc_by,proofread_status)
                   Values(convert(date,getdate(),120),@mo_id,@goods_id,@goods_name,@order_qty,@sample_qty,@ac,@re,@qty_ng,@qc_size,@qc_color,@qc_logo,@qc_result,@remark,@artwork,@create_by,getdate(),@qc_by,@proofread_status)";
