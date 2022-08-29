@@ -448,11 +448,11 @@ namespace cf_pad.Forms
             if (!string.IsNullOrEmpty(dat2))
                 sb.Append(string.Format(" AND A.qc_date<='{0}'", dat2));
             dtReport2 = clsPublicOfPad.ExecuteSqlReturnDataTable(sb.ToString());
+            dgvDetails2.DataSource = dtReport2;
             if (dtReport2.Rows.Count == 0)
             {
                 MessageBox.Show("沒有符合條件的數據!", "系統提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            dgvDetails2.DataSource = dtReport2;
+            }            
 
             //統計MO張數
             sb.Clear();
