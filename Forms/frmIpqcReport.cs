@@ -576,6 +576,10 @@ namespace cf_pad.Forms
                     this.Tag = "";
                     return;
                 }
+                if(dgvDetails.CurrentCell.RowIndex<0)
+                {
+                    return;
+                }
                 lblGoods_id.Text = dtReport.Rows[dgvDetails.CurrentCell.RowIndex]["goods_id"].ToString();
                 richGoods_name.Text = dtReport.Rows[dgvDetails.CurrentCell.RowIndex]["goods_name"].ToString();
                 cmbWorker.SelectedValue = ""; 
@@ -583,7 +587,6 @@ namespace cf_pad.Forms
                 {
                     cmbWorker.SelectedValue = dtReport.Rows[dgvDetails.CurrentCell.RowIndex]["qc_by"].ToString();
                 }
-
                 //對色
                 if (dtReport.Rows[dgvDetails.CurrentCell.RowIndex]["mo_id2"].ToString() != "" &&
                    "0,1".Contains(dtReport.Rows[dgvDetails.CurrentCell.RowIndex]["proofread_status"].ToString()))
@@ -656,12 +659,12 @@ namespace cf_pad.Forms
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
+        }       
 
-        private void chkCheckColor_CheckedChanged(object sender, EventArgs e)
+        private void chkCheckColor_MouseUp(object sender, MouseEventArgs e)
         {
             if (dgvDetails.Rows.Count > 0)
-            {                
+            {
                 if (chkCheckColor.Checked)
                 {
                     UpdateCheckColor(true);
