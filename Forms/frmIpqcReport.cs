@@ -399,20 +399,21 @@ namespace cf_pad.Forms
         private void btnFind_Click(object sender, EventArgs e)
         {
             string dat1 = mskDat1.Text;
-            string dat2 = mskDat2.Text;        
-            
+            string dat2 = mskDat2.Text;
+
             if (dat1 != "    /  /")
             {
                 if (!clsValidRule.CheckDateFormat(dat1))
-                {                
+                {
                     MessageBox.Show("日期格有誤，請返回檢查!", "系統提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     mskDat1.Focus();
                     return;
                 }
             }
             else
+            {
                 dat1 = "";
-
+            }
             if (dat2 != "    /  /")
             {
                 if (!clsValidRule.CheckDateFormat(dat2))
@@ -423,8 +424,9 @@ namespace cf_pad.Forms
                 }
             }
             else
+            {
                 dat2 = "";
-
+            }
             if (dat1 == "" && dat2 == "" && txtMO1.Text == "" && txtMO2.Text == "")
             {
                 MessageBox.Show("查詢條件不可為空，請輸入查詢條件!", "系統提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
