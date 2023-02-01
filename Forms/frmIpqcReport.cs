@@ -486,7 +486,7 @@ namespace cf_pad.Forms
         {
             if (dgvDetails2.RowCount > 0)
             {
-                using (xrQcFinishReport mMyReport = new xrQcFinishReport() { DataSource = dtReport })
+                using (xrQcFinishReport mMyReport = new xrQcFinishReport() { DataSource = dtReport2 })
                 {
                     mMyReport.CreateDocument();
                     mMyReport.PrintingSystem.ShowMarginsWarning = false;
