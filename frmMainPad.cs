@@ -32,9 +32,8 @@ namespace cf_pad
 
         private void RunNewForm(string path_formname)
         {
-            string formname = "";
-            formname = path_formname.Substring(path_formname.LastIndexOf(".") + 1, (path_formname.Length - (path_formname.LastIndexOf(".") + 1)));
-
+            int location = path_formname.LastIndexOf(".") + 1;
+            string formname = path_formname.Substring(location, (path_formname.Length - (location)));
             if (checkChildFrmExist(formname) == false)
             {
                 Assembly asb = Assembly.GetExecutingAssembly();//得到当前的程序集
