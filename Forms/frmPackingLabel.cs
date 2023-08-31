@@ -38,6 +38,9 @@ namespace cf_pad.Forms
             dtReport.Columns.Add("net_unit", typeof(String));
             dtReport.Columns.Add("cross_weiht", typeof(String));
             dtReport.Columns.Add("cross_unit", typeof(String));
+
+            dtReport.Columns.Add("brand_id", typeof(String));
+            dtReport.Columns.Add("brand_name", typeof(String));
         }
 
         private void frmPackingLabel_Load(object sender, EventArgs e)
@@ -116,6 +119,9 @@ namespace cf_pad.Forms
                         cmbNetUnit.Text = "";
                         txtCross_weiht.Text = "";
                         cmbCrossUnit.Text = "";
+
+                        lblBrand_id.Text = "";
+                        lblBrand_name.Text = "";
                         return;
                     }                    
                     break;
@@ -149,6 +155,9 @@ namespace cf_pad.Forms
             lblCustomer_color_id.Text = dr[0]["customer_color_id"].ToString();
             lblGoods_id.Text = dr[0]["goods_id"].ToString();
             rchGoods_desc.Text = dr[0]["goods_desc"].ToString();
+
+            lblBrand_id.Text = dr[0]["brand_id"].ToString();
+            lblBrand_name.Text = dr[0]["brand_name"].ToString();
 
             //取凈重
             Get_Net_Weiht(lblMo_id.Text, cmbItems.Text);
@@ -208,6 +217,8 @@ namespace cf_pad.Forms
                     newRow["cross_weiht"] = txtCross_weiht.Text == "" ? "--" : txtCross_weiht.Text;
                     newRow["cross_unit"] = cmbCrossUnit.Text;
 
+                    newRow["brand_id"] = lblBrand_id.Text;
+                    newRow["brand_name"] = lblBrand_name.Text;
                     dtReport.Rows.Add(newRow);
                 }
 

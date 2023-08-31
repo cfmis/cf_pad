@@ -51,6 +51,7 @@
             this.btnPint_List = new System.Windows.Forms.Button();
             this.lblBarcode = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblIt_customer = new System.Windows.Forms.Label();
             this.lblCustomer_color_id = new System.Windows.Forms.Label();
             this.lblCustomer_color = new System.Windows.Forms.Label();
             this.rchGoods_desc = new System.Windows.Forms.RichTextBox();
@@ -67,7 +68,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.lblIt_customer = new System.Windows.Forms.Label();
+            this.lblBrand_id = new System.Windows.Forms.Label();
+            this.lblBrand_name = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -345,6 +347,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.lblBrand_name);
+            this.panel2.Controls.Add(this.lblBrand_id);
             this.panel2.Controls.Add(this.lblIt_customer);
             this.panel2.Controls.Add(this.lblCustomer_color_id);
             this.panel2.Controls.Add(this.lblCustomer_color);
@@ -366,6 +370,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(818, 469);
             this.panel2.TabIndex = 3;
+            // 
+            // lblIt_customer
+            // 
+            this.lblIt_customer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblIt_customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblIt_customer.Location = new System.Drawing.Point(78, 92);
+            this.lblIt_customer.Name = "lblIt_customer";
+            this.lblIt_customer.Size = new System.Drawing.Size(172, 42);
+            this.lblIt_customer.TabIndex = 60;
+            this.lblIt_customer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblIt_customer.Visible = false;
             // 
             // lblCustomer_color_id
             // 
@@ -533,16 +548,27 @@
             this.label5.Text = "CUST.CODE:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblIt_customer
+            // lblBrand_id
             // 
-            this.lblIt_customer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblIt_customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblIt_customer.Location = new System.Drawing.Point(78, 92);
-            this.lblIt_customer.Name = "lblIt_customer";
-            this.lblIt_customer.Size = new System.Drawing.Size(172, 42);
-            this.lblIt_customer.TabIndex = 60;
-            this.lblIt_customer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblIt_customer.Visible = false;
+            this.lblBrand_id.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblBrand_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblBrand_id.Location = new System.Drawing.Point(10, 4);
+            this.lblBrand_id.Name = "lblBrand_id";
+            this.lblBrand_id.Size = new System.Drawing.Size(172, 42);
+            this.lblBrand_id.TabIndex = 61;
+            this.lblBrand_id.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblBrand_id.Visible = false;
+            // 
+            // lblBrand_name
+            // 
+            this.lblBrand_name.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblBrand_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblBrand_name.Location = new System.Drawing.Point(7, 48);
+            this.lblBrand_name.Name = "lblBrand_name";
+            this.lblBrand_name.Size = new System.Drawing.Size(172, 42);
+            this.lblBrand_name.TabIndex = 62;
+            this.lblBrand_name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblBrand_name.Visible = false;
             // 
             // frmPacking
             // 
@@ -606,5 +632,7 @@
         private System.Windows.Forms.Label lblCustomer_color_id;
         private System.Windows.Forms.Label lblCustomer_color;
         private System.Windows.Forms.Label lblIt_customer;
+        private System.Windows.Forms.Label lblBrand_name;
+        private System.Windows.Forms.Label lblBrand_id;
     }
 }
