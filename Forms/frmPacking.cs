@@ -23,22 +23,24 @@ namespace cf_pad.Forms
         {
             InitializeComponent();
 
-            dtReport.Columns.Add("it_customer", typeof(String));
-            dtReport.Columns.Add("mo_id", typeof(String));
-            dtReport.Columns.Add("mo_id_barcode", typeof(String));
-            dtReport.Columns.Add("name_cust", typeof(String));
-            dtReport.Columns.Add("po_style", typeof(String));
-            dtReport.Columns.Add("id", typeof(String));
-            dtReport.Columns.Add("trim_code", typeof(String));
-            dtReport.Columns.Add("customer_color_id", typeof(String));
-            dtReport.Columns.Add("goods_id", typeof(String));
-            dtReport.Columns.Add("goods_desc", typeof(String));
-            dtReport.Columns.Add("qty", typeof(String));
-            dtReport.Columns.Add("qty_unit", typeof(String));
+            dtReport.Columns.Add("it_customer", typeof(string));
+            dtReport.Columns.Add("mo_id", typeof(string));
+            dtReport.Columns.Add("mo_id_barcode", typeof(string));
+            dtReport.Columns.Add("name_cust", typeof(string));
+            dtReport.Columns.Add("po_style", typeof(string));
+            dtReport.Columns.Add("id", typeof(string));
+            dtReport.Columns.Add("trim_code", typeof(string));
+            dtReport.Columns.Add("customer_color_id", typeof(string));
+            dtReport.Columns.Add("goods_id", typeof(string));
+            dtReport.Columns.Add("goods_desc", typeof(string));
+            dtReport.Columns.Add("qty", typeof(string));
+            dtReport.Columns.Add("qty_unit", typeof(string));
             //dtReport.Columns.Add("net_weiht", typeof(String));
             //dtReport.Columns.Add("net_unit", typeof(String));
             //dtReport.Columns.Add("cross_weiht", typeof(String));
             //dtReport.Columns.Add("cross_unit", typeof(String));
+            dtReport.Columns.Add("brand_id", typeof(string));
+            dtReport.Columns.Add("brand_name", typeof(string));
         }
 
         private void frmPacking_Load(object sender, EventArgs e)
@@ -109,11 +111,13 @@ namespace cf_pad.Forms
                         lblGoods_id.Text = "";
                         rchGoods_desc.Text = "";
                         lblItem_total.Text = "";
-
                         txtQty.Text = "";
                         cmbQty.Text = "";
                         txtOrder_qty.Text = "";                        
-                        txtSend_qty.Text = "";                       
+                        txtSend_qty.Text = "";
+
+                        lblBrand_id.Text = "";
+                        lblBrand_name.Text = "";                   
                         return;
                     }                    
                     break;
@@ -154,6 +158,9 @@ namespace cf_pad.Forms
             cmbQty.Text = "PCS";
             //cmbNetUnit.Text = "KG";
             //cmbCrossUnit.Text = "KG";
+
+            lblBrand_id.Text = dr[0]["brand_id"].ToString();
+            lblBrand_name.Text = dr[0]["brand_name"].ToString();
         }
 
         private void cmbItems_SelectedIndexChanged(object sender, EventArgs e)
@@ -201,7 +208,9 @@ namespace cf_pad.Forms
                     newRow["goods_id"] = lblGoods_id.Text;
                     newRow["goods_desc"] = rchGoods_desc.Text;
                     newRow["qty"] = txtQty.Text == "" ? "--" : txtQty.Text;
-                    newRow["qty_unit"] = cmbQty.Text;       
+                    newRow["qty_unit"] = cmbQty.Text;
+                    newRow["brand_id"] =lblBrand_id.Text;
+                    newRow["brand_name"] = lblBrand_name.Text;
                     dtReport.Rows.Add(newRow);
                 }
 
