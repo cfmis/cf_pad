@@ -57,7 +57,7 @@ namespace cf_pad.Forms
         //            if (strBarCode1.Length == 5)//如果掃描的是工號// && barcode.Substring(0, 5) == "00000"
         //            {
         //                txtBarCode.Text = "";
-        //             }
+        //             } 
         //            else
         //            {
         //                doBarCode();
