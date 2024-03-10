@@ -40,7 +40,6 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.btnDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.lblTransfer_flag = new System.Windows.Forms.Label();
             this.lblGoods_id = new System.Windows.Forms.Label();
@@ -96,22 +95,20 @@
             this.tpBrowse = new System.Windows.Forms.TabPage();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.btnFind = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
-            this.lblTransfer_date_f = new System.Windows.Forms.Label();
-            this.lblDep_f = new System.Windows.Forms.Label();
             this.btnGenReport = new System.Windows.Forms.Button();
             this.lblMo_id_f = new System.Windows.Forms.Label();
-            this.cmbPrdDepFind = new System.Windows.Forms.ComboBox();
             this.txtMo_id_f = new System.Windows.Forms.TextBox();
-            this.dteTransferDateFind = new System.Windows.Forms.DateTimePicker();
             this.lblTransfer_flag_f = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.rdgAll = new System.Windows.Forms.RadioButton();
             this.rdgSent_f = new System.Windows.Forms.RadioButton();
             this.rdgReceive_f = new System.Windows.Forms.RadioButton();
+            this.btnSearch = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.cmbGoodsId = new System.Windows.Forms.ComboBox();
+            this.btnFindItem = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -136,13 +133,15 @@
             this.toolStripSeparator2,
             this.btnMutRec,
             this.toolStripSeparator3,
+            this.btnSearch,
+            this.toolStripSeparator6,
             this.btnDetails,
             this.toolStripSeparator4,
             this.btnDelete,
             this.toolStripSeparator5});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(836, 69);
+            this.toolStrip1.Size = new System.Drawing.Size(894, 69);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -153,7 +152,7 @@
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(140, 66);
+            this.btnExit.Size = new System.Drawing.Size(130, 66);
             this.btnExit.Text = "退出(&X)";
             this.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -170,8 +169,8 @@
             this.btnConf.Image = ((System.Drawing.Image)(resources.GetObject("btnConf.Image")));
             this.btnConf.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnConf.Name = "btnConf";
-            this.btnConf.Size = new System.Drawing.Size(140, 66);
-            this.btnConf.Text = "確認(&S)";
+            this.btnConf.Size = new System.Drawing.Size(130, 66);
+            this.btnConf.Text = "確認發貨(&S)";
             this.btnConf.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnConf.Click += new System.EventHandler(this.btnConf_Click);
             // 
@@ -187,8 +186,8 @@
             this.btnMutRec.Image = ((System.Drawing.Image)(resources.GetObject("btnMutRec.Image")));
             this.btnMutRec.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnMutRec.Name = "btnMutRec";
-            this.btnMutRec.Size = new System.Drawing.Size(140, 66);
-            this.btnMutRec.Text = "多批次";
+            this.btnMutRec.Size = new System.Drawing.Size(130, 66);
+            this.btnMutRec.Text = "多批次(&B)";
             this.btnMutRec.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnMutRec.Click += new System.EventHandler(this.btnMutRec_Click);
             // 
@@ -204,8 +203,8 @@
             this.btnDetails.Image = ((System.Drawing.Image)(resources.GetObject("btnDetails.Image")));
             this.btnDetails.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDetails.Name = "btnDetails";
-            this.btnDetails.Size = new System.Drawing.Size(140, 66);
-            this.btnDetails.Text = "瀏覽(&B)";
+            this.btnDetails.Size = new System.Drawing.Size(130, 66);
+            this.btnDetails.Text = "明細(&P)";
             this.btnDetails.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
             // 
@@ -221,7 +220,7 @@
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(140, 66);
+            this.btnDelete.Size = new System.Drawing.Size(130, 66);
             this.btnDelete.Text = "刪除(&D)";
             this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -231,27 +230,15 @@
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 69);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.panel7);
-            this.panel1.Controls.Add(this.panel6);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(822, 428);
-            this.panel1.TabIndex = 1;
-            // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.lblTransfer_flag);
+            this.panel7.Controls.Add(this.btnFindItem);
+            this.panel7.Controls.Add(this.cmbPrdDep);
             this.panel7.Controls.Add(this.lblGoods_id);
-            this.panel7.Controls.Add(this.dteTransferDate);
             this.panel7.Controls.Add(this.lblWeg);
-            this.panel7.Controls.Add(this.panel3);
-            this.panel7.Controls.Add(this.txtWeg);
-            this.panel7.Controls.Add(this.panel4);
-            this.panel7.Controls.Add(this.lblDat);
+            this.panel7.Controls.Add(this.lblDep);
             this.panel7.Controls.Add(this.txtPrd_id);
+            this.panel7.Controls.Add(this.txtWeg);
             this.panel7.Controls.Add(this.lblToDep);
             this.panel7.Controls.Add(this.txtTo_dep);
             this.panel7.Controls.Add(this.picItem);
@@ -260,23 +247,23 @@
             this.panel7.Controls.Add(this.txtPackNum);
             this.panel7.Controls.Add(this.lblPackNum);
             this.panel7.Controls.Add(this.txtQty);
-            this.panel7.Controls.Add(this.txtGoods_id);
             this.panel7.Controls.Add(this.txtGoods_name);
             this.panel7.Controls.Add(this.lblPGoods_name);
             this.panel7.Controls.Add(this.lblWipId);
             this.panel7.Controls.Add(this.lblMo_id);
             this.panel7.Controls.Add(this.txtMo_id);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 62);
+            this.panel7.Controls.Add(this.cmbGoodsId);
+            this.panel7.Controls.Add(this.txtGoods_id);
+            this.panel7.Location = new System.Drawing.Point(6, 3);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(822, 361);
+            this.panel7.Size = new System.Drawing.Size(872, 317);
             this.panel7.TabIndex = 48;
             // 
             // lblTransfer_flag
             // 
             this.lblTransfer_flag.AutoSize = true;
             this.lblTransfer_flag.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblTransfer_flag.Location = new System.Drawing.Point(27, 24);
+            this.lblTransfer_flag.Location = new System.Drawing.Point(444, 17);
             this.lblTransfer_flag.Name = "lblTransfer_flag";
             this.lblTransfer_flag.Size = new System.Drawing.Size(72, 16);
             this.lblTransfer_flag.TabIndex = 33;
@@ -286,7 +273,7 @@
             // 
             this.lblGoods_id.AutoSize = true;
             this.lblGoods_id.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblGoods_id.Location = new System.Drawing.Point(27, 169);
+            this.lblGoods_id.Location = new System.Drawing.Point(27, 79);
             this.lblGoods_id.Name = "lblGoods_id";
             this.lblGoods_id.Size = new System.Drawing.Size(72, 16);
             this.lblGoods_id.TabIndex = 38;
@@ -298,7 +285,7 @@
             this.dteTransferDate.CustomFormat = "yyyy/MM/dd";
             this.dteTransferDate.Font = new System.Drawing.Font("新細明體", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.dteTransferDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dteTransferDate.Location = new System.Drawing.Point(104, 58);
+            this.dteTransferDate.Location = new System.Drawing.Point(110, 3);
             this.dteTransferDate.Name = "dteTransferDate";
             this.dteTransferDate.Size = new System.Drawing.Size(514, 43);
             this.dteTransferDate.TabIndex = 45;
@@ -308,7 +295,7 @@
             // 
             this.lblWeg.AutoSize = true;
             this.lblWeg.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblWeg.Location = new System.Drawing.Point(59, 223);
+            this.lblWeg.Location = new System.Drawing.Point(59, 177);
             this.lblWeg.Name = "lblWeg";
             this.lblWeg.Size = new System.Drawing.Size(40, 16);
             this.lblWeg.TabIndex = 35;
@@ -318,46 +305,47 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Lime;
             this.panel3.Controls.Add(this.lblShowMsg);
-            this.panel3.Location = new System.Drawing.Point(625, 309);
+            this.panel3.Location = new System.Drawing.Point(639, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(230, 44);
+            this.panel3.Size = new System.Drawing.Size(225, 93);
             this.panel3.TabIndex = 2;
             // 
             // lblShowMsg
             // 
             this.lblShowMsg.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblShowMsg.ForeColor = System.Drawing.Color.Red;
-            this.lblShowMsg.Location = new System.Drawing.Point(7, 7);
+            this.lblShowMsg.Location = new System.Drawing.Point(46, 33);
             this.lblShowMsg.Name = "lblShowMsg";
-            this.lblShowMsg.Size = new System.Drawing.Size(201, 33);
+            this.lblShowMsg.Size = new System.Drawing.Size(159, 33);
             this.lblShowMsg.TabIndex = 0;
             this.lblShowMsg.Text = "信息提示";
             // 
             // txtWeg
             // 
             this.txtWeg.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtWeg.Location = new System.Drawing.Point(104, 209);
+            this.txtWeg.Location = new System.Drawing.Point(104, 163);
             this.txtWeg.Multiline = true;
             this.txtWeg.Name = "txtWeg";
-            this.txtWeg.Size = new System.Drawing.Size(214, 44);
+            this.txtWeg.Size = new System.Drawing.Size(215, 44);
             this.txtWeg.TabIndex = 5;
             this.txtWeg.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtWeg_MouseDown);
             // 
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.lblTransfer_flag);
             this.panel4.Controls.Add(this.rdgSent);
             this.panel4.Controls.Add(this.rdgReceive);
-            this.panel4.Location = new System.Drawing.Point(104, 8);
+            this.panel4.Location = new System.Drawing.Point(41, 59);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(514, 44);
+            this.panel4.Size = new System.Drawing.Size(563, 44);
             this.panel4.TabIndex = 44;
             // 
             // rdgSent
             // 
             this.rdgSent.Checked = true;
             this.rdgSent.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rdgSent.Location = new System.Drawing.Point(42, 4);
+            this.rdgSent.Location = new System.Drawing.Point(42, 6);
             this.rdgSent.Name = "rdgSent";
             this.rdgSent.Size = new System.Drawing.Size(162, 31);
             this.rdgSent.TabIndex = 1;
@@ -369,7 +357,7 @@
             // rdgReceive
             // 
             this.rdgReceive.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rdgReceive.Location = new System.Drawing.Point(285, 4);
+            this.rdgReceive.Location = new System.Drawing.Point(285, 6);
             this.rdgReceive.Name = "rdgReceive";
             this.rdgReceive.Size = new System.Drawing.Size(162, 31);
             this.rdgReceive.TabIndex = 2;
@@ -381,15 +369,15 @@
             // 
             this.lblDat.AutoSize = true;
             this.lblDat.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblDat.Location = new System.Drawing.Point(27, 73);
+            this.lblDat.Location = new System.Drawing.Point(27, 18);
             this.lblDat.Name = "lblDat";
             this.lblDat.Size = new System.Drawing.Size(72, 16);
             this.lblDat.TabIndex = 39;
-            this.lblDat.Text = "收發日期";
+            this.lblDat.Text = "發貨日期";
             // 
             // txtPrd_id
             // 
-            this.txtPrd_id.Location = new System.Drawing.Point(636, 169);
+            this.txtPrd_id.Location = new System.Drawing.Point(638, 240);
             this.txtPrd_id.Name = "txtPrd_id";
             this.txtPrd_id.Size = new System.Drawing.Size(100, 22);
             this.txtPrd_id.TabIndex = 43;
@@ -399,7 +387,7 @@
             // 
             this.lblToDep.AutoSize = true;
             this.lblToDep.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblToDep.Location = new System.Drawing.Point(342, 326);
+            this.lblToDep.Location = new System.Drawing.Point(43, 280);
             this.lblToDep.Name = "lblToDep";
             this.lblToDep.Size = new System.Drawing.Size(56, 16);
             this.lblToDep.TabIndex = 35;
@@ -409,16 +397,16 @@
             // 
             this.txtTo_dep.BackColor = System.Drawing.SystemColors.Window;
             this.txtTo_dep.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtTo_dep.Location = new System.Drawing.Point(404, 309);
+            this.txtTo_dep.Location = new System.Drawing.Point(104, 263);
             this.txtTo_dep.Multiline = true;
             this.txtTo_dep.Name = "txtTo_dep";
             this.txtTo_dep.ReadOnly = true;
-            this.txtTo_dep.Size = new System.Drawing.Size(214, 44);
+            this.txtTo_dep.Size = new System.Drawing.Size(215, 44);
             this.txtTo_dep.TabIndex = 10;
             // 
             // picItem
             // 
-            this.picItem.Location = new System.Drawing.Point(629, 3);
+            this.picItem.Location = new System.Drawing.Point(685, 3);
             this.picItem.Name = "picItem";
             this.picItem.Size = new System.Drawing.Size(150, 148);
             this.picItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -429,7 +417,7 @@
             // 
             this.txtWipId.BackColor = System.Drawing.SystemColors.Window;
             this.txtWipId.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtWipId.Location = new System.Drawing.Point(104, 309);
+            this.txtWipId.Location = new System.Drawing.Point(404, 213);
             this.txtWipId.Multiline = true;
             this.txtWipId.Name = "txtWipId";
             this.txtWipId.ReadOnly = true;
@@ -440,7 +428,7 @@
             // 
             this.lblQty.AutoSize = true;
             this.lblQty.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblQty.Location = new System.Drawing.Point(358, 223);
+            this.lblQty.Location = new System.Drawing.Point(358, 177);
             this.lblQty.Name = "lblQty";
             this.lblQty.Size = new System.Drawing.Size(40, 16);
             this.lblQty.TabIndex = 35;
@@ -449,10 +437,10 @@
             // txtPackNum
             // 
             this.txtPackNum.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtPackNum.Location = new System.Drawing.Point(404, 259);
+            this.txtPackNum.Location = new System.Drawing.Point(104, 213);
             this.txtPackNum.Multiline = true;
             this.txtPackNum.Name = "txtPackNum";
-            this.txtPackNum.Size = new System.Drawing.Size(214, 44);
+            this.txtPackNum.Size = new System.Drawing.Size(215, 44);
             this.txtPackNum.TabIndex = 6;
             this.txtPackNum.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtQty_MouseDown);
             // 
@@ -460,7 +448,7 @@
             // 
             this.lblPackNum.AutoSize = true;
             this.lblPackNum.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblPackNum.Location = new System.Drawing.Point(358, 273);
+            this.lblPackNum.Location = new System.Drawing.Point(59, 227);
             this.lblPackNum.Name = "lblPackNum";
             this.lblPackNum.Size = new System.Drawing.Size(40, 16);
             this.lblPackNum.TabIndex = 35;
@@ -469,7 +457,7 @@
             // txtQty
             // 
             this.txtQty.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtQty.Location = new System.Drawing.Point(404, 209);
+            this.txtQty.Location = new System.Drawing.Point(404, 163);
             this.txtQty.Multiline = true;
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(214, 44);
@@ -480,7 +468,7 @@
             // 
             this.txtGoods_id.BackColor = System.Drawing.SystemColors.Window;
             this.txtGoods_id.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtGoods_id.Location = new System.Drawing.Point(104, 157);
+            this.txtGoods_id.Location = new System.Drawing.Point(104, 60);
             this.txtGoods_id.Multiline = true;
             this.txtGoods_id.Name = "txtGoods_id";
             this.txtGoods_id.ReadOnly = true;
@@ -491,7 +479,7 @@
             // 
             this.txtGoods_name.BackColor = System.Drawing.SystemColors.Window;
             this.txtGoods_name.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtGoods_name.Location = new System.Drawing.Point(104, 107);
+            this.txtGoods_name.Location = new System.Drawing.Point(104, 112);
             this.txtGoods_name.Multiline = true;
             this.txtGoods_name.Name = "txtGoods_name";
             this.txtGoods_name.ReadOnly = true;
@@ -502,7 +490,7 @@
             // 
             this.lblPGoods_name.AutoSize = true;
             this.lblPGoods_name.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblPGoods_name.Location = new System.Drawing.Point(27, 121);
+            this.lblPGoods_name.Location = new System.Drawing.Point(27, 131);
             this.lblPGoods_name.Name = "lblPGoods_name";
             this.lblPGoods_name.Size = new System.Drawing.Size(72, 16);
             this.lblPGoods_name.TabIndex = 33;
@@ -512,17 +500,17 @@
             // 
             this.lblWipId.AutoSize = true;
             this.lblWipId.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblWipId.Location = new System.Drawing.Point(43, 326);
+            this.lblWipId.Location = new System.Drawing.Point(327, 230);
             this.lblWipId.Name = "lblWipId";
-            this.lblWipId.Size = new System.Drawing.Size(56, 16);
+            this.lblWipId.Size = new System.Drawing.Size(72, 16);
             this.lblWipId.TabIndex = 35;
-            this.lblWipId.Text = "本部門";
+            this.lblWipId.Text = "負責部門";
             // 
             // lblMo_id
             // 
             this.lblMo_id.AutoSize = true;
             this.lblMo_id.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblMo_id.Location = new System.Drawing.Point(27, 273);
+            this.lblMo_id.Location = new System.Drawing.Point(27, 22);
             this.lblMo_id.Name = "lblMo_id";
             this.lblMo_id.Size = new System.Drawing.Size(72, 16);
             this.lblMo_id.TabIndex = 35;
@@ -531,10 +519,10 @@
             // txtMo_id
             // 
             this.txtMo_id.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtMo_id.Location = new System.Drawing.Point(104, 259);
+            this.txtMo_id.Location = new System.Drawing.Point(104, 8);
             this.txtMo_id.Multiline = true;
             this.txtMo_id.Name = "txtMo_id";
-            this.txtMo_id.Size = new System.Drawing.Size(214, 44);
+            this.txtMo_id.Size = new System.Drawing.Size(295, 44);
             this.txtMo_id.TabIndex = 7;
             // 
             // panel6
@@ -542,10 +530,10 @@
             this.panel6.Controls.Add(this.dteSentDate);
             this.panel6.Controls.Add(this.lblShowMsg1);
             this.panel6.Controls.Add(this.label1);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Controls.Add(this.panel4);
+            this.panel6.Location = new System.Drawing.Point(56, 836);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(822, 62);
+            this.panel6.Size = new System.Drawing.Size(838, 107);
             this.panel6.TabIndex = 47;
             this.panel6.Visible = false;
             // 
@@ -587,32 +575,35 @@
             this.cmbPrdDep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPrdDep.Font = new System.Drawing.Font("新細明體", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cmbPrdDep.FormattingEnabled = true;
-            this.cmbPrdDep.Location = new System.Drawing.Point(110, 2);
+            this.cmbPrdDep.Location = new System.Drawing.Point(713, 180);
             this.cmbPrdDep.Name = "cmbPrdDep";
-            this.cmbPrdDep.Size = new System.Drawing.Size(514, 43);
+            this.cmbPrdDep.Size = new System.Drawing.Size(99, 43);
             this.cmbPrdDep.TabIndex = 46;
+            this.cmbPrdDep.Visible = false;
             // 
             // lblDep
             // 
             this.lblDep.AutoSize = true;
             this.lblDep.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblDep.Location = new System.Drawing.Point(27, 20);
+            this.lblDep.Location = new System.Drawing.Point(635, 196);
             this.lblDep.Name = "lblDep";
             this.lblDep.Size = new System.Drawing.Size(72, 16);
             this.lblDep.TabIndex = 35;
-            this.lblDep.Text = "收發部門";
+            this.lblDep.Text = "發貨部門";
+            this.lblDep.Visible = false;
             // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.cmbPrdDep);
+            this.panel2.Controls.Add(this.dteTransferDate);
             this.panel2.Controls.Add(this.lblBarCode);
-            this.panel2.Controls.Add(this.lblDep);
             this.panel2.Controls.Add(this.txtBarCode);
+            this.panel2.Controls.Add(this.lblDat);
+            this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 69);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(836, 114);
+            this.panel2.Size = new System.Drawing.Size(894, 110);
             this.panel2.TabIndex = 42;
             // 
             // lblBarCode
@@ -655,13 +646,12 @@
             this.colWipId,
             this.colTo_dep,
             this.colPrd_id});
-            this.dgvDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDetails.Location = new System.Drawing.Point(3, 431);
+            this.dgvDetails.Location = new System.Drawing.Point(6, 340);
             this.dgvDetails.Name = "dgvDetails";
             this.dgvDetails.ReadOnly = true;
             this.dgvDetails.RowHeadersWidth = 40;
             this.dgvDetails.RowTemplate.Height = 80;
-            this.dgvDetails.Size = new System.Drawing.Size(822, 113);
+            this.dgvDetails.Size = new System.Drawing.Size(867, 343);
             this.dgvDetails.TabIndex = 2;
             this.dgvDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetails_CellClick);
             this.dgvDetails.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvDetails_RowPostPaint);
@@ -776,17 +766,17 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(6, 80);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(836, 727);
+            this.tabControl1.Size = new System.Drawing.Size(894, 894);
             this.tabControl1.TabIndex = 45;
             // 
             // tbEdit
             // 
+            this.tbEdit.Controls.Add(this.panel7);
             this.tbEdit.Controls.Add(this.dgvDetails);
-            this.tbEdit.Controls.Add(this.panel1);
             this.tbEdit.Location = new System.Drawing.Point(4, 176);
             this.tbEdit.Name = "tbEdit";
             this.tbEdit.Padding = new System.Windows.Forms.Padding(3);
-            this.tbEdit.Size = new System.Drawing.Size(828, 547);
+            this.tbEdit.Size = new System.Drawing.Size(886, 714);
             this.tbEdit.TabIndex = 0;
             this.tbEdit.Text = "tabPage1";
             this.tbEdit.UseVisualStyleBackColor = true;
@@ -798,7 +788,7 @@
             this.tpBrowse.Location = new System.Drawing.Point(4, 176);
             this.tpBrowse.Name = "tpBrowse";
             this.tpBrowse.Padding = new System.Windows.Forms.Padding(3);
-            this.tpBrowse.Size = new System.Drawing.Size(828, 547);
+            this.tpBrowse.Size = new System.Drawing.Size(886, 676);
             this.tpBrowse.TabIndex = 1;
             this.tpBrowse.Text = "tabPage2";
             this.tpBrowse.UseVisualStyleBackColor = true;
@@ -806,45 +796,29 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer1.Location = new System.Drawing.Point(3, 312);
+            this.reportViewer1.Location = new System.Drawing.Point(3, 134);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(822, 232);
+            this.reportViewer1.Size = new System.Drawing.Size(880, 539);
             this.reportViewer1.TabIndex = 56;
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.btnFind);
             this.panel8.Controls.Add(this.btnPrint);
-            this.panel8.Controls.Add(this.lblTransfer_date_f);
-            this.panel8.Controls.Add(this.lblDep_f);
             this.panel8.Controls.Add(this.btnGenReport);
             this.panel8.Controls.Add(this.lblMo_id_f);
-            this.panel8.Controls.Add(this.cmbPrdDepFind);
             this.panel8.Controls.Add(this.txtMo_id_f);
-            this.panel8.Controls.Add(this.dteTransferDateFind);
             this.panel8.Controls.Add(this.lblTransfer_flag_f);
             this.panel8.Controls.Add(this.panel5);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(3, 3);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(822, 309);
+            this.panel8.Size = new System.Drawing.Size(880, 131);
             this.panel8.TabIndex = 58;
-            // 
-            // btnFind
-            // 
-            this.btnFind.Font = new System.Drawing.Font("新細明體", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnFind.Location = new System.Drawing.Point(91, 10);
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(342, 66);
-            this.btnFind.TabIndex = 51;
-            this.btnFind.Text = "查找(&F)";
-            this.btnFind.UseVisualStyleBackColor = true;
-            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // btnPrint
             // 
             this.btnPrint.Font = new System.Drawing.Font("新細明體", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnPrint.Location = new System.Drawing.Point(439, 95);
+            this.btnPrint.Location = new System.Drawing.Point(390, 57);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(342, 66);
             this.btnPrint.TabIndex = 57;
@@ -852,30 +826,10 @@
             this.btnPrint.UseVisualStyleBackColor = true;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
-            // lblTransfer_date_f
-            // 
-            this.lblTransfer_date_f.AutoSize = true;
-            this.lblTransfer_date_f.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblTransfer_date_f.Location = new System.Drawing.Point(45, 160);
-            this.lblTransfer_date_f.Name = "lblTransfer_date_f";
-            this.lblTransfer_date_f.Size = new System.Drawing.Size(40, 16);
-            this.lblTransfer_date_f.TabIndex = 49;
-            this.lblTransfer_date_f.Text = "日期";
-            // 
-            // lblDep_f
-            // 
-            this.lblDep_f.AutoSize = true;
-            this.lblDep_f.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblDep_f.Location = new System.Drawing.Point(45, 111);
-            this.lblDep_f.Name = "lblDep_f";
-            this.lblDep_f.Size = new System.Drawing.Size(40, 16);
-            this.lblDep_f.TabIndex = 49;
-            this.lblDep_f.Text = "部門";
-            // 
             // btnGenReport
             // 
             this.btnGenReport.Font = new System.Drawing.Font("新細明體", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnGenReport.Location = new System.Drawing.Point(439, 10);
+            this.btnGenReport.Location = new System.Drawing.Point(28, 57);
             this.btnGenReport.Name = "btnGenReport";
             this.btnGenReport.Size = new System.Drawing.Size(342, 66);
             this.btnGenReport.TabIndex = 55;
@@ -886,53 +840,32 @@
             // lblMo_id_f
             // 
             this.lblMo_id_f.AutoSize = true;
-            this.lblMo_id_f.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblMo_id_f.Location = new System.Drawing.Point(14, 210);
+            this.lblMo_id_f.Font = new System.Drawing.Font("新細明體", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblMo_id_f.Location = new System.Drawing.Point(19, 14);
             this.lblMo_id_f.Name = "lblMo_id_f";
-            this.lblMo_id_f.Size = new System.Drawing.Size(72, 16);
+            this.lblMo_id_f.Size = new System.Drawing.Size(351, 30);
             this.lblMo_id_f.TabIndex = 48;
-            this.lblMo_id_f.Text = "制單編號";
-            // 
-            // cmbPrdDepFind
-            // 
-            this.cmbPrdDepFind.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPrdDepFind.Font = new System.Drawing.Font("新細明體", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.cmbPrdDepFind.FormattingEnabled = true;
-            this.cmbPrdDepFind.Location = new System.Drawing.Point(91, 95);
-            this.cmbPrdDepFind.Name = "cmbPrdDepFind";
-            this.cmbPrdDepFind.Size = new System.Drawing.Size(342, 43);
-            this.cmbPrdDepFind.TabIndex = 54;
+            this.lblMo_id_f.Text = "可輸入制單編號點擊查找:";
             // 
             // txtMo_id_f
             // 
             this.txtMo_id_f.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtMo_id_f.Location = new System.Drawing.Point(91, 193);
+            this.txtMo_id_f.Location = new System.Drawing.Point(390, 7);
             this.txtMo_id_f.Multiline = true;
             this.txtMo_id_f.Name = "txtMo_id_f";
             this.txtMo_id_f.Size = new System.Drawing.Size(342, 44);
             this.txtMo_id_f.TabIndex = 46;
             // 
-            // dteTransferDateFind
-            // 
-            this.dteTransferDateFind.CalendarFont = new System.Drawing.Font("新細明體", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.dteTransferDateFind.CustomFormat = "yyyy/MM/dd";
-            this.dteTransferDateFind.Font = new System.Drawing.Font("新細明體", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.dteTransferDateFind.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dteTransferDateFind.Location = new System.Drawing.Point(91, 144);
-            this.dteTransferDateFind.Name = "dteTransferDateFind";
-            this.dteTransferDateFind.Size = new System.Drawing.Size(342, 43);
-            this.dteTransferDateFind.TabIndex = 53;
-            this.dteTransferDateFind.Value = new System.DateTime(2019, 9, 26, 0, 0, 0, 0);
-            // 
             // lblTransfer_flag_f
             // 
             this.lblTransfer_flag_f.AutoSize = true;
             this.lblTransfer_flag_f.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblTransfer_flag_f.Location = new System.Drawing.Point(14, 259);
+            this.lblTransfer_flag_f.Location = new System.Drawing.Point(45, 144);
             this.lblTransfer_flag_f.Name = "lblTransfer_flag_f";
             this.lblTransfer_flag_f.Size = new System.Drawing.Size(72, 16);
             this.lblTransfer_flag_f.TabIndex = 47;
             this.lblTransfer_flag_f.Text = "收發類型";
+            this.lblTransfer_flag_f.Visible = false;
             // 
             // panel5
             // 
@@ -940,10 +873,11 @@
             this.panel5.Controls.Add(this.rdgAll);
             this.panel5.Controls.Add(this.rdgSent_f);
             this.panel5.Controls.Add(this.rdgReceive_f);
-            this.panel5.Location = new System.Drawing.Point(91, 243);
+            this.panel5.Location = new System.Drawing.Point(122, 128);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(342, 44);
             this.panel5.TabIndex = 50;
+            this.panel5.Visible = false;
             // 
             // rdgAll
             // 
@@ -980,11 +914,53 @@
             this.rdgReceive_f.Text = "收貨";
             this.rdgReceive_f.UseVisualStyleBackColor = true;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.AutoSize = false;
+            this.btnSearch.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
+            this.btnSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(130, 66);
+            this.btnSearch.Text = "查詢(&F)";
+            this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSearch.ToolTipText = "查詢已發貨的記錄";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 69);
+            // 
+            // cmbGoodsId
+            // 
+            this.cmbGoodsId.DropDownWidth = 700;
+            this.cmbGoodsId.Font = new System.Drawing.Font("新細明體", 26F);
+            this.cmbGoodsId.FormattingEnabled = true;
+            this.cmbGoodsId.ItemHeight = 35;
+            this.cmbGoodsId.Location = new System.Drawing.Point(104, 61);
+            this.cmbGoodsId.Name = "cmbGoodsId";
+            this.cmbGoodsId.Size = new System.Drawing.Size(514, 43);
+            this.cmbGoodsId.TabIndex = 47;
+            this.cmbGoodsId.Leave += new System.EventHandler(this.cmbGoodsId_Leave);
+            // 
+            // btnFindItem
+            // 
+            this.btnFindItem.Font = new System.Drawing.Font("新細明體", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnFindItem.Location = new System.Drawing.Point(415, 8);
+            this.btnFindItem.Name = "btnFindItem";
+            this.btnFindItem.Size = new System.Drawing.Size(203, 44);
+            this.btnFindItem.TabIndex = 48;
+            this.btnFindItem.Text = "手動獲取";
+            this.btnFindItem.UseVisualStyleBackColor = true;
+            this.btnFindItem.Click += new System.EventHandler(this.btnFindItem_Click);
+            // 
             // frmGoodsTransferJx
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(836, 727);
+            this.ClientSize = new System.Drawing.Size(894, 894);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.tabControl1);
@@ -994,11 +970,11 @@
             this.Load += new System.EventHandler(this.frmGoodsTransferJx_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picItem)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
@@ -1021,7 +997,6 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnExit;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RadioButton rdgReceive;
         private System.Windows.Forms.RadioButton rdgSent;
         private System.Windows.Forms.PictureBox picItem;
@@ -1063,14 +1038,10 @@
         private System.Windows.Forms.Label lblTransfer_flag_f;
         private System.Windows.Forms.TextBox txtMo_id_f;
         private System.Windows.Forms.Label lblMo_id_f;
-        private System.Windows.Forms.Label lblTransfer_date_f;
         private System.Windows.Forms.RadioButton rdgAll;
-        private System.Windows.Forms.Button btnFind;
-        private System.Windows.Forms.Label lblDep_f;
         private System.Windows.Forms.TextBox txtPackNum;
         private System.Windows.Forms.Label lblPackNum;
         private System.Windows.Forms.DateTimePicker dteTransferDate;
-        private System.Windows.Forms.DateTimePicker dteTransferDateFind;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.DateTimePicker dteSentDate;
@@ -1081,7 +1052,6 @@
         private System.Windows.Forms.TextBox txtWipId;
         private System.Windows.Forms.Label lblWipId;
         private System.Windows.Forms.ComboBox cmbPrdDep;
-        private System.Windows.Forms.ComboBox cmbPrdDepFind;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrd_mo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrd_item_cdesc;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTransfer_qty;
@@ -1099,5 +1069,9 @@
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.ToolStripButton btnSearch;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.Button btnFindItem;
+        private System.Windows.Forms.ComboBox cmbGoodsId;
     }
 }

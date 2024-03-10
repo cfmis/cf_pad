@@ -281,7 +281,7 @@ namespace cf_pad.Forms
                     objModelJx.To_dep = objModel.to_dep;
                     objModelJx.Crusr = DBUtility._user_id;
                     objModelJx.Crtim = clsUtility.changeDateTimeFormat(System.DateTime.Now);
-                    Result = clsProductionSchedule.UpdateGoodsTransferJx(objModelJx);
+                    Result = clsGoodsTransferJx.UpdateGoodsTransferJx(objModelJx);
                 }
             }
             if (Result > 0)
