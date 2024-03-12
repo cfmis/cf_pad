@@ -57,17 +57,19 @@ namespace cf_pad.CLS
             DataTable dtmo_data = new DataTable();
             try
             {
-                string strSql = @" SELECT a.mo_id,a.ver,b.sequence_id,b.wp_id,b.goods_id,c.name as goods_name,Convert(Int,b.prod_qty) AS prod_qty,b.next_wp_id,d.materiel_id AS mat_item,e.name AS mat_item_desc
+                string strSql = @" SELECT a.mo_id,a.ver,b.sequence_id,b.wp_id,b.goods_id,c.name as goods_name,Convert(Int,b.prod_qty) AS prod_qty
+                        ,b.next_wp_id,d.materiel_id AS mat_item,e.name AS mat_item_desc
+                        ,(rtrim(b.wp_id)+'--'+rtrim(b.goods_id)+'--'+rtrim(c.name)) AS goods_cdesc
                                    from jo_bill_mostly a 
                                    INNER join jo_bill_goods_details b on a.within_code=b.within_code and a.id=b.id and a.ver=b.ver
                                    INNER JOIN it_goods c on b.within_code=c.within_code and b.goods_id=c.id 
                                    INNER JOIN jo_bill_materiel_details d ON b.within_code=d.within_code and b.id=d.id and b.ver=d.ver and b.sequence_id=d.upper_sequence
                                    INNER JOIN it_goods e ON d.within_code=e.within_code and d.materiel_id=e.id
-                                   WHERE a.within_code='0000'  And a.mo_id = '" + mo_id + "' And b.wp_id = '" + prd_dept + "' ";
+                                   WHERE a.within_code='0000'  And a.mo_id = '" + mo_id + "'";
+                if (prd_dept != "")
+                    strSql += " And b.wp_id = '" + prd_dept + "' ";
                 if (item != "")
-                {
                     strSql += " And b.goods_id ='" + item + "'";
-                }
                 using (SqlConnection conn = new SqlConnection(DBUtility.conn_str_dgerp2))
                 {
                     SqlDataAdapter sda = new SqlDataAdapter(strSql, conn);
@@ -821,95 +823,95 @@ namespace cf_pad.CLS
             return dt;
         }
 
-        public static int UpdateGoodsTransferJx(product_transfer_jx_details objModel)
-        {
-            int Result = 0;
-            string strSql = "";
-            string Prd_dep=objModel.Prd_dep;
-            string Prd_mo=objModel.Prd_mo;
-            string Prd_item=objModel.Prd_item;
-            string Transfer_date = objModel.Transfer_date;
-            int Transfer_flag = objModel.Transfer_flag;
-            decimal Transfer_qty = objModel.Transfer_qty;
-            decimal Transfer_weg = objModel.Transfer_weg;
-            decimal In_qty = 0, In_weg = 0;
-            decimal Out_qty = 0, Out_weg = 0;
-            string In_date = "", Out_date = "";
-            string Crusr = objModel.Crusr;
-            string Crtim = objModel.Crtim;
+        //public static int UpdateGoodsTransferJx(product_transfer_jx_details objModel)
+        //{
+        //    int Result = 0;
+        //    string strSql = "";
+        //    string Prd_dep=objModel.Prd_dep;
+        //    string Prd_mo=objModel.Prd_mo;
+        //    string Prd_item=objModel.Prd_item;
+        //    string Transfer_date = objModel.Transfer_date;
+        //    int Transfer_flag = objModel.Transfer_flag;
+        //    decimal Transfer_qty = objModel.Transfer_qty;
+        //    decimal Transfer_weg = objModel.Transfer_weg;
+        //    //decimal In_qty = 0, In_weg = 0;
+        //    //decimal Out_qty = 0, Out_weg = 0;
+        //    //string In_date = "", Out_date = "";
+        //    string Crusr = objModel.Crusr;
+        //    string Crtim = objModel.Crtim;
 
-            strSql += string.Format(@" SET XACT_ABORT  ON ");
-            strSql += string.Format(@" BEGIN TRANSACTION ");
-            strSql += string.Format(@"Insert Into product_transfer_jx_details (Transfer_date,Prd_dep,prd_item,prd_mo,Transfer_flag,transfer_qty,transfer_weg
-                ,wip_id,to_dep,pack_num,sent_date,crusr,crtim) Values " +
-                "('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}')"
-                , Transfer_date, Prd_dep, Prd_item, Prd_mo, objModel.Transfer_flag, objModel.Transfer_qty, objModel.Transfer_weg
-                , objModel.wipId, objModel.To_dep, objModel.packNum, objModel.sentDate, objModel.Crusr, objModel.Crtim);
+        //    strSql += string.Format(@" SET XACT_ABORT  ON ");
+        //    strSql += string.Format(@" BEGIN TRANSACTION ");
+        //    strSql += string.Format(@"Insert Into product_transfer_jx_details (Transfer_date,Prd_dep,prd_item,prd_mo,Transfer_flag,transfer_qty,transfer_weg
+        //        ,wip_id,to_dep,pack_num,sent_date,crusr,crtim) Values " +
+        //        "('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}')"
+        //        , Transfer_date, Prd_dep, Prd_item, Prd_mo, objModel.Transfer_flag, objModel.Transfer_qty, objModel.Transfer_weg
+        //        , objModel.wipId, objModel.To_dep, objModel.packNum, objModel.sentDate, objModel.Crusr, objModel.Crtim);
 
-            DataTable dtStore = checkStore(Prd_dep, Prd_item, Prd_mo);
-            if (dtStore.Rows.Count == 0)
-            {
-                if (Transfer_flag == 0)
-                {
-                    Out_date = Crtim;
-                    Out_qty = Transfer_qty;
-                    Out_weg = Transfer_weg;
-                }
-                else
-                {
-                    In_date = Crtim;
-                    In_qty = Transfer_qty;
-                    In_weg = Transfer_weg;
-                }
-                strSql += string.Format(@"Insert Into product_transfer_jx_summary (Prd_dep,Prd_item,Prd_mo,In_qty,In_weg,In_date,Out_qty,Out_weg,Out_date,Cpl_flag,crusr,crtim) Values " +
-                "('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}')"
-                , Prd_dep, Prd_item, Prd_mo, In_qty, In_weg, In_date, Out_qty, Out_weg, Out_date, "", Crusr, Crtim);
-            }
-            else
-            {
-                DataRow dr = dtStore.Rows[0];
-                Out_date = dr["Out_date"].ToString();
-                In_date = dr["In_date"].ToString();
-                In_weg = dr["In_weg"].ToString() != "" ? Convert.ToDecimal(dr["In_weg"].ToString()) : 0;
-                In_qty = dr["In_qty"].ToString() != "" ? Convert.ToDecimal(dr["In_qty"].ToString()) : 0;
-                Out_weg = dr["Out_weg"].ToString() != "" ? Convert.ToDecimal(dr["Out_weg"].ToString()) : 0;
-                Out_qty = dr["Out_qty"].ToString() != "" ? Convert.ToDecimal(dr["Out_qty"].ToString()) : 0;
-                if (Transfer_flag == 0)
-                {
-                    Out_date = Crtim;
-                    Out_qty = Out_qty + Transfer_qty;
-                    Out_weg = Out_weg + Transfer_weg;
-                }
-                else
-                {
-                    In_date = Crtim;
-                    In_qty = In_qty + Transfer_qty;
-                    In_weg = In_weg + Transfer_weg;
-                }
-                strSql += string.Format(@"Update product_transfer_jx_summary Set In_qty='{0}',In_weg='{1}',Out_qty='{2}',Out_weg='{3}',In_date='{4}',Out_date='{5}',Cpl_flag='',Crusr='{6}',Crtim='{7}'" +
-                " Where Prd_dep='{8}' And Prd_item='{9}' And Prd_mo='{10}'"
-                , In_qty, In_weg, Out_qty, Out_weg, In_date, Out_date, Crusr, Crtim, Prd_dep, Prd_item, Prd_mo);
-            }
+        //    //DataTable dtStore = checkStore(Prd_dep, Prd_item, Prd_mo);
+        //    //if (dtStore.Rows.Count == 0)
+        //    //{
+        //    //    if (Transfer_flag == 0)
+        //    //    {
+        //    //        Out_date = Crtim;
+        //    //        Out_qty = Transfer_qty;
+        //    //        Out_weg = Transfer_weg;
+        //    //    }
+        //    //    else
+        //    //    {
+        //    //        In_date = Crtim;
+        //    //        In_qty = Transfer_qty;
+        //    //        In_weg = Transfer_weg;
+        //    //    }
+        //    //    strSql += string.Format(@"Insert Into product_transfer_jx_summary (Prd_dep,Prd_item,Prd_mo,In_qty,In_weg,In_date,Out_qty,Out_weg,Out_date,Cpl_flag,crusr,crtim) Values " +
+        //    //    "('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}')"
+        //    //    , Prd_dep, Prd_item, Prd_mo, In_qty, In_weg, In_date, Out_qty, Out_weg, Out_date, "", Crusr, Crtim);
+        //    //}
+        //    //else
+        //    //{
+        //    //    DataRow dr = dtStore.Rows[0];
+        //    //    Out_date = dr["Out_date"].ToString();
+        //    //    In_date = dr["In_date"].ToString();
+        //    //    In_weg = dr["In_weg"].ToString() != "" ? Convert.ToDecimal(dr["In_weg"].ToString()) : 0;
+        //    //    In_qty = dr["In_qty"].ToString() != "" ? Convert.ToDecimal(dr["In_qty"].ToString()) : 0;
+        //    //    Out_weg = dr["Out_weg"].ToString() != "" ? Convert.ToDecimal(dr["Out_weg"].ToString()) : 0;
+        //    //    Out_qty = dr["Out_qty"].ToString() != "" ? Convert.ToDecimal(dr["Out_qty"].ToString()) : 0;
+        //    //    if (Transfer_flag == 0)
+        //    //    {
+        //    //        Out_date = Crtim;
+        //    //        Out_qty = Out_qty + Transfer_qty;
+        //    //        Out_weg = Out_weg + Transfer_weg;
+        //    //    }
+        //    //    else
+        //    //    {
+        //    //        In_date = Crtim;
+        //    //        In_qty = In_qty + Transfer_qty;
+        //    //        In_weg = In_weg + Transfer_weg;
+        //    //    }
+        //    //    strSql += string.Format(@"Update product_transfer_jx_summary Set In_qty='{0}',In_weg='{1}',Out_qty='{2}',Out_weg='{3}',In_date='{4}',Out_date='{5}',Cpl_flag='',Crusr='{6}',Crtim='{7}'" +
+        //    //    " Where Prd_dep='{8}' And Prd_item='{9}' And Prd_mo='{10}'"
+        //    //    , In_qty, In_weg, Out_qty, Out_weg, In_date, Out_date, Crusr, Crtim, Prd_dep, Prd_item, Prd_mo);
+        //    //}
 
-            strSql += string.Format(@" COMMIT TRANSACTION ");
+        //    strSql += string.Format(@" COMMIT TRANSACTION ");
 
-            Result = clsPublicOfPad.ExecuteSqlUpdate(strSql);
-            return Result;
+        //    Result = clsPublicOfPad.ExecuteSqlUpdate(strSql);
+        //    return Result;
 
-        }
+        //}
 
-        private static DataTable checkStore(string Prd_dep, string Prd_item, string Prd_mo)
-        {
-            string strSql = "Select * From product_transfer_jx_summary Where Prd_dep='" + Prd_dep + "' AND Prd_item='" + Prd_item + "' AND Prd_mo='" + Prd_mo + "'";
-            DataTable dt = clsPublicOfPad.ExecuteSqlReturnDataTable(strSql);
-            return dt;
-        }
-        public static DataTable CheckGoodsTransferJx(string Prd_dep,string Prd_item,string Prd_mo,int Transfer_flag)
-        {
-            string strSql = "Select * From product_transfer_jx_details Where Prd_dep='" + Prd_dep + "' AND Prd_item='" + Prd_item + "' AND Prd_mo='" + Prd_mo
-                + "' AND Transfer_flag='" + Transfer_flag + "'";
-            DataTable dt = clsPublicOfPad.ExecuteSqlReturnDataTable(strSql);
-            return dt;
-        }
+        //private static DataTable checkStore(string Prd_dep, string Prd_item, string Prd_mo)
+        //{
+        //    string strSql = "Select * From product_transfer_jx_summary Where Prd_dep='" + Prd_dep + "' AND Prd_item='" + Prd_item + "' AND Prd_mo='" + Prd_mo + "'";
+        //    DataTable dt = clsPublicOfPad.ExecuteSqlReturnDataTable(strSql);
+        //    return dt;
+        //}
+        //public static DataTable CheckGoodsTransferJx(string Prd_dep,string Prd_item,string Prd_mo,int Transfer_flag)
+        //{
+        //    string strSql = "Select * From product_transfer_jx_details Where Prd_dep='" + Prd_dep + "' AND Prd_item='" + Prd_item + "' AND Prd_mo='" + Prd_mo
+        //        + "' AND Transfer_flag='" + Transfer_flag + "'";
+        //    DataTable dt = clsPublicOfPad.ExecuteSqlReturnDataTable(strSql);
+        //    return dt;
+        //}
     }
 }

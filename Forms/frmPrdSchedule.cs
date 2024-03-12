@@ -40,60 +40,60 @@ namespace cf_pad.Forms
             //clsControlInfoHelper controlInfo = new clsControlInfoHelper("frmProductionSchedule", this.Controls);
             //controlInfo.GenerateContorl();
             GetAllComboxData();
-            BarCode.BarCodeEvent += new BardCodeHooK.BardCodeDeletegate(BarCode_BarCodeEvent);
+            //BarCode.BarCodeEvent += new BardCodeHooK.BardCodeDeletegate(BarCode_BarCodeEvent);
             
         }
-        private delegate void ShowInfoDelegate(BardCodeHooK.BarCodes barCode);
+        //private delegate void ShowInfoDelegate(BardCodeHooK.BarCodes barCode);
 
-        private void ShowInfo(BardCodeHooK.BarCodes barCode)
-        {
-            if (this.InvokeRequired)
-            {
-                this.BeginInvoke(new ShowInfoDelegate(ShowInfo), new object[] { barCode });
-            }
-            else
-            {
-                //foreach (Control c in this.Controls)
+        //private void ShowInfo(BardCodeHooK.BarCodes barCode)
+        //{
+        //    if (this.InvokeRequired)
+        //    {
+        //        this.BeginInvoke(new ShowInfoDelegate(ShowInfo), new object[] { barCode });
+        //    }
+        //    else
+        //    {
+        //        //foreach (Control c in this.Controls)
 
-                //    if (c.Focused)
+        //        //    if (c.Focused)
 
-                //        MessageBox.Show(c.Name);
-                //textBox1.Text = barCode.KeyName;
-                //textBox2.Text = barCode.VirtKey.ToString();
-                //textBox3.Text = barCode.ScanCode.ToString();
-                //textBox4.Text = barCode.Ascll.ToString();
-                //textBox5.Text = barCode.Chr.ToString();
-                string strBarCode1 = "";
-                strBarCode1 = barCode.IsValid ? barCode.BarCode : "";//是否为扫描枪输入，如果为true则是 否则为键盘输入
-                strBarCode1 = strBarCode1.Replace("\r\n", "").Replace("'", "").Replace("\0", "").Replace("\r", "");
+        //        //        MessageBox.Show(c.Name);
+        //        //textBox1.Text = barCode.KeyName;
+        //        //textBox2.Text = barCode.VirtKey.ToString();
+        //        //textBox3.Text = barCode.ScanCode.ToString();
+        //        //textBox4.Text = barCode.Ascll.ToString();
+        //        //textBox5.Text = barCode.Chr.ToString();
+        //        string strBarCode1 = "";
+        //        strBarCode1 = barCode.IsValid ? barCode.BarCode : "";//是否为扫描枪输入，如果为true则是 否则为键盘输入
+        //        strBarCode1 = strBarCode1.Replace("\r\n", "").Replace("'", "").Replace("\0", "").Replace("\r", "");
 
-                //textBox7.Text += barCode.KeyName;
-                if (strBarCode1.Length > BarCodeMinLength)
-                {
-                    txtBarCode.Text = strBarCode1.Trim().ToUpper();
+        //        //textBox7.Text += barCode.KeyName;
+        //        if (strBarCode1.Length > BarCodeMinLength)
+        //        {
+        //            txtBarCode.Text = strBarCode1.Trim().ToUpper();
 
-                    //MessageBox.Show(strBarCode);
-                    if (strBarCode1.Length == 5)//如果掃描的是工號// && barcode.Substring(0, 5) == "00000"
-                    {
-                        txtProductNo.Text = strBarCode1.PadLeft(10, '0');
-                        txtBarCode.Text = "";
-                        txtProductNo.Focus();
-                    }
-                    else
-                    {
-                        doBarCode();
-                        txtBarCode.Focus();
-                        //MessageBox.Show(barCode.IsValid.ToString());
-                    }
-                }
-            }
-        }
+        //            //MessageBox.Show(strBarCode);
+        //            if (strBarCode1.Length == 5)//如果掃描的是工號// && barcode.Substring(0, 5) == "00000"
+        //            {
+        //                txtProductNo.Text = strBarCode1.PadLeft(10, '0');
+        //                txtBarCode.Text = "";
+        //                txtProductNo.Focus();
+        //            }
+        //            else
+        //            {
+        //                doBarCode();
+        //                txtBarCode.Focus();
+        //                //MessageBox.Show(barCode.IsValid.ToString());
+        //            }
+        //        }
+        //    }
+        //}
 
-        void BarCode_BarCodeEvent(BardCodeHooK.BarCodes barCode)
-        {
+        //void BarCode_BarCodeEvent(BardCodeHooK.BarCodes barCode)
+        //{
 
-            ShowInfo(barCode);
-        }
+        //    ShowInfo(barCode);
+        //}
 
         private void frmProductionSchedule_Load(object sender, EventArgs e)
         {
@@ -1595,6 +1595,7 @@ namespace cf_pad.Forms
             {
                 if (txtBarCode.Text.Trim().Length > BarCodeMinLength)
                     doBarCode();
+                txtBarCode.Focus();
             }
         }
         private void doBarCode()
