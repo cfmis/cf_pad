@@ -30,8 +30,8 @@ namespace cf_pad
             //Application.Run(new frmPrdSchedule());
             //Application.Run(new frmProductQtyConfirm());
             //Application.Run(new frmGoodsTransferJx());
-            //Application.Run(new frmTransferRecords());
-            //Application.Run(new frmIpqcReport());
+            //Application.Run(new frmIpqcSpray());
+            //Application.Run(new frmPackingLabel());
             //Application.Run(new frmKeyboard());
 
             //student st = new student();

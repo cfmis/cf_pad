@@ -112,14 +112,14 @@
             this.lblBrand_name.CanGrow = false;
             this.lblBrand_name.Dpi = 254F;
             this.lblBrand_name.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Bold);
-            this.lblBrand_name.LocationFloat = new DevExpress.Utils.PointFloat(297.9374F, 618.6667F);
+            this.lblBrand_name.LocationFloat = new DevExpress.Utils.PointFloat(297.9374F, 619.6666F);
             this.lblBrand_name.Name = "lblBrand_name";
             this.lblBrand_name.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.lblBrand_name.SizeF = new System.Drawing.SizeF(201.583F, 43.14569F);
             this.lblBrand_name.StylePriority.UseFont = false;
             this.lblBrand_name.StylePriority.UseTextAlignment = false;
             this.lblBrand_name.Text = "BRAND DESC.:";
-            this.lblBrand_name.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.lblBrand_name.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.lblBrand_name.WordWrap = false;
             // 
             // txtBrand_id
@@ -142,7 +142,7 @@
             this.lblBrand_id.CanGrow = false;
             this.lblBrand_id.Dpi = 254F;
             this.lblBrand_id.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Bold);
-            this.lblBrand_id.LocationFloat = new DevExpress.Utils.PointFloat(297.5F, 574.5209F);
+            this.lblBrand_id.LocationFloat = new DevExpress.Utils.PointFloat(297.5F, 575.5209F);
             this.lblBrand_id.Name = "lblBrand_id";
             this.lblBrand_id.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.lblBrand_id.SizeF = new System.Drawing.SizeF(157.958F, 41.14569F);

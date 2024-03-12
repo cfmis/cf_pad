@@ -195,6 +195,12 @@
     <Compile Include="Forms\frmIpqcReport.Designer.cs">
       <DependentUpon>frmIpqcReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmIpqcSpray.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmIpqcSpray.designer.cs">
+      <DependentUpon>frmIpqcSpray.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmIpqcWeiht.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -441,6 +447,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmIpqcReport.resx">
       <DependentUpon>frmIpqcReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmIpqcSpray.resx">
+      <DependentUpon>frmIpqcSpray.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmIpqcWeiht.resx">
       <DependentUpon>frmIpqcWeiht.cs</DependentUpon>
