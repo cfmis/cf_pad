@@ -126,11 +126,11 @@
             // 
             this.txtBrand_id.CanGrow = false;
             this.txtBrand_id.Dpi = 254F;
-            this.txtBrand_id.Font = new System.Drawing.Font("SimSun", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBrand_id.Font = new System.Drawing.Font("SimSun", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBrand_id.LocationFloat = new DevExpress.Utils.PointFloat(460.458F, 574.2709F);
             this.txtBrand_id.Name = "txtBrand_id";
             this.txtBrand_id.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.txtBrand_id.SizeF = new System.Drawing.SizeF(251.9999F, 42.39569F);
+            this.txtBrand_id.SizeF = new System.Drawing.SizeF(251.9999F, 44.39581F);
             this.txtBrand_id.StylePriority.UseFont = false;
             this.txtBrand_id.StylePriority.UseTextAlignment = false;
             this.txtBrand_id.Text = "[brand_id]\r\n";
