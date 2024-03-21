@@ -37,11 +37,12 @@ namespace cf_pad.Forms
         private void frmIpqcSpray_Load(object sender, EventArgs e)
         {
             txtBarCode.Focus();
+            mskDate_check.Text = DateTime.Now.Date.ToString("yyyy/MM/dd");
             mskDat1.Text = DateTime.Now.ToString("yyyy/MM/dd");
             mskDat2.Text = DateTime.Now.ToString("yyyy/MM/dd");
             //生成表結構
             string strSql =
-            @"SELECT dept_id,qc_size as dept_name,date_check,sequence_id,mo_id,lot_no,goods_id,
+            @"SELECT dept_id,qc_size as name_dept,date_check,sequence_id,mo_id,lot_no,goods_id,
             qc_logo,qc_size,qc_size_actual,do_color,qty_lot,qty_sample,qty_ac_std,qty_re_std,
             qty_ng,Convert(bit,result_check) as result_check,result_desc_ng,package_num,weight,
             Convert(bit,is_complete) as is_complete,remark as goods_name
@@ -50,15 +51,16 @@ namespace cf_pad.Forms
             dtReport = clsPublicOfPad.ExecuteSqlReturnDataTable(strSql);
             dgvDetails2.DataSource = dtReport;
 
-            //FQC組別下的用戶才可以保存、刪除
-            strSql = string.Format(@"SELECT user_id FROM {0}sys_user WHERE user_id='{1}' and group_id='FQC'", remote_db, DBUtility._user_id);
-            DataTable dt = clsPublicOfPad.ExecuteSqlReturnDataTable(strSql);
-            if (dt.Rows.Count > 0 || DBUtility._user_id == "ADMIN")
-                blPermission = true;
-            else
-                blPermission = false;
-            dt.Dispose();
 
+            ////FQC組別下的用戶才可以保存、刪除
+            //strSql = string.Format(@"SELECT user_id FROM {0}sys_user WHERE user_id='{1}' and group_id='FQC'", remote_db, DBUtility._user_id);
+            //DataTable dt = clsPublicOfPad.ExecuteSqlReturnDataTable(strSql);
+            //if (dt.Rows.Count > 0 || DBUtility._user_id == "ADMIN")
+            //    blPermission = true;
+            //else
+            //    blPermission = false;
+            //dt.Dispose();
+            blPermission = true;
             //initWorker();//初始化綁定combobox的工號
         }
 
@@ -75,18 +77,27 @@ namespace cf_pad.Forms
             switch (e.KeyCode)
             {
                 case Keys.Enter:
-                    string strMo = txtBarCode.Text;
-                    if (string.IsNullOrEmpty(strMo))
-                    {
-                        dtReport.Clear();
+                    string strBarCode = txtBarCode.Text; //GKE0068420002
+                    string strMo = string.Empty;
+                    string strVer = string.Empty;
+                    string strSeq = string.Empty;
+                    if (string.IsNullOrEmpty(strBarCode))
+                    {                       
+                        this.ClearBarCodeInfo();
                         return;
                     }
-                    if (strMo.Length > 9)
+                    if (strBarCode.Length >= 13)
                     {
-                        strMo = strMo.Substring(0, 9);//頁數
+                        strMo = strBarCode.Substring(0, 9);//頁數
+                        strVer = strBarCode.Substring(9, 2); //頁數版本號
+                        strSeq = "00" + strBarCode.Substring(11, 2) + "h";//生產流程序號
                     }
-                    string strVer= strMo.Substring(10, 2); //頁數版本號
-                    string strSeq = "00" + strMo.Substring(12, 2) + "h";//生產流程序號
+                    else
+                    {
+                        this.ClearBarCodeInfo();
+                        this.Operation_info("些條在碼長度有問題,請返回檢查!", Color.Red);
+                        return;
+                    }                    
                     
                     //string strSql = string.Format(
                     //@"SELECT a.mo_id,b.wp_id,e.name as name_wp,b.next_wp_id,f.name as name_next,b.goods_id,b.prod_qty as qty_lot,c.blueprint_id as artwork,
@@ -116,28 +127,44 @@ namespace cf_pad.Forms
                     //    //}
                     //}
                     SqlParameter[] paras = new SqlParameter[] {
-                        new SqlParameter("@remote_db", @remote_db),
+                        new SqlParameter("@remote_db", remote_db),
                         new SqlParameter("@mo_id", strMo),
                         new SqlParameter("@sequence_id",strSeq)
                     };
                     dtBarCode = clsPublicOfPad.ExecuteProcedure("p_jx_spray_ipqc", paras);                   
-                    txtBarCode.Text = "";
-                    chkOk.Checked = false;
-                    chkNg.Checked = false;
-                    chkIs_complete1.Checked = false;
-                    chkIs_complete1.Checked = false;
-                    txtGoods_name.Text = "";
-                    txtName_dept.Text = "";
+                    txtBarCode.Text = "";                                       
                     if (dtBarCode.Rows.Count > 0)
-                    {                        
+                    { 
                         txtBarCode.Focus();
-                        
+                        txtDept_id.Text = dtBarCode.Rows[0]["dept_id"].ToString();
+                        txtDept_name.Text = dtBarCode.Rows[0]["dept_name"].ToString();
+                        txtMo_id.Text = dtBarCode.Rows[0]["mo_id"].ToString();
+                        txtLot_no.Text = dtBarCode.Rows[0]["lot_no"].ToString();                        
+                        //mskDate_check.Text = DateTime.Now.Date.ToString("yyyy/MM/dd");
+                        txtDo_color.Text= dtBarCode.Rows[0]["do_color"].ToString();
+                        txtQc_size.Text = dtBarCode.Rows[0]["size_desc"].ToString();
+                        txtQc_size_actual.Text = dtBarCode.Rows[0]["size_desc"].ToString();                        
+                        txtGoods_id.Text = dtBarCode.Rows[0]["goods_id"].ToString();
+                        txtGoods_name.Text = dtBarCode.Rows[0]["goods_name"].ToString();                       
+                        txtQty_lot.Text = dtBarCode.Rows[0]["qty_lot"].ToString();
+                        txtQc_logo.Text = dtBarCode.Rows[0]["qc_logo"].ToString();
+                        txtQty_sample.Text = dtBarCode.Rows[0]["qty_sample"].ToString();
+                        txtQty_ac_std.Text= dtBarCode.Rows[0]["qty_ac_std"].ToString();
+                        txtQty_re_std.Text = dtBarCode.Rows[0]["qty_re_std"].ToString();
+                        chkOk.Checked = true;  //檢驗結果OK
+                        chkNg.Checked = false;
+                        chkIs_complete1.Checked = true; //已齊
+                        chkIs_complete2.Checked = false; //未齊
+
+                        txtResult_desc_ng.Text = "";
+                        txtQty_ng.Text = "0";
+                        txtPackage_num.Text = "0";
+                        txtWeight.Text = "0.00";
                     }
                     else
                     {
+                        this.ClearBarCodeInfo();
                         dtBarCode.Clear();
-                        //lblGoods_id.Text = "";
-                        txtGoods_name.Text = "";
                         //cmbWorker.SelectedValue = "";
                         return;
                     }
@@ -145,15 +172,63 @@ namespace cf_pad.Forms
             }
         }
 
+        private void ClearBarCodeInfo() {
+            txtBarCode.Text = "";
+            txtBarCode.Focus();
+            txtDept_id.Text = "";
+            txtDept_name.Text = "";
+            txtMo_id.Text = "";
+            txtLot_no.Text = "";
+            //mskDate_check.Clear();
+            txtDo_color.Text = "";
+            txtQc_size.Text = "";
+            txtQc_size_actual.Text = "";
+            txtGoods_id.Text = "";
+            txtGoods_name.Text = "";
+            txtQty_lot.Text = "0";
+            txtQc_logo.Text = "";
+            txtQty_ac_std.Text = "0";
+            txtQty_re_std.Text = "0";
+            chkOk.Checked = true;  //檢驗結果OK
+            chkNg.Checked = false;
+            chkIs_complete1.Checked = true; //已齊
+            chkIs_complete2.Checked = false; //未齊
+
+            txtResult_desc_ng.Text = "";
+            txtQty_sample.Text = "0";
+            txtQty_ng.Text = "0";
+            txtPackage_num.Text = "0";
+            txtWeight.Text = "0.00";
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {  
-            if (dtReport.Rows.Count > 0)
+            //if (dtReport.Rows.Count > 0)
+            //{
+            if (!blPermission)
             {
-                if (!blPermission)
-                {
-                    MessageBox.Show(string.Format("當前用戶【{0}】沒有此操作權限!", DBUtility._user_id), "系統提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
+                this.Operation_info(string.Format("當前用戶【{0}】沒有此操作權限!", DBUtility._user_id), Color.Red);                
+                return;
+            }
+            if (string.IsNullOrEmpty(txtDept_id.Text.Trim()))
+            {
+                this.Operation_info("部門不可為空!  保存失敗!", Color.Red);
+                txtDept_id.Focus();
+                return;
+            }
+            if (mskDate_check.Text== "____/__/__")
+            {
+                this.Operation_info("日期不可為空! 保存失敗!", Color.Red);                
+                mskDate_check.Focus();
+                return;
+            }
+            //檢查日期有效性
+            if (!clsUtility.CheckDate(mskDate_check.Text))
+            {
+                this.Operation_info("輸入的日期不正確! 保存失敗!", Color.Red);
+                mskDate_check.Focus();
+                return;
+            }
+
                 //if (cmbWorker.SelectedValue == null || cmbWorker.SelectedValue.ToString() == "")
                 //{
                 //    MessageBox.Show("請輸入檢驗人!", "系統提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -171,16 +246,20 @@ namespace cf_pad.Forms
                 //        }
                 //    }
                 //}
-                 
-                const string sql_i =
-                    @"Insert into dbo.qc_report_finish(qc_date,mo_id,goods_id,goods_name,order_qty,sample_qty,ac,re,qty_ng,qc_size,qc_color,qc_logo,qc_result,remark,artwork,create_by,create_date,qc_by,proofread_status)
-                  Values(convert(date,getdate(),120),@mo_id,@goods_id,@goods_name,@order_qty,@sample_qty,@ac,@re,@qty_ng,@qc_size,@qc_color,@qc_logo,@qc_result,@remark,@artwork,@create_by,getdate(),@qc_by,@proofread_status)";
-                const string sql_u =
-                    @"UPDATE dbo.qc_report_finish 
-				SET mo_id=@mo_id,goods_id=@goods_id,goods_name=@goods_name,order_qty=@order_qty,sample_qty=@sample_qty,ac=@ac,re=@re,qty_ng=@qty_ng,qc_size=@qc_size,qc_color=@qc_color,qc_logo=@qc_logo,
-                    qc_result=@qc_result,remark=@remark,artwork=@artwork,update_by=@update_by,update_date=getdate(),qc_by=@qc_by,proofread_status=@proofread_status
-				WHERE id=@id";
 
+                string sql_i =
+                @"Insert Into dbo.qc_report_spray (dept_id,date_check,sequence_id,mo_id,lot_no,goods_id,qc_logo,qc_size,qc_size_actual,do_color,qty_lot,
+                qty_sample,qty_ac_std,qty_re_std,qty_ng,result_check,result_desc_ng,package_num,weight,is_complete,remark,create_by,create_date) Values
+                (@dept_id,@date_check,@sequence_id,@mo_id,@lot_no,@goods_id,@qc_logo,@qc_size,@qc_size_actual,@do_color,@qty_lot,
+                @qty_sample,@qty_ac_std,@qty_re_std,@qty_ng,@result_check,@result_desc_ng,@package_num,@weight,@is_complete,@remark,@user_id,getdate())";
+                string sql_u =
+                @"UPDATE dbo.qc_report_spray 
+				SET mo_id=@mo_id,lot_no=@lot_no,goods_id=@goods_id,qc_logo=@qc_logo,qc_size=@qc_size,qc_size_actual=@qc_size_actual,do_color=@do_color,qty_lot=@qty_lot,
+                qty_sample=@qty_sample,qty_ac_std=@qty_ac_std,qty_re_std=@qty_re_std,qty_ng=@qty_ng,result_check=@result_check,result_desc_ng=@result_desc_ng,
+                package_num=@package_num,weight=@weight,is_complete=@is_complete,remark=@remark,update_by=@user_id,update_date=getdate()
+				WHERE dept_id=@dept_id,date_check=@date_check,sequence_id=@sequence_id";
+
+            return;
                 bool isFlag = false;
                 for (int i=0;i<dtReport.Rows.Count;i++)
                 {
@@ -285,7 +364,7 @@ namespace cf_pad.Forms
                     Operation_info("數 據 保 存 失 敗!", Color.Red);                    
                 }
                 txtBarCode.Focus();
-            }
+            //}
         }
 
         private string GetFindSqlStr(string mo_id)
@@ -721,7 +800,47 @@ namespace cf_pad.Forms
 
         private void btnTest_Click(object sender, EventArgs e)
         {
-            CustomMessageBox("DFDFDFDF精豐鈕扣", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Information, 20);
+            //CustomMessageBox("DFDFDFDF精豐鈕扣", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Information, 20);
+            txtWeight.Text = string.IsNullOrEmpty(txtWeight.Text)?"0.00":clsUtility.FormatNullableDecimal(txtWeight).ToString();
+            if(clsUtility.CheckDate(mskDate_check.Text)==false)
+            {
+                MessageBox.Show("ERROR");
+            }
+        }
+
+        private void txtWeight_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            clsUtility.Input_Decimal(txtWeight,e);
+        }
+
+        private void txtQty_lot_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            clsUtility.Input_Int(txtQty_lot, e);            
+        }
+
+        private void txtQty_sample_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            clsUtility.Input_Int(txtQty_sample, e);
+        }
+
+        private void txtQty_ac_std_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            clsUtility.Input_Int(txtQty_ac_std, e);
+        }
+
+        private void txtQty_re_std_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            clsUtility.Input_Int(txtQty_re_std, e);
+        }
+
+        private void txtQty_ng_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            clsUtility.Input_Int(txtQty_ng, e);
+        }
+
+        private void txtPackage_num_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            clsUtility.Input_Int(txtPackage_num, e);
         }
     }
 }

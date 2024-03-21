@@ -28,26 +28,73 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIpqcSpray));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tbc = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txtSequence_id = new System.Windows.Forms.TextBox();
+            this.txtDept_name = new System.Windows.Forms.TextBox();
+            this.mskDate_check = new System.Windows.Forms.MaskedTextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.txtDept_id = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.chkIs_complete1 = new System.Windows.Forms.CheckBox();
+            this.chkIs_complete2 = new System.Windows.Forms.CheckBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.txtWeight = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.txtPackage_num = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtResult_desc_ng = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.chkOk = new System.Windows.Forms.CheckBox();
+            this.chkNg = new System.Windows.Forms.CheckBox();
+            this.txtQty_ng = new System.Windows.Forms.TextBox();
+            this.txtQc_size_actual = new System.Windows.Forms.TextBox();
+            this.txtQty_re_std = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtQty_ac_std = new System.Windows.Forms.TextBox();
+            this.txtQty_sample = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtQty_lot = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtDo_color = new System.Windows.Forms.RichTextBox();
+            this.txtQc_size = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtQc_logo = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtLot_no = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtGoods_id = new System.Windows.Forms.TextBox();
+            this.txtMo_id = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.lblSaveinfo = new System.Windows.Forms.Label();
             this.lblBarcode = new System.Windows.Forms.Label();
             this.txtBarCode = new System.Windows.Forms.TextBox();
             this.txtGoods_name = new System.Windows.Forms.RichTextBox();
             this.pic_artwork = new System.Windows.Forms.PictureBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.lblQcResult = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dgvDetails2 = new System.Windows.Forms.DataGridView();
             this.lblMo_total = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -65,9 +112,9 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSet = new System.Windows.Forms.Button();
             this.btnTest = new System.Windows.Forms.Button();
-            this.dgvDetails2 = new System.Windows.Forms.DataGridView();
+            this.btnSet = new System.Windows.Forms.Button();
+            this.dept_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mo_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lot_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.goods_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,63 +135,15 @@
             this.goods_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date_check = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sequence_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtMo_id = new System.Windows.Forms.TextBox();
-            this.txtGoods_id = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtLot_no = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtQc_logo = new System.Windows.Forms.TextBox();
-            this.txtQc_size = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtDo_color = new System.Windows.Forms.RichTextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txtQty_lot = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtQty_sample = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.txtQty_ac_std = new System.Windows.Forms.TextBox();
-            this.txtQty_re_std = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.txtQty_ng = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.chkOk = new System.Windows.Forms.CheckBox();
-            this.chkNg = new System.Windows.Forms.CheckBox();
-            this.lblQcResult = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtResult_desc_ng = new System.Windows.Forms.TextBox();
-            this.txtPackage_num = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.txtWeight = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.chkIs_complete1 = new System.Windows.Forms.CheckBox();
-            this.chkIs_complete2 = new System.Windows.Forms.CheckBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.txtName_dept = new System.Windows.Forms.TextBox();
-            this.txtSequence_id = new System.Windows.Forms.TextBox();
-            this.txtName_next = new System.Windows.Forms.TextBox();
-            this.txtNext_wp_id = new System.Windows.Forms.TextBox();
+            this.name_dept = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbc.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_artwork)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetails2)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbc
@@ -168,16 +167,15 @@
             // tabPage1
             // 
             this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tabPage1.Controls.Add(this.txtName_next);
-            this.tabPage1.Controls.Add(this.txtNext_wp_id);
+            this.tabPage1.Controls.Add(this.lblSaveinfo);
+            this.tabPage1.Controls.Add(this.label22);
             this.tabPage1.Controls.Add(this.txtSequence_id);
-            this.tabPage1.Controls.Add(this.txtName_dept);
-            this.tabPage1.Controls.Add(this.maskedTextBox1);
+            this.tabPage1.Controls.Add(this.txtDept_name);
+            this.tabPage1.Controls.Add(this.mskDate_check);
             this.tabPage1.Controls.Add(this.label27);
-            this.tabPage1.Controls.Add(this.textBox3);
+            this.tabPage1.Controls.Add(this.txtDept_id);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.panel3);
-            this.tabPage1.Controls.Add(this.label26);
             this.tabPage1.Controls.Add(this.txtWeight);
             this.tabPage1.Controls.Add(this.label25);
             this.tabPage1.Controls.Add(this.txtPackage_num);
@@ -185,7 +183,7 @@
             this.tabPage1.Controls.Add(this.txtResult_desc_ng);
             this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Controls.Add(this.txtQty_ng);
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.txtQc_size_actual);
             this.tabPage1.Controls.Add(this.txtQty_re_std);
             this.tabPage1.Controls.Add(this.label20);
             this.tabPage1.Controls.Add(this.txtQty_ac_std);
@@ -197,7 +195,6 @@
             this.tabPage1.Controls.Add(this.txtQc_size);
             this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Controls.Add(this.txtQc_logo);
-            this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Controls.Add(this.label12);
             this.tabPage1.Controls.Add(this.txtLot_no);
             this.tabPage1.Controls.Add(this.label11);
@@ -205,7 +202,6 @@
             this.tabPage1.Controls.Add(this.txtGoods_id);
             this.tabPage1.Controls.Add(this.txtMo_id);
             this.tabPage1.Controls.Add(this.label9);
-            this.tabPage1.Controls.Add(this.lblSaveinfo);
             this.tabPage1.Controls.Add(this.lblBarcode);
             this.tabPage1.Controls.Add(this.txtBarCode);
             this.tabPage1.Controls.Add(this.txtGoods_name);
@@ -216,8 +212,8 @@
             this.tabPage1.Controls.Add(this.label24);
             this.tabPage1.Controls.Add(this.lblQcResult);
             this.tabPage1.Controls.Add(this.label23);
-            this.tabPage1.Controls.Add(this.label22);
-            this.tabPage1.Controls.Add(this.label21);
+            this.tabPage1.Controls.Add(this.label13);
+            this.tabPage1.Controls.Add(this.label26);
             this.tabPage1.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.tabPage1.Location = new System.Drawing.Point(4, 106);
             this.tabPage1.Name = "tabPage1";
@@ -227,6 +223,408 @@
             this.tabPage1.Text = "數據錄入";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // txtSequence_id
+            // 
+            this.txtSequence_id.Font = new System.Drawing.Font("PMingLiU", 32F);
+            this.txtSequence_id.Location = new System.Drawing.Point(53, 696);
+            this.txtSequence_id.MaxLength = 10;
+            this.txtSequence_id.Name = "txtSequence_id";
+            this.txtSequence_id.ReadOnly = true;
+            this.txtSequence_id.Size = new System.Drawing.Size(109, 59);
+            this.txtSequence_id.TabIndex = 83;
+            // 
+            // txtDept_name
+            // 
+            this.txtDept_name.Font = new System.Drawing.Font("PMingLiU", 32F);
+            this.txtDept_name.Location = new System.Drawing.Point(334, 74);
+            this.txtDept_name.Name = "txtDept_name";
+            this.txtDept_name.ReadOnly = true;
+            this.txtDept_name.Size = new System.Drawing.Size(197, 59);
+            this.txtDept_name.TabIndex = 82;
+            // 
+            // mskDate_check
+            // 
+            this.mskDate_check.Font = new System.Drawing.Font("PMingLiU", 32F);
+            this.mskDate_check.Location = new System.Drawing.Point(623, 198);
+            this.mskDate_check.Mask = "0000/00/00";
+            this.mskDate_check.Name = "mskDate_check";
+            this.mskDate_check.Size = new System.Drawing.Size(262, 59);
+            this.mskDate_check.TabIndex = 81;
+            this.mskDate_check.ValidatingType = typeof(System.DateTime);
+            // 
+            // label27
+            // 
+            this.label27.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label27.ForeColor = System.Drawing.Color.Blue;
+            this.label27.Location = new System.Drawing.Point(539, 202);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(83, 46);
+            this.label27.TabIndex = 80;
+            this.label27.Text = "日期";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtDept_id
+            // 
+            this.txtDept_id.Font = new System.Drawing.Font("PMingLiU", 32F);
+            this.txtDept_id.Location = new System.Drawing.Point(164, 74);
+            this.txtDept_id.MaxLength = 3;
+            this.txtDept_id.Name = "txtDept_id";
+            this.txtDept_id.Size = new System.Drawing.Size(164, 59);
+            this.txtDept_id.TabIndex = 79;
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label7.ForeColor = System.Drawing.Color.Blue;
+            this.label7.Location = new System.Drawing.Point(6, 77);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(143, 46);
+            this.label7.TabIndex = 78;
+            this.label7.Text = "部門";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.chkIs_complete1);
+            this.panel3.Controls.Add(this.chkIs_complete2);
+            this.panel3.Font = new System.Drawing.Font("PMingLiU", 32F);
+            this.panel3.Location = new System.Drawing.Point(623, 574);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(262, 60);
+            this.panel3.TabIndex = 77;
+            // 
+            // chkIs_complete1
+            // 
+            this.chkIs_complete1.AutoSize = true;
+            this.chkIs_complete1.Font = new System.Drawing.Font("Tahoma", 26F, System.Drawing.FontStyle.Bold);
+            this.chkIs_complete1.ForeColor = System.Drawing.Color.Blue;
+            this.chkIs_complete1.Location = new System.Drawing.Point(8, 2);
+            this.chkIs_complete1.Name = "chkIs_complete1";
+            this.chkIs_complete1.Size = new System.Drawing.Size(109, 46);
+            this.chkIs_complete1.TabIndex = 5;
+            this.chkIs_complete1.Text = "已齊";
+            this.chkIs_complete1.UseVisualStyleBackColor = true;
+            // 
+            // chkIs_complete2
+            // 
+            this.chkIs_complete2.AutoSize = true;
+            this.chkIs_complete2.Font = new System.Drawing.Font("Tahoma", 26F, System.Drawing.FontStyle.Bold);
+            this.chkIs_complete2.ForeColor = System.Drawing.Color.Red;
+            this.chkIs_complete2.Location = new System.Drawing.Point(146, 2);
+            this.chkIs_complete2.Name = "chkIs_complete2";
+            this.chkIs_complete2.Size = new System.Drawing.Size(109, 46);
+            this.chkIs_complete2.TabIndex = 4;
+            this.chkIs_complete2.Text = "未齊";
+            this.chkIs_complete2.UseVisualStyleBackColor = true;
+            // 
+            // label26
+            // 
+            this.label26.Font = new System.Drawing.Font("PMingLiU", 22F);
+            this.label26.Location = new System.Drawing.Point(542, 571);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(80, 70);
+            this.label26.TabIndex = 76;
+            this.label26.Text = "是否齊件";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtWeight
+            // 
+            this.txtWeight.Font = new System.Drawing.Font("PMingLiU", 32F);
+            this.txtWeight.Location = new System.Drawing.Point(734, 511);
+            this.txtWeight.Name = "txtWeight";
+            this.txtWeight.Size = new System.Drawing.Size(151, 59);
+            this.txtWeight.TabIndex = 74;
+            this.txtWeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWeight_KeyPress);
+            // 
+            // label25
+            // 
+            this.label25.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label25.ForeColor = System.Drawing.Color.Black;
+            this.label25.Location = new System.Drawing.Point(653, 514);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(80, 50);
+            this.label25.TabIndex = 75;
+            this.label25.Text = "重量";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtPackage_num
+            // 
+            this.txtPackage_num.Font = new System.Drawing.Font("PMingLiU", 32F);
+            this.txtPackage_num.Location = new System.Drawing.Point(525, 511);
+            this.txtPackage_num.Name = "txtPackage_num";
+            this.txtPackage_num.Size = new System.Drawing.Size(99, 59);
+            this.txtPackage_num.TabIndex = 72;
+            this.txtPackage_num.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPackage_num_KeyPress);
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("PMingLiU", 21F);
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(3, 506);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(159, 67);
+            this.label8.TabIndex = 71;
+            this.label8.Text = "不良描述及處理結果";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtResult_desc_ng
+            // 
+            this.txtResult_desc_ng.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtResult_desc_ng.Font = new System.Drawing.Font("PMingLiU", 32F);
+            this.txtResult_desc_ng.Location = new System.Drawing.Point(164, 511);
+            this.txtResult_desc_ng.MaxLength = 20;
+            this.txtResult_desc_ng.Name = "txtResult_desc_ng";
+            this.txtResult_desc_ng.Size = new System.Drawing.Size(262, 59);
+            this.txtResult_desc_ng.TabIndex = 70;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.chkOk);
+            this.panel2.Controls.Add(this.chkNg);
+            this.panel2.Font = new System.Drawing.Font("PMingLiU", 32F);
+            this.panel2.Location = new System.Drawing.Point(623, 447);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(262, 60);
+            this.panel2.TabIndex = 69;
+            // 
+            // chkOk
+            // 
+            this.chkOk.AutoSize = true;
+            this.chkOk.Font = new System.Drawing.Font("Tahoma", 30F);
+            this.chkOk.ForeColor = System.Drawing.Color.Blue;
+            this.chkOk.Location = new System.Drawing.Point(8, 2);
+            this.chkOk.Name = "chkOk";
+            this.chkOk.Size = new System.Drawing.Size(91, 52);
+            this.chkOk.TabIndex = 5;
+            this.chkOk.Text = "OK";
+            this.chkOk.UseVisualStyleBackColor = true;
+            // 
+            // chkNg
+            // 
+            this.chkNg.AutoSize = true;
+            this.chkNg.Font = new System.Drawing.Font("Tahoma", 30F);
+            this.chkNg.ForeColor = System.Drawing.Color.Red;
+            this.chkNg.Location = new System.Drawing.Point(146, 2);
+            this.chkNg.Name = "chkNg";
+            this.chkNg.Size = new System.Drawing.Size(93, 52);
+            this.chkNg.TabIndex = 4;
+            this.chkNg.Text = "NG";
+            this.chkNg.UseVisualStyleBackColor = true;
+            // 
+            // txtQty_ng
+            // 
+            this.txtQty_ng.Font = new System.Drawing.Font("PMingLiU", 32F);
+            this.txtQty_ng.Location = new System.Drawing.Point(164, 447);
+            this.txtQty_ng.Name = "txtQty_ng";
+            this.txtQty_ng.Size = new System.Drawing.Size(193, 59);
+            this.txtQty_ng.TabIndex = 50;
+            this.txtQty_ng.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQty_ng_KeyPress);
+            // 
+            // txtQc_size_actual
+            // 
+            this.txtQc_size_actual.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtQc_size_actual.Font = new System.Drawing.Font("PMingLiU", 32F);
+            this.txtQc_size_actual.Location = new System.Drawing.Point(623, 322);
+            this.txtQc_size_actual.MaxLength = 50;
+            this.txtQc_size_actual.Name = "txtQc_size_actual";
+            this.txtQc_size_actual.Size = new System.Drawing.Size(262, 59);
+            this.txtQc_size_actual.TabIndex = 48;
+            // 
+            // txtQty_re_std
+            // 
+            this.txtQty_re_std.Font = new System.Drawing.Font("PMingLiU", 32F);
+            this.txtQty_re_std.Location = new System.Drawing.Point(786, 385);
+            this.txtQty_re_std.Name = "txtQty_re_std";
+            this.txtQty_re_std.Size = new System.Drawing.Size(99, 59);
+            this.txtQty_re_std.TabIndex = 45;
+            this.txtQty_re_std.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQty_re_std_KeyPress);
+            // 
+            // label20
+            // 
+            this.label20.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label20.ForeColor = System.Drawing.Color.Black;
+            this.label20.Location = new System.Drawing.Point(728, 388);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(58, 50);
+            this.label20.TabIndex = 46;
+            this.label20.Text = "RE";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtQty_ac_std
+            // 
+            this.txtQty_ac_std.Font = new System.Drawing.Font("PMingLiU", 32F);
+            this.txtQty_ac_std.Location = new System.Drawing.Point(623, 385);
+            this.txtQty_ac_std.Name = "txtQty_ac_std";
+            this.txtQty_ac_std.Size = new System.Drawing.Size(99, 59);
+            this.txtQty_ac_std.TabIndex = 43;
+            this.txtQty_ac_std.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQty_ac_std_KeyPress);
+            // 
+            // txtQty_sample
+            // 
+            this.txtQty_sample.Font = new System.Drawing.Font("PMingLiU", 32F);
+            this.txtQty_sample.Location = new System.Drawing.Point(432, 385);
+            this.txtQty_sample.Name = "txtQty_sample";
+            this.txtQty_sample.Size = new System.Drawing.Size(134, 59);
+            this.txtQty_sample.TabIndex = 41;
+            this.txtQty_sample.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQty_sample_KeyPress);
+            // 
+            // label17
+            // 
+            this.label17.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label17.ForeColor = System.Drawing.Color.Black;
+            this.label17.Location = new System.Drawing.Point(2, 388);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(159, 50);
+            this.label17.TabIndex = 40;
+            this.label17.Text = "批量(PCS)";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtQty_lot
+            // 
+            this.txtQty_lot.Font = new System.Drawing.Font("PMingLiU", 32F);
+            this.txtQty_lot.Location = new System.Drawing.Point(164, 385);
+            this.txtQty_lot.Name = "txtQty_lot";
+            this.txtQty_lot.Size = new System.Drawing.Size(193, 59);
+            this.txtQty_lot.TabIndex = 39;
+            this.txtQty_lot.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQty_lot_KeyPress);
+            // 
+            // label16
+            // 
+            this.label16.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label16.ForeColor = System.Drawing.Color.Black;
+            this.label16.Location = new System.Drawing.Point(6, 265);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(143, 46);
+            this.label16.TabIndex = 38;
+            this.label16.Text = "顏色";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtDo_color
+            // 
+            this.txtDo_color.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDo_color.Font = new System.Drawing.Font("PMingLiU", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtDo_color.Location = new System.Drawing.Point(164, 261);
+            this.txtDo_color.Name = "txtDo_color";
+            this.txtDo_color.ReadOnly = true;
+            this.txtDo_color.Size = new System.Drawing.Size(367, 58);
+            this.txtDo_color.TabIndex = 37;
+            this.txtDo_color.Text = "";
+            // 
+            // txtQc_size
+            // 
+            this.txtQc_size.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtQc_size.Font = new System.Drawing.Font("PMingLiU", 32F);
+            this.txtQc_size.Location = new System.Drawing.Point(623, 261);
+            this.txtQc_size.MaxLength = 50;
+            this.txtQc_size.Name = "txtQc_size";
+            this.txtQc_size.Size = new System.Drawing.Size(262, 59);
+            this.txtQc_size.TabIndex = 35;
+            // 
+            // label14
+            // 
+            this.label14.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label14.ForeColor = System.Drawing.Color.Black;
+            this.label14.Location = new System.Drawing.Point(-3, 325);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(165, 46);
+            this.label14.TabIndex = 34;
+            this.label14.Text = "LOGO字樣";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtQc_logo
+            // 
+            this.txtQc_logo.Font = new System.Drawing.Font("PMingLiU", 32F);
+            this.txtQc_logo.Location = new System.Drawing.Point(164, 322);
+            this.txtQc_logo.Name = "txtQc_logo";
+            this.txtQc_logo.ReadOnly = true;
+            this.txtQc_logo.Size = new System.Drawing.Size(247, 59);
+            this.txtQc_logo.TabIndex = 33;
+            // 
+            // label13
+            // 
+            this.label13.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(539, 256);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(83, 46);
+            this.label13.TabIndex = 32;
+            this.label13.Text = "尺寸";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label12
+            // 
+            this.label12.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(6, 202);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(143, 46);
+            this.label12.TabIndex = 31;
+            this.label12.Text = "批號";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtLot_no
+            // 
+            this.txtLot_no.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtLot_no.Font = new System.Drawing.Font("PMingLiU", 32F);
+            this.txtLot_no.Location = new System.Drawing.Point(164, 198);
+            this.txtLot_no.MaxLength = 20;
+            this.txtLot_no.Name = "txtLot_no";
+            this.txtLot_no.Size = new System.Drawing.Size(367, 59);
+            this.txtLot_no.TabIndex = 30;
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(6, 636);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(143, 50);
+            this.label11.TabIndex = 29;
+            this.label11.Text = "貨品描述";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(6, 579);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(143, 50);
+            this.label10.TabIndex = 28;
+            this.label10.Text = "貨品編碼";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtGoods_id
+            // 
+            this.txtGoods_id.Font = new System.Drawing.Font("PMingLiU", 32F);
+            this.txtGoods_id.Location = new System.Drawing.Point(164, 574);
+            this.txtGoods_id.Name = "txtGoods_id";
+            this.txtGoods_id.ReadOnly = true;
+            this.txtGoods_id.Size = new System.Drawing.Size(363, 59);
+            this.txtGoods_id.TabIndex = 27;
+            // 
+            // txtMo_id
+            // 
+            this.txtMo_id.Font = new System.Drawing.Font("PMingLiU", 32F);
+            this.txtMo_id.Location = new System.Drawing.Point(164, 136);
+            this.txtMo_id.Name = "txtMo_id";
+            this.txtMo_id.ReadOnly = true;
+            this.txtMo_id.Size = new System.Drawing.Size(367, 59);
+            this.txtMo_id.TabIndex = 26;
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(6, 138);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(143, 46);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "頁數";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // lblSaveinfo
             // 
             this.lblSaveinfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -235,7 +633,7 @@
             this.lblSaveinfo.Font = new System.Drawing.Font("PMingLiU", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblSaveinfo.ForeColor = System.Drawing.Color.Blue;
             this.lblSaveinfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblSaveinfo.Location = new System.Drawing.Point(275, 706);
+            this.lblSaveinfo.Location = new System.Drawing.Point(153, 265);
             this.lblSaveinfo.Name = "lblSaveinfo";
             this.lblSaveinfo.Size = new System.Drawing.Size(600, 49);
             this.lblSaveinfo.TabIndex = 16;
@@ -287,6 +685,82 @@
             this.pic_artwork.TabIndex = 13;
             this.pic_artwork.TabStop = false;
             // 
+            // label18
+            // 
+            this.label18.Font = new System.Drawing.Font("PMingLiU", 22F);
+            this.label18.ForeColor = System.Drawing.Color.Black;
+            this.label18.Location = new System.Drawing.Point(356, 377);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(79, 83);
+            this.label18.TabIndex = 42;
+            this.label18.Text = "抽樣數量";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label19
+            // 
+            this.label19.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label19.ForeColor = System.Drawing.Color.Black;
+            this.label19.Location = new System.Drawing.Point(564, 388);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(58, 50);
+            this.label19.TabIndex = 44;
+            this.label19.Text = "AC";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label15
+            // 
+            this.label15.Font = new System.Drawing.Font("PMingLiU", 18F);
+            this.label15.ForeColor = System.Drawing.Color.Black;
+            this.label15.Location = new System.Drawing.Point(544, 293);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(75, 21);
+            this.label15.TabIndex = 36;
+            this.label15.Text = "(mm)";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label24
+            // 
+            this.label24.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label24.ForeColor = System.Drawing.Color.Black;
+            this.label24.Location = new System.Drawing.Point(449, 514);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(80, 50);
+            this.label24.TabIndex = 73;
+            this.label24.Text = "包數";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblQcResult
+            // 
+            this.lblQcResult.Font = new System.Drawing.Font("PMingLiU", 24F);
+            this.lblQcResult.Location = new System.Drawing.Point(478, 449);
+            this.lblQcResult.Name = "lblQcResult";
+            this.lblQcResult.Size = new System.Drawing.Size(144, 52);
+            this.lblQcResult.TabIndex = 68;
+            this.lblQcResult.Text = "檢驗結果";
+            this.lblQcResult.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label23
+            // 
+            this.label23.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label23.ForeColor = System.Drawing.Color.Black;
+            this.label23.Location = new System.Drawing.Point(2, 449);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(159, 50);
+            this.label23.TabIndex = 51;
+            this.label23.Text = "不合格數";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label22
+            // 
+            this.label22.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label22.ForeColor = System.Drawing.Color.Black;
+            this.label22.Location = new System.Drawing.Point(411, 325);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(210, 46);
+            this.label22.TabIndex = 47;
+            this.label22.Text = "實測尺寸(mm)";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // tabPage2
             // 
             this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -312,6 +786,57 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "數據查詢";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dgvDetails2
+            // 
+            this.dgvDetails2.AllowUserToAddRows = false;
+            this.dgvDetails2.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.dgvDetails2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
+            this.dgvDetails2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDetails2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvDetails2.ColumnHeadersHeight = 65;
+            this.dgvDetails2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvDetails2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dept_id,
+            this.mo_id,
+            this.lot_no,
+            this.goods_name,
+            this.qc_logo,
+            this.qc_size,
+            this.do_color,
+            this.qty_lot,
+            this.qty_sample,
+            this.qty_ac_std,
+            this.qty_re_std,
+            this.qc_size_actual,
+            this.qty_ng,
+            this.qc_result,
+            this.result_desc_ng,
+            this.package_num,
+            this.weight,
+            this.is_complete,
+            this.goods_id,
+            this.date_check,
+            this.sequence_id,
+            this.name_dept});
+            this.dgvDetails2.Location = new System.Drawing.Point(1, 124);
+            this.dgvDetails2.Name = "dgvDetails2";
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("PMingLiU", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetails2.RowHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            this.dgvDetails2.RowHeadersWidth = 25;
+            this.dgvDetails2.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.dgvDetails2.RowTemplate.Height = 60;
+            this.dgvDetails2.Size = new System.Drawing.Size(899, 538);
+            this.dgvDetails2.TabIndex = 53;
             // 
             // lblMo_total
             // 
@@ -502,17 +1027,6 @@
             this.panel1.Size = new System.Drawing.Size(913, 89);
             this.panel1.TabIndex = 5;
             // 
-            // btnSet
-            // 
-            this.btnSet.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnSet.Location = new System.Drawing.Point(513, 3);
-            this.btnSet.Name = "btnSet";
-            this.btnSet.Size = new System.Drawing.Size(164, 80);
-            this.btnSet.TabIndex = 8;
-            this.btnSet.Text = "數據瀏覽";
-            this.btnSet.UseVisualStyleBackColor = true;
-            this.btnSet.Click += new System.EventHandler(this.btnSet_Click);
-            // 
             // btnTest
             // 
             this.btnTest.Font = new System.Drawing.Font("PMingLiU", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -524,59 +1038,29 @@
             this.btnTest.UseVisualStyleBackColor = true;
             this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
-            // dgvDetails2
+            // btnSet
             // 
-            this.dgvDetails2.AllowUserToAddRows = false;
-            this.dgvDetails2.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.dgvDetails2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDetails2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvDetails2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvDetails2.ColumnHeadersHeight = 65;
-            this.dgvDetails2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvDetails2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.mo_id,
-            this.lot_no,
-            this.goods_name,
-            this.qc_logo,
-            this.qc_size,
-            this.do_color,
-            this.qty_lot,
-            this.qty_sample,
-            this.qty_ac_std,
-            this.qty_re_std,
-            this.qc_size_actual,
-            this.qty_ng,
-            this.qc_result,
-            this.result_desc_ng,
-            this.package_num,
-            this.weight,
-            this.is_complete,
-            this.goods_id,
-            this.date_check,
-            this.sequence_id});
-            this.dgvDetails2.Location = new System.Drawing.Point(1, 124);
-            this.dgvDetails2.Name = "dgvDetails2";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("PMingLiU", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetails2.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.dgvDetails2.RowHeadersWidth = 25;
-            this.dgvDetails2.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.dgvDetails2.RowTemplate.Height = 60;
-            this.dgvDetails2.Size = new System.Drawing.Size(899, 538);
-            this.dgvDetails2.TabIndex = 53;
+            this.btnSet.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnSet.Location = new System.Drawing.Point(513, 3);
+            this.btnSet.Name = "btnSet";
+            this.btnSet.Size = new System.Drawing.Size(164, 80);
+            this.btnSet.TabIndex = 8;
+            this.btnSet.Text = "數據瀏覽";
+            this.btnSet.UseVisualStyleBackColor = true;
+            this.btnSet.Click += new System.EventHandler(this.btnSet_Click);
+            // 
+            // dept_id
+            // 
+            this.dept_id.DataPropertyName = "dept_id";
+            this.dept_id.HeaderText = "部門";
+            this.dept_id.Name = "dept_id";
+            this.dept_id.ReadOnly = true;
+            this.dept_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dept_id.Width = 50;
             // 
             // mo_id
             // 
             this.mo_id.DataPropertyName = "mo_id";
-            this.mo_id.Frozen = true;
             this.mo_id.HeaderText = "頁數";
             this.mo_id.Name = "mo_id";
             this.mo_id.ReadOnly = true;
@@ -631,10 +1115,10 @@
             // qty_lot
             // 
             this.qty_lot.DataPropertyName = "qty_lot";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle2.Format = "N0";
-            dataGridViewCellStyle2.NullValue = "0";
-            this.qty_lot.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle13.Format = "N0";
+            dataGridViewCellStyle13.NullValue = "0";
+            this.qty_lot.DefaultCellStyle = dataGridViewCellStyle13;
             this.qty_lot.HeaderText = "批量(PCS)";
             this.qty_lot.Name = "qty_lot";
             this.qty_lot.ReadOnly = true;
@@ -644,9 +1128,9 @@
             // qty_sample
             // 
             this.qty_sample.DataPropertyName = "qty_sample";
-            dataGridViewCellStyle3.Format = "N0";
-            dataGridViewCellStyle3.NullValue = "0";
-            this.qty_sample.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle14.Format = "N0";
+            dataGridViewCellStyle14.NullValue = "0";
+            this.qty_sample.DefaultCellStyle = dataGridViewCellStyle14;
             this.qty_sample.HeaderText = "抽樣";
             this.qty_sample.Name = "qty_sample";
             this.qty_sample.ReadOnly = true;
@@ -656,10 +1140,10 @@
             // qty_ac_std
             // 
             this.qty_ac_std.DataPropertyName = "qty_ac_std";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Format = "N0";
-            dataGridViewCellStyle4.NullValue = "0";
-            this.qty_ac_std.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.Format = "N0";
+            dataGridViewCellStyle15.NullValue = "0";
+            this.qty_ac_std.DefaultCellStyle = dataGridViewCellStyle15;
             this.qty_ac_std.HeaderText = "AC";
             this.qty_ac_std.Name = "qty_ac_std";
             this.qty_ac_std.ReadOnly = true;
@@ -669,10 +1153,10 @@
             // qty_re_std
             // 
             this.qty_re_std.DataPropertyName = "qty_re_std";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Format = "N0";
-            dataGridViewCellStyle5.NullValue = "0";
-            this.qty_re_std.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.Format = "N0";
+            dataGridViewCellStyle16.NullValue = "0";
+            this.qty_re_std.DefaultCellStyle = dataGridViewCellStyle16;
             this.qty_re_std.HeaderText = "RE";
             this.qty_re_std.Name = "qty_re_std";
             this.qty_re_std.ReadOnly = true;
@@ -682,8 +1166,8 @@
             // qc_size_actual
             // 
             this.qc_size_actual.DataPropertyName = "qc_size_actual";
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.qc_size_actual.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.qc_size_actual.DefaultCellStyle = dataGridViewCellStyle17;
             this.qc_size_actual.HeaderText = "實測尺寸";
             this.qc_size_actual.Name = "qc_size_actual";
             this.qc_size_actual.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -692,12 +1176,12 @@
             // qty_ng
             // 
             this.qty_ng.DataPropertyName = "qty_ng";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.Format = "N0";
-            dataGridViewCellStyle7.NullValue = "0";
-            this.qty_ng.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle18.Format = "N0";
+            dataGridViewCellStyle18.NullValue = "0";
+            this.qty_ng.DefaultCellStyle = dataGridViewCellStyle18;
             this.qty_ng.HeaderText = "不合格數";
             this.qty_ng.Name = "qty_ng";
             this.qty_ng.ReadOnly = true;
@@ -707,10 +1191,10 @@
             // qc_result
             // 
             this.qc_result.DataPropertyName = "qc_result";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle8.NullValue = false;
-            this.qc_result.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle19.NullValue = false;
+            this.qc_result.DefaultCellStyle = dataGridViewCellStyle19;
             this.qc_result.HeaderText = "檢驗結果";
             this.qc_result.Name = "qc_result";
             this.qc_result.ReadOnly = true;
@@ -729,9 +1213,9 @@
             // package_num
             // 
             this.package_num.DataPropertyName = "package_num";
-            dataGridViewCellStyle9.Format = "N0";
-            dataGridViewCellStyle9.NullValue = "0";
-            this.package_num.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle20.Format = "N0";
+            dataGridViewCellStyle20.NullValue = "0";
+            this.package_num.DefaultCellStyle = dataGridViewCellStyle20;
             this.package_num.HeaderText = "包數";
             this.package_num.Name = "package_num";
             this.package_num.ReadOnly = true;
@@ -741,9 +1225,9 @@
             // weight
             // 
             this.weight.DataPropertyName = "weight";
-            dataGridViewCellStyle10.Format = "N2";
-            dataGridViewCellStyle10.NullValue = "0";
-            this.weight.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle21.Format = "N2";
+            dataGridViewCellStyle21.NullValue = "0";
+            this.weight.DefaultCellStyle = dataGridViewCellStyle21;
             this.weight.HeaderText = "重量";
             this.weight.Name = "weight";
             this.weight.ReadOnly = true;
@@ -785,508 +1269,14 @@
             this.sequence_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.sequence_id.Visible = false;
             // 
-            // label9
-            // 
-            this.label9.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(6, 144);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(143, 32);
-            this.label9.TabIndex = 25;
-            this.label9.Text = "頁數";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtMo_id
-            // 
-            this.txtMo_id.Font = new System.Drawing.Font("PMingLiU", 32F);
-            this.txtMo_id.Location = new System.Drawing.Point(164, 136);
-            this.txtMo_id.Name = "txtMo_id";
-            this.txtMo_id.ReadOnly = true;
-            this.txtMo_id.Size = new System.Drawing.Size(367, 59);
-            this.txtMo_id.TabIndex = 26;
-            // 
-            // txtGoods_id
-            // 
-            this.txtGoods_id.Font = new System.Drawing.Font("PMingLiU", 32F);
-            this.txtGoods_id.Location = new System.Drawing.Point(164, 574);
-            this.txtGoods_id.Name = "txtGoods_id";
-            this.txtGoods_id.ReadOnly = true;
-            this.txtGoods_id.Size = new System.Drawing.Size(363, 59);
-            this.txtGoods_id.TabIndex = 27;
-            // 
-            // label10
-            // 
-            this.label10.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(6, 581);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(143, 32);
-            this.label10.TabIndex = 28;
-            this.label10.Text = "貨品編碼";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label11
-            // 
-            this.label11.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(6, 651);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(143, 32);
-            this.label11.TabIndex = 29;
-            this.label11.Text = "貨品描述";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtLot_no
-            // 
-            this.txtLot_no.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtLot_no.Font = new System.Drawing.Font("PMingLiU", 32F);
-            this.txtLot_no.Location = new System.Drawing.Point(164, 198);
-            this.txtLot_no.MaxLength = 20;
-            this.txtLot_no.Name = "txtLot_no";
-            this.txtLot_no.Size = new System.Drawing.Size(367, 59);
-            this.txtLot_no.TabIndex = 30;
-            // 
-            // label12
-            // 
-            this.label12.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(6, 207);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(143, 32);
-            this.label12.TabIndex = 31;
-            this.label12.Text = "批號";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label13
-            // 
-            this.label13.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(539, 264);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(83, 32);
-            this.label13.TabIndex = 32;
-            this.label13.Text = "尺寸";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label14
-            // 
-            this.label14.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(-3, 334);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(165, 32);
-            this.label14.TabIndex = 34;
-            this.label14.Text = "LOGO字樣";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtQc_logo
-            // 
-            this.txtQc_logo.Font = new System.Drawing.Font("PMingLiU", 32F);
-            this.txtQc_logo.Location = new System.Drawing.Point(164, 322);
-            this.txtQc_logo.Name = "txtQc_logo";
-            this.txtQc_logo.ReadOnly = true;
-            this.txtQc_logo.Size = new System.Drawing.Size(268, 59);
-            this.txtQc_logo.TabIndex = 33;
-            // 
-            // txtQc_size
-            // 
-            this.txtQc_size.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtQc_size.Font = new System.Drawing.Font("PMingLiU", 32F);
-            this.txtQc_size.Location = new System.Drawing.Point(623, 261);
-            this.txtQc_size.MaxLength = 50;
-            this.txtQc_size.Name = "txtQc_size";
-            this.txtQc_size.Size = new System.Drawing.Size(262, 59);
-            this.txtQc_size.TabIndex = 35;
-            // 
-            // label15
-            // 
-            this.label15.Font = new System.Drawing.Font("PMingLiU", 18F);
-            this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(544, 293);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(75, 21);
-            this.label15.TabIndex = 36;
-            this.label15.Text = "(mm)";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label16
-            // 
-            this.label16.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(6, 272);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(143, 32);
-            this.label16.TabIndex = 38;
-            this.label16.Text = "顏色";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtDo_color
-            // 
-            this.txtDo_color.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDo_color.Font = new System.Drawing.Font("PMingLiU", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtDo_color.Location = new System.Drawing.Point(164, 261);
-            this.txtDo_color.Name = "txtDo_color";
-            this.txtDo_color.ReadOnly = true;
-            this.txtDo_color.Size = new System.Drawing.Size(367, 58);
-            this.txtDo_color.TabIndex = 37;
-            this.txtDo_color.Text = "";
-            // 
-            // label17
-            // 
-            this.label17.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(2, 388);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(159, 50);
-            this.label17.TabIndex = 40;
-            this.label17.Text = "批量(PCS)";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtQty_lot
-            // 
-            this.txtQty_lot.Font = new System.Drawing.Font("PMingLiU", 32F);
-            this.txtQty_lot.Location = new System.Drawing.Point(164, 385);
-            this.txtQty_lot.Name = "txtQty_lot";
-            this.txtQty_lot.Size = new System.Drawing.Size(193, 59);
-            this.txtQty_lot.TabIndex = 39;
-            // 
-            // label18
-            // 
-            this.label18.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(359, 381);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(79, 70);
-            this.label18.TabIndex = 42;
-            this.label18.Text = "抽樣數量";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtQty_sample
-            // 
-            this.txtQty_sample.Font = new System.Drawing.Font("PMingLiU", 32F);
-            this.txtQty_sample.Location = new System.Drawing.Point(432, 385);
-            this.txtQty_sample.Name = "txtQty_sample";
-            this.txtQty_sample.Size = new System.Drawing.Size(134, 59);
-            this.txtQty_sample.TabIndex = 41;
-            // 
-            // label19
-            // 
-            this.label19.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(564, 388);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(58, 50);
-            this.label19.TabIndex = 44;
-            this.label19.Text = "AC";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtQty_ac_std
-            // 
-            this.txtQty_ac_std.Font = new System.Drawing.Font("PMingLiU", 32F);
-            this.txtQty_ac_std.Location = new System.Drawing.Point(623, 385);
-            this.txtQty_ac_std.Name = "txtQty_ac_std";
-            this.txtQty_ac_std.Size = new System.Drawing.Size(99, 59);
-            this.txtQty_ac_std.TabIndex = 43;
-            // 
-            // txtQty_re_std
-            // 
-            this.txtQty_re_std.Font = new System.Drawing.Font("PMingLiU", 32F);
-            this.txtQty_re_std.Location = new System.Drawing.Point(786, 385);
-            this.txtQty_re_std.Name = "txtQty_re_std";
-            this.txtQty_re_std.Size = new System.Drawing.Size(99, 59);
-            this.txtQty_re_std.TabIndex = 45;
-            // 
-            // label20
-            // 
-            this.label20.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label20.ForeColor = System.Drawing.Color.Black;
-            this.label20.Location = new System.Drawing.Point(728, 388);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(58, 50);
-            this.label20.TabIndex = 46;
-            this.label20.Text = "RE";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label21
-            // 
-            this.label21.Font = new System.Drawing.Font("PMingLiU", 18F);
-            this.label21.ForeColor = System.Drawing.Color.Black;
-            this.label21.Location = new System.Drawing.Point(544, 355);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(78, 21);
-            this.label21.TabIndex = 49;
-            this.label21.Text = "(mm)";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // textBox1
-            // 
-            this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox1.Font = new System.Drawing.Font("PMingLiU", 32F);
-            this.textBox1.Location = new System.Drawing.Point(623, 322);
-            this.textBox1.MaxLength = 50;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(262, 59);
-            this.textBox1.TabIndex = 48;
-            // 
-            // label22
-            // 
-            this.label22.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label22.ForeColor = System.Drawing.Color.Black;
-            this.label22.Location = new System.Drawing.Point(469, 326);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(153, 32);
-            this.label22.TabIndex = 47;
-            this.label22.Text = "實測尺寸";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label23
-            // 
-            this.label23.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label23.ForeColor = System.Drawing.Color.Black;
-            this.label23.Location = new System.Drawing.Point(2, 449);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(159, 50);
-            this.label23.TabIndex = 51;
-            this.label23.Text = "不合格數";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtQty_ng
-            // 
-            this.txtQty_ng.Font = new System.Drawing.Font("PMingLiU", 32F);
-            this.txtQty_ng.Location = new System.Drawing.Point(164, 447);
-            this.txtQty_ng.Name = "txtQty_ng";
-            this.txtQty_ng.Size = new System.Drawing.Size(193, 59);
-            this.txtQty_ng.TabIndex = 50;
-            // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.chkOk);
-            this.panel2.Controls.Add(this.chkNg);
-            this.panel2.Font = new System.Drawing.Font("PMingLiU", 32F);
-            this.panel2.Location = new System.Drawing.Point(623, 447);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(262, 60);
-            this.panel2.TabIndex = 69;
-            // 
-            // chkOk
-            // 
-            this.chkOk.AutoSize = true;
-            this.chkOk.Enabled = false;
-            this.chkOk.Font = new System.Drawing.Font("Tahoma", 30F);
-            this.chkOk.ForeColor = System.Drawing.Color.Blue;
-            this.chkOk.Location = new System.Drawing.Point(8, 2);
-            this.chkOk.Name = "chkOk";
-            this.chkOk.Size = new System.Drawing.Size(91, 52);
-            this.chkOk.TabIndex = 5;
-            this.chkOk.Text = "OK";
-            this.chkOk.UseVisualStyleBackColor = true;
-            // 
-            // chkNg
-            // 
-            this.chkNg.AutoSize = true;
-            this.chkNg.Font = new System.Drawing.Font("Tahoma", 30F);
-            this.chkNg.ForeColor = System.Drawing.Color.Red;
-            this.chkNg.Location = new System.Drawing.Point(146, 2);
-            this.chkNg.Name = "chkNg";
-            this.chkNg.Size = new System.Drawing.Size(93, 52);
-            this.chkNg.TabIndex = 4;
-            this.chkNg.Text = "NG";
-            this.chkNg.UseVisualStyleBackColor = true;
-            // 
-            // lblQcResult
-            // 
-            this.lblQcResult.Font = new System.Drawing.Font("PMingLiU", 24F);
-            this.lblQcResult.Location = new System.Drawing.Point(478, 449);
-            this.lblQcResult.Name = "lblQcResult";
-            this.lblQcResult.Size = new System.Drawing.Size(144, 52);
-            this.lblQcResult.TabIndex = 68;
-            this.lblQcResult.Text = "檢驗結果";
-            this.lblQcResult.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("PMingLiU", 21F);
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(3, 506);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(159, 67);
-            this.label8.TabIndex = 71;
-            this.label8.Text = "不良描述及處理結果";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtResult_desc_ng
-            // 
-            this.txtResult_desc_ng.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtResult_desc_ng.Font = new System.Drawing.Font("PMingLiU", 32F);
-            this.txtResult_desc_ng.Location = new System.Drawing.Point(164, 511);
-            this.txtResult_desc_ng.MaxLength = 20;
-            this.txtResult_desc_ng.Name = "txtResult_desc_ng";
-            this.txtResult_desc_ng.Size = new System.Drawing.Size(262, 59);
-            this.txtResult_desc_ng.TabIndex = 70;
-            // 
-            // txtPackage_num
-            // 
-            this.txtPackage_num.Font = new System.Drawing.Font("PMingLiU", 32F);
-            this.txtPackage_num.Location = new System.Drawing.Point(525, 511);
-            this.txtPackage_num.Name = "txtPackage_num";
-            this.txtPackage_num.Size = new System.Drawing.Size(99, 59);
-            this.txtPackage_num.TabIndex = 72;
-            // 
-            // label24
-            // 
-            this.label24.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label24.ForeColor = System.Drawing.Color.Black;
-            this.label24.Location = new System.Drawing.Point(449, 514);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(80, 50);
-            this.label24.TabIndex = 73;
-            this.label24.Text = "包數";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtWeight
-            // 
-            this.txtWeight.Font = new System.Drawing.Font("PMingLiU", 32F);
-            this.txtWeight.Location = new System.Drawing.Point(734, 511);
-            this.txtWeight.Name = "txtWeight";
-            this.txtWeight.Size = new System.Drawing.Size(151, 59);
-            this.txtWeight.TabIndex = 74;
-            // 
-            // label25
-            // 
-            this.label25.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label25.ForeColor = System.Drawing.Color.Black;
-            this.label25.Location = new System.Drawing.Point(653, 514);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(80, 50);
-            this.label25.TabIndex = 75;
-            this.label25.Text = "重量";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.chkIs_complete1);
-            this.panel3.Controls.Add(this.chkIs_complete2);
-            this.panel3.Font = new System.Drawing.Font("PMingLiU", 32F);
-            this.panel3.Location = new System.Drawing.Point(623, 574);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(262, 60);
-            this.panel3.TabIndex = 77;
-            // 
-            // chkIs_complete1
-            // 
-            this.chkIs_complete1.AutoSize = true;
-            this.chkIs_complete1.Enabled = false;
-            this.chkIs_complete1.Font = new System.Drawing.Font("Tahoma", 26F, System.Drawing.FontStyle.Bold);
-            this.chkIs_complete1.ForeColor = System.Drawing.Color.Blue;
-            this.chkIs_complete1.Location = new System.Drawing.Point(8, 2);
-            this.chkIs_complete1.Name = "chkIs_complete1";
-            this.chkIs_complete1.Size = new System.Drawing.Size(109, 46);
-            this.chkIs_complete1.TabIndex = 5;
-            this.chkIs_complete1.Text = "已齊";
-            this.chkIs_complete1.UseVisualStyleBackColor = true;
-            // 
-            // chkIs_complete2
-            // 
-            this.chkIs_complete2.AutoSize = true;
-            this.chkIs_complete2.Font = new System.Drawing.Font("Tahoma", 26F, System.Drawing.FontStyle.Bold);
-            this.chkIs_complete2.ForeColor = System.Drawing.Color.Red;
-            this.chkIs_complete2.Location = new System.Drawing.Point(146, 2);
-            this.chkIs_complete2.Name = "chkIs_complete2";
-            this.chkIs_complete2.Size = new System.Drawing.Size(109, 46);
-            this.chkIs_complete2.TabIndex = 4;
-            this.chkIs_complete2.Text = "未齊";
-            this.chkIs_complete2.UseVisualStyleBackColor = true;
-            // 
-            // label26
-            // 
-            this.label26.Font = new System.Drawing.Font("PMingLiU", 24F);
-            this.label26.Location = new System.Drawing.Point(542, 572);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(80, 64);
-            this.label26.TabIndex = 76;
-            this.label26.Text = "是否齊件";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("PMingLiU", 32F);
-            this.textBox3.Location = new System.Drawing.Point(164, 74);
-            this.textBox3.MaxLength = 3;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(93, 59);
-            this.textBox3.TabIndex = 79;
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label7.ForeColor = System.Drawing.Color.Blue;
-            this.label7.Location = new System.Drawing.Point(6, 82);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(143, 32);
-            this.label7.TabIndex = 78;
-            this.label7.Text = "部門";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label27
-            // 
-            this.label27.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label27.ForeColor = System.Drawing.Color.Blue;
-            this.label27.Location = new System.Drawing.Point(539, 207);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(83, 32);
-            this.label27.TabIndex = 80;
-            this.label27.Text = "日期";
-            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Font = new System.Drawing.Font("PMingLiU", 32F);
-            this.maskedTextBox1.Location = new System.Drawing.Point(623, 198);
-            this.maskedTextBox1.Mask = "0000/00/00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(262, 59);
-            this.maskedTextBox1.TabIndex = 81;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
-            // 
-            // txtName_dept
-            // 
-            this.txtName_dept.Font = new System.Drawing.Font("PMingLiU", 32F);
-            this.txtName_dept.Location = new System.Drawing.Point(258, 74);
-            this.txtName_dept.Name = "txtName_dept";
-            this.txtName_dept.ReadOnly = true;
-            this.txtName_dept.Size = new System.Drawing.Size(140, 59);
-            this.txtName_dept.TabIndex = 82;
-            // 
-            // txtSequence_id
-            // 
-            this.txtSequence_id.Font = new System.Drawing.Font("PMingLiU", 32F);
-            this.txtSequence_id.Location = new System.Drawing.Point(53, 696);
-            this.txtSequence_id.MaxLength = 10;
-            this.txtSequence_id.Name = "txtSequence_id";
-            this.txtSequence_id.ReadOnly = true;
-            this.txtSequence_id.Size = new System.Drawing.Size(109, 59);
-            this.txtSequence_id.TabIndex = 83;
-            // 
-            // txtName_next
-            // 
-            this.txtName_next.Font = new System.Drawing.Font("PMingLiU", 32F);
-            this.txtName_next.Location = new System.Drawing.Point(533, 74);
-            this.txtName_next.Name = "txtName_next";
-            this.txtName_next.ReadOnly = true;
-            this.txtName_next.Size = new System.Drawing.Size(140, 59);
-            this.txtName_next.TabIndex = 85;
-            // 
-            // txtNext_wp_id
-            // 
-            this.txtNext_wp_id.Font = new System.Drawing.Font("PMingLiU", 32F);
-            this.txtNext_wp_id.Location = new System.Drawing.Point(439, 74);
-            this.txtNext_wp_id.MaxLength = 3;
-            this.txtNext_wp_id.Name = "txtNext_wp_id";
-            this.txtNext_wp_id.ReadOnly = true;
-            this.txtNext_wp_id.Size = new System.Drawing.Size(93, 59);
-            this.txtNext_wp_id.TabIndex = 84;
+            // name_dept
+            // 
+            this.name_dept.DataPropertyName = "name_dept";
+            this.name_dept.HeaderText = "部門名稱";
+            this.name_dept.Name = "name_dept";
+            this.name_dept.ReadOnly = true;
+            this.name_dept.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.name_dept.Visible = false;
             // 
             // frmIpqcSpray
             // 
@@ -1302,15 +1292,15 @@
             this.tbc.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_artwork)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetails2)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1345,29 +1335,8 @@
         private System.Windows.Forms.Button btnSet;
         private System.Windows.Forms.Button btnTest;
         private System.Windows.Forms.DataGridView dgvDetails2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mo_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lot_no;
-        private System.Windows.Forms.DataGridViewTextBoxColumn goods_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qc_logo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qc_size;
-        private System.Windows.Forms.DataGridViewTextBoxColumn do_color;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qty_lot;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qty_sample;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qty_ac_std;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qty_re_std;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qc_size_actual;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qty_ng;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn qc_result;
-        private System.Windows.Forms.DataGridViewTextBoxColumn result_desc_ng;
-        private System.Windows.Forms.DataGridViewTextBoxColumn package_num;
-        private System.Windows.Forms.DataGridViewTextBoxColumn weight;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn is_complete;
-        private System.Windows.Forms.DataGridViewTextBoxColumn goods_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date_check;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sequence_id;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtQc_size_actual;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox txtQty_re_std;
         private System.Windows.Forms.Label label20;
@@ -1399,7 +1368,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtResult_desc_ng;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtDept_id;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.CheckBox chkIs_complete1;
@@ -1409,10 +1378,30 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox txtPackage_num;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.TextBox txtName_dept;
+        private System.Windows.Forms.MaskedTextBox mskDate_check;
+        private System.Windows.Forms.TextBox txtDept_name;
         private System.Windows.Forms.TextBox txtSequence_id;
-        private System.Windows.Forms.TextBox txtName_next;
-        private System.Windows.Forms.TextBox txtNext_wp_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dept_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mo_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lot_no;
+        private System.Windows.Forms.DataGridViewTextBoxColumn goods_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qc_logo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qc_size;
+        private System.Windows.Forms.DataGridViewTextBoxColumn do_color;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qty_lot;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qty_sample;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qty_ac_std;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qty_re_std;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qc_size_actual;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qty_ng;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn qc_result;
+        private System.Windows.Forms.DataGridViewTextBoxColumn result_desc_ng;
+        private System.Windows.Forms.DataGridViewTextBoxColumn package_num;
+        private System.Windows.Forms.DataGridViewTextBoxColumn weight;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn is_complete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn goods_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date_check;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sequence_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name_dept;
     }
 }
