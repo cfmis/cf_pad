@@ -31,8 +31,9 @@ namespace cf_pad.Reports
         private void xrPictureBox2_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
             clsUtility clsUtility = new clsUtility();
-            string fileName = GetCurrentColumnValue("mo_id").ToString().Trim() + ".jpg";
-            xrPictureBox2.Image = clsUtility.QRCodeImage(fileName);
+            //string fileName = GetCurrentColumnValue("mo_id").ToString().Trim() + ".jpg";
+            //xrPictureBox2.Image = clsUtility.QRCodeImage(fileName);
+            xrPictureBox2.Image = clsUtility.GenQRCode("http://www.chingfung.com");
         }
     }
 }

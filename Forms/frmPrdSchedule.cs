@@ -180,6 +180,7 @@ namespace cf_pad.Forms
             cmbSearch.Items.Add("未完成的制單");
             cmbSearch.Items.Add("未開始生產的制單");
             cmbSearch.Items.Add("當日已完成的制單");
+            cmbSearch.Items.Add("員工當日生產記錄");
         }
         //提取工作組別
         private void InitComBoxGroup()
@@ -347,7 +348,8 @@ namespace cf_pad.Forms
                 string sql = "";
                 if (con_type != 8)
                 {
-                    sql =" Select a.*,rtrim(b.work_type_desc) as work_type_desc " +
+                    sql =" Select a.*"+
+                    ",Convert(Varchar(20),a.crtim,120) As crtim_str,Convert(Varchar(20),a.amtim,120) As amtim_str,rtrim(b.work_type_desc) as work_type_desc " +
                     " From product_records a with(nolock) " +
                     " Left outer join work_type b with(nolock) on a.prd_work_type=b.work_type_id ";
                     sql += " Where a.prd_dep = " + "'" + cmbProductDept.SelectedValue.ToString() + "'";
@@ -415,6 +417,13 @@ namespace cf_pad.Forms
                                                     if (txtBarCodeItem.Text.Trim() != "")
                                                         sql += " And a.prd_item = " + "'" + txtBarCodeItem.Text.Trim() + "'";
                                                     //sql += " Order By a.prd_end_time,a.prd_date Desc";//a.amtim Desc,a.crtim Desc ";
+                                                    sql += " Order By a.amtim Desc,a.crtim Desc ";
+                                                }
+                                                else if (con_type == 6)//按工號查詢
+                                                {
+                                                    string prd_worker = txtFindMo.Text.PadLeft(10, '0');
+                                                    sql += " And a.prd_worker = " + "'" + prd_worker + "'";
+                                                    sql += " And a.prd_date = " + "'" + dteProdcutDate.Text.Trim() + "'";
                                                     sql += " Order By a.amtim Desc,a.crtim Desc ";
                                                 }
                                             }
@@ -836,9 +845,44 @@ namespace cf_pad.Forms
                 txtAdd_work.SelectAll();
                 return false;
             }
+            //////控制開始、完成　時間不能大於當前時間
+            string prd_date = dteProdcutDate.Text;
+            string now_date = System.DateTime.Now.ToString("yyyy/MM/dd");
+            string now_time = System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss").Substring(11, 5);
+            string prd_class = cmbOrder_class.Text.Trim();
+            if (string.Compare(prd_date, now_date) > 0 && prd_class != "夜班")
+            {
+                MessageBox.Show("生產日期不能大於當前日期,請重新輸入!");
+                dteProdcutDate.Focus();
+                return false;
+            }
+            
+            //如果是當日的，時間不能大於當前時間
+            if (prd_date == now_date && prd_class != "夜班")
+            {
+                if (string.Compare(dtpStart.Text.Trim(), now_time) > 0)
+                {
+                    MessageBox.Show("生產開始時間不能大於現在的時間,請重新輸入!");
+                    dtpStart.Focus();
+                    return false;
+                }
+                else if (string.Compare(dtpEnd.Text.Trim(), now_time) > 0)
+                {
+                    MessageBox.Show("生產結束時間不能大於現在的時間,請重新輸入!");
+                    dtpEnd.Focus();
+                    return false;
+                }
+            }
             //如果是完成的，就要做如下控制
             if (dtpStart.Text != "00:00" && dtpEnd.Text != "00:00")
             {
+                if (string.Compare(dtpStart.Text.Trim(), dtpEnd.Text.Trim()) > 0)
+                {
+                    MessageBox.Show("生產開始時間不能大於結束時間,請重新輸入!");
+                    dtpEnd.Focus();
+                    return false;
+                }
+                
                 if (cmbWorkType.SelectedValue.ToString().Trim() == "A00")
                 {
                     MessageBox.Show("不是有效的生產類型，請重新輸入!");
@@ -888,12 +932,12 @@ namespace cf_pad.Forms
                 if (chkPrdRecords() == false)//檢查之前是否存在重複時間的記錄
                     return false;
             }
-            if (string.Compare(dteProdcutDate.Text, System.DateTime.Now.ToString("yyyy/MM/dd")) > 0)
-            {
-                MessageBox.Show("生產日期不能大於當天日期，請重新輸入!");
-                dteProdcutDate.Focus();
-                return false;
-            }
+            //if (string.Compare(dteProdcutDate.Text, System.DateTime.Now.ToString("yyyy/MM/dd")) > 0)
+            //{
+            //    MessageBox.Show("生產日期不能大於當天日期，請重新輸入!");
+            //    dteProdcutDate.Focus();
+            //    return false;
+            //}
             //if (txtprd_weg.Text != "" && !Verify.StringValidating(txtprd_weg.Text.Trim(), Verify.enumValidatingType.PositiveNumber))
             if (!clsValidRule.IsNumeric(txtprd_weg.Text))
             {
@@ -2480,9 +2524,12 @@ namespace cf_pad.Forms
                         {
                             get_prd_records(4);//未開始的記錄7天內未開始生產的記錄
                         }
-                        else
+                        else if(selindex == 4)//當天完成的記錄
                         {
-                            get_prd_records(5);//當天完成的記錄
+                            get_prd_records(5);
+                        }else
+                        {
+                            get_prd_records(6);
                         }
                     }
                     FillGrid(); //將查詢到的記錄存入列表
@@ -2801,6 +2848,10 @@ namespace cf_pad.Forms
                 }
             }
         }
- 
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }
