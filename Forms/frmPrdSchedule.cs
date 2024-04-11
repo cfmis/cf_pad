@@ -521,7 +521,7 @@ namespace cf_pad.Forms
             txtPrd_id_ref.Text = dtProductionRecordslist.Rows[index]["prd_id_ref"].ToString();
             if (txtDifficulty_level.Text.Trim() == "" && dteProdcutDate.Text == "302")//合金部難度設定為1
                 txtDifficulty_level.Text = "1";
-            setProdDate();//自動設定生產日期為當前日期
+            //setProdDate();//自動設定生產日期為當前日期       //2024/04/11取消這個  仍然為當時的日期
             if (cmbProductDept.Text == "105" && cmbGroup.Text == "")
             {
                 if (_userid == "BLK01")

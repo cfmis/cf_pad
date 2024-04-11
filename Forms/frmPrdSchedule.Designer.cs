@@ -181,9 +181,6 @@
             this.lblMoStatus = new System.Windows.Forms.Label();
             this.tp1Details = new System.Windows.Forms.TabPage();
             this.dgvDetails = new System.Windows.Forms.DataGridView();
-            this.tp1Mer = new System.Windows.Forms.TabPage();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -201,6 +198,9 @@
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tp1Mer = new System.Windows.Forms.TabPage();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -297,7 +297,7 @@
             this.dteProdcutDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dteProdcutDate.Location = new System.Drawing.Point(98, 38);
             this.dteProdcutDate.Name = "dteProdcutDate";
-            this.dteProdcutDate.Size = new System.Drawing.Size(178, 30);
+            this.dteProdcutDate.Size = new System.Drawing.Size(210, 30);
             this.dteProdcutDate.TabIndex = 2;
             this.dteProdcutDate.Value = new System.DateTime(2018, 9, 17, 0, 0, 0, 0);
             this.dteProdcutDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmo_id_KeyPress);
@@ -1965,38 +1965,6 @@
             this.dgvDetails.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetails_CellLeave);
             this.dgvDetails.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvDetails_RowPostPaint);
             // 
-            // tp1Mer
-            // 
-            this.tp1Mer.Controls.Add(this.dgvAndSingle);
-            this.tp1Mer.Controls.Add(this.panel9);
-            this.tp1Mer.Location = new System.Drawing.Point(4, 124);
-            this.tp1Mer.Name = "tp1Mer";
-            this.tp1Mer.Size = new System.Drawing.Size(1225, 547);
-            this.tp1Mer.TabIndex = 5;
-            this.tp1Mer.Text = "制單并單";
-            this.tp1Mer.UseVisualStyleBackColor = true;
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.panel10);
-            this.panel9.Controls.Add(this.lblMo_search);
-            this.panel9.Controls.Add(this.txtMo_search);
-            this.panel9.Controls.Add(this.btnMo_search);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(0, 0);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1225, 48);
-            this.panel9.TabIndex = 34;
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.rdbSearch1);
-            this.panel10.Controls.Add(this.rdbSearch2);
-            this.panel10.Location = new System.Drawing.Point(269, 9);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(202, 32);
-            this.panel10.TabIndex = 5;
-            // 
             // Column2
             // 
             this.Column2.DataPropertyName = "prd_start_time";
@@ -2110,6 +2078,38 @@
             this.Column16.HeaderText = "錄入日期(生產)";
             this.Column16.Name = "Column16";
             this.Column16.Width = 180;
+            // 
+            // tp1Mer
+            // 
+            this.tp1Mer.Controls.Add(this.dgvAndSingle);
+            this.tp1Mer.Controls.Add(this.panel9);
+            this.tp1Mer.Location = new System.Drawing.Point(4, 124);
+            this.tp1Mer.Name = "tp1Mer";
+            this.tp1Mer.Size = new System.Drawing.Size(1225, 547);
+            this.tp1Mer.TabIndex = 5;
+            this.tp1Mer.Text = "制單并單";
+            this.tp1Mer.UseVisualStyleBackColor = true;
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.panel10);
+            this.panel9.Controls.Add(this.lblMo_search);
+            this.panel9.Controls.Add(this.txtMo_search);
+            this.panel9.Controls.Add(this.btnMo_search);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(1225, 48);
+            this.panel9.TabIndex = 34;
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.rdbSearch1);
+            this.panel10.Controls.Add(this.rdbSearch2);
+            this.panel10.Location = new System.Drawing.Point(269, 9);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(202, 32);
+            this.panel10.TabIndex = 5;
             // 
             // frmPrdSchedule
             // 

@@ -18,17 +18,17 @@ namespace cf_pad
             //Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new frmLogin());
-            if (frmMainPad.isRunMain == true)
-            {
-                //frmCfg.flag_readonly = true; //數據庫連接信息窗體用到此變量               
-                Application.Run(new frmMainPad());
-            }
+            //Application.Run(new frmLogin());
+            //if (frmMainPad.isRunMain == true)
+            //{
+            //    //frmCfg.flag_readonly = true; //數據庫連接信息窗體用到此變量               
+            //    Application.Run(new frmMainPad());
+            //}
 
             //Application.Run(new frmDemoRS485());
             //Application.Run(new frmTransferRecords());
             //Application.Run(new frmProductionSchedule());
-            //Application.Run(new frmPrdSchedule());
+            Application.Run(new frmPrdSchedule());
             //Application.Run(new frmProductQtyConfirm());
             //Application.Run(new frmGoodsTransferJx());
             //  Application.Run(new frmIpqcSpray());
