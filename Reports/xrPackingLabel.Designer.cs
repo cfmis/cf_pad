@@ -468,7 +468,7 @@
             this.xrLabel19.Multiline = true;
             this.xrLabel19.Name = "xrLabel19";
             this.xrLabel19.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel19.SizeF = new System.Drawing.SizeF(1110.094F, 410.7899F);
+            this.xrLabel19.SizeF = new System.Drawing.SizeF(1115.094F, 410.7899F);
             this.xrLabel19.StylePriority.UseFont = false;
             this.xrLabel19.Text = "[name_cust]";
             // 
@@ -480,7 +480,7 @@
             this.xrLabel18.LocationFloat = new DevExpress.Utils.PointFloat(68.49998F, 79.00004F);
             this.xrLabel18.Name = "xrLabel18";
             this.xrLabel18.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel18.SizeF = new System.Drawing.SizeF(1100.833F, 219.8767F);
+            this.xrLabel18.SizeF = new System.Drawing.SizeF(1119.833F, 219.8767F);
             this.xrLabel18.StylePriority.UseFont = false;
             this.xrLabel18.StylePriority.UseTextAlignment = false;
             this.xrLabel18.Text = "[mo_id]";
