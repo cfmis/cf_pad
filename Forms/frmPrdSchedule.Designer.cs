@@ -297,7 +297,7 @@
             this.dteProdcutDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dteProdcutDate.Location = new System.Drawing.Point(98, 38);
             this.dteProdcutDate.Name = "dteProdcutDate";
-            this.dteProdcutDate.Size = new System.Drawing.Size(178, 30);
+            this.dteProdcutDate.Size = new System.Drawing.Size(210, 30);
             this.dteProdcutDate.TabIndex = 2;
             this.dteProdcutDate.Value = new System.DateTime(2018, 9, 17, 0, 0, 0, 0);
             this.dteProdcutDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmo_id_KeyPress);
@@ -822,6 +822,7 @@
             this.toolStrip1.Size = new System.Drawing.Size(1229, 39);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
             // btnExit
             // 
@@ -2060,7 +2061,7 @@
             // 
             // Column14
             // 
-            this.Column14.DataPropertyName = "crtim";
+            this.Column14.DataPropertyName = "crtim_str";
             this.Column14.HeaderText = "建立日期";
             this.Column14.Name = "Column14";
             this.Column14.Width = 180;
@@ -2073,7 +2074,7 @@
             // 
             // Column16
             // 
-            this.Column16.DataPropertyName = "amtim";
+            this.Column16.DataPropertyName = "amtim_str";
             this.Column16.HeaderText = "錄入日期(生產)";
             this.Column16.Name = "Column16";
             this.Column16.Width = 180;
@@ -2312,6 +2313,7 @@
         private System.Windows.Forms.Label lblAutoSave;
         private System.Windows.Forms.ToolStripButton btnImput;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.ComboBox cmbJob_type;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -2329,6 +2331,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
-        private System.Windows.Forms.ComboBox cmbJob_type;
     }
 }

@@ -771,9 +771,43 @@ namespace cf_pad.Forms
             //        return false;
             //    }
             //}
+            //////控制開始、完成　時間不能大於當前時間
+            string prd_date = dteProdcutDate.Text;
+            string now_date = System.DateTime.Now.ToString("yyyy/MM/dd");
+            string now_time = System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss").Substring(11, 5);
+            string prd_class = cmbOrder_class.Text.Trim();
+            if (string.Compare(prd_date, now_date) > 0 && prd_class != "夜班")
+            {
+                MessageBox.Show("生產日期不能大於當前日期,請重新輸入!");
+                dteProdcutDate.Focus();
+                return false;
+            }
+            
+            //如果是當日的，時間不能大於當前時間
+            if (prd_date == now_date && prd_class!="夜班")
+            {
+                if (string.Compare(dtpStart.Text.Trim(), now_time) > 0)
+                {
+                    MessageBox.Show("生產開始時間不能大於現在的時間,請重新輸入!");
+                    dtpStart.Focus();
+                    return false;
+                }
+                else if (string.Compare(dtpEnd.Text.Trim(), now_time) > 0)
+                {
+                    MessageBox.Show("生產結束時間不能大於現在的時間,請重新輸入!");
+                    dtpEnd.Focus();
+                    return false;
+                }
+            }
             //如果是完成的，就要做如下控制
             if (dtpStart.Text != "00:00" && dtpEnd.Text != "00:00")
             {
+                if (string.Compare(dtpStart.Text.Trim(), dtpEnd.Text.Trim()) > 0)
+                {
+                    MessageBox.Show("生產開始時間不能大於結束時間,請重新輸入!");
+                    dtpEnd.Focus();
+                    return false;
+                }
                 if (cmbOrder_class.Text == "")
                 {
                     MessageBox.Show("班次不能為空,請重新輸入!");
@@ -808,12 +842,12 @@ namespace cf_pad.Forms
                 if (chkPrdRecords() == false)//檢查之前是否存在重複時間的記錄
                     return false;
             }
-            if (string.Compare(dteProdcutDate.Text, System.DateTime.Now.ToString("yyyy/MM/dd")) > 0)
-            {
-                MessageBox.Show("生產日期不能大於當天日期，請重新輸入!");
-                dteProdcutDate.Focus();
-                return false;
-            }
+             //if (string.Compare(dteProdcutDate.Text, System.DateTime.Now.ToString("yyyy/MM/dd")) > 0)
+            //{
+            //    MessageBox.Show("生產日期不能大於當天日期，請重新輸入!");
+            //    dteProdcutDate.Focus();
+            //    return false;
+            //}
             if (txtprd_weg.Text != "" && !Verify.StringValidating(txtprd_weg.Text.Trim(), Verify.enumValidatingType.PositiveNumber))
             {
                 MessageBox.Show("重量格式有誤,請重新輸入!");

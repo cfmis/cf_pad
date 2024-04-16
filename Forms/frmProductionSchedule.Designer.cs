@@ -1131,7 +1131,6 @@
             // grpTime
             // 
             this.grpTime.BackColor = System.Drawing.SystemColors.Control;
-            this.grpTime.Controls.Add(this.pnlKgPcs);
             this.grpTime.Controls.Add(this.txtNormal_work);
             this.grpTime.Controls.Add(this.dtpEnd);
             this.grpTime.Controls.Add(this.dtpStart);
@@ -1170,7 +1169,7 @@
             this.pnlKgPcs.Controls.Add(this.label6);
             this.pnlKgPcs.Controls.Add(this.lblWegUnit);
             this.pnlKgPcs.ForeColor = System.Drawing.Color.Black;
-            this.pnlKgPcs.Location = new System.Drawing.Point(2, 12);
+            this.pnlKgPcs.Location = new System.Drawing.Point(0, 311);
             this.pnlKgPcs.Name = "pnlKgPcs";
             this.pnlKgPcs.Size = new System.Drawing.Size(1010, 133);
             this.pnlKgPcs.TabIndex = 35;
@@ -1801,6 +1800,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.pnlKgPcs);
             this.tabPage1.Controls.Add(this.groupBox4);
             this.tabPage1.Controls.Add(this.grpMat);
             this.tabPage1.Controls.Add(this.grpQty);
