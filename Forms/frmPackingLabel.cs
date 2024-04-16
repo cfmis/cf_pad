@@ -15,7 +15,6 @@ namespace cf_pad.Forms
 {
     public partial class frmPackingLabel : Form
     {
-
         DataTable dtLabel = new DataTable();
         DataTable dtReport = new DataTable();
         public frmPackingLabel()
@@ -82,8 +81,7 @@ namespace cf_pad.Forms
             {
                 case Keys.Enter:
                     SqlParameter[] paras = new SqlParameter[] {
-                        new SqlParameter("@mo_id", strBarCode)  //txtBarCode.Text)
-                        //,new SqlParameter("@is_finish", chkIsFinish.Checked?"Y":"N")
+                        new SqlParameter("@mo_id", strBarCode)  //txtBarCode.Text)                       
                     };
                     dtLabel = clsPublicOfPad.ExecuteProcedure("usp_packing_label", paras);
                     txtBarCode.Text = "";
