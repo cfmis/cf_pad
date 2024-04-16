@@ -51,6 +51,8 @@
             this.btnPint_List = new System.Windows.Forms.Button();
             this.lblBarcode = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblBrand_name = new System.Windows.Forms.Label();
+            this.lblBrand_id = new System.Windows.Forms.Label();
             this.lblIt_customer = new System.Windows.Forms.Label();
             this.lblCustomer_color_id = new System.Windows.Forms.Label();
             this.lblCustomer_color = new System.Windows.Forms.Label();
@@ -68,8 +70,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.lblBrand_id = new System.Windows.Forms.Label();
-            this.lblBrand_name = new System.Windows.Forms.Label();
+            this.chkBoth = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -80,6 +81,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.chkBoth);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.txtSend_qty);
@@ -203,7 +205,7 @@
             // txtPrints
             // 
             this.txtPrints.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtPrints.Location = new System.Drawing.Point(512, 22);
+            this.txtPrints.Location = new System.Drawing.Point(512, 3);
             this.txtPrints.MaxLength = 3;
             this.txtPrints.Name = "txtPrints";
             this.txtPrints.Size = new System.Drawing.Size(77, 47);
@@ -217,7 +219,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(397, 32);
+            this.label1.Location = new System.Drawing.Point(397, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 29);
             this.label1.TabIndex = 42;
@@ -230,7 +232,7 @@
             this.chkAutoPrint.Checked = true;
             this.chkAutoPrint.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkAutoPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.chkAutoPrint.Location = new System.Drawing.Point(653, 32);
+            this.chkAutoPrint.Location = new System.Drawing.Point(653, 13);
             this.chkAutoPrint.Name = "chkAutoPrint";
             this.chkAutoPrint.Size = new System.Drawing.Size(128, 33);
             this.chkAutoPrint.TabIndex = 4;
@@ -242,7 +244,7 @@
             // 
             this.lblItem_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblItem_total.ForeColor = System.Drawing.Color.Blue;
-            this.lblItem_total.Location = new System.Drawing.Point(775, 153);
+            this.lblItem_total.Location = new System.Drawing.Point(670, 153);
             this.lblItem_total.Name = "lblItem_total";
             this.lblItem_total.Size = new System.Drawing.Size(32, 35);
             this.lblItem_total.TabIndex = 27;
@@ -289,7 +291,7 @@
             this.cmbItems.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cmbItems.FormattingEnabled = true;
-            this.cmbItems.Location = new System.Drawing.Point(257, 149);
+            this.cmbItems.Location = new System.Drawing.Point(153, 149);
             this.cmbItems.MaxLength = 18;
             this.cmbItems.Name = "cmbItems";
             this.cmbItems.Size = new System.Drawing.Size(514, 47);
@@ -311,9 +313,9 @@
             this.txtBarCode.BackColor = System.Drawing.Color.Plum;
             this.txtBarCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBarCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtBarCode.Location = new System.Drawing.Point(256, 3);
+            this.txtBarCode.Location = new System.Drawing.Point(152, 3);
             this.txtBarCode.Name = "txtBarCode";
-            this.txtBarCode.Size = new System.Drawing.Size(360, 47);
+            this.txtBarCode.Size = new System.Drawing.Size(421, 47);
             this.txtBarCode.TabIndex = 0;
             this.txtBarCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBarCode_KeyDown);
             // 
@@ -334,7 +336,7 @@
             this.lblBarcode.AutoSize = true;
             this.lblBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblBarcode.ForeColor = System.Drawing.Color.DarkViolet;
-            this.lblBarcode.Location = new System.Drawing.Point(126, 14);
+            this.lblBarcode.Location = new System.Drawing.Point(22, 14);
             this.lblBarcode.Name = "lblBarcode";
             this.lblBarcode.Size = new System.Drawing.Size(128, 26);
             this.lblBarcode.TabIndex = 0;
@@ -370,6 +372,28 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(818, 469);
             this.panel2.TabIndex = 3;
+            // 
+            // lblBrand_name
+            // 
+            this.lblBrand_name.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblBrand_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblBrand_name.Location = new System.Drawing.Point(7, 48);
+            this.lblBrand_name.Name = "lblBrand_name";
+            this.lblBrand_name.Size = new System.Drawing.Size(172, 42);
+            this.lblBrand_name.TabIndex = 62;
+            this.lblBrand_name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblBrand_name.Visible = false;
+            // 
+            // lblBrand_id
+            // 
+            this.lblBrand_id.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblBrand_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblBrand_id.Location = new System.Drawing.Point(10, 4);
+            this.lblBrand_id.Name = "lblBrand_id";
+            this.lblBrand_id.Size = new System.Drawing.Size(172, 42);
+            this.lblBrand_id.TabIndex = 61;
+            this.lblBrand_id.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblBrand_id.Visible = false;
             // 
             // lblIt_customer
             // 
@@ -548,27 +572,16 @@
             this.label5.Text = "CUST.CODE:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblBrand_id
+            // chkBoth
             // 
-            this.lblBrand_id.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblBrand_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblBrand_id.Location = new System.Drawing.Point(10, 4);
-            this.lblBrand_id.Name = "lblBrand_id";
-            this.lblBrand_id.Size = new System.Drawing.Size(172, 42);
-            this.lblBrand_id.TabIndex = 61;
-            this.lblBrand_id.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblBrand_id.Visible = false;
-            // 
-            // lblBrand_name
-            // 
-            this.lblBrand_name.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblBrand_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblBrand_name.Location = new System.Drawing.Point(7, 48);
-            this.lblBrand_name.Name = "lblBrand_name";
-            this.lblBrand_name.Size = new System.Drawing.Size(172, 42);
-            this.lblBrand_name.TabIndex = 62;
-            this.lblBrand_name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblBrand_name.Visible = false;
+            this.chkBoth.AutoSize = true;
+            this.chkBoth.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.chkBoth.Location = new System.Drawing.Point(459, 55);
+            this.chkBoth.Name = "chkBoth";
+            this.chkBoth.Size = new System.Drawing.Size(344, 33);
+            this.chkBoth.TabIndex = 54;
+            this.chkBoth.Text = "默認則面、正面標簽一起列印";
+            this.chkBoth.UseVisualStyleBackColor = true;
             // 
             // frmPacking
             // 
@@ -634,5 +647,6 @@
         private System.Windows.Forms.Label lblIt_customer;
         private System.Windows.Forms.Label lblBrand_name;
         private System.Windows.Forms.Label lblBrand_id;
+        private System.Windows.Forms.CheckBox chkBoth;
     }
 }

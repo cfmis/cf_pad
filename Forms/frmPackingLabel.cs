@@ -22,25 +22,26 @@ namespace cf_pad.Forms
         {
             InitializeComponent();
 
-            dtReport.Columns.Add("it_customer", typeof(String));
-            dtReport.Columns.Add("mo_id", typeof(String));
-            dtReport.Columns.Add("mo_id_barcode", typeof(String));
-            dtReport.Columns.Add("name_cust", typeof(String));
-            dtReport.Columns.Add("po_style", typeof(String));
-            dtReport.Columns.Add("id", typeof(String));
-            dtReport.Columns.Add("trim_code", typeof(String));
-            dtReport.Columns.Add("customer_color_id", typeof(String));
-            dtReport.Columns.Add("goods_id", typeof(String));
-            dtReport.Columns.Add("goods_desc", typeof(String));
-            dtReport.Columns.Add("qty", typeof(String));
-            dtReport.Columns.Add("qty_unit", typeof(String));
-            dtReport.Columns.Add("net_weiht", typeof(String));
-            dtReport.Columns.Add("net_unit", typeof(String));
-            dtReport.Columns.Add("cross_weiht", typeof(String));
-            dtReport.Columns.Add("cross_unit", typeof(String));
+            dtReport.Columns.Add("it_customer", typeof(string));
+            dtReport.Columns.Add("mo_id", typeof(string));
+            dtReport.Columns.Add("mo_id_barcode", typeof(string));
+            dtReport.Columns.Add("name_cust", typeof(string));
+            dtReport.Columns.Add("po_style", typeof(string));
+            dtReport.Columns.Add("id", typeof(string));
+            dtReport.Columns.Add("trim_code", typeof(string));
+            dtReport.Columns.Add("customer_color_id", typeof(string));
+            dtReport.Columns.Add("goods_id", typeof(string));
+            dtReport.Columns.Add("goods_desc", typeof(string));
+            dtReport.Columns.Add("qty", typeof(string));
+            dtReport.Columns.Add("qty_unit", typeof(string));
+            dtReport.Columns.Add("net_weiht", typeof(string));
+            dtReport.Columns.Add("net_unit", typeof(string));
+            dtReport.Columns.Add("cross_weiht", typeof(string));
+            dtReport.Columns.Add("cross_unit", typeof(string));
 
-            dtReport.Columns.Add("brand_id", typeof(String));
-            dtReport.Columns.Add("brand_name", typeof(String));
+            dtReport.Columns.Add("brand_id", typeof(string));
+            dtReport.Columns.Add("brand_name", typeof(string));
+            dtReport.Columns.Add("flag_both", typeof(string));
         }
 
         private void frmPackingLabel_Load(object sender, EventArgs e)
@@ -52,7 +53,7 @@ namespace cf_pad.Forms
             SetComboxItem(dtUnit, cmbCrossUnit);
             dtUnit = clsPublicOfGeo.ExecuteSqlReturnDataTable("SELECT id FROM cd_units WHERE kind='05'");
             SetComboxItem(dtUnit, cmbQty);
-            cmbQty.Text = "PCS";
+            cmbQty.Text = "SET";
             cmbNetUnit.Text = "KG";
             cmbCrossUnit.Text = "KG";
         }
@@ -83,6 +84,7 @@ namespace cf_pad.Forms
                 case Keys.Enter:
                     SqlParameter[] paras = new SqlParameter[] {
                         new SqlParameter("@mo_id", strBarCode)  //txtBarCode.Text)
+                        //,new SqlParameter("@is_finish", chkIsFinish.Checked?"Y":"N")
                     };
                     dtLabel = clsPublicOfPad.ExecuteProcedure("usp_packing_label", paras);
                     txtBarCode.Text = "";
@@ -91,8 +93,7 @@ namespace cf_pad.Forms
                     {
                         cmbItems.Text = dtLabel.Rows[0]["goods_id"].ToString();
                         Fill_Combox(dtLabel);
-                        lblItem_total.Text = dtLabel.Rows.Count.ToString();
-                                           
+                                                                  
                         if (chkAutoPrint.Checked)
                         {
                             Print("P");
@@ -133,18 +134,38 @@ namespace cf_pad.Forms
             cmbItems.Items.Clear();
             if (dt.Rows.Count > 0)
             {
-                for (int i = 0; i < dt.Rows.Count; i++)
+                if (chkIsFinish.Checked)
                 {
-                    cmbItems.Items.Add(dt.Rows[i]["goods_id"].ToString());
+                    cmbItems.Items.Add(dt.Rows[0]["goods_id_f"].ToString());
+                    cmbItems.Text = dt.Rows[0]["goods_id_f"].ToString();
+                    lblItem_total.Text = "1";
                 }
-                cmbItems.Text = dt.Rows[0]["goods_id"].ToString();
-            }
-            Select_Item(cmbItems.Text);              
+                else
+                {
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        cmbItems.Items.Add(dt.Rows[i]["goods_id"].ToString());
+                    }
+                    cmbItems.Text = dt.Rows[0]["goods_id"].ToString();
+                    lblItem_total.Text = dt.Rows.Count.ToString();
+                }
+                Select_Item(cmbItems.Text);
+            }                       
         }
 
         private void Select_Item(string pGoods_id)
         {
-            DataRow[] dr = dtLabel.Select(string.Format("goods_id='{0}'", pGoods_id));
+            DataRow[] dr ;
+            if (chkIsFinish.Checked)
+            {
+                dr = dtLabel.Select(string.Format("goods_id_f='{0}'", pGoods_id));
+                lblGoods_id.Text = dr[0]["goods_id_f"].ToString();
+            }
+            else
+            {
+                dr = dtLabel.Select(string.Format("goods_id='{0}'", pGoods_id));
+                lblGoods_id.Text = dr[0]["goods_id"].ToString();
+            }
             lblIt_customer.Text = dr[0]["it_customer"].ToString();
             lblMo_id.Text = dr[0]["mo_id"].ToString();
             lblMo_id_barcode.Text = dr[0]["mo_id_barcode"].ToString();
@@ -153,7 +174,7 @@ namespace cf_pad.Forms
             lblOc_no.Text = dr[0]["id"].ToString();
             lblCode.Text = dr[0]["trim_code"].ToString();
             lblCustomer_color_id.Text = dr[0]["customer_color_id"].ToString();
-            lblGoods_id.Text = dr[0]["goods_id"].ToString();
+            //lblGoods_id.Text = dr[0]["goods_id"].ToString();
             rchGoods_desc.Text = dr[0]["goods_desc"].ToString();
 
             lblBrand_id.Text = dr[0]["brand_id"].ToString();
@@ -161,7 +182,7 @@ namespace cf_pad.Forms
 
             //取凈重
             Get_Net_Weiht(lblMo_id.Text, cmbItems.Text);
-            cmbQty.Text = "PCS";
+            cmbQty.Text = "SET";// "PCS";
             cmbNetUnit.Text = "KG";
             cmbCrossUnit.Text = "KG";
         }
@@ -198,7 +219,7 @@ namespace cf_pad.Forms
                     print_total = 1;
                 }
                 for (int i = 0; i < print_total; i++)
-                {
+                {                   
                     DataRow newRow = dtReport.NewRow();
                     newRow["it_customer"] = lblIt_customer.Text;
                     newRow["mo_id"] = lblMo_id.Text;
@@ -216,9 +237,9 @@ namespace cf_pad.Forms
                     newRow["net_unit"] = cmbNetUnit.Text;
                     newRow["cross_weiht"] = txtCross_weiht.Text == "" ? "--" : txtCross_weiht.Text;
                     newRow["cross_unit"] = cmbCrossUnit.Text;
-
                     newRow["brand_id"] = lblBrand_id.Text;
                     newRow["brand_name"] = lblBrand_name.Text;
+                    newRow["flag_both"] = chkBoth.Checked?"Y":"N";//紙箱正面,側面標簽列是否一起列印標識
                     dtReport.Rows.Add(newRow);
                 }
 
@@ -341,12 +362,14 @@ namespace cf_pad.Forms
             dt = clsPublicOfPad.ExecuteProcedure("usp_packing_get_weight", paras);
             if (dt.Rows.Count > 0)
             {
+                txtQty.Text = dt.Rows[0]["qty"].ToString();
                 txtNet_weiht.Text = dt.Rows[0]["net_weiht"].ToString();
             }
             else
+            {
+                txtQty.Text = "";
                 txtNet_weiht.Text = "";
-
-            txtQty.Text = "";            
+            }   
             txtCross_weiht.Text = "";
         }
 
@@ -381,10 +404,9 @@ namespace cf_pad.Forms
                 txtNet_weiht.Text = "";
         }
 
-     
-     
-    
-
-       
+        private void chkIsFinish_MouseUp(object sender, MouseEventArgs e)
+        {
+            Fill_Combox(dtLabel);                        
+        }
     }
 }

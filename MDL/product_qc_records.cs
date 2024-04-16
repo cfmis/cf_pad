@@ -351,4 +351,39 @@ namespace cf_pad.MDL
         public string Crusr;
         public string Crtim;
     }
+
+    public class qc_report_spray
+    {
+        public string dept_id;
+        public string date_check;
+        public string sequence_id;
+        public string mo_id;
+        public string lot_no;
+        public string goods_id;
+        public string qc_logo;
+        public string qc_size;
+        public string qc_size_actual;
+        public string do_color;
+        public string qty_lot;
+        public int qty_sample;
+        public int qty_ac_std;
+        public int qty_re_std;
+        public int qty_ng;
+        public bool result_check;
+        public string result_desc_ng;
+        public int package_num;
+        public decimal weight;
+        public bool is_complete;
+        public string remark;
+    }
+
+    public class find_qc_report_spray
+    {
+        public string mo_id1;
+        public string mo_id2;
+        public string date_check1;
+        public string date_check2;
+        public string dept_id1;
+        public string dept_id2;        
+    }
 }

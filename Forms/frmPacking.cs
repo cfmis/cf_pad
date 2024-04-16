@@ -211,6 +211,7 @@ namespace cf_pad.Forms
                     newRow["qty_unit"] = cmbQty.Text;
                     newRow["brand_id"] =lblBrand_id.Text;
                     newRow["brand_name"] = lblBrand_name.Text;
+                    newRow["flag_both"] = chkBoth.Checked?"Y":"N";
                     dtReport.Rows.Add(newRow);
                 }
 
