@@ -78,7 +78,6 @@ namespace cf_pad.Forms
             {
                 strBarCode = strBarCode.Substring(0, 9);
             }
-
             switch (e.KeyCode)
             {
                 case Keys.Enter:
