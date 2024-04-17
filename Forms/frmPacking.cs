@@ -210,8 +210,7 @@ namespace cf_pad.Forms
                     newRow["qty"] = txtQty.Text == "" ? "--" : txtQty.Text;
                     newRow["qty_unit"] = cmbQty.Text;
                     newRow["brand_id"] =lblBrand_id.Text;
-                    newRow["brand_name"] = lblBrand_name.Text;
-                    newRow["flag_both"] = chkBoth.Checked?"Y":"N";
+                    newRow["brand_name"] = lblBrand_name.Text;                   
                     dtReport.Rows.Add(newRow);
                 }
 
