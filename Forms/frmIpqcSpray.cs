@@ -291,41 +291,24 @@ namespace cf_pad.Forms
                     MessageBox.Show(string.Format("當前用戶【{0}】沒有此操作權限!", DBUtility._user_id), "系統提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
-
-                int id = Convert.ToInt32(dtReport.Rows[dgvDetails2.CurrentRow.Index]["id"].ToString());
-                string strSql_d = string.Format("Delete From qc_report_finish WHERE id={0}",id);
-
-                if (id > 0)
+               
+                string dept_id = dtReport.Rows[dgvDetails2.CurrentRow.Index]["dept_id"].ToString();
+                string date_check = dtReport.Rows[dgvDetails2.CurrentRow.Index]["date_check"].ToString();
+                string sequence_id = dtReport.Rows[dgvDetails2.CurrentRow.Index]["sequence_id"].ToString();
+               
+                if (dept_id !="")
                 {
                     if (MessageBox.Show("確定要刪除當前記錄?", "系統提示",MessageBoxButtons.YesNo,MessageBoxIcon.Information,
                      MessageBoxDefaultButton.Button2) == DialogResult.No)
                     {
                         return;
                     }
-                    
-                    try
+                    if(clsIpqcSpray.Del(dept_id, date_check, sequence_id) >= 0)
                     {
-                        using (SqlConnection conn = new SqlConnection(DBUtility.dgcf_pad_connectionString))
-                        {
-                            conn.Open();
-                            SqlCommand cmd = new SqlCommand();
-                            cmd.Connection = conn;
-                            cmd.CommandText = strSql_d;
-                            cmd.ExecuteNonQuery();
-                            this.Tag = "DEL";
-                            dgvDetails2.Rows.RemoveAt(dgvDetails2.CurrentRow.Index);//移除表格中的當前行          
-                            Operation_info("當前行刪除成功!", Color.Blue);
-                        }
+                        this.Tag = "DEL";
+                        dgvDetails2.Rows.RemoveAt(dgvDetails2.CurrentRow.Index);//移除表格中的當前行          
+                        Operation_info("當前行刪除成功!", Color.Blue);
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-                else
-                {                    
-                    this.Tag = "DEL";
-                    dgvDetails2.Rows.RemoveAt(dgvDetails2.CurrentRow.Index);//移除表格中的當前行                    
                 }
                 dtReport.AcceptChanges();
             }
@@ -502,11 +485,12 @@ namespace cf_pad.Forms
         {
             if (dgvDetails2.RowCount > 0)
             {
-                if (this.Tag.ToString() == "DEL")
-                {
-                    this.Tag = "";
-                    return;
-                }
+                //if (this.Tag.ToString() == "DEL")
+                //{
+                //    this.Tag = "";
+                //    return;
+                //}
+                this.Tag = "";
                 if (dgvDetails2.CurrentCell.RowIndex < 0)
                 {
                     return;
@@ -610,36 +594,6 @@ namespace cf_pad.Forms
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
-        }       
-
-
-        public static DialogResult CustomMessageBox(string message, string caption,
-                                                    MessageBoxButtons buttons = MessageBoxButtons.OK, 
-                                                    MessageBoxIcon icon = MessageBoxIcon.Information, 
-                                                    int fontSize = 12)
-        {
-            Form messageForm = new Form();
-            messageForm.Text = caption;
-            messageForm.Width = 300;
-            messageForm.Height = 100;
-            messageForm.FormBorderStyle = FormBorderStyle.FixedDialog;
-            messageForm.StartPosition = FormStartPosition.CenterParent;
-            messageForm.DialogResult = DialogResult.None;
-            messageForm.AcceptButton = null;
-            messageForm.CancelButton = null;
-            messageForm.Controls.Add(new Label() { Text = message, Font = new Font("Arial", fontSize, FontStyle.Regular, GraphicsUnit.Pixel, ((byte)(0))), Location = new Point(10, 10) });
-            messageForm.ShowDialog();
-            return messageForm.DialogResult; // Return the result only after form is closed.
-        }
-
-        private void btnTest_Click(object sender, EventArgs e)
-        {
-            //CustomMessageBox("DFDFDFDF精豐鈕扣", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Information, 20);
-            txtWeight.Text = string.IsNullOrEmpty(txtWeight.Text)?"0.00":clsUtility.FormatNullableDecimal(txtWeight).ToString();
-            if(clsUtility.CheckDate(mskDate_check.Text)==false)
-            {
-                MessageBox.Show("ERROR");
-            }
         }
 
         private void txtWeight_KeyPress(object sender, KeyPressEventArgs e)

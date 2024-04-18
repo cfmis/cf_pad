@@ -68,10 +68,10 @@ namespace cf_pad.CLS
 			SET mo_id=@mo_id,lot_no=@lot_no,goods_id=@goods_id,qc_logo=@qc_logo,qc_size=@qc_size,qc_size_actual=@qc_size_actual,do_color=@do_color,qty_lot=@qty_lot,
             qty_sample=@qty_sample,qty_ac_std=@qty_ac_std,qty_re_std=@qty_re_std,qty_ng=@qty_ng,result_check=@result_check,result_desc_ng=@result_desc_ng,
             package_num=@package_num,weight=@weight,is_complete=@is_complete,remark=@remark,update_by=@user_id,update_date=getdate()
-			WHERE dept_id=@dept_id,date_check=@date_check,sequence_id=@sequence_id";           
+			WHERE dept_id=@dept_id And date_check=@date_check And sequence_id=@sequence_id";
             if(status_edit == "NEW")
             {
-                string sql_f = string.Format(@"SELECT '1' AS id FROM qc_report_spray WHERE dept_id='{0}' and date_check='{1}' and sequence_id='{2}'", mdl.dept_id, mdl.date_check, mdl.sequence_id);
+                string sql_f = string.Format(@"SELECT '1' AS id FROM qc_report_spray WHERE dept_id='{0}' And date_check='{1}' And sequence_id='{2}'", mdl.dept_id, mdl.date_check, mdl.sequence_id);
                 DataTable dt = clsPublicOfPad.ExecuteSqlReturnDataTable(sql_f);
                 //多用戶同時操作,可能序號已存在,則重新取最大序號
                 if (dt.Rows.Count > 0)
@@ -137,7 +137,7 @@ namespace cf_pad.CLS
             }
             catch (Exception ex)
             {
-                save_flag = false;
+                save_flag = false;                
                 MessageBox.Show(ex.Message);
             }
             return save_flag;
@@ -153,7 +153,7 @@ namespace cf_pad.CLS
             WHERE b.within_code=bb.within_code and b.blueprint_id=bb.id and Isnull(bb.picture_name,'')<>''
             ) AS picture_name
             FROM dbo.qc_report_spray a INNER JOIN {0}it_goods b on b.within_code='0000' And a.goods_id=b.id
-            INNER JOIN {0}cd_department c on c.within_code='0000' And c.id=a.dept_id            
+            INNER JOIN {0}cd_department c ON c.within_code='0000' And c.id=a.dept_id            
             WHERE 1>0", remote_db);
 
             StringBuilder sb = new StringBuilder();
@@ -172,6 +172,13 @@ namespace cf_pad.CLS
                 sb.Append(string.Format(" AND a.dept_id<='{0}'", mdl.dept_id2));
             DataTable dt = clsPublicOfPad.ExecuteSqlReturnDataTable(sb.ToString());
             return dt;
+        }
+
+        public static int Del(string dept_id, string date_check, string sequence_id)
+        {
+            string strSql_d = string.Format("Delete From qc_report_spray WHERE dept_id='{0}' And date_check='{1}' And sequence_id='{2}'", dept_id, date_check, sequence_id);
+            int result= clsPublicOfPad.ExecuteSqlUpdate(strSql_d);
+            return result;
         }
 
     }
