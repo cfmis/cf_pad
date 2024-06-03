@@ -25,7 +25,9 @@ namespace cf_pad.Reports
             {
                 //2021/04/29號要求,DO-S0467客戶要求顯示“country of origin :China ”內容
                 xrLabel17.Visible = true;
-            }            
+            }       
+            string division= GetCurrentColumnValue("division").ToString();
+            lblDivision.Visible = (!string.IsNullOrEmpty(division)) ? true : false;            
         }
 
 

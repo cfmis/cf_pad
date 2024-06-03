@@ -42,6 +42,7 @@ namespace cf_pad.Forms
             dtReport.Columns.Add("brand_name", typeof(string));
             dtReport.Columns.Add("flag_both", typeof(string));
             dtReport.Columns.Add("brand_name_custom", typeof(string));
+            dtReport.Columns.Add("division", typeof(string));
         }
 
         private void frmPackingLabel_Load(object sender, EventArgs e)
@@ -121,6 +122,7 @@ namespace cf_pad.Forms
 
                         lblBrand_id.Text = "";
                         lblBrand_name.Text = "";
+                        lblDivision.Text = "";
                         return;
                     }                    
                     break;
@@ -177,6 +179,7 @@ namespace cf_pad.Forms
 
             lblBrand_id.Text = dr[0]["brand_id"].ToString();
             lblBrand_name.Text = dr[0]["brand_name_custom"].ToString();
+            lblDivision.Text = dr[0]["division"].ToString();
 
             //取凈重
             Get_Net_Weiht(lblMo_id.Text, cmbItems.Text);
@@ -238,6 +241,7 @@ namespace cf_pad.Forms
                     newRow["brand_id"] = lblBrand_id.Text;
                     newRow["brand_name_custom"] = lblBrand_name.Text;
                     newRow["flag_both"] = chkBoth.Checked?"Y":"N";//紙箱正面,側面標簽列是否一起列印標識
+                    newRow["division"] = lblDivision.Text;
                     dtReport.Rows.Add(newRow);
                 }
 

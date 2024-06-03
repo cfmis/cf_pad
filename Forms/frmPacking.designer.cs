@@ -37,7 +37,6 @@
             this.lblOrder = new System.Windows.Forms.Label();
             this.cmbQty = new System.Windows.Forms.ComboBox();
             this.txtQty = new System.Windows.Forms.TextBox();
-            this.lblQty = new System.Windows.Forms.Label();
             this.txtPrints = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.chkAutoPrint = new System.Windows.Forms.CheckBox();
@@ -50,6 +49,7 @@
             this.txtBarCode = new System.Windows.Forms.TextBox();
             this.btnPint_List = new System.Windows.Forms.Button();
             this.lblBarcode = new System.Windows.Forms.Label();
+            this.lblQty = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblBrand_name = new System.Windows.Forms.Label();
             this.lblBrand_id = new System.Windows.Forms.Label();
@@ -70,6 +70,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.lblDivision = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -189,16 +190,6 @@
             this.txtQty.Size = new System.Drawing.Size(122, 47);
             this.txtQty.TabIndex = 1;
             this.txtQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // lblQty
-            // 
-            this.lblQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblQty.ForeColor = System.Drawing.Color.Black;
-            this.lblQty.Location = new System.Drawing.Point(544, 193);
-            this.lblQty.Name = "lblQty";
-            this.lblQty.Size = new System.Drawing.Size(62, 67);
-            this.lblQty.TabIndex = 47;
-            this.lblQty.Text = "本次數量";
             // 
             // txtPrints
             // 
@@ -340,6 +331,16 @@
             this.lblBarcode.TabIndex = 0;
             this.lblBarcode.Text = "條碼掃描區:";
             // 
+            // lblQty
+            // 
+            this.lblQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblQty.ForeColor = System.Drawing.Color.Black;
+            this.lblQty.Location = new System.Drawing.Point(544, 193);
+            this.lblQty.Name = "lblQty";
+            this.lblQty.Size = new System.Drawing.Size(62, 67);
+            this.lblQty.TabIndex = 47;
+            this.lblQty.Text = "本次數量";
+            // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -347,6 +348,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.lblDivision);
             this.panel2.Controls.Add(this.lblBrand_name);
             this.panel2.Controls.Add(this.lblBrand_id);
             this.panel2.Controls.Add(this.lblIt_customer);
@@ -570,6 +572,17 @@
             this.label5.Text = "CUST.CODE:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // lblDivision
+            // 
+            this.lblDivision.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblDivision.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblDivision.Location = new System.Drawing.Point(185, 50);
+            this.lblDivision.Name = "lblDivision";
+            this.lblDivision.Size = new System.Drawing.Size(68, 33);
+            this.lblDivision.TabIndex = 63;
+            this.lblDivision.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDivision.Visible = false;
+            // 
             // frmPacking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -634,5 +647,6 @@
         private System.Windows.Forms.Label lblIt_customer;
         private System.Windows.Forms.Label lblBrand_name;
         private System.Windows.Forms.Label lblBrand_id;
+        private System.Windows.Forms.Label lblDivision;
     }
 }

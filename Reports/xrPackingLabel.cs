@@ -28,6 +28,10 @@ namespace cf_pad.Reports
             }
             string strFlagboth = GetCurrentColumnValue("flag_both").ToString();
             SubBand1.Visible = strFlagboth == "Y" ? true : false;
+
+            //牌子分類2024/06/03
+            string division = GetCurrentColumnValue("division").ToString();
+            lblDivision.Visible = (!string.IsNullOrEmpty(division)) ? true : false;            
         }
 
         private void xrPictureBox2_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
