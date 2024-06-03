@@ -104,12 +104,13 @@
             this.txtBrand_name.Dpi = 254F;
             this.txtBrand_name.Font = new System.Drawing.Font("SimSun", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBrand_name.LocationFloat = new DevExpress.Utils.PointFloat(513.5205F, 614.4166F);
+            this.txtBrand_name.Multiline = true;
             this.txtBrand_name.Name = "txtBrand_name";
             this.txtBrand_name.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.txtBrand_name.SizeF = new System.Drawing.SizeF(670.4951F, 44.39569F);
             this.txtBrand_name.StylePriority.UseFont = false;
             this.txtBrand_name.StylePriority.UseTextAlignment = false;
-            this.txtBrand_name.Text = "[brand_name]\r\n";
+            this.txtBrand_name.Text = "[brand_name_custom]\r\n";
             this.txtBrand_name.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.txtBrand_name.WordWrap = false;
             // 
