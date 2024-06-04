@@ -125,7 +125,7 @@
             this.txtBrand_name.Multiline = true;
             this.txtBrand_name.Name = "txtBrand_name";
             this.txtBrand_name.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.txtBrand_name.SizeF = new System.Drawing.SizeF(673.4951F, 44.39569F);
+            this.txtBrand_name.SizeF = new System.Drawing.SizeF(675.4951F, 44.39569F);
             this.txtBrand_name.StylePriority.UseFont = false;
             this.txtBrand_name.StylePriority.UseTextAlignment = false;
             this.txtBrand_name.Text = "[brand_name_custom]\r\n";
@@ -196,7 +196,7 @@
             // xrPictureBox2
             // 
             this.xrPictureBox2.Dpi = 254F;
-            this.xrPictureBox2.LocationFloat = new DevExpress.Utils.PointFloat(36.40637F, 465.9375F);
+            this.xrPictureBox2.LocationFloat = new DevExpress.Utils.PointFloat(36.40637F, 463.9375F);
             this.xrPictureBox2.Name = "xrPictureBox2";
             this.xrPictureBox2.SizeF = new System.Drawing.SizeF(259.9269F, 224.6459F);
             this.xrPictureBox2.Sizing = DevExpress.XtraPrinting.ImageSizeMode.ZoomImage;
