@@ -106,12 +106,13 @@
             this.lblDivision.Dpi = 254F;
             this.lblDivision.Font = new System.Drawing.Font("SimSun", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDivision.LocationFloat = new DevExpress.Utils.PointFloat(682F, 547.5209F);
+            this.lblDivision.Multiline = true;
             this.lblDivision.Name = "lblDivision";
             this.lblDivision.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.lblDivision.SizeF = new System.Drawing.SizeF(507.4951F, 44.39569F);
             this.lblDivision.StylePriority.UseFont = false;
             this.lblDivision.StylePriority.UseTextAlignment = false;
-            this.lblDivision.Text = "(divison\r\n)";
+            this.lblDivision.Text = "([division])\r\n)";
             this.lblDivision.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.lblDivision.WordWrap = false;
             // 

@@ -108,7 +108,7 @@
             this.lblDivision.SizeF = new System.Drawing.SizeF(541.0832F, 38.14587F);
             this.lblDivision.StylePriority.UseFont = false;
             this.lblDivision.StylePriority.UseTextAlignment = false;
-            this.lblDivision.Text = "([divison])";
+            this.lblDivision.Text = "([division])";
             this.lblDivision.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.lblDivision.WordWrap = false;
             // 
