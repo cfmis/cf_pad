@@ -31,7 +31,9 @@ namespace cf_pad.Reports
 
             //牌子分類2024/06/03
             string division = GetCurrentColumnValue("division").ToString();
-            lblDivision.Visible = (!string.IsNullOrEmpty(division)) ? true : false;            
+            string brand_name_custom = GetCurrentColumnValue("brand_name_custom").ToString();
+            lblDivision.Visible = (!string.IsNullOrEmpty(division)) ? true : false;
+            lblBrand_name.Visible = (!string.IsNullOrEmpty(brand_name_custom)) ? true : false;
         }
 
         private void xrPictureBox2_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)

@@ -27,7 +27,9 @@ namespace cf_pad.Reports
                 xrLabel17.Visible = true;
             }       
             string division= GetCurrentColumnValue("division").ToString();
-            lblDivision.Visible = (!string.IsNullOrEmpty(division)) ? true : false;            
+            string brand_name_custom = GetCurrentColumnValue("brand_name_custom").ToString();
+            lblDivision.Visible = (!string.IsNullOrEmpty(division)) ? true : false;
+            lblBrand_name.Visible = (!string.IsNullOrEmpty(brand_name_custom)) ? true : false;
         }
 
 
