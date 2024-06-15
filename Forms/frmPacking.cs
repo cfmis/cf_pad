@@ -41,6 +41,8 @@ namespace cf_pad.Forms
             //dtReport.Columns.Add("cross_unit", typeof(String));
             dtReport.Columns.Add("brand_id", typeof(string));
             dtReport.Columns.Add("brand_name", typeof(string));
+            dtReport.Columns.Add("brand_name_custom", typeof(string));
+            dtReport.Columns.Add("division", typeof(string));
         }
 
         private void frmPacking_Load(object sender, EventArgs e)
@@ -117,7 +119,8 @@ namespace cf_pad.Forms
                         txtSend_qty.Text = "";
 
                         lblBrand_id.Text = "";
-                        lblBrand_name.Text = "";                   
+                        lblBrand_name.Text = "";
+                        lblDivision.Text = "";
                         return;
                     }                    
                     break;
@@ -160,7 +163,8 @@ namespace cf_pad.Forms
             //cmbCrossUnit.Text = "KG";
 
             lblBrand_id.Text = dr[0]["brand_id"].ToString();
-            lblBrand_name.Text = dr[0]["brand_name"].ToString();
+            lblBrand_name.Text = dr[0]["brand_name_custom"].ToString();
+            lblDivision.Text = dr[0]["division"].ToString();
         }
 
         private void cmbItems_SelectedIndexChanged(object sender, EventArgs e)
@@ -210,7 +214,8 @@ namespace cf_pad.Forms
                     newRow["qty"] = txtQty.Text == "" ? "--" : txtQty.Text;
                     newRow["qty_unit"] = cmbQty.Text;
                     newRow["brand_id"] =lblBrand_id.Text;
-                    newRow["brand_name"] = lblBrand_name.Text;
+                    newRow["brand_name_custom"] = lblBrand_name.Text;
+                    newRow["division"] = lblDivision.Text;
                     dtReport.Rows.Add(newRow);
                 }
 

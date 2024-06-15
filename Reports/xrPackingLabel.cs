@@ -11,7 +11,7 @@ namespace cf_pad.Reports
     {
         public xrPackingLabel()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         private void Detail_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
@@ -26,6 +26,14 @@ namespace cf_pad.Reports
                 //2021/04/29號要求,DO-S0467客戶要求顯示“country of origin :China ”內容
                 xrLabel17.Visible = true;
             }
+            string strFlagboth = GetCurrentColumnValue("flag_both").ToString();
+            SubBand1.Visible = strFlagboth == "Y" ? true : false;
+
+            //牌子分類2024/06/03
+            string division = GetCurrentColumnValue("division").ToString();
+            string brand_name_custom = GetCurrentColumnValue("brand_name_custom").ToString();
+            lblDivision.Visible = (!string.IsNullOrEmpty(division)) ? true : false;
+            lblBrand_name.Visible = (!string.IsNullOrEmpty(brand_name_custom)) ? true : false;
         }
 
         private void xrPictureBox2_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)

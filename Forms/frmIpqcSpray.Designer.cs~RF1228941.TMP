@@ -28,22 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIpqcSpray));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tbc = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.lblSaveinfo = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
             this.txtSequence_id = new System.Windows.Forms.TextBox();
             this.txtDept_name = new System.Windows.Forms.TextBox();
             this.mskDate_check = new System.Windows.Forms.MaskedTextBox();
@@ -53,6 +51,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.chkIs_complete1 = new System.Windows.Forms.CheckBox();
             this.chkIs_complete2 = new System.Windows.Forms.CheckBox();
+            this.label26 = new System.Windows.Forms.Label();
             this.txtWeight = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.txtPackage_num = new System.Windows.Forms.TextBox();
@@ -74,6 +73,7 @@
             this.txtQc_size = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtQc_logo = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txtLot_no = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -81,6 +81,7 @@
             this.txtGoods_id = new System.Windows.Forms.TextBox();
             this.txtMo_id = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.lblSaveinfo = new System.Windows.Forms.Label();
             this.lblBarcode = new System.Windows.Forms.Label();
             this.txtBarCode = new System.Windows.Forms.TextBox();
             this.txtGoods_name = new System.Windows.Forms.RichTextBox();
@@ -91,37 +92,12 @@
             this.label24 = new System.Windows.Forms.Label();
             this.lblQcResult = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.txtDept2 = new System.Windows.Forms.TextBox();
-            this.txtDept1 = new System.Windows.Forms.TextBox();
             this.dgvDetails2 = new System.Windows.Forms.DataGridView();
-            this.dept_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mo_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lot_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.goods_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qc_logo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qc_size = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.do_color = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qty_lot = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qty_sample = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qty_ac_std = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qty_re_std = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qc_size_actual = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qty_ng = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.result_check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.result_desc_ng = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.package_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.weight = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.is_complete = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.goods_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date_check = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sequence_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name_dept = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.picture_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblMo_total = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnPrint = new System.Windows.Forms.Button();
@@ -136,7 +112,30 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnTest = new System.Windows.Forms.Button();
             this.btnSet = new System.Windows.Forms.Button();
+            this.dept_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mo_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lot_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.goods_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qc_logo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qc_size = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.do_color = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qty_lot = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qty_sample = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qty_ac_std = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qty_re_std = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qc_size_actual = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qty_ng = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qc_result = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.result_desc_ng = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.package_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.weight = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.is_complete = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.goods_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_check = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sequence_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name_dept = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbc.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -224,33 +223,6 @@
             this.tabPage1.Text = "數據錄入";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // lblSaveinfo
-            // 
-            this.lblSaveinfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSaveinfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.lblSaveinfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblSaveinfo.Font = new System.Drawing.Font("PMingLiU", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblSaveinfo.ForeColor = System.Drawing.Color.Blue;
-            this.lblSaveinfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblSaveinfo.Location = new System.Drawing.Point(168, 265);
-            this.lblSaveinfo.Name = "lblSaveinfo";
-            this.lblSaveinfo.Size = new System.Drawing.Size(600, 49);
-            this.lblSaveinfo.TabIndex = 16;
-            this.lblSaveinfo.Text = "數據保存成功！";
-            this.lblSaveinfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblSaveinfo.Visible = false;
-            // 
-            // label22
-            // 
-            this.label22.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label22.ForeColor = System.Drawing.Color.Black;
-            this.label22.Location = new System.Drawing.Point(411, 325);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(210, 46);
-            this.label22.TabIndex = 47;
-            this.label22.Text = "實測尺寸(mm)";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // txtSequence_id
             // 
             this.txtSequence_id.Font = new System.Drawing.Font("PMingLiU", 32F);
@@ -264,10 +236,10 @@
             // txtDept_name
             // 
             this.txtDept_name.Font = new System.Drawing.Font("PMingLiU", 32F);
-            this.txtDept_name.Location = new System.Drawing.Point(393, 74);
+            this.txtDept_name.Location = new System.Drawing.Point(334, 74);
             this.txtDept_name.Name = "txtDept_name";
             this.txtDept_name.ReadOnly = true;
-            this.txtDept_name.Size = new System.Drawing.Size(275, 59);
+            this.txtDept_name.Size = new System.Drawing.Size(197, 59);
             this.txtDept_name.TabIndex = 82;
             // 
             // mskDate_check
@@ -297,7 +269,7 @@
             this.txtDept_id.Location = new System.Drawing.Point(164, 74);
             this.txtDept_id.MaxLength = 3;
             this.txtDept_id.Name = "txtDept_id";
-            this.txtDept_id.Size = new System.Drawing.Size(228, 59);
+            this.txtDept_id.Size = new System.Drawing.Size(164, 59);
             this.txtDept_id.TabIndex = 79;
             // 
             // label7
@@ -333,7 +305,6 @@
             this.chkIs_complete1.TabIndex = 5;
             this.chkIs_complete1.Text = "已齊";
             this.chkIs_complete1.UseVisualStyleBackColor = true;
-            this.chkIs_complete1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.chkIs_complete1_MouseUp);
             // 
             // chkIs_complete2
             // 
@@ -346,7 +317,16 @@
             this.chkIs_complete2.TabIndex = 4;
             this.chkIs_complete2.Text = "未齊";
             this.chkIs_complete2.UseVisualStyleBackColor = true;
-            this.chkIs_complete2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.chkIs_complete2_MouseUp);
+            // 
+            // label26
+            // 
+            this.label26.Font = new System.Drawing.Font("PMingLiU", 22F);
+            this.label26.Location = new System.Drawing.Point(542, 571);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(80, 70);
+            this.label26.TabIndex = 76;
+            this.label26.Text = "是否齊件";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtWeight
             // 
@@ -420,7 +400,6 @@
             this.chkOk.TabIndex = 5;
             this.chkOk.Text = "OK";
             this.chkOk.UseVisualStyleBackColor = true;
-            this.chkOk.MouseUp += new System.Windows.Forms.MouseEventHandler(this.chkOk_MouseUp);
             // 
             // chkNg
             // 
@@ -433,7 +412,6 @@
             this.chkNg.TabIndex = 4;
             this.chkNg.Text = "NG";
             this.chkNg.UseVisualStyleBackColor = true;
-            this.chkNg.MouseUp += new System.Windows.Forms.MouseEventHandler(this.chkNg_MouseUp);
             // 
             // txtQty_ng
             // 
@@ -564,6 +542,17 @@
             this.txtQc_logo.Size = new System.Drawing.Size(247, 59);
             this.txtQc_logo.TabIndex = 33;
             // 
+            // label13
+            // 
+            this.label13.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(539, 256);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(83, 46);
+            this.label13.TabIndex = 32;
+            this.label13.Text = "尺寸";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // label12
             // 
             this.label12.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -636,6 +625,22 @@
             this.label9.Text = "頁數";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // lblSaveinfo
+            // 
+            this.lblSaveinfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSaveinfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblSaveinfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblSaveinfo.Font = new System.Drawing.Font("PMingLiU", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblSaveinfo.ForeColor = System.Drawing.Color.Blue;
+            this.lblSaveinfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblSaveinfo.Location = new System.Drawing.Point(168, 265);
+            this.lblSaveinfo.Name = "lblSaveinfo";
+            this.lblSaveinfo.Size = new System.Drawing.Size(600, 49);
+            this.lblSaveinfo.TabIndex = 16;
+            this.lblSaveinfo.Text = "數據保存成功！";
+            this.lblSaveinfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSaveinfo.Visible = false;
+            // 
             // lblBarcode
             // 
             this.lblBarcode.AutoSize = true;
@@ -654,7 +659,7 @@
             this.txtBarCode.Font = new System.Drawing.Font("PMingLiU", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtBarCode.Location = new System.Drawing.Point(164, 5);
             this.txtBarCode.Name = "txtBarCode";
-            this.txtBarCode.Size = new System.Drawing.Size(504, 65);
+            this.txtBarCode.Size = new System.Drawing.Size(367, 65);
             this.txtBarCode.TabIndex = 0;
             this.txtBarCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBarCode_KeyDown);
             // 
@@ -745,35 +750,24 @@
             this.label23.Text = "不合格數";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label13
+            // label22
             // 
-            this.label13.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(539, 256);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(83, 46);
-            this.label13.TabIndex = 32;
-            this.label13.Text = "尺寸";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label26
-            // 
-            this.label26.Font = new System.Drawing.Font("PMingLiU", 22F);
-            this.label26.Location = new System.Drawing.Point(542, 571);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(80, 70);
-            this.label26.TabIndex = 76;
-            this.label26.Text = "是否齊件";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label22.Font = new System.Drawing.Font("PMingLiU", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label22.ForeColor = System.Drawing.Color.Black;
+            this.label22.Location = new System.Drawing.Point(411, 325);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(210, 46);
+            this.label22.TabIndex = 47;
+            this.label22.Text = "實測尺寸(mm)";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tabPage2
             // 
             this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tabPage2.Controls.Add(this.label21);
-            this.tabPage2.Controls.Add(this.label28);
-            this.tabPage2.Controls.Add(this.txtDept2);
-            this.tabPage2.Controls.Add(this.txtDept1);
             this.tabPage2.Controls.Add(this.dgvDetails2);
+            this.tabPage2.Controls.Add(this.lblMo_total);
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.btnPrint);
@@ -793,52 +787,12 @@
             this.tabPage2.Text = "數據查詢";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("PMingLiU", 20F);
-            this.label21.Location = new System.Drawing.Point(294, 128);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(26, 27);
-            this.label21.TabIndex = 57;
-            this.label21.Text = "~";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("PMingLiU", 20F);
-            this.label28.Location = new System.Drawing.Point(13, 128);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(80, 27);
-            this.label28.TabIndex = 56;
-            this.label28.Text = "部 門:";
-            // 
-            // txtDept2
-            // 
-            this.txtDept2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDept2.Font = new System.Drawing.Font("PMingLiU", 25F);
-            this.txtDept2.Location = new System.Drawing.Point(321, 121);
-            this.txtDept2.MaxLength = 3;
-            this.txtDept2.Name = "txtDept2";
-            this.txtDept2.Size = new System.Drawing.Size(192, 47);
-            this.txtDept2.TabIndex = 55;
-            // 
-            // txtDept1
-            // 
-            this.txtDept1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDept1.Font = new System.Drawing.Font("PMingLiU", 25F);
-            this.txtDept1.Location = new System.Drawing.Point(99, 121);
-            this.txtDept1.MaxLength = 3;
-            this.txtDept1.Name = "txtDept1";
-            this.txtDept1.Size = new System.Drawing.Size(192, 47);
-            this.txtDept1.TabIndex = 54;
-            // 
             // dgvDetails2
             // 
             this.dgvDetails2.AllowUserToAddRows = false;
             this.dgvDetails2.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.dgvDetails2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.dgvDetails2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle23;
             this.dgvDetails2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -859,7 +813,7 @@
             this.qty_re_std,
             this.qc_size_actual,
             this.qty_ng,
-            this.result_check,
+            this.qc_result,
             this.result_desc_ng,
             this.package_num,
             this.weight,
@@ -867,262 +821,53 @@
             this.goods_id,
             this.date_check,
             this.sequence_id,
-            this.name_dept,
-            this.picture_name});
-            this.dgvDetails2.Location = new System.Drawing.Point(1, 174);
+            this.name_dept});
+            this.dgvDetails2.Location = new System.Drawing.Point(1, 124);
             this.dgvDetails2.Name = "dgvDetails2";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("PMingLiU", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetails2.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle33.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("PMingLiU", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetails2.RowHeadersDefaultCellStyle = dataGridViewCellStyle33;
             this.dgvDetails2.RowHeadersWidth = 25;
             this.dgvDetails2.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.dgvDetails2.RowTemplate.Height = 60;
-            this.dgvDetails2.Size = new System.Drawing.Size(899, 488);
+            this.dgvDetails2.Size = new System.Drawing.Size(899, 538);
             this.dgvDetails2.TabIndex = 53;
-            this.dgvDetails2.SelectionChanged += new System.EventHandler(this.dgvDetails2_SelectionChanged);
             // 
-            // dept_id
+            // lblMo_total
             // 
-            this.dept_id.DataPropertyName = "dept_id";
-            this.dept_id.HeaderText = "部門";
-            this.dept_id.Name = "dept_id";
-            this.dept_id.ReadOnly = true;
-            this.dept_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dept_id.Width = 50;
+            this.lblMo_total.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblMo_total.Font = new System.Drawing.Font("PMingLiU", 20F);
+            this.lblMo_total.ForeColor = System.Drawing.Color.Blue;
+            this.lblMo_total.Location = new System.Drawing.Point(587, 92);
+            this.lblMo_total.Name = "lblMo_total";
+            this.lblMo_total.Size = new System.Drawing.Size(70, 29);
+            this.lblMo_total.TabIndex = 52;
+            this.lblMo_total.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // mo_id
+            // label6
             // 
-            this.mo_id.DataPropertyName = "mo_id";
-            this.mo_id.HeaderText = "頁數";
-            this.mo_id.Name = "mo_id";
-            this.mo_id.ReadOnly = true;
-            this.mo_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.mo_id.Width = 105;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("PMingLiU", 20F);
+            this.label6.Location = new System.Drawing.Point(659, 93);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(93, 27);
+            this.label6.TabIndex = 51;
+            this.label6.Text = "張頁數";
             // 
-            // lot_no
+            // label5
             // 
-            this.lot_no.DataPropertyName = "lot_no";
-            this.lot_no.HeaderText = "批號";
-            this.lot_no.Name = "lot_no";
-            this.lot_no.ReadOnly = true;
-            this.lot_no.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.lot_no.Width = 75;
-            // 
-            // goods_name
-            // 
-            this.goods_name.DataPropertyName = "goods_name";
-            this.goods_name.HeaderText = "產品描述";
-            this.goods_name.Name = "goods_name";
-            this.goods_name.ReadOnly = true;
-            this.goods_name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.goods_name.Width = 150;
-            // 
-            // qc_logo
-            // 
-            this.qc_logo.DataPropertyName = "qc_logo";
-            this.qc_logo.HeaderText = "LOGO";
-            this.qc_logo.Name = "qc_logo";
-            this.qc_logo.ReadOnly = true;
-            this.qc_logo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.qc_logo.Width = 90;
-            // 
-            // qc_size
-            // 
-            this.qc_size.DataPropertyName = "qc_size";
-            this.qc_size.HeaderText = "尺寸";
-            this.qc_size.Name = "qc_size";
-            this.qc_size.ReadOnly = true;
-            this.qc_size.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.qc_size.Width = 90;
-            // 
-            // do_color
-            // 
-            this.do_color.DataPropertyName = "do_color";
-            this.do_color.HeaderText = "產品顏色";
-            this.do_color.Name = "do_color";
-            this.do_color.ReadOnly = true;
-            this.do_color.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.do_color.Width = 90;
-            // 
-            // qty_lot
-            // 
-            this.qty_lot.DataPropertyName = "qty_lot";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle2.Format = "N0";
-            dataGridViewCellStyle2.NullValue = "0";
-            this.qty_lot.DefaultCellStyle = dataGridViewCellStyle2;
-            this.qty_lot.HeaderText = "批量(PCS)";
-            this.qty_lot.Name = "qty_lot";
-            this.qty_lot.ReadOnly = true;
-            this.qty_lot.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.qty_lot.Width = 90;
-            // 
-            // qty_sample
-            // 
-            this.qty_sample.DataPropertyName = "qty_sample";
-            dataGridViewCellStyle3.Format = "N0";
-            dataGridViewCellStyle3.NullValue = "0";
-            this.qty_sample.DefaultCellStyle = dataGridViewCellStyle3;
-            this.qty_sample.HeaderText = "抽樣";
-            this.qty_sample.Name = "qty_sample";
-            this.qty_sample.ReadOnly = true;
-            this.qty_sample.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.qty_sample.Width = 40;
-            // 
-            // qty_ac_std
-            // 
-            this.qty_ac_std.DataPropertyName = "qty_ac_std";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Format = "N0";
-            dataGridViewCellStyle4.NullValue = "0";
-            this.qty_ac_std.DefaultCellStyle = dataGridViewCellStyle4;
-            this.qty_ac_std.HeaderText = "AC";
-            this.qty_ac_std.Name = "qty_ac_std";
-            this.qty_ac_std.ReadOnly = true;
-            this.qty_ac_std.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.qty_ac_std.Width = 35;
-            // 
-            // qty_re_std
-            // 
-            this.qty_re_std.DataPropertyName = "qty_re_std";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Format = "N0";
-            dataGridViewCellStyle5.NullValue = "0";
-            this.qty_re_std.DefaultCellStyle = dataGridViewCellStyle5;
-            this.qty_re_std.HeaderText = "RE";
-            this.qty_re_std.Name = "qty_re_std";
-            this.qty_re_std.ReadOnly = true;
-            this.qty_re_std.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.qty_re_std.Width = 35;
-            // 
-            // qc_size_actual
-            // 
-            this.qc_size_actual.DataPropertyName = "qc_size_actual";
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.qc_size_actual.DefaultCellStyle = dataGridViewCellStyle6;
-            this.qc_size_actual.HeaderText = "實測尺寸";
-            this.qc_size_actual.Name = "qc_size_actual";
-            this.qc_size_actual.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.qc_size_actual.Width = 90;
-            // 
-            // qty_ng
-            // 
-            this.qty_ng.DataPropertyName = "qty_ng";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.Format = "N0";
-            dataGridViewCellStyle7.NullValue = "0";
-            this.qty_ng.DefaultCellStyle = dataGridViewCellStyle7;
-            this.qty_ng.HeaderText = "不合格數";
-            this.qty_ng.Name = "qty_ng";
-            this.qty_ng.ReadOnly = true;
-            this.qty_ng.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.qty_ng.Width = 50;
-            // 
-            // result_check
-            // 
-            this.result_check.DataPropertyName = "result_check";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle8.NullValue = false;
-            this.result_check.DefaultCellStyle = dataGridViewCellStyle8;
-            this.result_check.HeaderText = "檢驗結果";
-            this.result_check.Name = "result_check";
-            this.result_check.ReadOnly = true;
-            this.result_check.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.result_check.Width = 70;
-            // 
-            // result_desc_ng
-            // 
-            this.result_desc_ng.DataPropertyName = "result_desc_ng";
-            this.result_desc_ng.HeaderText = "不良描述及處理結果";
-            this.result_desc_ng.Name = "result_desc_ng";
-            this.result_desc_ng.ReadOnly = true;
-            this.result_desc_ng.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.result_desc_ng.Width = 110;
-            // 
-            // package_num
-            // 
-            this.package_num.DataPropertyName = "package_num";
-            dataGridViewCellStyle9.Format = "N0";
-            dataGridViewCellStyle9.NullValue = "0";
-            this.package_num.DefaultCellStyle = dataGridViewCellStyle9;
-            this.package_num.HeaderText = "包數";
-            this.package_num.Name = "package_num";
-            this.package_num.ReadOnly = true;
-            this.package_num.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.package_num.Visible = false;
-            // 
-            // weight
-            // 
-            this.weight.DataPropertyName = "weight";
-            dataGridViewCellStyle10.Format = "N2";
-            dataGridViewCellStyle10.NullValue = "0";
-            this.weight.DefaultCellStyle = dataGridViewCellStyle10;
-            this.weight.HeaderText = "重量";
-            this.weight.Name = "weight";
-            this.weight.ReadOnly = true;
-            this.weight.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.weight.Width = 80;
-            // 
-            // is_complete
-            // 
-            this.is_complete.DataPropertyName = "is_complete";
-            this.is_complete.HeaderText = "是否已齊";
-            this.is_complete.Name = "is_complete";
-            this.is_complete.ReadOnly = true;
-            this.is_complete.Width = 70;
-            // 
-            // goods_id
-            // 
-            this.goods_id.DataPropertyName = "goods_id";
-            this.goods_id.HeaderText = "goods_id";
-            this.goods_id.Name = "goods_id";
-            this.goods_id.ReadOnly = true;
-            this.goods_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.goods_id.Visible = false;
-            // 
-            // date_check
-            // 
-            this.date_check.DataPropertyName = "date_check";
-            this.date_check.HeaderText = "QC Date";
-            this.date_check.Name = "date_check";
-            this.date_check.ReadOnly = true;
-            this.date_check.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.date_check.Visible = false;
-            // 
-            // sequence_id
-            // 
-            this.sequence_id.DataPropertyName = "sequence_id";
-            this.sequence_id.HeaderText = "Seq No.";
-            this.sequence_id.Name = "sequence_id";
-            this.sequence_id.ReadOnly = true;
-            this.sequence_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.sequence_id.Visible = false;
-            // 
-            // name_dept
-            // 
-            this.name_dept.DataPropertyName = "name_dept";
-            this.name_dept.HeaderText = "部門名稱";
-            this.name_dept.Name = "name_dept";
-            this.name_dept.ReadOnly = true;
-            this.name_dept.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.name_dept.Visible = false;
-            // 
-            // picture_name
-            // 
-            this.picture_name.DataPropertyName = "picture_name";
-            this.picture_name.HeaderText = "圖樣";
-            this.picture_name.Name = "picture_name";
-            this.picture_name.ReadOnly = true;
-            this.picture_name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.picture_name.Visible = false;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("PMingLiU", 20F);
+            this.label5.Location = new System.Drawing.Point(544, 93);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(39, 27);
+            this.label5.TabIndex = 50;
+            this.label5.Text = "共";
             // 
             // label4
             // 
@@ -1146,22 +891,20 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.Enabled = false;
             this.btnPrint.Font = new System.Drawing.Font("PMingLiU", 20F);
-            this.btnPrint.Location = new System.Drawing.Point(695, 14);
+            this.btnPrint.Location = new System.Drawing.Point(659, 6);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(128, 74);
             this.btnPrint.TabIndex = 46;
             this.btnPrint.Text = "列印(&P)";
-            this.btnPrint.Visible = false;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnFind
             // 
             this.btnFind.Font = new System.Drawing.Font("PMingLiU", 20F);
-            this.btnFind.Location = new System.Drawing.Point(526, 14);
+            this.btnFind.Location = new System.Drawing.Point(526, 6);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(142, 74);
+            this.btnFind.Size = new System.Drawing.Size(128, 74);
             this.btnFind.TabIndex = 4;
             this.btnFind.Text = "查詢(&F)";
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
@@ -1273,6 +1016,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnTest);
             this.panel1.Controls.Add(this.btnSet);
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.btnSave);
@@ -1282,6 +1026,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(913, 89);
             this.panel1.TabIndex = 5;
+            // 
+            // btnTest
+            // 
+            this.btnTest.Font = new System.Drawing.Font("PMingLiU", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnTest.Location = new System.Drawing.Point(699, 2);
+            this.btnTest.Name = "btnTest";
+            this.btnTest.Size = new System.Drawing.Size(164, 80);
+            this.btnTest.TabIndex = 9;
+            this.btnTest.Text = "TEST";
+            this.btnTest.UseVisualStyleBackColor = true;
+            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
             // btnSet
             // 
@@ -1293,6 +1048,235 @@
             this.btnSet.Text = "數據瀏覽";
             this.btnSet.UseVisualStyleBackColor = true;
             this.btnSet.Click += new System.EventHandler(this.btnSet_Click);
+            // 
+            // dept_id
+            // 
+            this.dept_id.DataPropertyName = "dept_id";
+            this.dept_id.HeaderText = "部門";
+            this.dept_id.Name = "dept_id";
+            this.dept_id.ReadOnly = true;
+            this.dept_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dept_id.Width = 50;
+            // 
+            // mo_id
+            // 
+            this.mo_id.DataPropertyName = "mo_id";
+            this.mo_id.HeaderText = "頁數";
+            this.mo_id.Name = "mo_id";
+            this.mo_id.ReadOnly = true;
+            this.mo_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.mo_id.Width = 105;
+            // 
+            // lot_no
+            // 
+            this.lot_no.DataPropertyName = "lot_no";
+            this.lot_no.HeaderText = "批號";
+            this.lot_no.Name = "lot_no";
+            this.lot_no.ReadOnly = true;
+            this.lot_no.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.lot_no.Width = 75;
+            // 
+            // goods_name
+            // 
+            this.goods_name.DataPropertyName = "goods_name";
+            this.goods_name.HeaderText = "產品描述";
+            this.goods_name.Name = "goods_name";
+            this.goods_name.ReadOnly = true;
+            this.goods_name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.goods_name.Width = 150;
+            // 
+            // qc_logo
+            // 
+            this.qc_logo.DataPropertyName = "qc_logo";
+            this.qc_logo.HeaderText = "LOGO";
+            this.qc_logo.Name = "qc_logo";
+            this.qc_logo.ReadOnly = true;
+            this.qc_logo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.qc_logo.Width = 90;
+            // 
+            // qc_size
+            // 
+            this.qc_size.DataPropertyName = "qc_size";
+            this.qc_size.HeaderText = "尺寸";
+            this.qc_size.Name = "qc_size";
+            this.qc_size.ReadOnly = true;
+            this.qc_size.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.qc_size.Width = 90;
+            // 
+            // do_color
+            // 
+            this.do_color.DataPropertyName = "do_color";
+            this.do_color.HeaderText = "產品顏色";
+            this.do_color.Name = "do_color";
+            this.do_color.ReadOnly = true;
+            this.do_color.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.do_color.Width = 90;
+            // 
+            // qty_lot
+            // 
+            this.qty_lot.DataPropertyName = "qty_lot";
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle24.Format = "N0";
+            dataGridViewCellStyle24.NullValue = "0";
+            this.qty_lot.DefaultCellStyle = dataGridViewCellStyle24;
+            this.qty_lot.HeaderText = "批量(PCS)";
+            this.qty_lot.Name = "qty_lot";
+            this.qty_lot.ReadOnly = true;
+            this.qty_lot.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.qty_lot.Width = 90;
+            // 
+            // qty_sample
+            // 
+            this.qty_sample.DataPropertyName = "qty_sample";
+            dataGridViewCellStyle25.Format = "N0";
+            dataGridViewCellStyle25.NullValue = "0";
+            this.qty_sample.DefaultCellStyle = dataGridViewCellStyle25;
+            this.qty_sample.HeaderText = "抽樣";
+            this.qty_sample.Name = "qty_sample";
+            this.qty_sample.ReadOnly = true;
+            this.qty_sample.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.qty_sample.Width = 40;
+            // 
+            // qty_ac_std
+            // 
+            this.qty_ac_std.DataPropertyName = "qty_ac_std";
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle26.Format = "N0";
+            dataGridViewCellStyle26.NullValue = "0";
+            this.qty_ac_std.DefaultCellStyle = dataGridViewCellStyle26;
+            this.qty_ac_std.HeaderText = "AC";
+            this.qty_ac_std.Name = "qty_ac_std";
+            this.qty_ac_std.ReadOnly = true;
+            this.qty_ac_std.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.qty_ac_std.Width = 35;
+            // 
+            // qty_re_std
+            // 
+            this.qty_re_std.DataPropertyName = "qty_re_std";
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle27.Format = "N0";
+            dataGridViewCellStyle27.NullValue = "0";
+            this.qty_re_std.DefaultCellStyle = dataGridViewCellStyle27;
+            this.qty_re_std.HeaderText = "RE";
+            this.qty_re_std.Name = "qty_re_std";
+            this.qty_re_std.ReadOnly = true;
+            this.qty_re_std.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.qty_re_std.Width = 35;
+            // 
+            // qc_size_actual
+            // 
+            this.qc_size_actual.DataPropertyName = "qc_size_actual";
+            dataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.qc_size_actual.DefaultCellStyle = dataGridViewCellStyle28;
+            this.qc_size_actual.HeaderText = "實測尺寸";
+            this.qc_size_actual.Name = "qc_size_actual";
+            this.qc_size_actual.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.qc_size_actual.Width = 90;
+            // 
+            // qty_ng
+            // 
+            this.qty_ng.DataPropertyName = "qty_ng";
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle29.Format = "N0";
+            dataGridViewCellStyle29.NullValue = "0";
+            this.qty_ng.DefaultCellStyle = dataGridViewCellStyle29;
+            this.qty_ng.HeaderText = "不合格數";
+            this.qty_ng.Name = "qty_ng";
+            this.qty_ng.ReadOnly = true;
+            this.qty_ng.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.qty_ng.Width = 50;
+            // 
+            // qc_result
+            // 
+            this.qc_result.DataPropertyName = "qc_result";
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle30.NullValue = false;
+            this.qc_result.DefaultCellStyle = dataGridViewCellStyle30;
+            this.qc_result.HeaderText = "檢驗結果";
+            this.qc_result.Name = "qc_result";
+            this.qc_result.ReadOnly = true;
+            this.qc_result.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.qc_result.Width = 70;
+            // 
+            // result_desc_ng
+            // 
+            this.result_desc_ng.DataPropertyName = "result_desc_ng";
+            this.result_desc_ng.HeaderText = "不良描述及處理結果";
+            this.result_desc_ng.Name = "result_desc_ng";
+            this.result_desc_ng.ReadOnly = true;
+            this.result_desc_ng.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.result_desc_ng.Width = 110;
+            // 
+            // package_num
+            // 
+            this.package_num.DataPropertyName = "package_num";
+            dataGridViewCellStyle31.Format = "N0";
+            dataGridViewCellStyle31.NullValue = "0";
+            this.package_num.DefaultCellStyle = dataGridViewCellStyle31;
+            this.package_num.HeaderText = "包數";
+            this.package_num.Name = "package_num";
+            this.package_num.ReadOnly = true;
+            this.package_num.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.package_num.Visible = false;
+            // 
+            // weight
+            // 
+            this.weight.DataPropertyName = "weight";
+            dataGridViewCellStyle32.Format = "N2";
+            dataGridViewCellStyle32.NullValue = "0";
+            this.weight.DefaultCellStyle = dataGridViewCellStyle32;
+            this.weight.HeaderText = "重量";
+            this.weight.Name = "weight";
+            this.weight.ReadOnly = true;
+            this.weight.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.weight.Width = 80;
+            // 
+            // is_complete
+            // 
+            this.is_complete.DataPropertyName = "is_complete";
+            this.is_complete.HeaderText = "是否已齊";
+            this.is_complete.Name = "is_complete";
+            this.is_complete.ReadOnly = true;
+            this.is_complete.Width = 70;
+            // 
+            // goods_id
+            // 
+            this.goods_id.DataPropertyName = "goods_id";
+            this.goods_id.HeaderText = "goods_id";
+            this.goods_id.Name = "goods_id";
+            this.goods_id.ReadOnly = true;
+            this.goods_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.goods_id.Visible = false;
+            // 
+            // date_check
+            // 
+            this.date_check.DataPropertyName = "date_check";
+            this.date_check.HeaderText = "QC Date";
+            this.date_check.Name = "date_check";
+            this.date_check.ReadOnly = true;
+            this.date_check.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.date_check.Visible = false;
+            // 
+            // sequence_id
+            // 
+            this.sequence_id.DataPropertyName = "sequence_id";
+            this.sequence_id.HeaderText = "Seq No.";
+            this.sequence_id.Name = "sequence_id";
+            this.sequence_id.ReadOnly = true;
+            this.sequence_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.sequence_id.Visible = false;
+            // 
+            // name_dept
+            // 
+            this.name_dept.DataPropertyName = "name_dept";
+            this.name_dept.HeaderText = "部門名稱";
+            this.name_dept.Name = "name_dept";
+            this.name_dept.ReadOnly = true;
+            this.name_dept.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.name_dept.Visible = false;
             // 
             // frmIpqcSpray
             // 
@@ -1344,8 +1328,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button btnFind;
+        private System.Windows.Forms.Label lblMo_total;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnSet;
+        private System.Windows.Forms.Button btnTest;
         private System.Windows.Forms.DataGridView dgvDetails2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtQc_size_actual;
@@ -1393,10 +1381,6 @@
         private System.Windows.Forms.MaskedTextBox mskDate_check;
         private System.Windows.Forms.TextBox txtDept_name;
         private System.Windows.Forms.TextBox txtSequence_id;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox txtDept2;
-        private System.Windows.Forms.TextBox txtDept1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dept_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn mo_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn lot_no;
@@ -1410,7 +1394,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn qty_re_std;
         private System.Windows.Forms.DataGridViewTextBoxColumn qc_size_actual;
         private System.Windows.Forms.DataGridViewTextBoxColumn qty_ng;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn result_check;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn qc_result;
         private System.Windows.Forms.DataGridViewTextBoxColumn result_desc_ng;
         private System.Windows.Forms.DataGridViewTextBoxColumn package_num;
         private System.Windows.Forms.DataGridViewTextBoxColumn weight;
@@ -1419,6 +1403,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn date_check;
         private System.Windows.Forms.DataGridViewTextBoxColumn sequence_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name_dept;
-        private System.Windows.Forms.DataGridViewTextBoxColumn picture_name;
     }
 }

@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.chkBoth = new System.Windows.Forms.CheckBox();
+            this.chkIsFinish = new System.Windows.Forms.CheckBox();
             this.cmbCrossUnit = new System.Windows.Forms.ComboBox();
             this.cmbNetUnit = new System.Windows.Forms.ComboBox();
             this.cmbQty = new System.Windows.Forms.ComboBox();
             this.txtQty = new System.Windows.Forms.TextBox();
             this.lblQty = new System.Windows.Forms.Label();
             this.txtCross_weiht = new System.Windows.Forms.TextBox();
-            this.lblRoss_weiht = new System.Windows.Forms.Label();
             this.txtNet_weiht = new System.Windows.Forms.TextBox();
             this.txtPrints = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,8 +49,11 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtBarCode = new System.Windows.Forms.TextBox();
             this.lblBarcode = new System.Windows.Forms.Label();
+            this.lblRoss_weiht = new System.Windows.Forms.Label();
             this.lblNet_weiht = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblBrand_name = new System.Windows.Forms.Label();
+            this.lblBrand_id = new System.Windows.Forms.Label();
             this.lblIt_customer = new System.Windows.Forms.Label();
             this.lblCustomer_color_id = new System.Windows.Forms.Label();
             this.lblCustomer_color = new System.Windows.Forms.Label();
@@ -67,8 +71,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.lblBrand_id = new System.Windows.Forms.Label();
-            this.lblBrand_name = new System.Windows.Forms.Label();
+            this.lblDivision = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -79,13 +82,14 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.chkBoth);
+            this.panel1.Controls.Add(this.chkIsFinish);
             this.panel1.Controls.Add(this.cmbCrossUnit);
             this.panel1.Controls.Add(this.cmbNetUnit);
             this.panel1.Controls.Add(this.cmbQty);
             this.panel1.Controls.Add(this.txtQty);
             this.panel1.Controls.Add(this.lblQty);
             this.panel1.Controls.Add(this.txtCross_weiht);
-            this.panel1.Controls.Add(this.lblRoss_weiht);
             this.panel1.Controls.Add(this.txtNet_weiht);
             this.panel1.Controls.Add(this.txtPrints);
             this.panel1.Controls.Add(this.label1);
@@ -96,11 +100,39 @@
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.cmbItems);
             this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.lblRoss_weiht);
             this.panel1.Controls.Add(this.lblNet_weiht);
             this.panel1.Location = new System.Drawing.Point(2, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(818, 264);
             this.panel1.TabIndex = 2;
+            // 
+            // chkBoth
+            // 
+            this.chkBoth.AutoSize = true;
+            this.chkBoth.Checked = true;
+            this.chkBoth.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkBoth.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.chkBoth.Location = new System.Drawing.Point(468, 55);
+            this.chkBoth.Name = "chkBoth";
+            this.chkBoth.Size = new System.Drawing.Size(344, 33);
+            this.chkBoth.TabIndex = 49;
+            this.chkBoth.Text = "默認則面、正面標簽一起列印";
+            this.chkBoth.UseVisualStyleBackColor = true;
+            // 
+            // chkIsFinish
+            // 
+            this.chkIsFinish.AutoSize = true;
+            this.chkIsFinish.Checked = true;
+            this.chkIsFinish.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkIsFinish.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.chkIsFinish.Location = new System.Drawing.Point(720, 159);
+            this.chkIsFinish.Name = "chkIsFinish";
+            this.chkIsFinish.Size = new System.Drawing.Size(80, 33);
+            this.chkIsFinish.TabIndex = 48;
+            this.chkIsFinish.Text = "套件";
+            this.chkIsFinish.UseVisualStyleBackColor = true;
+            this.chkIsFinish.MouseUp += new System.Windows.Forms.MouseEventHandler(this.chkIsFinish_MouseUp);
             // 
             // cmbCrossUnit
             // 
@@ -116,7 +148,7 @@
             // 
             this.cmbNetUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F);
             this.cmbNetUnit.FormattingEnabled = true;
-            this.cmbNetUnit.Location = new System.Drawing.Point(498, 208);
+            this.cmbNetUnit.Location = new System.Drawing.Point(480, 208);
             this.cmbNetUnit.Name = "cmbNetUnit";
             this.cmbNetUnit.Size = new System.Drawing.Size(73, 47);
             this.cmbNetUnit.TabIndex = 4;
@@ -126,19 +158,19 @@
             // 
             this.cmbQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F);
             this.cmbQty.FormattingEnabled = true;
-            this.cmbQty.Location = new System.Drawing.Point(256, 208);
+            this.cmbQty.Location = new System.Drawing.Point(212, 208);
             this.cmbQty.Name = "cmbQty";
-            this.cmbQty.Size = new System.Drawing.Size(85, 47);
+            this.cmbQty.Size = new System.Drawing.Size(91, 47);
             this.cmbQty.TabIndex = 2;
-            this.cmbQty.Text = "PCS";
+            this.cmbQty.Text = "SET";
             // 
             // txtQty
             // 
-            this.txtQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.txtQty.Location = new System.Drawing.Point(137, 208);
+            this.txtQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQty.Location = new System.Drawing.Point(73, 208);
             this.txtQty.MaxLength = 10;
             this.txtQty.Name = "txtQty";
-            this.txtQty.Size = new System.Drawing.Size(119, 41);
+            this.txtQty.Size = new System.Drawing.Size(139, 47);
             this.txtQty.TabIndex = 1;
             this.txtQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNet_weiht_KeyPress);
@@ -149,7 +181,7 @@
             this.lblQty.AutoSize = true;
             this.lblQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblQty.ForeColor = System.Drawing.Color.Black;
-            this.lblQty.Location = new System.Drawing.Point(83, 219);
+            this.lblQty.Location = new System.Drawing.Point(19, 219);
             this.lblQty.Name = "lblQty";
             this.lblQty.Size = new System.Drawing.Size(56, 26);
             this.lblQty.TabIndex = 47;
@@ -157,34 +189,22 @@
             // 
             // txtCross_weiht
             // 
-            this.txtCross_weiht.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.txtCross_weiht.Location = new System.Drawing.Point(643, 208);
+            this.txtCross_weiht.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCross_weiht.Location = new System.Drawing.Point(618, 208);
             this.txtCross_weiht.MaxLength = 10;
             this.txtCross_weiht.Name = "txtCross_weiht";
-            this.txtCross_weiht.Size = new System.Drawing.Size(98, 41);
+            this.txtCross_weiht.Size = new System.Drawing.Size(123, 47);
             this.txtCross_weiht.TabIndex = 3;
             this.txtCross_weiht.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCross_weiht.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCross_weiht_KeyPress);
             // 
-            // lblRoss_weiht
-            // 
-            this.lblRoss_weiht.AutoSize = true;
-            this.lblRoss_weiht.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblRoss_weiht.ForeColor = System.Drawing.Color.Black;
-            this.lblRoss_weiht.Location = new System.Drawing.Point(587, 219);
-            this.lblRoss_weiht.Name = "lblRoss_weiht";
-            this.lblRoss_weiht.Size = new System.Drawing.Size(56, 26);
-            this.lblRoss_weiht.TabIndex = 45;
-            this.lblRoss_weiht.Text = "毛重";
-            this.lblRoss_weiht.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // txtNet_weiht
             // 
-            this.txtNet_weiht.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.txtNet_weiht.Location = new System.Drawing.Point(398, 208);
+            this.txtNet_weiht.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNet_weiht.Location = new System.Drawing.Point(370, 208);
             this.txtNet_weiht.MaxLength = 10;
             this.txtNet_weiht.Name = "txtNet_weiht";
-            this.txtNet_weiht.Size = new System.Drawing.Size(100, 41);
+            this.txtNet_weiht.Size = new System.Drawing.Size(110, 47);
             this.txtNet_weiht.TabIndex = 2;
             this.txtNet_weiht.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtNet_weiht.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNet_weiht_KeyPress);
@@ -192,7 +212,7 @@
             // txtPrints
             // 
             this.txtPrints.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtPrints.Location = new System.Drawing.Point(512, 22);
+            this.txtPrints.Location = new System.Drawing.Point(512, 4);
             this.txtPrints.MaxLength = 3;
             this.txtPrints.Name = "txtPrints";
             this.txtPrints.Size = new System.Drawing.Size(77, 47);
@@ -206,7 +226,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(397, 32);
+            this.label1.Location = new System.Drawing.Point(397, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 29);
             this.label1.TabIndex = 42;
@@ -216,14 +236,12 @@
             // chkAutoPrint
             // 
             this.chkAutoPrint.AutoSize = true;
-            this.chkAutoPrint.Checked = true;
-            this.chkAutoPrint.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkAutoPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.chkAutoPrint.Location = new System.Drawing.Point(653, 32);
+            this.chkAutoPrint.Location = new System.Drawing.Point(617, 12);
             this.chkAutoPrint.Name = "chkAutoPrint";
-            this.chkAutoPrint.Size = new System.Drawing.Size(128, 33);
+            this.chkAutoPrint.Size = new System.Drawing.Size(176, 33);
             this.chkAutoPrint.TabIndex = 4;
-            this.chkAutoPrint.Text = "自動列印";
+            this.chkAutoPrint.Text = "掃描自動列印";
             this.chkAutoPrint.UseVisualStyleBackColor = true;
             this.chkAutoPrint.Click += new System.EventHandler(this.chkAutoPrint_Click);
             // 
@@ -231,7 +249,7 @@
             // 
             this.lblItem_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblItem_total.ForeColor = System.Drawing.Color.Blue;
-            this.lblItem_total.Location = new System.Drawing.Point(775, 153);
+            this.lblItem_total.Location = new System.Drawing.Point(684, 155);
             this.lblItem_total.Name = "lblItem_total";
             this.lblItem_total.Size = new System.Drawing.Size(32, 35);
             this.lblItem_total.TabIndex = 27;
@@ -278,7 +296,7 @@
             this.cmbItems.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cmbItems.FormattingEnabled = true;
-            this.cmbItems.Location = new System.Drawing.Point(256, 149);
+            this.cmbItems.Location = new System.Drawing.Point(164, 149);
             this.cmbItems.MaxLength = 18;
             this.cmbItems.Name = "cmbItems";
             this.cmbItems.Size = new System.Drawing.Size(514, 47);
@@ -299,7 +317,7 @@
             this.txtBarCode.BackColor = System.Drawing.Color.Plum;
             this.txtBarCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBarCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtBarCode.Location = new System.Drawing.Point(253, 3);
+            this.txtBarCode.Location = new System.Drawing.Point(161, 3);
             this.txtBarCode.Name = "txtBarCode";
             this.txtBarCode.Size = new System.Drawing.Size(514, 47);
             this.txtBarCode.TabIndex = 0;
@@ -308,20 +326,32 @@
             // lblBarcode
             // 
             this.lblBarcode.AutoSize = true;
-            this.lblBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBarcode.ForeColor = System.Drawing.Color.DarkViolet;
-            this.lblBarcode.Location = new System.Drawing.Point(126, 14);
+            this.lblBarcode.Location = new System.Drawing.Point(12, 14);
             this.lblBarcode.Name = "lblBarcode";
-            this.lblBarcode.Size = new System.Drawing.Size(128, 26);
+            this.lblBarcode.Size = new System.Drawing.Size(139, 29);
             this.lblBarcode.TabIndex = 0;
             this.lblBarcode.Text = "條碼掃描區:";
+            // 
+            // lblRoss_weiht
+            // 
+            this.lblRoss_weiht.AutoSize = true;
+            this.lblRoss_weiht.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblRoss_weiht.ForeColor = System.Drawing.Color.Black;
+            this.lblRoss_weiht.Location = new System.Drawing.Point(565, 219);
+            this.lblRoss_weiht.Name = "lblRoss_weiht";
+            this.lblRoss_weiht.Size = new System.Drawing.Size(56, 26);
+            this.lblRoss_weiht.TabIndex = 45;
+            this.lblRoss_weiht.Text = "毛重";
+            this.lblRoss_weiht.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblNet_weiht
             // 
             this.lblNet_weiht.AutoSize = true;
             this.lblNet_weiht.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblNet_weiht.ForeColor = System.Drawing.Color.Black;
-            this.lblNet_weiht.Location = new System.Drawing.Point(344, 219);
+            this.lblNet_weiht.Location = new System.Drawing.Point(315, 219);
             this.lblNet_weiht.Name = "lblNet_weiht";
             this.lblNet_weiht.Size = new System.Drawing.Size(56, 26);
             this.lblNet_weiht.TabIndex = 1;
@@ -335,6 +365,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.lblDivision);
             this.panel2.Controls.Add(this.lblBrand_name);
             this.panel2.Controls.Add(this.lblBrand_id);
             this.panel2.Controls.Add(this.lblIt_customer);
@@ -358,6 +389,28 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(818, 469);
             this.panel2.TabIndex = 3;
+            // 
+            // lblBrand_name
+            // 
+            this.lblBrand_name.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblBrand_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblBrand_name.Location = new System.Drawing.Point(9, 47);
+            this.lblBrand_name.Name = "lblBrand_name";
+            this.lblBrand_name.Size = new System.Drawing.Size(120, 40);
+            this.lblBrand_name.TabIndex = 61;
+            this.lblBrand_name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblBrand_name.Visible = false;
+            // 
+            // lblBrand_id
+            // 
+            this.lblBrand_id.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblBrand_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblBrand_id.Location = new System.Drawing.Point(10, 4);
+            this.lblBrand_id.Name = "lblBrand_id";
+            this.lblBrand_id.Size = new System.Drawing.Size(120, 40);
+            this.lblBrand_id.TabIndex = 60;
+            this.lblBrand_id.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblBrand_id.Visible = false;
             // 
             // lblIt_customer
             // 
@@ -536,27 +589,16 @@
             this.label5.Text = "CUST. CODE:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblBrand_id
+            // lblDivision
             // 
-            this.lblBrand_id.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblBrand_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblBrand_id.Location = new System.Drawing.Point(10, 6);
-            this.lblBrand_id.Name = "lblBrand_id";
-            this.lblBrand_id.Size = new System.Drawing.Size(120, 40);
-            this.lblBrand_id.TabIndex = 60;
-            this.lblBrand_id.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblBrand_id.Visible = false;
-            // 
-            // lblBrand_name
-            // 
-            this.lblBrand_name.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblBrand_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblBrand_name.Location = new System.Drawing.Point(9, 49);
-            this.lblBrand_name.Name = "lblBrand_name";
-            this.lblBrand_name.Size = new System.Drawing.Size(120, 40);
-            this.lblBrand_name.TabIndex = 61;
-            this.lblBrand_name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblBrand_name.Visible = false;
+            this.lblDivision.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblDivision.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblDivision.Location = new System.Drawing.Point(135, 52);
+            this.lblDivision.Name = "lblDivision";
+            this.lblDivision.Size = new System.Drawing.Size(88, 31);
+            this.lblDivision.TabIndex = 62;
+            this.lblDivision.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDivision.Visible = false;
             // 
             // frmPackingLabel
             // 
@@ -621,5 +663,8 @@
         private System.Windows.Forms.Label lblIt_customer;
         private System.Windows.Forms.Label lblBrand_name;
         private System.Windows.Forms.Label lblBrand_id;
+        private System.Windows.Forms.CheckBox chkIsFinish;
+        private System.Windows.Forms.CheckBox chkBoth;
+        private System.Windows.Forms.Label lblDivision;
     }
 }
