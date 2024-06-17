@@ -45,6 +45,7 @@ namespace cf_pad.Reports
             //string fileName = GetCurrentColumnValue("mo_id").ToString().Trim() + ".jpg";
             //xrPictureBox2.Image = clsUtility.QRCodeImage(fileName);
             xrPictureBox2.Image = clsUtility.GenQRCode("http://www.chingfung.com");
+ 
         }
     }
 }
