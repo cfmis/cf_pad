@@ -152,7 +152,6 @@ namespace cf_pad.Forms
                 Select_Item(cmbItems.Text);
             }                       
         }
-
         private void Select_Item(string pGoods_id)
         {
             DataRow[] dr ;

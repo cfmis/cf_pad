@@ -741,5 +741,21 @@ namespace cf_pad.CLS
             Bitmap image = qrEncoder.Encode(strEncode, Encoding.UTF8);
             return image;
         }
+        public Bitmap GenBarCode(string strMsg)
+        {
+            string barcodeContent = strMsg; //"6973266780020"; // 这里输入你要生成条形码的内容
+            BarcodeWriter writer = new BarcodeWriter
+            {
+                Format = BarcodeFormat.CODE_128, // 指定条形码格式为Code 128
+                Options = new ZXing.Common.EncodingOptions
+                {
+                    Width = 300, // 条形码的宽度
+                    Height = 100 // 条形码的高度
+                }
+            };
+
+            Bitmap barcodeBitmap = writer.Write(barcodeContent); // 生成条形码图片
+            return barcodeBitmap;
+        }
     }
 }
