@@ -773,7 +773,7 @@ namespace cf_pad.CLS
             }
             if (con_qty > 100000)
             {
-                if (con_qty > plan_qty + (1 + 0.05))
+                if (con_qty > plan_qty * (1 + 0.05))
                 {
                     result = false;
                 }                
