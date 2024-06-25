@@ -230,7 +230,7 @@
             // btnShow
             // 
             this.btnShow.BackColor = System.Drawing.Color.Orange;
-            this.btnShow.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnShow.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnShow.Location = new System.Drawing.Point(158, 3);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(150, 71);
@@ -277,7 +277,7 @@
             // btnPrint
             // 
             this.btnPrint.BackColor = System.Drawing.Color.Cyan;
-            this.btnPrint.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnPrint.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnPrint.Location = new System.Drawing.Point(618, 3);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(150, 70);
@@ -326,7 +326,7 @@
             this.palShowCont.Controls.Add(this.txtFindId);
             this.palShowCont.Location = new System.Drawing.Point(1, 3);
             this.palShowCont.Name = "palShowCont";
-            this.palShowCont.Size = new System.Drawing.Size(1071, 287);
+            this.palShowCont.Size = new System.Drawing.Size(1071, 27);
             this.palShowCont.TabIndex = 2;
             this.palShowCont.Visible = false;
             // 

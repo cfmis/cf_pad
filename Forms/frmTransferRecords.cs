@@ -428,6 +428,21 @@ namespace cf_pad.Forms
             }
             else
             {
+                //--strart  十萬以上檢查是否超計劃數 2024/06/21 Allen
+                string mo_id = txtMo_id.Text;
+                string wp_id = txtOut_dept.Text;
+                string next_wp_id = txtIn_dept.Text;
+                float con_qty = clsUtility.FormatNullableFloat(txtActual_qty.Text);
+                string goods_id = txtGoods_id.Text;
+                if (!clsPrdTransfer.CheckProductQty(mo_id, goods_id, wp_id, next_wp_id, con_qty))
+                {
+                    if (con_qty > 100000)
+                    {
+                        MessageBox.Show(string.Format("發貨部門({0})->收貨部門({1})"+"\r\n"+"收貨數量已超出計劃數量的5%,請返回檢查!", wp_id, next_wp_id), "提示信息");
+                        return;
+                    }
+                }
+                //--end               
                 Result = GeneralRecive();
             }
 
@@ -467,7 +482,8 @@ namespace cf_pad.Forms
             {
                 for (int i = 0; i < listDetail.Count; i++)
                 {
-                    if (listDetail[i].id.Substring(0, 3) == "DAA" || listDetail[i].id.Substring(0, 3) == "DAB" || listDetail[i].id.Substring(0, 3) == "LAA" || listDetail[i].id.Substring(0, 3) == "LAB")//如果是貨倉發貨
+                    if (listDetail[i].id.Substring(0, 3) == "DAA" || listDetail[i].id.Substring(0, 3) == "DAB" || 
+                        listDetail[i].id.Substring(0, 3) == "LAA" || listDetail[i].id.Substring(0, 3) == "LAB")//如果是貨倉發貨
                         st_tr = 2;
                     Result = clsPrdTransfer.SaveTransferMostly(st_tr, listDetail[i].id, txtIn_dept.Text.Trim(), txtOut_dept.Text.Trim(), _userid);
                     if (Result == 0)
@@ -498,7 +514,7 @@ namespace cf_pad.Forms
             int result = 0;
             if (valid_data())
             {
-                jo_materiel_con_details objDetails = new jo_materiel_con_details();
+               jo_materiel_con_details objDetails = new jo_materiel_con_details();
                 objDetails.mo_id = txtMo_id.Text.Trim();
                 objDetails.goods_id = dgvDetails.CurrentRow.Cells["colGoods_id"].Value.ToString();
                 objDetails.id = txtTransfer_id.Text.Trim();
@@ -532,7 +548,8 @@ namespace cf_pad.Forms
                 {
                     //填充主表實體類
                     int st_tr=1;
-                    if (objDetails.id.Substring(0, 3) == "DAA" || objDetails.id.Substring(0, 3) == "DAB" || objDetails.id.Substring(0, 3) == "LAA" || objDetails.id.Substring(0, 3) == "LAB")//如果是貨倉發貨
+                    if (objDetails.id.Substring(0, 3) == "DAA" || objDetails.id.Substring(0, 3) == "DAB" || 
+                        objDetails.id.Substring(0, 3) == "LAA" || objDetails.id.Substring(0, 3) == "LAB")//如果是貨倉發貨
                         st_tr = 2;
                     int MostlyResult = clsPrdTransfer.SaveTransferMostly(st_tr, objDetails.id, txtIn_dept.Text.Trim(), txtOut_dept.Text.Trim(), _userid);
 
