@@ -326,7 +326,7 @@
             this.palShowCont.Controls.Add(this.txtFindId);
             this.palShowCont.Location = new System.Drawing.Point(1, 3);
             this.palShowCont.Name = "palShowCont";
-            this.palShowCont.Size = new System.Drawing.Size(1071, 27);
+            this.palShowCont.Size = new System.Drawing.Size(1071, 282);
             this.palShowCont.TabIndex = 2;
             this.palShowCont.Visible = false;
             // 

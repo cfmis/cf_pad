@@ -34,41 +34,30 @@ namespace cf_pad.Forms
 
         private void frmTransferRecords_Load(object sender, EventArgs e)
         {
-            if (_userid.Substring(0, 3) == "BUT")
-                txtIn_dept.Text = "102";
-            else
+            switch (_userid.Substring(0, 3))
             {
-                if (_userid.Substring(0, 3) == "ALY")
+                case "BUT":
+                    txtIn_dept.Text = "102";
+                    break;
+                case "ALY":
                     txtIn_dept.Text = "302";
-                else
-                {
-                    if (_userid.Substring(0, 3) == "BLK")
-                        txtIn_dept.Text = "105";
-                    else
-                    {
-                        if (_userid.Substring(0, 3) == "BUK")
-                            txtIn_dept.Text = "202";
-                        else
-                        {
-                            if (_userid.Substring(0, 3) == "STB")
-                                txtIn_dept.Text = "806";
-                            else
-                            {
-                                if (_userid.Substring(0, 3) == "STA")
-                                    txtIn_dept.Text = "805";
-                                else
-                                {
-                                    if (_userid.Substring(0, 3) == "STC")
-                                        txtIn_dept.Text = "809";
-                                    else
-                                    {
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+                    break;
+                case "BLK":
+                    txtIn_dept.Text = "105";
+                    break;
+                case "BUK":
+                    txtIn_dept.Text = "202";
+                    break;
+                case "STB":
+                    txtIn_dept.Text = "806";
+                    break;
+                case "STA":
+                    txtIn_dept.Text = "805";
+                    break;
+                case "STC":
+                    txtIn_dept.Text = "809";
+                    break;
+            }            
             if (txtIn_dept.Text == "105" || txtIn_dept.Text == "510")
                 chkIsRec.Checked = true;
             setTextVisible();
@@ -428,6 +417,7 @@ namespace cf_pad.Forms
             }
             else
             {
+                
                 //--strart  十萬以上檢查是否超計劃數 2024/06/21 Allen
                 string mo_id = txtMo_id.Text;
                 string wp_id = txtOut_dept.Text;
@@ -442,7 +432,8 @@ namespace cf_pad.Forms
                         return;
                     }
                 }
-                //--end               
+                //--end      
+                       
                 Result = GeneralRecive();
             }
 
