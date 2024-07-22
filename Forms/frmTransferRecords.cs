@@ -417,7 +417,7 @@ namespace cf_pad.Forms
             }
             else
             {
-                
+                /*
                 //--strart  十萬以上檢查是否超計劃數 2024/06/21 Allen
                 string mo_id = txtMo_id.Text;
                 string wp_id = txtOut_dept.Text;
@@ -433,7 +433,7 @@ namespace cf_pad.Forms
                     }
                 }
                 //--end      
-                       
+                */       
                 Result = GeneralRecive();
             }
 
