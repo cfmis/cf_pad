@@ -19,10 +19,12 @@ namespace cf_pad.Forms
 
         DataTable dtReport = new DataTable();
         DataTable dtReport2 = new DataTable();
-        public bool blPermission =false;
-        public frmIpqcReport()
+        public bool blPermission = false;
+        string inputType = "0"; // 0--為原來的；1--為L組測試數據
+        public frmIpqcReport(string type)
         {
-            InitializeComponent();                 
+            InitializeComponent();
+            inputType = type;
         }
 
         private void frmIpqcReport_FormClosed(object sender, FormClosedEventArgs e)
@@ -37,10 +39,11 @@ namespace cf_pad.Forms
             mskDat2.Text = DateTime.Now.ToString("yyyy/MM/dd");
             //生成表結構
             string strSql =
-                   @"SELECT Convert(bit,0) AS flag_select,CONVERT(VARCHAR(20),qc_date,111) AS qc_date,mo_id,goods_id,goods_name,order_qty,
-                    sample_qty,ac,re,qty_ng,qc_size,qc_color,qc_logo,qc_result,remark,artwork,id,qc_by,
-                    ROW_NUMBER() OVER (ORDER BY id) AS seq_no,'' AS check_color_desc,proofread_status AS check_color,mo_id AS mo_id2,'' AS proofread_status
-                    FROM dbo.qc_report_finish WHERE 1=0";
+            @"SELECT Convert(bit,0) AS flag_select,CONVERT(VARCHAR(20),qc_date,111) AS qc_date,mo_id,goods_id,goods_name,order_qty,
+            sample_qty,ac,re,qty_ng,qc_size,qc_color,qc_logo,qc_result,remark,artwork,id,qc_by,
+            ROW_NUMBER() OVER (ORDER BY id) AS seq_no,'' As check_color_desc,proofread_status As check_color,mo_id As mo_id2,
+            '' As proofread_status,'' As input_type
+            FROM dbo.qc_report_finish WHERE 1=0";
             dtReport = clsPublicOfPad.ExecuteSqlReturnDataTable(strSql);
             dgvDetails.DataSource = dtReport;
 
@@ -54,13 +57,19 @@ namespace cf_pad.Forms
             dt.Dispose();
 
             initWorker();//初始化綁定combobox的工號
+            if (inputType == "1")
+            {
+                this.tabPage1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+                this.tabPage2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            }
         }
-
-
+        
         //初始化綁定combobox的工號
         private void initWorker()
         {
-            cmbWorker.DataSource = clsProductQCRecords.InitWorker("P21-01", "P21-01","");
+            //cmbWorker.DataSource = clsProductQCRecords.InitWorker("P21-01", "P21-01", "");
+            string dept = (inputType == "0") ? "FQC" : "E02";            
+            cmbWorker.DataSource = clsProductQCRecords.InitWorker(dept);
             cmbWorker.DisplayMember = "hrm1name";
             cmbWorker.ValueMember = "hrm1wid";
         }
@@ -76,14 +85,12 @@ namespace cf_pad.Forms
                     {
                         strMo = strMo.Substring(0, 9);
                     }
-
                     if (string.IsNullOrEmpty(strMo))
                     {
                         dtReport.Clear();
                         return;
                     }
                     string strSql = GetFindSqlStr(strMo);
-
                     dtReport = clsPublicOfPad.ExecuteSqlReturnDataTable(strSql);
                     txtBarCode.Text = "";
                     if (dtReport.Rows.Count > 0)
@@ -102,10 +109,11 @@ namespace cf_pad.Forms
                         }
                     }
                     SqlParameter[] paras = new SqlParameter[] {
-                        new SqlParameter("@mo_id", strMo)
+                        new SqlParameter("@mo_id", strMo),
+                        new SqlParameter("@input_type", inputType)
                     };
                     dtReport.Clear();      
-                    dtReport = clsPublicOfGeo.ExecuteProcedureReturnTable("z_ipqc_get_ac_re", paras);
+                    dtReport = clsPublicOfGeo.ExecuteProcedureReturnTable("z_ipqc_get_acre", paras);
                     dgvDetails.DataSource = dtReport;
                     txtBarCode.Text = "";
                     chkResult.Checked = false;
@@ -151,17 +159,15 @@ namespace cf_pad.Forms
                             return;
                         }
                     }
-                }
-                 
-                const string sql_i =
-                    @"Insert into dbo.qc_report_finish(qc_date,mo_id,goods_id,goods_name,order_qty,sample_qty,ac,re,qty_ng,qc_size,qc_color,qc_logo,qc_result,remark,artwork,create_by,create_date,qc_by,proofread_status)
-                  Values(convert(date,getdate(),120),@mo_id,@goods_id,@goods_name,@order_qty,@sample_qty,@ac,@re,@qty_ng,@qc_size,@qc_color,@qc_logo,@qc_result,@remark,@artwork,@create_by,getdate(),@qc_by,@proofread_status)";
-                const string sql_u =
-                    @"UPDATE dbo.qc_report_finish 
+                }                 
+                string sql_i =
+                @"Insert into dbo.qc_report_finish(qc_date,mo_id,goods_id,goods_name,order_qty,sample_qty,ac,re,qty_ng,qc_size,qc_color,qc_logo,qc_result,remark,artwork,create_by,create_date,qc_by,proofread_status,input_type)
+                Values(convert(date,getdate(),120),@mo_id,@goods_id,@goods_name,@order_qty,@sample_qty,@ac,@re,@qty_ng,@qc_size,@qc_color,@qc_logo,@qc_result,@remark,@artwork,@create_by,getdate(),@qc_by,@proofread_status,@input_type)";
+                string sql_u =
+                @"UPDATE dbo.qc_report_finish 
 				SET mo_id=@mo_id,goods_id=@goods_id,goods_name=@goods_name,order_qty=@order_qty,sample_qty=@sample_qty,ac=@ac,re=@re,qty_ng=@qty_ng,qc_size=@qc_size,qc_color=@qc_color,qc_logo=@qc_logo,
-                    qc_result=@qc_result,remark=@remark,artwork=@artwork,update_by=@update_by,update_date=getdate(),qc_by=@qc_by,proofread_status=@proofread_status
+                    qc_result=@qc_result,remark=@remark,artwork=@artwork,update_by=@update_by,update_date=getdate(),qc_by=@qc_by,proofread_status=@proofread_status,input_type=@input_type
 				WHERE id=@id";
-
                 bool isFlag = false;
                 for (int i=0;i<dtReport.Rows.Count;i++)
                 {
@@ -212,10 +218,7 @@ namespace cf_pad.Forms
                                     qc_result = false;
                                 if (dtReport.Rows[i]["mo_id2"].ToString() != "" && "0,1".Contains(dtReport.Rows[i]["proofread_status"].ToString()))
                                 {
-                                    if (dtReport.Rows[i]["check_color"].ToString() == "True")
-                                        proofread_status = true;
-                                    else
-                                        proofread_status = false;
+                                    proofread_status = (dtReport.Rows[i]["check_color"].ToString() == "True") ? true : false;                                    
                                 }else
                                 {
                                     proofread_status = false;
@@ -225,6 +228,7 @@ namespace cf_pad.Forms
                                 myCommand.Parameters.AddWithValue("@artwork", dtReport.Rows[i]["artwork"].ToString());
                                 myCommand.Parameters.AddWithValue("@qc_by", cmbWorker.SelectedValue.ToString());
                                 myCommand.Parameters.AddWithValue("@proofread_status", proofread_status);
+                                myCommand.Parameters.AddWithValue("@input_type", inputType);
 
                                 if (id == 0) //新增
                                 {
@@ -272,12 +276,12 @@ namespace cf_pad.Forms
         private string GetFindSqlStr(string mo_id)
         {
             string str = string.Format(
-                    @"SELECT convert(bit,0) AS flag_select,CONVERT(VARCHAR(20),A.qc_date,111) AS qc_date,A.mo_id,A.goods_id,A.goods_name,A.order_qty,
-                    A.sample_qty,A.ac,A.re,A.qty_ng,A.qc_size,A.qc_color,A.qc_logo,A.qc_result,A.remark,A.artwork,A.id,A.qc_by,
-                    ROW_NUMBER() OVER (ORDER BY A.id) AS seq_no,Case WHEN ISNULL(B.mo_id,'')<>'' THEN '需要對色' ELSE '' END AS check_color_desc,
-                    A.proofread_status AS check_color,ISNULL(B.mo_id,'') AS mo_id2,ISNULL(B.proofread_status,'') AS proofread_status
-                    FROM dbo.qc_report_finish A left join dgsql2.dgcf_db.dbo.mo_need_proofread_color B on A.mo_id = B.mo_id Collate Chinese_PRC_CI_AS
-                    WHERE A.mo_id='{0}' and A.qc_date=CONVERT(date,GETDATE(),120)", mo_id); ;
+            @"SELECT convert(bit,0) AS flag_select,CONVERT(VARCHAR(20),A.qc_date,111) AS qc_date,A.mo_id,A.goods_id,A.goods_name,A.order_qty,
+            A.sample_qty,A.ac,A.re,A.qty_ng,A.qc_size,A.qc_color,A.qc_logo,A.qc_result,A.remark,A.artwork,A.id,A.qc_by,
+            ROW_NUMBER() OVER (ORDER BY A.id) AS seq_no,Case WHEN ISNULL(B.mo_id,'')<>'' THEN '需要對色' ELSE '' END AS check_color_desc,
+            A.proofread_status AS check_color,ISNULL(B.mo_id,'') AS mo_id2,ISNULL(B.proofread_status,'') AS proofread_status,input_type
+            FROM dbo.qc_report_finish A LEFT JOIN dgsql2.dgcf_db.dbo.mo_need_proofread_color B on A.mo_id = B.mo_id Collate Chinese_PRC_CI_AS
+            WHERE A.mo_id='{0}' And A.qc_date=CONVERT(date,GETDATE(),120) And A.input_type='{1}'", mo_id,inputType); 
             return str;
         }
        
@@ -438,7 +442,7 @@ namespace cf_pad.Forms
                     A.goods_name,A.order_qty,A.sample_qty,A.ac,re,A.qty_ng,A.qc_size,A.qc_color,A.qc_logo,A.qc_result,A.remark,
                     A.artwork,A.id,A.qc_by,ROW_NUMBER() OVER (ORDER BY A.id) AS seq_no,
                     Case WHEN ISNULL(B.mo_id,'')<>'' THEN '需要對色' ELSE '' END AS check_color_desc, A.proofread_status AS check_color,
-                    ISNULL(B.mo_id,'') AS mo_id2,ISNULL(B.proofread_status,'') AS proofread_status
+                    ISNULL(B.mo_id,'') AS mo_id2,ISNULL(B.proofread_status,'') AS proofread_status,input_type
                     FROM dbo.qc_report_finish A LEFT JOIN dgsql2.dgcf_db.dbo.mo_need_proofread_color B on A.mo_id = B.mo_id Collate Chinese_PRC_CI_AS
                     WHERE id>0 ");
             if (!string.IsNullOrEmpty(txtMO1.Text))
@@ -449,6 +453,7 @@ namespace cf_pad.Forms
                 sb.Append(string.Format(" AND A.qc_date>='{0}'", dat1));
             if (!string.IsNullOrEmpty(dat2))
                 sb.Append(string.Format(" AND A.qc_date<='{0}'", dat2));
+            sb.Append(string.Format(" AND A.input_type='{0}'", inputType));
             dtReport2 = clsPublicOfPad.ExecuteSqlReturnDataTable(sb.ToString());
             dgvDetails2.DataSource = dtReport2;
             if (dtReport2.Rows.Count == 0)
@@ -466,7 +471,8 @@ namespace cf_pad.Forms
             if (!string.IsNullOrEmpty(dat1))
                 sb.Append(string.Format(" AND qc_date>='{0}'", dat1));
             if (!string.IsNullOrEmpty(dat2))
-                sb.Append(string.Format(" AND qc_date<='{0}'", dat2));            
+                sb.Append(string.Format(" AND qc_date<='{0}'", dat2));
+            sb.Append(string.Format(" AND input_type='{0}'", inputType));
             using (DataTable dtMO = clsPublicOfPad.ExecuteSqlReturnDataTable(sb.ToString()))
             {
                 lblMo_total.Text = dtMO.Rows.Count.ToString();
@@ -570,9 +576,13 @@ namespace cf_pad.Forms
         }
 
         private void dgvDetails_SelectionChanged(object sender, EventArgs e)
-        {
+        {            
+            if (dtReport.Rows.Count==0)
+            {
+                return;
+            }
             if (dgvDetails.RowCount > 0)
-            {               
+            {          
                 if (this.Tag == "DEL")
                 {
                     this.Tag = "";

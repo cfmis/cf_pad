@@ -116,14 +116,14 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txtQty = new System.Windows.Forms.TextBox();
             this.txtBarCode = new System.Windows.Forms.TextBox();
-            this.lblBarcode = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.lblBarcode = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtCheck_date = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.txtCheck_by = new System.Windows.Forms.TextBox();
             this.txtSate = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label20 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -593,6 +593,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.txtBarCode);
             this.panel2.Controls.Add(this.pnlLot);
             this.panel2.Controls.Add(this.btnLotNo);
             this.panel2.Controls.Add(this.pnlQc);
@@ -601,22 +602,21 @@
             this.panel2.Controls.Add(this.picqc_result2);
             this.panel2.Controls.Add(this.txtSec_qty);
             this.panel2.Controls.Add(this.txtIqc_result);
-            this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.txtPackage_num);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.txtQty);
-            this.panel2.Controls.Add(this.txtBarCode);
             this.panel2.Controls.Add(this.txtMo_id);
-            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.txtGoods_id);
             this.panel2.Controls.Add(this.txtGoods_name);
             this.panel2.Controls.Add(this.txtLot);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.dgvDetails);
             this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.lblBarcode);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.lblBarcode);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label13);
             this.panel2.Location = new System.Drawing.Point(4, 146);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(824, 628);
@@ -780,10 +780,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlQc.BackColor = System.Drawing.Color.LightPink;
             this.pnlQc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlQc.Controls.Add(this.txtIdqc);
             this.pnlQc.Controls.Add(this.btnItemDel);
             this.pnlQc.Controls.Add(this.dgvDetails_qc);
             this.pnlQc.Controls.Add(this.label21);
-            this.pnlQc.Controls.Add(this.txtIdqc);
             this.pnlQc.Location = new System.Drawing.Point(1, 519);
             this.pnlQc.Name = "pnlQc";
             this.pnlQc.Size = new System.Drawing.Size(819, 112);
@@ -1058,6 +1058,16 @@
             this.txtBarCode.Enter += new System.EventHandler(this.txtBarCode_Enter);
             this.txtBarCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBarCode_KeyDown);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label11.Location = new System.Drawing.Point(537, 102);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(56, 26);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "重量";
+            // 
             // lblBarcode
             // 
             this.lblBarcode.AutoSize = true;
@@ -1068,16 +1078,6 @@
             this.lblBarcode.Size = new System.Drawing.Size(100, 26);
             this.lblBarcode.TabIndex = 24;
             this.lblBarcode.Text = "條碼掃描";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label11.Location = new System.Drawing.Point(537, 102);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(56, 26);
-            this.label11.TabIndex = 26;
-            this.label11.Text = "重量";
             // 
             // label10
             // 
@@ -1098,6 +1098,25 @@
             this.txtCheck_date.TabIndex = 28;
             this.txtCheck_date.TabStop = false;
             // 
+            // txtCheck_by
+            // 
+            this.txtCheck_by.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCheck_by.Location = new System.Drawing.Point(109, 103);
+            this.txtCheck_by.Name = "txtCheck_by";
+            this.txtCheck_by.ReadOnly = true;
+            this.txtCheck_by.Size = new System.Drawing.Size(260, 38);
+            this.txtCheck_by.TabIndex = 25;
+            this.txtCheck_by.TabStop = false;
+            // 
+            // txtSate
+            // 
+            this.txtSate.Location = new System.Drawing.Point(708, 105);
+            this.txtSate.Name = "txtSate";
+            this.txtSate.ReadOnly = true;
+            this.txtSate.Size = new System.Drawing.Size(79, 35);
+            this.txtSate.TabIndex = 22;
+            this.txtSate.TabStop = false;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -1117,25 +1136,6 @@
             this.label9.Size = new System.Drawing.Size(90, 26);
             this.label9.TabIndex = 26;
             this.label9.Text = "批 準 人";
-            // 
-            // txtCheck_by
-            // 
-            this.txtCheck_by.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCheck_by.Location = new System.Drawing.Point(109, 103);
-            this.txtCheck_by.Name = "txtCheck_by";
-            this.txtCheck_by.ReadOnly = true;
-            this.txtCheck_by.Size = new System.Drawing.Size(260, 38);
-            this.txtCheck_by.TabIndex = 25;
-            this.txtCheck_by.TabStop = false;
-            // 
-            // txtSate
-            // 
-            this.txtSate.Location = new System.Drawing.Point(708, 105);
-            this.txtSate.Name = "txtSate";
-            this.txtSate.ReadOnly = true;
-            this.txtSate.Size = new System.Drawing.Size(79, 35);
-            this.txtSate.TabIndex = 22;
-            this.txtSate.TabStop = false;
             // 
             // tabPage2
             // 
