@@ -47,14 +47,15 @@ namespace cf_pad.Forms
             dtReport = clsPublicOfPad.ExecuteSqlReturnDataTable(strSql);
             dgvDetails.DataSource = dtReport;
 
-            //FQC組別下的用戶才可以保存、刪除
-            strSql = string.Format(@"SELECT user_id FROM DGERP2.cferp.dbo.sys_user WHERE user_id='{0}' and group_id='FQC'", DBUtility._user_id);
-            DataTable dt = clsPublicOfPad.ExecuteSqlReturnDataTable(strSql);
-            if (dt.Rows.Count > 0 || DBUtility._user_id == "ADMIN")
-                blPermission = true;
-            else
-                blPermission = false;
-            dt.Dispose();
+            ////FQC組別下的用戶才可以保存、刪除
+            //strSql = string.Format(@"SELECT user_id FROM DGERP2.cferp.dbo.sys_user WHERE user_id='{0}' and group_id='FQC'", DBUtility._user_id);
+            //DataTable dt = clsPublicOfPad.ExecuteSqlReturnDataTable(strSql);
+            //if (dt.Rows.Count > 0 || DBUtility._user_id == "ADMIN")
+            //    blPermission = true;
+            //else
+            //    blPermission = false;
+            //dt.Dispose();
+            blPermission = true;
 
             initWorker();//初始化綁定combobox的工號
             if (inputType == "1")
