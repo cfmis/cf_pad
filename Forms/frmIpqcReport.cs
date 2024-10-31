@@ -78,8 +78,9 @@ namespace cf_pad.Forms
 
         private void txtBarCode_KeyDown(object sender, KeyEventArgs e)
         {
+            chkSelectAll.Checked = false;
             switch (e.KeyCode)
-            {
+            {               
                 case Keys.Enter:
                     string strMo = txtBarCode.Text;
                     if (strMo.Length > 9)
