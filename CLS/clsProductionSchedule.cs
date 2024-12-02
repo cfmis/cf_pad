@@ -437,7 +437,17 @@ namespace cf_pad.CLS
             //同時刪除GEO系統的記錄
             if (Result > 0)
             {
-                strSql = " DELETE FROM " + remote_db + "Jo_data_upkeep_details WHERE within_code='" + "0000" + "' AND prd_id='" + prd_id + "'";
+                string strSql1 = @" SELECT transfer_flag FROM product_records 
+                                   WHERE prd_id = '" + prd_id + "' And transfer_flag ='' ";
+                DataTable dtres = clsPublicOfPad.ExecuteSqlReturnDataTable(strSql1);
+                if (dtres.Rows.Count > 0)
+                {
+                    string strSql2 = @" DELETE FROM product_records WHERE prd_id = '" + prd_id + "'";
+                    strSql2 += @" DELETE FROM product_records_worker WHERE prd_id = '" + prd_id + "'";
+                    strSql2 += @" DELETE FROM product_records_defective WHERE prd_id = '" + prd_id + "'";
+
+                    Result = clsPublicOfPad.ExecuteNonQuery(strSql2, null, false);
+                }
                 Result = clsPublicOfPad.ExecuteSqlUpdate(strSql);
             }
 //            try

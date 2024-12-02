@@ -46,11 +46,11 @@ namespace cf_pad.Forms
             //加載時讓條碼框獲得焦點
             txtBarCode.Focus();
 
-            Font a = new Font("GB2312", 20);//GB2312为字体名称，1为字体大小dataGridView1.Font = a;
-            dgvDetails.Font = a;
-            dgvWorker.Font = a;
-            dgvWorker1.Font = a;
-            dgvWorker2.Font = a;
+            //Font a = new Font("GB2312", 20);//GB2312为字体名称，1为字体大小dataGridView1.Font = a;
+            //dgvDetails.Font = a;
+            //dgvWorker.Font = a;
+            //dgvWorker1.Font = a;
+            //dgvWorker2.Font = a;
             dgvDetails.AutoGenerateColumns = false;
 
             get_prd_worker();//初始化dtWorker表，不然中間會出錯
@@ -88,7 +88,7 @@ namespace cf_pad.Forms
             cmbWorkType.DataSource = dtWork_type;
             cmbWorkType.DisplayMember = "work_type_desc";
             cmbWorkType.ValueMember = "work_type_id";
-            cmbWorkType.Text = "選貨";
+            //cmbWorkType.Text = "選貨";
             cmbWorkType.SelectedValue = "A03";
             InitComBoxGroup();
             //初始化班次、組別
@@ -123,7 +123,7 @@ namespace cf_pad.Forms
                 cmbGroup.ValueMember = "work_group";
             }
 
-            cmbWorkType.Text = "選貨";
+            cmbWorkType.SelectedValue = "A03";
             if (cmbProductDept.Text == "302")
                 txtmWeg1.Text = "1.4";
             else
@@ -170,72 +170,65 @@ namespace cf_pad.Forms
         //查詢未完成的記錄，並重新賦值，便於重新輸入完整資料
         private void get_prd_records(int con_type)
         {
-            try
+            string prd_work_type = cmbWorkType.SelectedValue.ToString().Trim();
+            //獲取制單編號資料
+            string sql = "";
+            sql += " Select a.*,rtrim(b.work_type_desc) as work_type_desc ";
+            sql += " From product_records a ";
+            sql += " Left outer join work_type b on a.prd_work_type=b.work_type_id ";
+            sql += " Where a.prd_dep = " + "'" + cmbProductDept.SelectedValue.ToString() + "'";
+            sql += " And a.prd_work_type = " + "'" + prd_work_type + "'";
+            if (con_type == 1)//是否查找當日未完成標識
             {
-                string prd_work_type = cmbWorkType.SelectedValue.ToString().Trim();
-                //獲取制單編號資料
-                string sql = "";
-                sql += " Select a.*,rtrim(b.work_type_desc) as work_type_desc ";
-                sql += " From product_records a ";
-                sql += " Left outer join work_type b on a.prd_work_type=b.work_type_id ";
-                sql += " Where a.prd_dep = " + "'" + cmbProductDept.SelectedValue.ToString() + "'";
-                sql += " And a.prd_work_type = " + "'" + prd_work_type + "'";
-                if (con_type == 1)//是否查找當日未完成標識
+                sql += " And a.prd_mo = " + "'" + txtmo_id.Text.ToString() + "'";
+                sql += " And a.prd_item = " + "'" + cmbGoods_id.Text.ToString() + "'";
+            }
+            else
+            {
+                if (con_type == 2)//未完成的記錄
                 {
-                    sql += " And a.prd_mo = " + "'" + txtmo_id.Text.ToString() + "'";
-                    sql += " And a.prd_item = " + "'" + cmbGoods_id.Text.ToString() + "'";
+                    //sql += " And a.prd_date = " + "'" + dteProdcutDate.Text + "'";
+                    sql += " And a.prd_start_time <> " + "'" + "" + "'" + " And a.prd_end_time = " + "'" + "" + "'";
                 }
                 else
                 {
-                    if (con_type == 2)//未完成的記錄
-                    {
-                        //sql += " And a.prd_date = " + "'" + dteProdcutDate.Text + "'";
-                        sql += " And a.prd_start_time <> " + "'" + "" + "'" + " And a.prd_end_time = " + "'" + "" + "'";
-                    }
+                    if (con_type == 3)//如果是查找當日所有記錄
+                        sql += " And a.prd_date = " + "'" + dteProdcutDate.Text + "'";
                     else
                     {
-                        if (con_type == 3)//如果是查找當日所有記錄
-                            sql += " And a.prd_date = " + "'" + dteProdcutDate.Text + "'";
+                        if (con_type == 4)//未開始生產的記錄
+                        {
+                            //sql += " And a.prd_date = " + "'" + dteProdcutDate.Text + "'";
+                            sql += " And a.prd_start_time = " + "'" + "" + "'" + " And a.prd_end_time = " + "'" + "" + "'";
+                        }
                         else
                         {
-                            if (con_type == 4)//未開始生產的記錄
+                            if (con_type == 5)//當天完成的記錄
                             {
-                                //sql += " And a.prd_date = " + "'" + dteProdcutDate.Text + "'";
-                                sql += " And a.prd_start_time = " + "'" + "" + "'" + " And a.prd_end_time = " + "'" + "" + "'";
+                                sql += " And a.prd_date = " + "'" + dteProdcutDate.Text + "'";
+                                sql += " And a.prd_start_time <> " + "'" + "" + "'" + " And a.prd_end_time <> " + "'" + "" + "'";
                             }
                             else
                             {
-                                if (con_type == 5)//當天完成的記錄
+                                if (con_type == 6)//按制單編號查詢未完成的記錄
                                 {
-                                    sql += " And a.prd_date = " + "'" + dteProdcutDate.Text + "'";
-                                    sql += " And a.prd_start_time <> " + "'" + "" + "'" + " And a.prd_end_time <> " + "'" + "" + "'";
+                                    sql += " And a.prd_mo like " + "'%" + txtSearchMo.Text + "%'";
+                                    sql += " And a.prd_end_time = " + "'" + "" + "'";
                                 }
                                 else
                                 {
-                                    if (con_type == 6)//按制單編號查詢未完成的記錄
+                                    if (con_type == 7)//按制單編號查詢所有記錄
                                     {
                                         sql += " And a.prd_mo like " + "'%" + txtSearchMo.Text + "%'";
-                                        sql += " And a.prd_end_time = " + "'" + "" + "'";
-                                    }
-                                    else
-                                    {
-                                        if (con_type == 7)//按制單編號查詢所有記錄
-                                        {
-                                            sql += " And a.prd_mo like " + "'%" + txtSearchMo.Text + "%'";
-                                        }
                                     }
                                 }
                             }
                         }
                     }
                 }
-                sql += " Order By a.prd_date desc,a.prd_end_time,a.crtim ";
-                dtProductionRecordslist = clsPublicOfPad.ExecuteSqlReturnDataTable(sql);
             }
-            catch (Exception e1)
-            {
-                MessageBox.Show(e1.Message);
-            }
+            sql += " Order By a.prd_date desc,a.prd_end_time,a.crtim ";
+            dtProductionRecordslist = clsPublicOfPad.ExecuteSqlReturnDataTable(sql);
             //GBW004725
         }
 
@@ -342,7 +335,7 @@ namespace cf_pad.Forms
 
             txtMachine.Text = dtProductionRecordslist.Rows[index]["prd_machine"].ToString();
             txtProductNo.Text = dtProductionRecordslist.Rows[index]["prd_worker"].ToString();
-            cmbWorkType.Text = dtProductionRecordslist.Rows[index]["work_type_desc"].ToString().Trim();
+            cmbWorkType.SelectedValue = dtProductionRecordslist.Rows[index]["prd_work_type"].ToString().Trim();
             dtpStart.Value = Convert.ToDateTime("2014/01/01 " + dtProductionRecordslist.Rows[index]["prd_start_time"].ToString());
             dtpEnd.Value = Convert.ToDateTime("2014/01/01 " + dtProductionRecordslist.Rows[index]["prd_end_time"].ToString());
             txtNormal_work.Text = (dtProductionRecordslist.Rows[index]["prd_normal_time"].ToString() != "0" ? dtProductionRecordslist.Rows[index]["prd_normal_time"].ToString() : "");
@@ -506,7 +499,7 @@ namespace cf_pad.Forms
             txtPrd_qty.Text = "";
             txtprd_weg.Text = "";
             txtProductNo.Text = "";
-            cmbWorkType.Text = "";
+            //cmbWorkType.Text = "";
             dtpStart.Value = Convert.ToDateTime("2014/01/01 " + "00:00");
             dtpEnd.Value = Convert.ToDateTime("2014/01/01 " + "00:00");
             chkcont_work1.Checked = false;
@@ -593,7 +586,7 @@ namespace cf_pad.Forms
                 cmbGroup.SelectAll();
                 return false;
             }
-            if (cmbWorkType.Text == "")
+            if (cmbWorkType.SelectedValue.ToString().Trim() == "")
             {
                 MessageBox.Show("工作類型不能為空,請重新輸入!");
                 cmbWorkType.Focus();
@@ -614,7 +607,7 @@ namespace cf_pad.Forms
                 cmbGoods_id.SelectAll();
                 return false;
             }
-            if (cmbWorkType.Text.Trim() == "A03")
+            if (cmbWorkType.SelectedValue.ToString().Trim() == "A03")
             {
                 if (txtPrd_qty.Text != "" && !Verify.StringValidating(txtPrd_qty.Text.Trim(), Verify.enumValidatingType.AllNumber))
                 {
@@ -1562,7 +1555,7 @@ namespace cf_pad.Forms
 
         private void cmbGroup_Leave(object sender, EventArgs e)
         {
-            //get_group_member();//獲取組別的成員
+            get_group_member();//獲取組別的成員
             //get_last_prd_end_time();//查詢組別當日最後的完成時間，作為開始時間
             //if (cmbGroup.Text == "AB99")
             //{
@@ -1712,23 +1705,17 @@ namespace cf_pad.Forms
 
         private void btnKgPcsHide_Click(object sender, EventArgs e)
         {
-            pnlKgPcs.Visible = false;
+
         }
 
         private void btnKgPcsShow_Click(object sender, EventArgs e)
         {
-            pnlKgPcs.Visible = true;
-            txtSample_no.Focus();
-        }
 
-        private void btnWorkerShow_Click(object sender, EventArgs e)
-        {
-            pnlWorker.Visible = true;
         }
 
         private void btnWorkerHide_Click(object sender, EventArgs e)
         {
-            pnlWorker.Visible = false;
+
         }
 
         private void txtSample_no_TextChanged(object sender, EventArgs e)
@@ -1970,6 +1957,18 @@ namespace cf_pad.Forms
 
             return strNew_No;
         }
+
+        private void lblOrder_Class_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbOrder_class_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
 
     }
 }

@@ -32,6 +32,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -41,6 +42,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>stm.ico</ApplicationIcon>
@@ -120,6 +122,9 @@
       <HintPath>DLL\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="NModbus4">
+      <HintPath>DLL\NModbus4.dll</HintPath>
+    </Reference>
     <Reference Include="RKLib.ExportData, Version=1.0.0.0, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>DLL\RKLib.ExportData.dll</HintPath>
@@ -171,6 +176,7 @@
     <Compile Include="CLS\clsUser.cs" />
     <Compile Include="CLS\clsUtility.cs" />
     <Compile Include="CLS\clsValidRule.cs" />
+    <Compile Include="CLS\CRC.cs" />
     <Compile Include="CLS\ExpToExcel.cs" />
     <Compile Include="CLS\NewBarCodeHook.cs" />
     <Compile Include="CLS\SynTimer.cs" />
