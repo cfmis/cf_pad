@@ -130,7 +130,10 @@ namespace cf_pad
 
         private void BTN10_Click(object sender, EventArgs e)
         {
-            RunNewForm("Forms.frmIpqcReport");//成品檢驗記錄
+            ////RunNewForm("Forms.frmIpqcReport");//成品檢驗記錄           
+            Forms.frmIpqcReport frm = new Forms.frmIpqcReport("0");
+            frm.WindowState = FormWindowState.Maximized;
+            frm.ShowDialog();
         }
 
         private void BTN11_Click(object sender, EventArgs e)
@@ -172,6 +175,14 @@ namespace cf_pad
         private void btnPrintArtwork_Click(object sender, EventArgs e)
         {
             RunNewForm("Forms.frmPrintArtwork");//圖樣列印
+        }
+
+        private void BTN14_Click(object sender, EventArgs e)
+        {            
+            Forms.frmIpqcReport frm = new Forms.frmIpqcReport("1");
+            //frm.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.ShowDialog();            
         }
     }
 }

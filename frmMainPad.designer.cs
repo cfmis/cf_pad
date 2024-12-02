@@ -95,9 +95,9 @@
             // btnPrintArtwork
             // 
             this.btnPrintArtwork.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.btnPrintArtwork.Location = new System.Drawing.Point(261, 643);
+            this.btnPrintArtwork.Location = new System.Drawing.Point(276, 633);
             this.btnPrintArtwork.Name = "btnPrintArtwork";
-            this.btnPrintArtwork.Size = new System.Drawing.Size(214, 74);
+            this.btnPrintArtwork.Size = new System.Drawing.Size(224, 74);
             this.btnPrintArtwork.TabIndex = 32;
             this.btnPrintArtwork.Text = "圖樣列印";
             this.btnPrintArtwork.UseVisualStyleBackColor = true;
@@ -106,9 +106,9 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button1.Location = new System.Drawing.Point(261, 564);
+            this.button1.Location = new System.Drawing.Point(275, 554);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(214, 74);
+            this.button1.Size = new System.Drawing.Size(224, 74);
             this.button1.TabIndex = 31;
             this.button1.Text = "外發IQC檢驗(新)";
             this.button1.UseVisualStyleBackColor = true;
@@ -117,9 +117,9 @@
             // btnTransfer
             // 
             this.btnTransfer.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.btnTransfer.Location = new System.Drawing.Point(25, 643);
+            this.btnTransfer.Location = new System.Drawing.Point(25, 633);
             this.btnTransfer.Name = "btnTransfer";
-            this.btnTransfer.Size = new System.Drawing.Size(214, 74);
+            this.btnTransfer.Size = new System.Drawing.Size(224, 74);
             this.btnTransfer.TabIndex = 30;
             this.btnTransfer.Text = "電鍍磅貨(開移交單)";
             this.btnTransfer.UseVisualStyleBackColor = true;
@@ -128,9 +128,9 @@
             // btnTakeMoSample
             // 
             this.btnTakeMoSample.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnTakeMoSample.Location = new System.Drawing.Point(261, 643);
+            this.btnTakeMoSample.Location = new System.Drawing.Point(276, 634);
             this.btnTakeMoSample.Name = "btnTakeMoSample";
-            this.btnTakeMoSample.Size = new System.Drawing.Size(214, 74);
+            this.btnTakeMoSample.Size = new System.Drawing.Size(224, 74);
             this.btnTakeMoSample.TabIndex = 29;
             this.btnTakeMoSample.Text = "提倉單";
             this.btnTakeMoSample.UseVisualStyleBackColor = true;
@@ -140,9 +140,9 @@
             // btnStoreIssue
             // 
             this.btnStoreIssue.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnStoreIssue.Location = new System.Drawing.Point(261, 174);
+            this.btnStoreIssue.Location = new System.Drawing.Point(275, 164);
             this.btnStoreIssue.Name = "btnStoreIssue";
-            this.btnStoreIssue.Size = new System.Drawing.Size(214, 74);
+            this.btnStoreIssue.Size = new System.Drawing.Size(224, 74);
             this.btnStoreIssue.TabIndex = 28;
             this.btnStoreIssue.Text = "倉庫發貨";
             this.btnStoreIssue.UseVisualStyleBackColor = true;
@@ -151,9 +151,9 @@
             // BTN11
             // 
             this.BTN11.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.BTN11.Location = new System.Drawing.Point(261, 486);
+            this.BTN11.Location = new System.Drawing.Point(275, 476);
             this.BTN11.Name = "BTN11";
-            this.BTN11.Size = new System.Drawing.Size(214, 74);
+            this.BTN11.Size = new System.Drawing.Size(224, 74);
             this.BTN11.TabIndex = 25;
             this.BTN11.Text = "外發IQC檢驗異常處理";
             this.BTN11.UseVisualStyleBackColor = true;
@@ -162,9 +162,9 @@
             // BTN7
             // 
             this.BTN7.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.BTN7.Location = new System.Drawing.Point(25, 486);
+            this.BTN7.Location = new System.Drawing.Point(25, 476);
             this.BTN7.Name = "BTN7";
-            this.BTN7.Size = new System.Drawing.Size(214, 74);
+            this.BTN7.Size = new System.Drawing.Size(224, 74);
             this.BTN7.TabIndex = 21;
             this.BTN7.Text = "收發登記";
             this.BTN7.UseVisualStyleBackColor = true;
@@ -173,9 +173,9 @@
             // BTN3
             // 
             this.BTN3.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.BTN3.Location = new System.Drawing.Point(261, 330);
+            this.BTN3.Location = new System.Drawing.Point(275, 320);
             this.BTN3.Name = "BTN3";
-            this.BTN3.Size = new System.Drawing.Size(214, 74);
+            this.BTN3.Size = new System.Drawing.Size(224, 74);
             this.BTN3.TabIndex = 17;
             this.BTN3.Text = "產品QC";
             this.BTN3.UseVisualStyleBackColor = true;
@@ -184,9 +184,9 @@
             // BTN10
             // 
             this.BTN10.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.BTN10.Location = new System.Drawing.Point(25, 330);
+            this.BTN10.Location = new System.Drawing.Point(25, 320);
             this.BTN10.Name = "BTN10";
-            this.BTN10.Size = new System.Drawing.Size(214, 74);
+            this.BTN10.Size = new System.Drawing.Size(224, 74);
             this.BTN10.TabIndex = 24;
             this.BTN10.Text = "成品檢驗記錄";
             this.BTN10.UseVisualStyleBackColor = true;
@@ -195,9 +195,9 @@
             // BTN6
             // 
             this.BTN6.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.BTN6.Location = new System.Drawing.Point(25, 408);
+            this.BTN6.Location = new System.Drawing.Point(25, 398);
             this.BTN6.Name = "BTN6";
-            this.BTN6.Size = new System.Drawing.Size(214, 74);
+            this.BTN6.Size = new System.Drawing.Size(224, 74);
             this.BTN6.TabIndex = 20;
             this.BTN6.Text = "生產進度表(新)";
             this.BTN6.UseVisualStyleBackColor = true;
@@ -206,9 +206,9 @@
             // BTN2
             // 
             this.BTN2.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.BTN2.Location = new System.Drawing.Point(25, 564);
+            this.BTN2.Location = new System.Drawing.Point(25, 554);
             this.BTN2.Name = "BTN2";
-            this.BTN2.Size = new System.Drawing.Size(214, 74);
+            this.BTN2.Size = new System.Drawing.Size(224, 74);
             this.BTN2.TabIndex = 16;
             this.BTN2.Text = " 選  貨";
             this.BTN2.UseVisualStyleBackColor = true;
@@ -217,9 +217,9 @@
             // BTN13
             // 
             this.BTN13.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.BTN13.Location = new System.Drawing.Point(261, 408);
+            this.BTN13.Location = new System.Drawing.Point(275, 398);
             this.BTN13.Name = "BTN13";
-            this.BTN13.Size = new System.Drawing.Size(214, 74);
+            this.BTN13.Size = new System.Drawing.Size(224, 74);
             this.BTN13.TabIndex = 27;
             this.BTN13.Text = "標識卡(辦單)";
             this.BTN13.UseVisualStyleBackColor = true;
@@ -228,9 +228,9 @@
             // BTN9
             // 
             this.BTN9.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.BTN9.Location = new System.Drawing.Point(261, 252);
+            this.BTN9.Location = new System.Drawing.Point(275, 242);
             this.BTN9.Name = "BTN9";
-            this.BTN9.Size = new System.Drawing.Size(214, 74);
+            this.BTN9.Size = new System.Drawing.Size(224, 74);
             this.BTN9.TabIndex = 23;
             this.BTN9.Text = "裝箱標識卡";
             this.BTN9.UseVisualStyleBackColor = true;
@@ -239,9 +239,9 @@
             // BTN5
             // 
             this.BTN5.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.BTN5.Location = new System.Drawing.Point(261, 97);
+            this.BTN5.Location = new System.Drawing.Point(275, 85);
             this.BTN5.Name = "BTN5";
-            this.BTN5.Size = new System.Drawing.Size(214, 74);
+            this.BTN5.Size = new System.Drawing.Size(224, 74);
             this.BTN5.TabIndex = 19;
             this.BTN5.Text = "收  貨";
             this.BTN5.UseVisualStyleBackColor = true;
@@ -250,9 +250,9 @@
             // BTN1
             // 
             this.BTN1.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.BTN1.Location = new System.Drawing.Point(261, 18);
+            this.BTN1.Location = new System.Drawing.Point(275, 8);
             this.BTN1.Name = "BTN1";
-            this.BTN1.Size = new System.Drawing.Size(214, 74);
+            this.BTN1.Size = new System.Drawing.Size(224, 74);
             this.BTN1.TabIndex = 15;
             this.BTN1.Text = "生產進度記錄表";
             this.BTN1.UseVisualStyleBackColor = true;
@@ -261,9 +261,9 @@
             // BTN12
             // 
             this.BTN12.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.BTN12.Location = new System.Drawing.Point(25, 252);
+            this.BTN12.Location = new System.Drawing.Point(25, 242);
             this.BTN12.Name = "BTN12";
-            this.BTN12.Size = new System.Drawing.Size(214, 74);
+            this.BTN12.Size = new System.Drawing.Size(224, 74);
             this.BTN12.TabIndex = 26;
             this.BTN12.Text = "重量記錄表";
             this.BTN12.UseVisualStyleBackColor = true;
@@ -273,9 +273,9 @@
             // 
             this.BTNEXIT.Font = new System.Drawing.Font("Tahoma", 15.75F);
             this.BTNEXIT.ForeColor = System.Drawing.Color.Red;
-            this.BTNEXIT.Location = new System.Drawing.Point(25, 18);
+            this.BTNEXIT.Location = new System.Drawing.Point(25, 8);
             this.BTNEXIT.Name = "BTNEXIT";
-            this.BTNEXIT.Size = new System.Drawing.Size(214, 74);
+            this.BTNEXIT.Size = new System.Drawing.Size(224, 74);
             this.BTNEXIT.TabIndex = 14;
             this.BTNEXIT.Text = "退出系統";
             this.BTNEXIT.UseVisualStyleBackColor = true;
@@ -284,9 +284,9 @@
             // BTN4
             // 
             this.BTN4.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.BTN4.Location = new System.Drawing.Point(25, 97);
+            this.BTN4.Location = new System.Drawing.Point(25, 85);
             this.BTN4.Name = "BTN4";
-            this.BTN4.Size = new System.Drawing.Size(214, 74);
+            this.BTN4.Size = new System.Drawing.Size(224, 74);
             this.BTN4.TabIndex = 18;
             this.BTN4.Text = "磅貨登記";
             this.BTN4.UseVisualStyleBackColor = true;
@@ -295,9 +295,9 @@
             // BTN8
             // 
             this.BTN8.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.BTN8.Location = new System.Drawing.Point(25, 174);
+            this.BTN8.Location = new System.Drawing.Point(25, 164);
             this.BTN8.Name = "BTN8";
-            this.BTN8.Size = new System.Drawing.Size(214, 74);
+            this.BTN8.Size = new System.Drawing.Size(224, 74);
             this.BTN8.TabIndex = 22;
             this.BTN8.Text = "外發點貨";
             this.BTN8.UseVisualStyleBackColor = true;

@@ -475,19 +475,20 @@
             this.xrPanel3.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrLabel19});
             this.xrPanel3.Dpi = 254F;
-            this.xrPanel3.LocationFloat = new DevExpress.Utils.PointFloat(62.49998F, 298.8767F);
+            this.xrPanel3.LocationFloat = new DevExpress.Utils.PointFloat(53.49998F, 298.8767F);
             this.xrPanel3.Name = "xrPanel3";
-            this.xrPanel3.SizeF = new System.Drawing.SizeF(1130.594F, 423.79F);
+            this.xrPanel3.SizeF = new System.Drawing.SizeF(1130.594F, 403.79F);
             // 
             // xrLabel19
             // 
+            this.xrLabel19.CanShrink = true;
             this.xrLabel19.Dpi = 254F;
-            this.xrLabel19.Font = new System.Drawing.Font("SimSun", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel19.Font = new System.Drawing.Font("SimSun", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrLabel19.LocationFloat = new DevExpress.Utils.PointFloat(6F, 5.000092F);
             this.xrLabel19.Multiline = true;
             this.xrLabel19.Name = "xrLabel19";
             this.xrLabel19.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel19.SizeF = new System.Drawing.SizeF(1115.094F, 410.7899F);
+            this.xrLabel19.SizeF = new System.Drawing.SizeF(1111.594F, 389.7898F);
             this.xrLabel19.StylePriority.UseFont = false;
             this.xrLabel19.Text = "[name_cust]";
             // 
@@ -495,8 +496,8 @@
             // 
             this.xrLabel18.CanGrow = false;
             this.xrLabel18.Dpi = 254F;
-            this.xrLabel18.Font = new System.Drawing.Font("SimSun", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel18.LocationFloat = new DevExpress.Utils.PointFloat(68.49998F, 79.00004F);
+            this.xrLabel18.Font = new System.Drawing.Font("SimSun", 54.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel18.LocationFloat = new DevExpress.Utils.PointFloat(59.49998F, 79.00004F);
             this.xrLabel18.Name = "xrLabel18";
             this.xrLabel18.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.xrLabel18.SizeF = new System.Drawing.SizeF(1119.833F, 219.8767F);

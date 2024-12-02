@@ -116,14 +116,14 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txtQty = new System.Windows.Forms.TextBox();
             this.txtBarCode = new System.Windows.Forms.TextBox();
-            this.lblBarcode = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.lblBarcode = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtCheck_date = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.txtCheck_by = new System.Windows.Forms.TextBox();
             this.txtSate = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label20 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -198,7 +198,7 @@
             // 
             this.lblMo_id_v.AutoSize = true;
             this.lblMo_id_v.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblMo_id_v.Location = new System.Drawing.Point(7, 14);
+            this.lblMo_id_v.Location = new System.Drawing.Point(4, 14);
             this.lblMo_id_v.Name = "lblMo_id_v";
             this.lblMo_id_v.Size = new System.Drawing.Size(100, 26);
             this.lblMo_id_v.TabIndex = 3;
@@ -226,7 +226,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(7, 64);
+            this.label1.Location = new System.Drawing.Point(4, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 26);
             this.label1.TabIndex = 8;
@@ -277,8 +277,8 @@
             // dgvDetails
             // 
             this.dgvDetails.AllowUserToAddRows = false;
-            this.dgvDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDetails.ColumnHeadersHeight = 35;
             this.dgvDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -502,9 +502,9 @@
             // 
             // tbcDetails
             // 
-            this.tbcDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbcDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbcDetails.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tbcDetails.Controls.Add(this.tabPage1);
             this.tbcDetails.Controls.Add(this.tabPage2);
@@ -528,18 +528,18 @@
             this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Controls.Add(this.txtCheck_date);
-            this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Controls.Add(this.txtCheck_by);
             this.tabPage1.Controls.Add(this.txtSate);
             this.tabPage1.Controls.Add(this.txtId);
-            this.tabPage1.Controls.Add(this.lblMo_id_v);
             this.tabPage1.Controls.Add(this.dtpDate);
-            this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.cboOut_dept);
             this.tabPage1.Controls.Add(this.cboIn_dept);
+            this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.label9);
+            this.tabPage1.Controls.Add(this.lblMo_id_v);
+            this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.tabPage1.Location = new System.Drawing.Point(4, 89);
             this.tabPage1.Name = "tabPage1";
@@ -589,10 +589,11 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.txtBarCode);
             this.panel2.Controls.Add(this.pnlLot);
             this.panel2.Controls.Add(this.btnLotNo);
             this.panel2.Controls.Add(this.pnlQc);
@@ -601,22 +602,21 @@
             this.panel2.Controls.Add(this.picqc_result2);
             this.panel2.Controls.Add(this.txtSec_qty);
             this.panel2.Controls.Add(this.txtIqc_result);
-            this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.txtPackage_num);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.txtQty);
-            this.panel2.Controls.Add(this.txtBarCode);
-            this.panel2.Controls.Add(this.lblBarcode);
             this.panel2.Controls.Add(this.txtMo_id);
-            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.txtGoods_id);
-            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.txtGoods_name);
-            this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.txtLot);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.dgvDetails);
             this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.lblBarcode);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label13);
             this.panel2.Location = new System.Drawing.Point(4, 146);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(824, 628);
@@ -775,15 +775,15 @@
             // 
             // pnlQc
             // 
-            this.pnlQc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlQc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlQc.BackColor = System.Drawing.Color.LightPink;
             this.pnlQc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlQc.Controls.Add(this.txtIdqc);
             this.pnlQc.Controls.Add(this.btnItemDel);
             this.pnlQc.Controls.Add(this.dgvDetails_qc);
             this.pnlQc.Controls.Add(this.label21);
-            this.pnlQc.Controls.Add(this.txtIdqc);
             this.pnlQc.Location = new System.Drawing.Point(1, 519);
             this.pnlQc.Name = "pnlQc";
             this.pnlQc.Size = new System.Drawing.Size(819, 112);
@@ -797,7 +797,7 @@
             this.btnItemDel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnItemDel.Location = new System.Drawing.Point(555, 3);
             this.btnItemDel.Name = "btnItemDel";
-            this.btnItemDel.Size = new System.Drawing.Size(162, 40);
+            this.btnItemDel.Size = new System.Drawing.Size(169, 40);
             this.btnItemDel.TabIndex = 24;
             this.btnItemDel.Text = "項目刪除(QC)";
             this.btnItemDel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -807,9 +807,9 @@
             // dgvDetails_qc
             // 
             this.dgvDetails_qc.AllowUserToAddRows = false;
-            this.dgvDetails_qc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDetails_qc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDetails_qc.ColumnHeadersHeight = 35;
             this.dgvDetails_qc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvDetails_qc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -923,7 +923,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(7, 10);
+            this.label21.Location = new System.Drawing.Point(5, 10);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(190, 24);
             this.label21.TabIndex = 22;
@@ -1058,6 +1058,16 @@
             this.txtBarCode.Enter += new System.EventHandler(this.txtBarCode_Enter);
             this.txtBarCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBarCode_KeyDown);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label11.Location = new System.Drawing.Point(537, 102);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(56, 26);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "重量";
+            // 
             // lblBarcode
             // 
             this.lblBarcode.AutoSize = true;
@@ -1068,16 +1078,6 @@
             this.lblBarcode.Size = new System.Drawing.Size(100, 26);
             this.lblBarcode.TabIndex = 24;
             this.lblBarcode.Text = "條碼掃描";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label11.Location = new System.Drawing.Point(537, 102);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(56, 26);
-            this.label11.TabIndex = 26;
-            this.label11.Text = "重量";
             // 
             // label10
             // 
@@ -1098,26 +1098,6 @@
             this.txtCheck_date.TabIndex = 28;
             this.txtCheck_date.TabStop = false;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label8.Location = new System.Drawing.Point(369, 108);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(100, 26);
-            this.label8.TabIndex = 27;
-            this.label8.Text = "批準日期";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label9.Location = new System.Drawing.Point(17, 108);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(90, 26);
-            this.label9.TabIndex = 26;
-            this.label9.Text = "批 準 人";
-            // 
             // txtCheck_by
             // 
             this.txtCheck_by.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1136,6 +1116,26 @@
             this.txtSate.Size = new System.Drawing.Size(79, 35);
             this.txtSate.TabIndex = 22;
             this.txtSate.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label8.Location = new System.Drawing.Point(369, 108);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(100, 26);
+            this.label8.TabIndex = 27;
+            this.label8.Text = "批準日期";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label9.Location = new System.Drawing.Point(14, 108);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(90, 26);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "批 準 人";
             // 
             // tabPage2
             // 
@@ -1350,9 +1350,9 @@
             this.dgvDetails2.AllowUserToDeleteRows = false;
             dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.dgvDetails2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
-            this.dgvDetails2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDetails2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDetails2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvDetails2.ColumnHeadersHeight = 45;
             this.dgvDetails2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
@@ -1561,8 +1561,8 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.btnEdit);
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.btnDataList);
@@ -1604,7 +1604,7 @@
             this.btnDataList.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnDataList.Location = new System.Drawing.Point(541, 3);
             this.btnDataList.Name = "btnDataList";
-            this.btnDataList.Size = new System.Drawing.Size(141, 84);
+            this.btnDataList.Size = new System.Drawing.Size(145, 84);
             this.btnDataList.TabIndex = 12;
             this.btnDataList.Text = "查找畫面";
             this.btnDataList.UseVisualStyleBackColor = false;
@@ -1644,7 +1644,7 @@
             this.btnDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnDel.Image = ((System.Drawing.Image)(resources.GetObject("btnDel.Image")));
-            this.btnDel.Location = new System.Drawing.Point(687, 3);
+            this.btnDel.Location = new System.Drawing.Point(692, 3);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(126, 84);
             this.btnDel.TabIndex = 9;

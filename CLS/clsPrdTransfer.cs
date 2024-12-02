@@ -739,6 +739,49 @@ namespace cf_pad.CLS
             }
             return dtDept;
         }
-        
+
+        public static bool CheckProductQty(string mo_id,string goods_id,string wp_id,string next_wp_id,float con_qty)
+        {
+            bool result = true;
+            float plan_qty = 0;
+            DataTable dtPlan = new DataTable();
+            string strSql = string.Format(
+            @"SELECT b.prod_qty + ISNULL(b.obligate_qty,0) AS plan_qty
+            FROM jo_bill_mostly a with(nolock),jo_bill_goods_details b with(nolock)
+            WHERE a.within_code=b.within_code And a.id=b.id And a.ver=b.ver And a.within_code='0000' And a.mo_id='{0}'
+	            And b.goods_id='{1}' And b.wp_id ='{2}' And b.next_wp_id='{3}'", mo_id, goods_id, wp_id, next_wp_id);            
+            try
+            {                
+                using (SqlConnection conn = new SqlConnection(DBUtility.conn_str_dgerp2))
+                {
+                    SqlDataAdapter sda = new SqlDataAdapter(strSql, conn);
+                    sda.Fill(dtPlan);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                result = false;
+            }
+            if (dtPlan.Rows.Count > 0)
+            {
+                plan_qty = clsUtility.FormatNullableFloat(dtPlan.Rows[0]["plan_qty"].ToString());
+            }
+            else
+            {
+                plan_qty = 0;
+            }
+            if (con_qty > 100000)
+            {
+                if (con_qty > plan_qty * (1 + 0.05))
+                {
+                    result = false;
+                }                
+            }
+            else
+                result = true;
+            return result;
+        }
+
     }
 }

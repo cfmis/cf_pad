@@ -203,16 +203,15 @@ namespace cf_pad.CLS
 		}
 
         //提取檢驗人員的工號
-        public static DataTable InitWorker(string dep1,string dep2,string job)
-        {
+        public static DataTable InitWorker(string dept1, string dept2, string job)
+        {           
             DataTable dtWid = new DataTable();
             try
             {
                 //獲取制單編號資料 COLLATE Chinese_PRC_CI_AS
-                string sql = "";
-                sql += " Select a.hrm1wid,a.hrm1name " +
-                    " From dgsql1.dghr.dbo.hrm01 a " +
-                    " Where a.hrm1stat2 >='" + dep1 + "' AND a.hrm1stat2<='" + dep2 + "' AND a.hrm1state='1'";
+                string sql =string.Format(
+                @"Select a.hrm1wid,a.hrm1name From dgsql1.dghr.dbo.hrm01 a 
+                 Where a.hrm1stat2 >='{0}' AND a.hrm1stat2<='{1}' AND a.hrm1state='1'", dept1, dept2);
                 if (job != "")
                     sql += " And a.hrm1job='" + job + "'";
                 dtWid = clsPublicOfPad.ExecuteSqlReturnDataTable(sql);
@@ -220,8 +219,6 @@ namespace cf_pad.CLS
                 {
                     dtWid.Rows.Add();
                     dtWid.DefaultView.Sort = "hrm1wid";
-
-
                 }
             }
             catch (Exception e1)
@@ -231,7 +228,29 @@ namespace cf_pad.CLS
             return dtWid;
         }
 
+        public static DataTable InitWorker(string dept)
+        {
+            DataTable dtWid = new DataTable();
+            try
+            {
+                string sql = string.Format(
+                @"SELECT prd_worker AS hrm1wid,remark AS hrm1name               
+                FROM dgsql2.dgcf_pad.dbo.product_group_member WHERE prd_dep='{0}'", dept);
+                dtWid = clsPublicOfPad.ExecuteSqlReturnDataTable(sql);
+                if (dtWid.Rows.Count > 0)
+                {
+                    dtWid.Rows.Add();
+                    dtWid.DefaultView.Sort = "hrm1wid";
+                }
+            } 
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+            }
+            return dtWid;
+        }
 
 
-	}
+
+    }
 }
