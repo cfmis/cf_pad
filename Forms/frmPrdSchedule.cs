@@ -928,6 +928,13 @@ namespace cf_pad.Forms
                         txtPrd_qty.SelectAll();
                         return false;
                     }
+                    if ((txtprd_weg.Text != "" ? Convert.ToDecimal(txtprd_weg.Text) : 0) == 0)
+                    {
+                        MessageBox.Show("生產重量不能為0,請重新輸入!");
+                        txtprd_weg.Focus();
+                        txtprd_weg.SelectAll();
+                        return false;
+                    }
                 }
                 if (chkPrdRecords() == false)//檢查之前是否存在重複時間的記錄
                     return false;
