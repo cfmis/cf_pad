@@ -228,6 +228,30 @@ namespace cf_pad.CLS
             return dtWid;
         }
 
+        //提取檢驗人員的工號
+        public static DataTable InitWorker2(string dept)
+        {
+            DataTable dtWid = new DataTable();
+            try
+            {
+                //獲取制單編號資料 COLLATE Chinese_PRC_CI_AS
+                string sql = string.Format(
+                @"Select prd_worker as hrm1wid,remark as hrm1name From product_group_member Where prd_dep='{0}'", dept);                
+                dtWid = clsPublicOfPad.ExecuteSqlReturnDataTable(sql);
+                if (dtWid.Rows.Count > 0)
+                {
+                    dtWid.Rows.Add();
+                    dtWid.DefaultView.Sort = "hrm1wid";
+                }
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+            }
+            return dtWid;
+        }
+
+
         public static DataTable InitWorker(string dept)
         {
             DataTable dtWid = new DataTable();

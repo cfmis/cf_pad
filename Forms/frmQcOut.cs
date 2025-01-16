@@ -81,7 +81,7 @@ namespace cf_pad.Forms
         //初始化綁定combobox的工號
         private void initWorker()
         {
-            cmbWorker.DataSource = clsProductQCRecords.InitWorker("P13-00", "P13-00","159");
+            cmbWorker.DataSource = clsProductQCRecords.InitWorker2("OQC");
             cmbWorker.DisplayMember = "hrm1name";
             cmbWorker.ValueMember = "hrm1wid";
         }

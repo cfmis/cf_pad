@@ -154,7 +154,7 @@
             this.tbc.Name = "tbc";
             this.tbc.Padding = new System.Drawing.Point(36, 36);
             this.tbc.SelectedIndex = 0;
-            this.tbc.Size = new System.Drawing.Size(1008, 875);
+            this.tbc.Size = new System.Drawing.Size(1008, 719);
             this.tbc.TabIndex = 4;
             this.tbc.SelectedIndexChanged += new System.EventHandler(this.tbc_SelectedIndexChanged);
             // 
@@ -177,7 +177,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 106);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1000, 765);
+            this.tabPage1.Size = new System.Drawing.Size(1000, 609);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "數據錄入";
             // 
@@ -243,7 +243,7 @@
             this.lblSaveinfo.Font = new System.Drawing.Font("PMingLiU", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblSaveinfo.ForeColor = System.Drawing.Color.Blue;
             this.lblSaveinfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblSaveinfo.Location = new System.Drawing.Point(140, 167);
+            this.lblSaveinfo.Location = new System.Drawing.Point(140, 89);
             this.lblSaveinfo.Name = "lblSaveinfo";
             this.lblSaveinfo.Size = new System.Drawing.Size(695, 49);
             this.lblSaveinfo.TabIndex = 16;
@@ -378,7 +378,7 @@
             this.dgvDetails.RowHeadersWidth = 25;
             this.dgvDetails.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.dgvDetails.RowTemplate.Height = 60;
-            this.dgvDetails.Size = new System.Drawing.Size(994, 484);
+            this.dgvDetails.Size = new System.Drawing.Size(994, 328);
             this.dgvDetails.TabIndex = 9;
             this.dgvDetails.SelectionChanged += new System.EventHandler(this.dgvDetails_SelectionChanged);
             // 
@@ -1112,7 +1112,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 885);
+            this.ClientSize = new System.Drawing.Size(1008, 729);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tbc);
             this.Name = "frmIpqcReport";
