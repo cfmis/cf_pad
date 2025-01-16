@@ -32,7 +32,6 @@ namespace cf_pad
             //Application.Run(new frmProductQtyConfirm());
             //Application.Run(new frmGoodsTransferJx());
             //Application.Run(new frmIpqcSpray());
-            //Application.Run(new frmIpqcReport("1"));
             //Application.Run(new frmPacking());
             //Application.Run(new frmKeyboard());
 

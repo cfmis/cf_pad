@@ -725,8 +725,8 @@ namespace cf_pad.Forms
         //輸入格式驗證
         private bool valid_data()
         {
-            if (chk_imput_status() == true)//檢查記錄是否已傳入新系統
-                return false;
+            //if (chk_imput_status() == true)//檢查記錄是否已傳入新系統
+            //    return false;
             if (cmbProductDept.Text == "")
             {
                 MessageBox.Show("生產部門不能為空,請重新輸入!");
@@ -756,13 +756,13 @@ namespace cf_pad.Forms
                 cmbGoods_id.SelectAll();
                 return false;
             }
-            if (txtPrd_qty.Text != "" && !Verify.StringValidating(txtPrd_qty.Text.Trim(), Verify.enumValidatingType.AllNumber))
-            {
-                MessageBox.Show("生產數量格式有誤,請重新輸入!");
-                txtPrd_qty.Focus();
-                txtPrd_qty.SelectAll();
-                return false;
-            }
+            //if (txtPrd_qty.Text != "" && !Verify.StringValidating(txtPrd_qty.Text.Trim(), Verify.enumValidatingType.AllNumber))
+            //{
+            //    MessageBox.Show("生產數量格式有誤,請重新輸入!");
+            //    txtPrd_qty.Focus();
+            //    txtPrd_qty.SelectAll();
+            //    return false;
+            //}
             //if (txtMachine.Text != "")
             //{
             //    if (checkMachine(0) == false)
@@ -848,12 +848,29 @@ namespace cf_pad.Forms
             //    dteProdcutDate.Focus();
             //    return false;
             //}
-            if (txtprd_weg.Text != "" && !Verify.StringValidating(txtprd_weg.Text.Trim(), Verify.enumValidatingType.PositiveNumber))
+            //if (txtprd_weg.Text != "" && !Verify.StringValidating(txtprd_weg.Text.Trim(), Verify.enumValidatingType.PositiveNumber))
+            //{
+            //    MessageBox.Show("重量格式有誤,請重新輸入!");
+            //    txtprd_weg.Focus();
+            //    txtprd_weg.SelectAll();
+            //    return false;
+            //}
+            if (cmbWorkType.SelectedValue.ToString().Trim() == "A02")//如果是生產，則要檢查數量不能為0
             {
-                MessageBox.Show("重量格式有誤,請重新輸入!");
-                txtprd_weg.Focus();
-                txtprd_weg.SelectAll();
-                return false;
+                if ((txtPrd_qty.Text != "" ? Convert.ToDecimal(txtPrd_qty.Text) : 0) == 0)
+                {
+                    MessageBox.Show("生產數量不能為0,請重新輸入!");
+                    txtPrd_qty.Focus();
+                    txtPrd_qty.SelectAll();
+                    return false;
+                }
+                if ((txtprd_weg.Text != "" ? Convert.ToDecimal(txtprd_weg.Text) : 0) == 0)
+                {
+                    MessageBox.Show("生產重量不能為0,請重新輸入!");
+                    txtprd_weg.Focus();
+                    txtprd_weg.SelectAll();
+                    return false;
+                }
             }
             if (cmbWorkType.Text == "")
             {

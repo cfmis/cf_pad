@@ -778,8 +778,8 @@ namespace cf_pad.Forms
         //輸入格式驗證
         private bool valid_data()
         {
-            if (chk_imput_status() == true)//檢查記錄是否已傳入新系統
-                return false;
+            //if (chk_imput_status() == true)//檢查記錄是否已傳入新系統
+            //    return false;
             if (cmbProductDept.Text == "")
             {
                 MessageBox.Show("生產部門不能為空,請重新輸入!");
@@ -926,6 +926,13 @@ namespace cf_pad.Forms
                         MessageBox.Show("生產數量不能為0,請重新輸入!");
                         txtPrd_qty.Focus();
                         txtPrd_qty.SelectAll();
+                        return false;
+                    }
+                    if ((txtprd_weg.Text != "" ? Convert.ToDecimal(txtprd_weg.Text) : 0) == 0)
+                    {
+                        MessageBox.Show("生產重量不能為0,請重新輸入!");
+                        txtprd_weg.Focus();
+                        txtprd_weg.SelectAll();
                         return false;
                     }
                 }
