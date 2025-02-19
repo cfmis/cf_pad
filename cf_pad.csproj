@@ -149,12 +149,11 @@
       <HintPath>packages\ThoughtWorks.QRCode.1.1.0\lib\ThoughtWorks.QRCode.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="zxing, Version=0.16.5.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
-      <HintPath>packages\ZXing.Net.0.16.5\lib\net40\zxing.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="zxing">
+      <HintPath>packages\ZXing.Net.0.16.10\lib\net40\zxing.dll</HintPath>
     </Reference>
-    <Reference Include="zxing.presentation, Version=0.16.5.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
-      <HintPath>packages\ZXing.Net.0.16.5\lib\net40\zxing.presentation.dll</HintPath>
+    <Reference Include="zxing.presentation, Version=0.16.10.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>packages\ZXing.Net.0.16.10\lib\net40\zxing.presentation.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -275,6 +274,12 @@
     </Compile>
     <Compile Include="Forms\frmPackingList.Designer.cs">
       <DependentUpon>frmPackingList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPackingMo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPackingMo.designer.cs">
+      <DependentUpon>frmPackingMo.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmPrdSchedule.cs">
       <SubType>Form</SubType>
@@ -430,6 +435,12 @@
     <Compile Include="Reports\xrPackingLabel.Designer.cs">
       <DependentUpon>xrPackingLabel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\xrPackingMo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\xrPackingMo.designer.cs">
+      <DependentUpon>xrPackingMo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\xrPrdTransfer.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -499,6 +510,9 @@
     <EmbeddedResource Include="Forms\frmPackingList.resx">
       <DependentUpon>frmPackingList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPackingMo.resx">
+      <DependentUpon>frmPackingMo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmPrdSchedule.resx">
       <DependentUpon>frmPrdSchedule.cs</DependentUpon>
     </EmbeddedResource>
@@ -553,7 +567,6 @@
     <EmbeddedResource Include="frmMainForPad.resx">
       <DependentUpon>frmMainForPad.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -586,6 +599,9 @@
     <EmbeddedResource Include="Reports\xrPackingLabel.resx">
       <DependentUpon>xrPackingLabel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\xrPackingMo.resx">
+      <DependentUpon>xrPackingMo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\xrPrdTransfer.resx">
       <DependentUpon>xrPrdTransfer.cs</DependentUpon>
     </EmbeddedResource>
@@ -612,6 +628,7 @@
     </None>
     <Fakes Include="Fakes\CFPublic.fakes" />
     <None Include="packages.config" />
+    <None Include="Properties\licenses.licx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
