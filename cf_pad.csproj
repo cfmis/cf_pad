@@ -278,6 +278,18 @@
     <Compile Include="Forms\frmPackingList.Designer.cs">
       <DependentUpon>frmPackingList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmPackingMo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPackingMo.Designer.cs">
+      <DependentUpon>frmPackingMo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPackingMoRecords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPackingMoRecords.Designer.cs">
+      <DependentUpon>frmPackingMoRecords.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmPrdSchedule.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -506,6 +518,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmPackingList.resx">
       <DependentUpon>frmPackingList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPackingMo.resx">
+      <DependentUpon>frmPackingMo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPackingMoRecords.resx">
+      <DependentUpon>frmPackingMoRecords.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmPrdSchedule.resx">
       <DependentUpon>frmPrdSchedule.cs</DependentUpon>
