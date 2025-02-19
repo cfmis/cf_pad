@@ -184,5 +184,14 @@ namespace cf_pad
             frm.WindowState = FormWindowState.Maximized;
             frm.ShowDialog();            
         }
+
+        private void btnPackingMoRecords_Click(object sender, EventArgs e)
+        {
+            Forms.frmPackingMoRecords frm = new Forms.frmPackingMoRecords();
+            //frm.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.ShowDialog();
+            
+        }
     }
 }

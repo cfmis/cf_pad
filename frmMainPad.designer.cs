@@ -49,6 +49,7 @@
             this.BTNEXIT = new System.Windows.Forms.Button();
             this.BTN4 = new System.Windows.Forms.Button();
             this.BTN8 = new System.Windows.Forms.Button();
+            this.btnPackingMoRecords = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -66,6 +67,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnPackingMoRecords);
             this.panel1.Controls.Add(this.btnPrintArtwork);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnTransfer);
@@ -303,6 +305,17 @@
             this.BTN8.UseVisualStyleBackColor = true;
             this.BTN8.Click += new System.EventHandler(this.BTN8_Click);
             // 
+            // btnPackingMoRecords
+            // 
+            this.btnPackingMoRecords.Font = new System.Drawing.Font("Tahoma", 15.75F);
+            this.btnPackingMoRecords.Location = new System.Drawing.Point(25, 714);
+            this.btnPackingMoRecords.Name = "btnPackingMoRecords";
+            this.btnPackingMoRecords.Size = new System.Drawing.Size(224, 74);
+            this.btnPackingMoRecords.TabIndex = 32;
+            this.btnPackingMoRecords.Text = "裝箱單頁數登記";
+            this.btnPackingMoRecords.UseVisualStyleBackColor = true;
+            this.btnPackingMoRecords.Click += new System.EventHandler(this.btnPackingMoRecords_Click);
+            // 
             // frmMainPad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -343,5 +356,6 @@
         private System.Windows.Forms.Button btnTransfer;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnPrintArtwork;
+        private System.Windows.Forms.Button btnPackingMoRecords;
     }
 }
