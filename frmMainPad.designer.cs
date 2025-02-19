@@ -49,7 +49,6 @@
             this.BTNEXIT = new System.Windows.Forms.Button();
             this.BTN4 = new System.Windows.Forms.Button();
             this.BTN8 = new System.Windows.Forms.Button();
-            this.btnPackingMoRecords = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -67,7 +66,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnPackingMoRecords);
             this.panel1.Controls.Add(this.btnPrintArtwork);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnTransfer);
@@ -97,7 +95,7 @@
             // btnPrintArtwork
             // 
             this.btnPrintArtwork.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.btnPrintArtwork.Location = new System.Drawing.Point(276, 633);
+            this.btnPrintArtwork.Location = new System.Drawing.Point(267, 633);
             this.btnPrintArtwork.Name = "btnPrintArtwork";
             this.btnPrintArtwork.Size = new System.Drawing.Size(224, 74);
             this.btnPrintArtwork.TabIndex = 32;
@@ -108,7 +106,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button1.Location = new System.Drawing.Point(275, 554);
+            this.button1.Location = new System.Drawing.Point(266, 554);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(224, 74);
             this.button1.TabIndex = 31;
@@ -130,7 +128,7 @@
             // btnTakeMoSample
             // 
             this.btnTakeMoSample.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnTakeMoSample.Location = new System.Drawing.Point(276, 634);
+            this.btnTakeMoSample.Location = new System.Drawing.Point(267, 634);
             this.btnTakeMoSample.Name = "btnTakeMoSample";
             this.btnTakeMoSample.Size = new System.Drawing.Size(224, 74);
             this.btnTakeMoSample.TabIndex = 29;
@@ -142,7 +140,7 @@
             // btnStoreIssue
             // 
             this.btnStoreIssue.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnStoreIssue.Location = new System.Drawing.Point(275, 164);
+            this.btnStoreIssue.Location = new System.Drawing.Point(266, 164);
             this.btnStoreIssue.Name = "btnStoreIssue";
             this.btnStoreIssue.Size = new System.Drawing.Size(224, 74);
             this.btnStoreIssue.TabIndex = 28;
@@ -153,7 +151,7 @@
             // BTN11
             // 
             this.BTN11.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.BTN11.Location = new System.Drawing.Point(275, 476);
+            this.BTN11.Location = new System.Drawing.Point(266, 476);
             this.BTN11.Name = "BTN11";
             this.BTN11.Size = new System.Drawing.Size(224, 74);
             this.BTN11.TabIndex = 25;
@@ -175,7 +173,7 @@
             // BTN3
             // 
             this.BTN3.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.BTN3.Location = new System.Drawing.Point(275, 320);
+            this.BTN3.Location = new System.Drawing.Point(266, 320);
             this.BTN3.Name = "BTN3";
             this.BTN3.Size = new System.Drawing.Size(224, 74);
             this.BTN3.TabIndex = 17;
@@ -219,7 +217,7 @@
             // BTN13
             // 
             this.BTN13.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.BTN13.Location = new System.Drawing.Point(275, 398);
+            this.BTN13.Location = new System.Drawing.Point(266, 398);
             this.BTN13.Name = "BTN13";
             this.BTN13.Size = new System.Drawing.Size(224, 74);
             this.BTN13.TabIndex = 27;
@@ -230,7 +228,7 @@
             // BTN9
             // 
             this.BTN9.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.BTN9.Location = new System.Drawing.Point(275, 242);
+            this.BTN9.Location = new System.Drawing.Point(266, 242);
             this.BTN9.Name = "BTN9";
             this.BTN9.Size = new System.Drawing.Size(224, 74);
             this.BTN9.TabIndex = 23;
@@ -241,7 +239,7 @@
             // BTN5
             // 
             this.BTN5.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.BTN5.Location = new System.Drawing.Point(275, 85);
+            this.BTN5.Location = new System.Drawing.Point(266, 85);
             this.BTN5.Name = "BTN5";
             this.BTN5.Size = new System.Drawing.Size(224, 74);
             this.BTN5.TabIndex = 19;
@@ -252,7 +250,7 @@
             // BTN1
             // 
             this.BTN1.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.BTN1.Location = new System.Drawing.Point(275, 8);
+            this.BTN1.Location = new System.Drawing.Point(266, 8);
             this.BTN1.Name = "BTN1";
             this.BTN1.Size = new System.Drawing.Size(224, 74);
             this.BTN1.TabIndex = 15;
@@ -305,17 +303,6 @@
             this.BTN8.UseVisualStyleBackColor = true;
             this.BTN8.Click += new System.EventHandler(this.BTN8_Click);
             // 
-            // btnPackingMoRecords
-            // 
-            this.btnPackingMoRecords.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.btnPackingMoRecords.Location = new System.Drawing.Point(25, 714);
-            this.btnPackingMoRecords.Name = "btnPackingMoRecords";
-            this.btnPackingMoRecords.Size = new System.Drawing.Size(224, 74);
-            this.btnPackingMoRecords.TabIndex = 32;
-            this.btnPackingMoRecords.Text = "裝箱單頁數登記";
-            this.btnPackingMoRecords.UseVisualStyleBackColor = true;
-            this.btnPackingMoRecords.Click += new System.EventHandler(this.btnPackingMoRecords_Click);
-            // 
             // frmMainPad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -356,6 +343,5 @@
         private System.Windows.Forms.Button btnTransfer;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnPrintArtwork;
-        private System.Windows.Forms.Button btnPackingMoRecords;
     }
 }
