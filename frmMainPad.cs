@@ -184,5 +184,10 @@ namespace cf_pad
             frm.WindowState = FormWindowState.Maximized;
             frm.ShowDialog();            
         }
+
+        private void BTN15_Click(object sender, EventArgs e)
+        {
+            RunNewForm("Forms.frmPackingMo");//翔龍頁數
+        }
     }
 }

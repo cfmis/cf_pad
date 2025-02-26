@@ -37,7 +37,7 @@ namespace cf_pad.Forms
             mskDat1.Text = DateTime.Now.ToString("yyyy/MM/dd");
             mskDat2.Text = DateTime.Now.ToString("yyyy/MM/dd");
             //生成表結構
-            string strSql = @"SELECT mo_id,qty,weg,upd_flag,update_user,update_time,prd_id FROM dbo.packing_mo_records WHERE 1=0";
+            string strSql = @"SELECT mo_id,qty,weg,box_no,upd_flag,update_user,update_time,prd_id FROM dbo.packing_mo_records WHERE 1=0";
             dtReport = clsPublicOfPad.ExecuteSqlReturnDataTable(strSql);
             dgvDetails.DataSource = dtReport;
 
@@ -128,11 +128,11 @@ namespace cf_pad.Forms
                 }
                 string user_id = DBUtility._user_id;
                 string sql_i =
-                @"Insert into dbo.packing_mo_records(mo_id,qty,weg,upd_flag,update_user,update_time)
-                Values(@mo_id,@qty,@weg,@upd_flag,@update_user,getdate())";
+                @"Insert into dbo.packing_mo_records(mo_id,qty,weg,box_no,upd_flag,update_user,update_time)
+                Values(@mo_id,@qty,@weg,@box_no,@upd_flag,@update_user,getdate())";
                 string sql_u =
                 @"UPDATE dbo.packing_mo_records 
-				SET mo_id=@mo_id,qty=@qty,weg=@weg,update_user=@update_user,update_time=getdate()
+				SET mo_id=@mo_id,qty=@qty,weg=@weg,box_no=@box_no,update_user=@update_user,update_time=getdate()
 				WHERE prd_id=@prd_id";               
                 
                 int prd_id;
@@ -157,9 +157,10 @@ namespace cf_pad.Forms
                             myCommand.CommandText = sql_u;
                             myCommand.Parameters.AddWithValue("@prd_id", prd_id);
                         }
-                        myCommand.Parameters.AddWithValue("@mo_id", txtMo_id.Text);
+                        myCommand.Parameters.AddWithValue("@mo_id", txtMo_id.Text.Trim());
                         myCommand.Parameters.AddWithValue("@qty", txtQty.Text);
                         myCommand.Parameters.AddWithValue("@weg", txtWeg.Text);
+                        myCommand.Parameters.AddWithValue("@box_no", cmbBoxno.Text.Trim());
                         myCommand.Parameters.AddWithValue("@update_user", DBUtility._user_id);
                         
                         myCommand.ExecuteNonQuery();                        
@@ -193,18 +194,20 @@ namespace cf_pad.Forms
         private void CheckMo(string mo_id)
         {
             string str = string.Format(
-            @"SELECT mo_id,dbo.fn_z_Get_pcs_qty(order_qty,goods_unit) as order_qty FROM {0}so_order_details with(nolock) WHERE within_code='{1}' and mo_id='{2}'", dbRemote, "0000",mo_id);
+            @"SELECT B.mo_id,dbo.fn_z_Get_pcs_qty(B.transfer_amount,B.unit) AS order_qty,B.sec_qty
+            FROM st_transfer_mostly A WITH(NOLOCK),st_transfer_detail B WITH(NOLOCK)
+            WHERE A.id=B.id and A.within_code=B.within_code AND B.within_code='{0}' AND B.mo_id='{1}' And ISNULL(A.bill_type_no,'')<>'' AND A.state NOT IN('0','2')",  "0000",mo_id);
             DataTable dt = clsPublicOfGeo.ExecuteSqlReturnDataTable(str);
             if(dt.Rows.Count > 0)
             {
                 str = dt.Rows[0]["mo_id"].ToString();
                 txtMo_id.Text = dt.Rows[0]["mo_id"].ToString();
                 txtQty.Text = dt.Rows[0]["order_qty"].ToString();
-                txtWeg.Text = "0.00";
+                txtWeg.Text = dt.Rows[0]["sec_qty"].ToString(); ;
                 DataRow drw = dtReport.NewRow();
                 drw["mo_id"] = txtMo_id.Text;
                 drw["qty"] = Int32.Parse(txtQty.Text);
-                drw["weg"] = 0.00;
+                drw["weg"] = decimal.Parse(txtWeg.Text);
                 dtReport.Rows.Add(drw);
                 txtBarCode.Text = "";                
             }
@@ -216,7 +219,8 @@ namespace cf_pad.Forms
                 txtWeg.Text = "0.00";
                 txtPrd_id.Text = "0";
                 Operation_info("頁數資料不正確!", Color.Red);
-                txtBarCode.Text = "";               
+                txtBarCode.Text = "";
+                cmbBoxno.Text = "";             
             }
         }
        
@@ -448,6 +452,7 @@ namespace cf_pad.Forms
                 txtMo_id.Text = dtReport.Rows[dgvDetails.CurrentCell.RowIndex]["mo_id"].ToString();
                 txtQty.Text = dtReport.Rows[dgvDetails.CurrentCell.RowIndex]["qty"].ToString();
                 txtWeg.Text = dtReport.Rows[dgvDetails.CurrentCell.RowIndex]["weg"].ToString();
+                cmbBoxno.Text = dtReport.Rows[dgvDetails.CurrentCell.RowIndex]["box_no"].ToString();
                 txtPrd_id.Text = dtReport.Rows[dgvDetails.CurrentCell.RowIndex]["prd_id"].ToString();
                          
             }
