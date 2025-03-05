@@ -245,7 +245,15 @@ namespace cf_pad.Forms
                         txtLot.Text = dtStock.Rows[0]["lot_no"].ToString();
                         txtQty.Text = dtStock.Rows[0]["qty"].ToString();
                         txtSec_qty.Text = dtStock.Rows[0]["sec_qty"].ToString();
-                        txtPackage_num.Text = "1";                        
+                        txtPackage_num.Text = "1";
+                        if(txtMo_id.Text.Trim() !="")
+                        {
+                            if (txtMo_id.Text.Trim().Substring(0, 1) == "R")
+                            {
+                                MessageBox.Show("R單不可以直接移交下部門，請在本部門轉為正單！", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                                return;
+                            }
+                        }
 
                         //=================
                         //生成702QC測試移交單數據
