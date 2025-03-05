@@ -37,7 +37,7 @@ namespace cf_pad.Forms
             mskDat1.Text = DateTime.Now.ToString("yyyy/MM/dd");
             mskDat2.Text = DateTime.Now.ToString("yyyy/MM/dd");
             //生成表結構
-            string strSql = @"SELECT mo_id,qty,weg,box_no,upd_flag,update_user,update_time,prd_id FROM dbo.packing_mo_records WHERE 1=0";
+            string strSql = @"SELECT mo_id,qty,weg,box_no,package_num,upd_flag,update_user,update_time,prd_id FROM dbo.packing_mo_records WHERE 1=0";
             dtReport = clsPublicOfPad.ExecuteSqlReturnDataTable(strSql);
             dgvDetails.DataSource = dtReport;
 
@@ -79,6 +79,7 @@ namespace cf_pad.Forms
             txtQty.Text = "0";
             txtWeg.Text = "0.00";
             txtBarCode.Text = "";
+            cmbPackage_num.Text = "";
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -128,14 +129,15 @@ namespace cf_pad.Forms
                 }
                 string user_id = DBUtility._user_id;
                 string sql_i =
-                @"Insert into dbo.packing_mo_records(mo_id,qty,weg,box_no,upd_flag,update_user,update_time)
-                Values(@mo_id,@qty,@weg,@box_no,@upd_flag,@update_user,getdate())";
+                @"Insert into dbo.packing_mo_records(mo_id,qty,weg,box_no,package_num,upd_flag,update_user,update_time)
+                Values(@mo_id,@qty,@weg,@box_no,@package_num,@upd_flag,@update_user,getdate())";
                 string sql_u =
                 @"UPDATE dbo.packing_mo_records 
-				SET mo_id=@mo_id,qty=@qty,weg=@weg,box_no=@box_no,update_user=@update_user,update_time=getdate()
+				SET mo_id=@mo_id,qty=@qty,weg=@weg,box_no=@box_no,package_num=@package_num,update_user=@update_user,update_time=getdate()
 				WHERE prd_id=@prd_id";               
                 
                 int prd_id;
+                int package_num = 0;
                 bool save_flag = false;
                 try
                 {
@@ -161,6 +163,12 @@ namespace cf_pad.Forms
                         myCommand.Parameters.AddWithValue("@qty", txtQty.Text);
                         myCommand.Parameters.AddWithValue("@weg", txtWeg.Text);
                         myCommand.Parameters.AddWithValue("@box_no", cmbBoxno.Text.Trim());
+                        if (string.IsNullOrEmpty(cmbPackage_num.Text.Trim()))
+                            package_num = 0;
+                        else
+                            package_num = int.Parse(cmbPackage_num.Text.Trim());
+                        myCommand.Parameters.AddWithValue("@package_num", package_num);
+                        
                         myCommand.Parameters.AddWithValue("@update_user", DBUtility._user_id);
                         
                         myCommand.ExecuteNonQuery();                        
@@ -453,6 +461,7 @@ namespace cf_pad.Forms
                 txtQty.Text = dtReport.Rows[dgvDetails.CurrentCell.RowIndex]["qty"].ToString();
                 txtWeg.Text = dtReport.Rows[dgvDetails.CurrentCell.RowIndex]["weg"].ToString();
                 cmbBoxno.Text = dtReport.Rows[dgvDetails.CurrentCell.RowIndex]["box_no"].ToString();
+                cmbPackage_num.Text = dtReport.Rows[dgvDetails.CurrentCell.RowIndex]["package_num"].ToString();
                 txtPrd_id.Text = dtReport.Rows[dgvDetails.CurrentCell.RowIndex]["prd_id"].ToString();
                          
             }
