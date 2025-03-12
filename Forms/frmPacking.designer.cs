@@ -29,7 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtQty1 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.txtNet_weiht = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtSend_qty = new System.Windows.Forms.TextBox();
             this.lblSend_qty = new System.Windows.Forms.Label();
@@ -50,7 +53,9 @@
             this.btnPint_List = new System.Windows.Forms.Button();
             this.lblBarcode = new System.Windows.Forms.Label();
             this.lblQty = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblgoods_id_f0 = new System.Windows.Forms.Label();
             this.lblDivision = new System.Windows.Forms.Label();
             this.lblBrand_name = new System.Windows.Forms.Label();
             this.lblBrand_id = new System.Windows.Forms.Label();
@@ -71,11 +76,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.lblgoods_id_f0 = new System.Windows.Forms.Label();
-            this.txtQty1 = new System.Windows.Forms.TextBox();
-            this.txtNet_weiht = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblMo_group = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -113,6 +114,27 @@
             this.panel1.Size = new System.Drawing.Size(818, 312);
             this.panel1.TabIndex = 2;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(392, 268);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(62, 26);
+            this.label11.TabIndex = 68;
+            this.label11.Text = "净重:";
+            // 
+            // txtQty1
+            // 
+            this.txtQty1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQty1.Location = new System.Drawing.Point(231, 260);
+            this.txtQty1.MaxLength = 10;
+            this.txtQty1.Name = "txtQty1";
+            this.txtQty1.Size = new System.Drawing.Size(153, 44);
+            this.txtQty1.TabIndex = 65;
+            this.txtQty1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // label9
             // 
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -123,6 +145,16 @@
             this.label9.TabIndex = 53;
             this.label9.Text = "=";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtNet_weiht
+            // 
+            this.txtNet_weiht.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNet_weiht.Location = new System.Drawing.Point(463, 260);
+            this.txtNet_weiht.MaxLength = 10;
+            this.txtNet_weiht.Name = "txtNet_weiht";
+            this.txtNet_weiht.Size = new System.Drawing.Size(121, 44);
+            this.txtNet_weiht.TabIndex = 66;
+            this.txtNet_weiht.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label8
             // 
@@ -350,6 +382,17 @@
             this.lblQty.TabIndex = 47;
             this.lblQty.Text = "本次數量";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(27, 268);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(194, 26);
+            this.label10.TabIndex = 67;
+            this.label10.Text = "已移交包装部數量:";
+            // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -357,6 +400,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.lblMo_group);
             this.panel2.Controls.Add(this.lblgoods_id_f0);
             this.panel2.Controls.Add(this.lblDivision);
             this.panel2.Controls.Add(this.lblBrand_name);
@@ -382,6 +426,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(818, 560);
             this.panel2.TabIndex = 3;
+            // 
+            // lblgoods_id_f0
+            // 
+            this.lblgoods_id_f0.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblgoods_id_f0.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblgoods_id_f0.Location = new System.Drawing.Point(538, 21);
+            this.lblgoods_id_f0.Name = "lblgoods_id_f0";
+            this.lblgoods_id_f0.Size = new System.Drawing.Size(275, 42);
+            this.lblgoods_id_f0.TabIndex = 64;
+            this.lblgoods_id_f0.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblDivision
             // 
@@ -411,7 +465,7 @@
             this.lblBrand_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblBrand_id.Location = new System.Drawing.Point(10, 4);
             this.lblBrand_id.Name = "lblBrand_id";
-            this.lblBrand_id.Size = new System.Drawing.Size(172, 42);
+            this.lblBrand_id.Size = new System.Drawing.Size(133, 42);
             this.lblBrand_id.TabIndex = 61;
             this.lblBrand_id.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblBrand_id.Visible = false;
@@ -593,57 +647,16 @@
             this.label5.Text = "CUST.CODE";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblgoods_id_f0
+            // lblMo_group
             // 
-            this.lblgoods_id_f0.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblgoods_id_f0.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblgoods_id_f0.Location = new System.Drawing.Point(538, 21);
-            this.lblgoods_id_f0.Name = "lblgoods_id_f0";
-            this.lblgoods_id_f0.Size = new System.Drawing.Size(275, 42);
-            this.lblgoods_id_f0.TabIndex = 64;
-            this.lblgoods_id_f0.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtQty1
-            // 
-            this.txtQty1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQty1.Location = new System.Drawing.Point(231, 260);
-            this.txtQty1.MaxLength = 10;
-            this.txtQty1.Name = "txtQty1";
-            this.txtQty1.Size = new System.Drawing.Size(153, 44);
-            this.txtQty1.TabIndex = 65;
-            this.txtQty1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // txtNet_weiht
-            // 
-            this.txtNet_weiht.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNet_weiht.Location = new System.Drawing.Point(463, 260);
-            this.txtNet_weiht.MaxLength = 10;
-            this.txtNet_weiht.Name = "txtNet_weiht";
-            this.txtNet_weiht.Size = new System.Drawing.Size(121, 44);
-            this.txtNet_weiht.TabIndex = 66;
-            this.txtNet_weiht.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(27, 268);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(194, 26);
-            this.label10.TabIndex = 67;
-            this.label10.Text = "已移交包装部數量:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(392, 268);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(62, 26);
-            this.label11.TabIndex = 68;
-            this.label11.Text = "净重:";
+            this.lblMo_group.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblMo_group.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblMo_group.Location = new System.Drawing.Point(149, 10);
+            this.lblMo_group.Name = "lblMo_group";
+            this.lblMo_group.Size = new System.Drawing.Size(88, 31);
+            this.lblMo_group.TabIndex = 65;
+            this.lblMo_group.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblMo_group.Visible = false;
             // 
             // frmPacking
             // 
@@ -715,5 +728,6 @@
         private System.Windows.Forms.TextBox txtNet_weiht;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblMo_group;
     }
 }

@@ -15,7 +15,7 @@ namespace cf_pad.Forms
 {
     public partial class frmPacking : Form
     {
-        string mo_id = "", goods_id = "";
+        string mo_id = "", goods_id = "", mo_group ="";
         int qty = 0;
         decimal weg = 0, weg_gross = 0;
         DataTable dtLabel = new DataTable();
@@ -87,9 +87,11 @@ namespace cf_pad.Forms
             {
                 case Keys.Enter:
                     SqlParameter[] paras = new SqlParameter[] {
-                        new SqlParameter("@mo_id", strBarCode)  //txtBarCode.Text)
+                        new SqlParameter("@mo_id", strBarCode),
+                        new SqlParameter("@lang", "EN")
+                        //txtBarCode.Text)
                     };
-                    dtLabel = clsPublicOfPad.ExecuteProcedure("usp_packing_label_en", paras);
+                    dtLabel = clsPublicOfPad.ExecuteProcedure("usp_packing_label_new", paras);
                     txtBarCode.Text = "";
                     txtPrints.Text = "1";//重新掃條碼將列印份數重置為1
                     if (dtLabel.Rows.Count > 0)
@@ -128,6 +130,7 @@ namespace cf_pad.Forms
                         lblDivision.Text = "";
                         txtQty1.Text = "";
                         txtNet_weiht.Text = "";
+                        lblMo_group.Text = "";
                         return;
                     }                    
                     break;
@@ -162,6 +165,7 @@ namespace cf_pad.Forms
             lblGoods_id.Text = dr[0]["goods_id"].ToString();
             rchGoods_desc.Text = dr[0]["goods_desc"].ToString();
             lblgoods_id_f0.Text = dr[0]["goods_id_f0"].ToString();
+            lblMo_group.Text = dr[0]["mo_group"].ToString();
 
             //取訂單數量
             Get_Order_Qty();
@@ -200,11 +204,12 @@ namespace cf_pad.Forms
             {
                 //保存打印标签数据到临时表
                 mo_id = lblMo_id.Text.Trim();
-                goods_id = cmbItems.Text.Trim();
+                goods_id = lblgoods_id_f0.Text.Trim();
                 qty = string.IsNullOrEmpty(txtQty1.Text) ? 0 : int.Parse(txtQty1.Text);
                 weg = string.IsNullOrEmpty(txtNet_weiht.Text) ? 0 : decimal.Parse(txtNet_weiht.Text);
                 weg_gross = 0;
-                if (!clsPacking.SavePrintData(mo_id, goods_id, qty, weg, weg_gross))
+                mo_group = lblMo_group.Text;
+                if (!clsPacking.SavePrintData(mo_id, goods_id, qty, weg, weg_gross, mo_group))
                 {
                     MessageBox.Show("保存列印數據失败!", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }

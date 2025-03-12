@@ -15,7 +15,7 @@ namespace cf_pad.Forms
 {
     public partial class frmPackingLabel : Form
     {
-        string mo_id = "", goods_id = "";
+        string mo_id = "", goods_id = "", mo_group = "";
         int qty =  0 ;
         decimal weg = 0, weg_gross = 0;
         DataTable dtLabel = new DataTable();
@@ -88,9 +88,11 @@ namespace cf_pad.Forms
             {
                 case Keys.Enter:
                     SqlParameter[] paras = new SqlParameter[] {
-                        new SqlParameter("@mo_id", strBarCode)  //txtBarCode.Text)                       
+                        new SqlParameter("@mo_id", strBarCode),
+                        new SqlParameter("@lang", "CN")
+                        //txtBarCode.Text)                       
                     };
-                    dtLabel = clsPublicOfPad.ExecuteProcedure("usp_packing_label", paras);
+                    dtLabel = clsPublicOfPad.ExecuteProcedure("usp_packing_label_new", paras);
                     txtBarCode.Text = "";
                     txtPrints.Text = "1";//重新掃條碼將列印份數重置為1
                     if (dtLabel.Rows.Count > 0)
@@ -128,6 +130,7 @@ namespace cf_pad.Forms
                         lblBrand_id.Text = "";
                         lblBrand_name.Text = "";
                         lblDivision.Text = "";
+                        lblMo_group.Text = "";
                         return;
                     }                    
                     break;
@@ -141,8 +144,8 @@ namespace cf_pad.Forms
             {
                 if (chkIsFinish.Checked)
                 {
-                    cmbItems.Items.Add(dt.Rows[0]["goods_id_f"].ToString());
-                    cmbItems.Text = dt.Rows[0]["goods_id_f"].ToString();
+                    cmbItems.Items.Add(dt.Rows[0]["goods_id_f0"].ToString());
+                    cmbItems.Text = dt.Rows[0]["goods_id_f0"].ToString();
                     lblItem_total.Text = "1";
                 }
                 else
@@ -162,8 +165,8 @@ namespace cf_pad.Forms
             DataRow[] dr ;
             if (chkIsFinish.Checked)
             {
-                dr = dtLabel.Select(string.Format("goods_id_f='{0}'", pGoods_id));
-                lblGoods_id.Text = dr[0]["goods_id_f"].ToString();
+                dr = dtLabel.Select(string.Format("goods_id_f0='{0}'", pGoods_id));
+                lblGoods_id.Text = dr[0]["goods_id_f0"].ToString();
             }
             else
             {
@@ -184,6 +187,7 @@ namespace cf_pad.Forms
             lblBrand_id.Text = dr[0]["brand_id"].ToString();
             lblBrand_name.Text = dr[0]["brand_name_custom"].ToString();
             lblDivision.Text = dr[0]["division"].ToString();
+            lblMo_group.Text = dr[0]["mo_group"].ToString();
 
             //取凈重
             Get_Net_Weiht(lblMo_id.Text, cmbItems.Text);
@@ -219,7 +223,8 @@ namespace cf_pad.Forms
                 qty = string.IsNullOrEmpty(txtQty.Text) ? 0 : int.Parse(txtQty.Text);
                 weg = string.IsNullOrEmpty(txtNet_weiht.Text) ? 0 : decimal.Parse(txtNet_weiht.Text);
                 weg_gross = string.IsNullOrEmpty(txtCross_weiht.Text) ? 0 : decimal.Parse(txtCross_weiht.Text);
-                if (!clsPacking.SavePrintData(mo_id, goods_id, qty, weg, weg_gross))
+                mo_group = lblMo_group.Text;
+                if (!clsPacking.SavePrintData(mo_id, goods_id, qty, weg, weg_gross,mo_group))
                 {
                     MessageBox.Show("保存列印數據失败!", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }

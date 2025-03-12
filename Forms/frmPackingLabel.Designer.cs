@@ -72,6 +72,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.lblMo_group = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -365,6 +366,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.lblMo_group);
             this.panel2.Controls.Add(this.lblDivision);
             this.panel2.Controls.Add(this.lblBrand_name);
             this.panel2.Controls.Add(this.lblBrand_id);
@@ -600,6 +602,17 @@
             this.label5.Text = "CUST. CODE";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // lblMo_group
+            // 
+            this.lblMo_group.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblMo_group.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblMo_group.Location = new System.Drawing.Point(135, 13);
+            this.lblMo_group.Name = "lblMo_group";
+            this.lblMo_group.Size = new System.Drawing.Size(88, 31);
+            this.lblMo_group.TabIndex = 63;
+            this.lblMo_group.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblMo_group.Visible = false;
+            // 
             // frmPackingLabel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -666,5 +679,6 @@
         private System.Windows.Forms.CheckBox chkIsFinish;
         private System.Windows.Forms.CheckBox chkBoth;
         private System.Windows.Forms.Label lblDivision;
+        private System.Windows.Forms.Label lblMo_group;
     }
 }
