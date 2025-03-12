@@ -167,6 +167,7 @@
     <Compile Include="CLS\clsGoodsTransferJx.cs" />
     <Compile Include="CLS\clsIpqcSpray.cs" />
     <Compile Include="CLS\clsMo_for_jx.cs" />
+    <Compile Include="CLS\clsPacking.cs" />
     <Compile Include="CLS\clsProductionSchedule.cs" />
     <Compile Include="CLS\clsProductQCRecords.cs" />
     <Compile Include="CLS\clsPublicOfGeo.cs" />

@@ -52,6 +52,7 @@
             this.lblRoss_weiht = new System.Windows.Forms.Label();
             this.lblNet_weiht = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblDivision = new System.Windows.Forms.Label();
             this.lblBrand_name = new System.Windows.Forms.Label();
             this.lblBrand_id = new System.Windows.Forms.Label();
             this.lblIt_customer = new System.Windows.Forms.Label();
@@ -71,7 +72,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.lblDivision = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -390,6 +390,17 @@
             this.panel2.Size = new System.Drawing.Size(818, 469);
             this.panel2.TabIndex = 3;
             // 
+            // lblDivision
+            // 
+            this.lblDivision.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblDivision.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblDivision.Location = new System.Drawing.Point(135, 52);
+            this.lblDivision.Name = "lblDivision";
+            this.lblDivision.Size = new System.Drawing.Size(88, 31);
+            this.lblDivision.TabIndex = 62;
+            this.lblDivision.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDivision.Visible = false;
+            // 
             // lblBrand_name
             // 
             this.lblBrand_name.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -437,11 +448,11 @@
             // 
             this.lblCustomer_color.AutoSize = true;
             this.lblCustomer_color.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.lblCustomer_color.Location = new System.Drawing.Point(15, 321);
+            this.lblCustomer_color.Location = new System.Drawing.Point(14, 321);
             this.lblCustomer_color.Name = "lblCustomer_color";
-            this.lblCustomer_color.Size = new System.Drawing.Size(259, 39);
+            this.lblCustomer_color.Size = new System.Drawing.Size(250, 39);
             this.lblCustomer_color.TabIndex = 57;
-            this.lblCustomer_color.Text = "CUST. COLOR:";
+            this.lblCustomer_color.Text = "CUST. COLOR";
             this.lblCustomer_color.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // rchGoods_desc
@@ -527,22 +538,22 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.label2.Location = new System.Drawing.Point(52, 139);
+            this.label2.Location = new System.Drawing.Point(51, 139);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(222, 39);
+            this.label2.Size = new System.Drawing.Size(213, 39);
             this.label2.TabIndex = 41;
-            this.label2.Text = "CUSTOMER:";
+            this.label2.Text = "CUSTOMER";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.label7.Location = new System.Drawing.Point(18, 406);
+            this.label7.Location = new System.Drawing.Point(16, 406);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(266, 39);
+            this.label7.Size = new System.Drawing.Size(248, 39);
             this.label7.TabIndex = 46;
-            this.label7.Text = "GOODS DESC.:";
+            this.label7.Text = "GOODS DESC";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label3
@@ -551,31 +562,31 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.label3.Location = new System.Drawing.Point(3, 189);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(270, 39);
+            this.label3.Size = new System.Drawing.Size(261, 39);
             this.label3.TabIndex = 42;
-            this.label3.Text = "PO NO / STYLE:";
+            this.label3.Text = "PO NO / STYLE";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.label6.Location = new System.Drawing.Point(92, 365);
+            this.label6.Location = new System.Drawing.Point(93, 365);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(180, 39);
+            this.label6.Size = new System.Drawing.Size(171, 39);
             this.label6.TabIndex = 45;
-            this.label6.Text = "CF CODE:";
+            this.label6.Text = "CF CODE";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.label4.Location = new System.Drawing.Point(128, 232);
+            this.label4.Location = new System.Drawing.Point(136, 232);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(137, 39);
+            this.label4.Size = new System.Drawing.Size(128, 39);
             this.label4.TabIndex = 43;
-            this.label4.Text = "OC NO:";
+            this.label4.Text = "OC NO";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label5
@@ -584,21 +595,10 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.label5.Location = new System.Drawing.Point(36, 276);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(237, 39);
+            this.label5.Size = new System.Drawing.Size(228, 39);
             this.label5.TabIndex = 44;
-            this.label5.Text = "CUST. CODE:";
+            this.label5.Text = "CUST. CODE";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblDivision
-            // 
-            this.lblDivision.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblDivision.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblDivision.Location = new System.Drawing.Point(135, 52);
-            this.lblDivision.Name = "lblDivision";
-            this.lblDivision.Size = new System.Drawing.Size(88, 31);
-            this.lblDivision.TabIndex = 62;
-            this.lblDivision.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblDivision.Visible = false;
             // 
             // frmPackingLabel
             // 

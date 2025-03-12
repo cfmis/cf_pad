@@ -15,8 +15,13 @@ namespace cf_pad.Forms
 {
     public partial class frmPackingLabel : Form
     {
+        string mo_id = "", goods_id = "";
+        int qty =  0 ;
+        decimal weg = 0, weg_gross = 0;
         DataTable dtLabel = new DataTable();
         DataTable dtReport = new DataTable();
+        DataTable dtFind = new DataTable();
+
         public frmPackingLabel()
         {
             InitializeComponent();
@@ -208,6 +213,17 @@ namespace cf_pad.Forms
         {
             if (dtLabel.Rows.Count > 0)
             {
+                //保存打印标签数据到临时表
+                mo_id = lblMo_id.Text.Trim();
+                goods_id = cmbItems.Text.Trim();
+                qty = string.IsNullOrEmpty(txtQty.Text) ? 0 : int.Parse(txtQty.Text);
+                weg = string.IsNullOrEmpty(txtNet_weiht.Text) ? 0 : decimal.Parse(txtNet_weiht.Text);
+                weg_gross = string.IsNullOrEmpty(txtCross_weiht.Text) ? 0 : decimal.Parse(txtCross_weiht.Text);
+                if (!clsPacking.SavePrintData(mo_id, goods_id, qty, weg, weg_gross))
+                {
+                    MessageBox.Show("保存列印數據失败!", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
                 dtReport.Clear();
                 if(txtPrints.Text=="")
                 {
@@ -345,7 +361,6 @@ namespace cf_pad.Forms
                     }
                 }
             }
-
             if (e.KeyChar == 13)
             {
                 SendKeys.Send("{TAB}");
@@ -360,6 +375,7 @@ namespace cf_pad.Forms
                 new SqlParameter("@mo_id", mo_id),
                 new SqlParameter("@goods_id",goods_id)
             };
+            //上部門移交或倉庫轉倉到包裝（601）的数量和重量
             dt = clsPublicOfPad.ExecuteProcedure("usp_packing_get_weight", paras);
             if (dt.Rows.Count > 0)
             {
@@ -378,17 +394,18 @@ namespace cf_pad.Forms
         {
             if (txtQty.Text != "")
             {
-                Set_qty_Convert_to_weiht(lblMo_id.Text, cmbItems.Text, Int32.Parse(txtQty.Text));
+                Set_qty_Convert_to_weiht(lblMo_id.Text, cmbItems.Text, int.Parse(txtQty.Text));
             }
         }
 
         private void Set_qty_Convert_to_weiht(string mo_id, string goods_id, int qty_input)
         {
             if (string.IsNullOrEmpty(mo_id) || string.IsNullOrEmpty(goods_id))
+            {
                 return;
-
+            }
             DataTable dt = new DataTable();
-            SqlParameter[] paras = new SqlParameter[] 
+            SqlParameter[] paras = new SqlParameter[]
             {
                 new SqlParameter("@mo_id", mo_id),
                 new SqlParameter("@goods_id",goods_id)
@@ -398,16 +415,18 @@ namespace cf_pad.Forms
             if (dt.Rows.Count > 0)
             {
                 float weiht = float.Parse(dt.Rows[0]["net_weiht"].ToString());
-                int qty = Int32.Parse(dt.Rows[0]["qty"].ToString());
+                int qty = int.Parse(dt.Rows[0]["qty"].ToString());
                 txtNet_weiht.Text = Math.Round((qty_input * weiht) / qty, 2).ToString();
             }
             else
                 txtNet_weiht.Text = "";
-        }
+        }   
 
         private void chkIsFinish_MouseUp(object sender, MouseEventArgs e)
         {
             Fill_Combox(dtLabel);                        
         }
+
+        
     }
 }

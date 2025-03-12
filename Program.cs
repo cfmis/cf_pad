@@ -17,7 +17,7 @@ namespace cf_pad
         {
             //Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
-            
+
             Application.Run(new frmLogin());
             if (frmMainPad.isRunMain == true)
             {

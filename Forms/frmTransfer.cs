@@ -246,7 +246,11 @@ namespace cf_pad.Forms
                         txtQty.Text = dtStock.Rows[0]["qty"].ToString();
                         txtSec_qty.Text = dtStock.Rows[0]["sec_qty"].ToString();
                         txtPackage_num.Text = "1";
-                        if(txtMo_id.Text.Trim() !="")
+
+                        /* 2025/03/12 Cancel重新开放电镀R单根据实际情况交货至下部门，根本不需要到下部门转单的R单生产数打0，由上部门按正单来移交
+                        *因正单已生产结束货到客人边才发现问题，有可能补其中的某一件，补货给客人，
+                        *R单流程到包装这边才转正单，例子：TBV034771，RBV002360
+                        if (txtMo_id.Text.Trim() !="")
                         {
                             if (txtMo_id.Text.Trim().Substring(0, 1) == "R")
                             {
@@ -254,6 +258,7 @@ namespace cf_pad.Forms
                                 return;
                             }
                         }
+                        */
 
                         //=================
                         //生成702QC測試移交單數據
