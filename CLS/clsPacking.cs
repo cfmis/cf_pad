@@ -12,7 +12,8 @@ namespace cf_pad.CLS
         public static bool SavePrintData(string mo_id,string goods_id,int qty,decimal weg,decimal weg_gross,string mo_group,int pages)
         {
             bool flag = true;
-            string sql_f = string.Format(@"Select '1' From packing_mo_label Where mo_id='{0}' And goods_id='{1}' And pages={2}", mo_id, goods_id,pages);
+            string sql_f = string.Format(
+            @"Select '1' From packing_mo_label Where mo_id='{0}' And goods_id='{1}' and qty={2} And pages={3}", mo_id, goods_id,qty,pages);
             DataTable dtFind = clsPublicOfPad.ExecuteSqlReturnDataTable(sql_f);
             if (dtFind.Rows.Count == 0)
             {
