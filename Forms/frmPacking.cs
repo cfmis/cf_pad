@@ -208,11 +208,7 @@ namespace cf_pad.Forms
                 qty = string.IsNullOrEmpty(txtQty1.Text) ? 0 : int.Parse(txtQty1.Text);
                 weg = string.IsNullOrEmpty(txtNet_weiht.Text) ? 0 : decimal.Parse(txtNet_weiht.Text);
                 weg_gross = 0;
-                mo_group = lblMo_group.Text;
-                if (!clsPacking.SavePrintData(mo_id, goods_id, qty, weg, weg_gross, mo_group))
-                {
-                    MessageBox.Show("保存列印數據失败!", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                mo_group = lblMo_group.Text;               
 
                 dtReport.Clear();
                 if(txtPrints.Text=="")
@@ -224,6 +220,12 @@ namespace cf_pad.Forms
                 {
                     print_total = 1;
                 }
+
+                if (!clsPacking.SavePrintData(mo_id, goods_id, qty, weg, weg_gross, mo_group, print_total))
+                {
+                    MessageBox.Show("保存列印數據失败!", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
                 for (int i = 0; i < print_total; i++)
                 {
                     DataRow newRow = dtReport.NewRow();
