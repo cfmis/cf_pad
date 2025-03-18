@@ -13,7 +13,7 @@ namespace cf_pad.CLS
         {
             bool flag = true;
             string sql_f = string.Format(
-            @"Select '1' From packing_mo_label Where mo_id='{0}' And goods_id='{1}' and qty={2} And package_num={3}", mo_id, goods_id,qty, package_num);
+            @"Select '1' From packing_mo_label Where mo_id='{0}' And goods_id='{1}' And qty={2} And package_num={3}", mo_id, goods_id,qty, package_num);
             DataTable dtFind = clsPublicOfPad.ExecuteSqlReturnDataTable(sql_f);
             if (dtFind.Rows.Count == 0)
             {
@@ -24,6 +24,12 @@ namespace cf_pad.CLS
                     flag = true;
                 else
                     flag = false;
+            }
+            else
+            {
+                string sql_u = string.Format(
+                @"UPDATE packing_mo_label SET weg={4},weg_gross={5} Where mo_id='{0}' And goods_id='{1}' And qty={2} And package_num={3}",
+                mo_id, goods_id, qty, package_num, weg, weg_gross);
             }
             return flag;
         }
