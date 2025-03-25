@@ -15,7 +15,7 @@ namespace cf_pad.Forms
 {
     public partial class frmPackingLabel : Form
     {
-        string mo_id = "", goods_id = "", mo_group = "";
+        string mo_id = "", goods_id = "", mo_group = "",carton_size="";
         int qty =  0 ;
         decimal weg = 0, weg_gross = 0;
         DataTable dtLabel = new DataTable();
@@ -62,6 +62,12 @@ namespace cf_pad.Forms
             cmbQty.Text = "SET";
             cmbNetUnit.Text = "KG";
             cmbCrossUnit.Text = "KG";
+            DataTable dtCartonSize = clsPublicOfGeo.ExecuteSqlReturnDataTable("SELECT name as id FROM cd_carton_size WHERE state <>'2' Order By id");
+            for (int i = 0; i < dtCartonSize.Rows.Count; i++)
+            {
+                cmbCartonSize.Items.Add(dtCartonSize.Rows[i]["id"].ToString());
+            }
+            cmbCartonSize.Text = "";
         }
 
         private void SetComboxItem(DataTable dt,ComboBox cmb)
@@ -140,6 +146,7 @@ namespace cf_pad.Forms
         private void Fill_Combox(DataTable dt)
         {
             cmbItems.Items.Clear();
+            cmbCartonSize.Items.Clear();
             if (dt.Rows.Count > 0)
             {
                 if (chkIsFinish.Checked)
@@ -223,7 +230,8 @@ namespace cf_pad.Forms
                 qty = string.IsNullOrEmpty(txtQty.Text) ? 0 : int.Parse(txtQty.Text);
                 weg = string.IsNullOrEmpty(txtNet_weiht.Text) ? 0 : decimal.Parse(txtNet_weiht.Text);
                 weg_gross = string.IsNullOrEmpty(txtCross_weiht.Text) ? 0 : decimal.Parse(txtCross_weiht.Text);
-                mo_group = lblMo_group.Text;                
+                mo_group = lblMo_group.Text;
+                carton_size = cmbCartonSize.Text.Trim();
 
                 dtReport.Clear();
                 if(txtPrints.Text=="")
@@ -236,7 +244,7 @@ namespace cf_pad.Forms
                     print_total = 1;
                 }
 
-                if (!clsPacking.SavePrintData(mo_id, goods_id, qty, weg, weg_gross, mo_group, print_total))
+                if (!clsPacking.SavePrintData(mo_id, goods_id, qty, weg, weg_gross, mo_group, print_total,carton_size))
                 {
                     MessageBox.Show("保存列印數據失败!", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
