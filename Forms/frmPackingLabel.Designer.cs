@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbCartonSize = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.chkBoth = new System.Windows.Forms.CheckBox();
             this.chkIsFinish = new System.Windows.Forms.CheckBox();
             this.cmbCrossUnit = new System.Windows.Forms.ComboBox();
@@ -73,8 +75,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.cmbCartonSize = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -111,6 +111,30 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(818, 264);
             this.panel1.TabIndex = 2;
+            // 
+            // cmbCartonSize
+            // 
+            this.cmbCartonSize.BackColor = System.Drawing.Color.GhostWhite;
+            this.cmbCartonSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCartonSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.cmbCartonSize.FormattingEnabled = true;
+            this.cmbCartonSize.Location = new System.Drawing.Point(518, 95);
+            this.cmbCartonSize.MaxDropDownItems = 12;
+            this.cmbCartonSize.MaxLength = 50;
+            this.cmbCartonSize.Name = "cmbCartonSize";
+            this.cmbCartonSize.Size = new System.Drawing.Size(295, 47);
+            this.cmbCartonSize.TabIndex = 51;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label8.Location = new System.Drawing.Point(404, 104);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(109, 29);
+            this.label8.TabIndex = 50;
+            this.label8.Text = "紙箱尺寸";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // chkBoth
             // 
@@ -616,30 +640,6 @@
             this.label5.TabIndex = 44;
             this.label5.Text = "CUST. CODE";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label8.Location = new System.Drawing.Point(404, 104);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(109, 29);
-            this.label8.TabIndex = 50;
-            this.label8.Text = "紙箱尺寸";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // cmbCartonSize
-            // 
-            this.cmbCartonSize.BackColor = System.Drawing.Color.GhostWhite;
-            this.cmbCartonSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCartonSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.cmbCartonSize.FormattingEnabled = true;
-            this.cmbCartonSize.Location = new System.Drawing.Point(518, 95);
-            this.cmbCartonSize.MaxDropDownItems = 10;
-            this.cmbCartonSize.MaxLength = 50;
-            this.cmbCartonSize.Name = "cmbCartonSize";
-            this.cmbCartonSize.Size = new System.Drawing.Size(295, 47);
-            this.cmbCartonSize.TabIndex = 51;
             // 
             // frmPackingLabel
             // 

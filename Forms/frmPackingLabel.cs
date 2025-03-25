@@ -132,6 +132,7 @@ namespace cf_pad.Forms
                         cmbNetUnit.Text = "";
                         txtCross_weiht.Text = "";
                         cmbCrossUnit.Text = "";
+                        cmbCartonSize.Text = "";
 
                         lblBrand_id.Text = "";
                         lblBrand_name.Text = "";
@@ -146,7 +147,7 @@ namespace cf_pad.Forms
         private void Fill_Combox(DataTable dt)
         {
             cmbItems.Items.Clear();
-            cmbCartonSize.Items.Clear();
+            cmbCartonSize.Text="";
             if (dt.Rows.Count > 0)
             {
                 if (chkIsFinish.Checked)
