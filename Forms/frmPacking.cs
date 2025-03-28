@@ -15,7 +15,7 @@ namespace cf_pad.Forms
 {
     public partial class frmPacking : Form
     {
-        string mo_id = "", goods_id = "", mo_group ="",carton_size="";
+        string mo_id = "", goods_id = "", mo_group ="",carton_size="", suit_flag="0";
         int qty = 0;
         decimal weg = 0, weg_gross = 0;
         DataTable dtLabel = new DataTable();
@@ -221,7 +221,7 @@ namespace cf_pad.Forms
                     print_total = 1;
                 }
 
-                if (!clsPacking.SavePrintData(mo_id, goods_id, qty, weg, weg_gross, mo_group, print_total,carton_size))
+                if (!clsPacking.SavePrintData(mo_id, goods_id, qty, weg, weg_gross, mo_group, print_total,carton_size, suit_flag))
                 {
                     MessageBox.Show("保存列印數據失败!", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }

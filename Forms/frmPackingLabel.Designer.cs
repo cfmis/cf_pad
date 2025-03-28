@@ -75,9 +75,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.chkSuit = new DevExpress.XtraEditors.CheckEdit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkSuit.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -85,6 +87,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.chkSuit);
             this.panel1.Controls.Add(this.cmbCartonSize);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.chkBoth);
@@ -155,7 +158,7 @@
             this.chkIsFinish.Checked = true;
             this.chkIsFinish.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkIsFinish.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.chkIsFinish.Location = new System.Drawing.Point(595, 159);
+            this.chkIsFinish.Location = new System.Drawing.Point(523, 159);
             this.chkIsFinish.Name = "chkIsFinish";
             this.chkIsFinish.Size = new System.Drawing.Size(80, 33);
             this.chkIsFinish.TabIndex = 48;
@@ -328,7 +331,7 @@
             this.cmbItems.Location = new System.Drawing.Point(72, 149);
             this.cmbItems.MaxLength = 18;
             this.cmbItems.Name = "cmbItems";
-            this.cmbItems.Size = new System.Drawing.Size(514, 47);
+            this.cmbItems.Size = new System.Drawing.Size(444, 47);
             this.cmbItems.TabIndex = 0;
             this.cmbItems.SelectedIndexChanged += new System.EventHandler(this.cmbItems_SelectedIndexChanged);
             // 
@@ -641,6 +644,16 @@
             this.label5.Text = "CUST. CODE";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // chkSuit
+            // 
+            this.chkSuit.Location = new System.Drawing.Point(650, 155);
+            this.chkSuit.Name = "chkSuit";
+            this.chkSuit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkSuit.Properties.Appearance.Options.UseFont = true;
+            this.chkSuit.Properties.Caption = "底三件走貨";
+            this.chkSuit.Size = new System.Drawing.Size(163, 37);
+            this.chkSuit.TabIndex = 52;
+            // 
             // frmPackingLabel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -657,6 +670,7 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkSuit.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -710,5 +724,6 @@
         private System.Windows.Forms.Label lblMo_group;
         private System.Windows.Forms.ComboBox cmbCartonSize;
         private System.Windows.Forms.Label label8;
+        private DevExpress.XtraEditors.CheckEdit chkSuit;
     }
 }
