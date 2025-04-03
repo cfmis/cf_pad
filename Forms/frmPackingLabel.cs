@@ -21,6 +21,8 @@ namespace cf_pad.Forms
         DataTable dtLabel = new DataTable();
         DataTable dtReport = new DataTable();
         DataTable dtFind = new DataTable();
+        DataTable dtBom = new DataTable();
+        List<string> lstItem = new List<string>();
 
         public frmPackingLabel()
         {
@@ -48,6 +50,11 @@ namespace cf_pad.Forms
             dtReport.Columns.Add("flag_both", typeof(string));
             dtReport.Columns.Add("brand_name_custom", typeof(string));
             dtReport.Columns.Add("division", typeof(string));
+
+            dtBom.Columns.Add("flag_select", typeof(bool));
+            dtBom.Columns.Add("goods_id", typeof(string));
+            dtBom.Columns.Add("primary_key", typeof(string));
+            dtBom.Columns.Add("goods_desc", typeof(string));
         }
 
         private void frmPackingLabel_Load(object sender, EventArgs e)
@@ -68,6 +75,7 @@ namespace cf_pad.Forms
                 cmbCartonSize.Items.Add(dtCartonSize.Rows[i]["id"].ToString());
             }
             cmbCartonSize.Text = "";
+            dgvBom.DataSource = dtBom;
         }
 
         private void SetComboxItem(DataTable dt,ComboBox cmb)
@@ -101,6 +109,9 @@ namespace cf_pad.Forms
                     dtLabel = clsPublicOfPad.ExecuteProcedure("usp_packing_label_new", paras);
                     txtBarCode.Text = "";
                     txtPrints.Text = "1";//重新掃條碼將列印份數重置為1
+                    chkSuit.Checked = false;
+                    pnlSuit.Visible = false;                   
+                    dtBom.Clear();
                     if (dtLabel.Rows.Count > 0)
                     {
                         cmbItems.Text = dtLabel.Rows[0]["goods_id"].ToString();
@@ -245,8 +256,19 @@ namespace cf_pad.Forms
                 {
                     print_total = 1;
                 }
+                lstItem.Clear();
+                if(chkSuit.Checked)
+                {
+                    for(int i = 0; i < dgvBom.Rows.Count; i++)
+                    {
+                        if (dgvBom.Rows[i].Cells["chkSelect"].Value.ToString() == "True")
+                        {
+                            lstItem.Add(dgvBom.Rows[i].Cells["goods_id1"].Value.ToString());
+                        }
+                    }
+                }
 
-                if (!clsPacking.SavePrintData(mo_id, goods_id, qty, weg, weg_gross, mo_group, print_total,carton_size, suit_flag))
+                if (!clsPacking.SavePrintData(mo_id, goods_id, qty, weg, weg_gross, mo_group, print_total, carton_size, suit_flag, lstItem))
                 {
                     MessageBox.Show("保存列印數據失败!", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -351,6 +373,29 @@ namespace cf_pad.Forms
             Set_Number_Format(txtCross_weiht, e);
         }
 
+        private void chkSuit_MouseUp(object sender, MouseEventArgs e)
+        {
+            dtBom.Clear();
+            if (chkSuit.Checked)
+            {
+                pnlSuit.Visible = true;               
+                DataRow dr;
+                for (int i=0;i<dtLabel.Rows.Count;i++)
+                {
+                    dr = dtBom.NewRow();
+                    dr["flag_select"] = false;
+                    dr["goods_id"] = dtLabel.Rows[i]["goods_id"].ToString();
+                    dr["primary_key"] = dtLabel.Rows[i]["primary_key"].ToString();
+                    dr["goods_desc"] = dtLabel.Rows[i]["goods_desc"].ToString();                   
+                    dtBom.Rows.Add(dr);
+                }
+            }
+            else
+            {
+                pnlSuit.Visible = false;
+            }                              
+        }
+
         private void Set_Number_Format(TextBox obj,KeyPressEventArgs e)
         {
             //判断按键是不是要输入的类型。
@@ -431,8 +476,22 @@ namespace cf_pad.Forms
             
             if (dt.Rows.Count > 0)
             {
-                float weiht = float.Parse(dt.Rows[0]["net_weiht"].ToString());
-                int qty = int.Parse(dt.Rows[0]["qty"].ToString());
+                string strWeg = dt.Rows[0]["net_weiht"].ToString();
+                if(string.IsNullOrEmpty(strWeg))
+                {
+                    strWeg = "0.00";
+                }
+                float weiht = float.Parse(strWeg);
+                string strQty = dt.Rows[0]["qty"].ToString();
+                if (string.IsNullOrEmpty(strQty))
+                {
+                    strQty = "0";
+                }
+                int qty = int.Parse(strQty);
+                if (qty == 0)
+                {
+                    qty = 1;
+                }
                 txtNet_weiht.Text = Math.Round((qty_input * weiht) / qty, 2).ToString();
             }
             else

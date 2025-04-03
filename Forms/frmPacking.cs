@@ -21,6 +21,7 @@ namespace cf_pad.Forms
         DataTable dtLabel = new DataTable();
         //DataTable dtGet_Str_Date = new DataTable();
         DataTable dtReport = new DataTable();
+        List<string> lstItem = new List<string>();
 
 
         public frmPacking()
@@ -221,7 +222,7 @@ namespace cf_pad.Forms
                     print_total = 1;
                 }
 
-                if (!clsPacking.SavePrintData(mo_id, goods_id, qty, weg, weg_gross, mo_group, print_total,carton_size, suit_flag))
+                if (!clsPacking.SavePrintData(mo_id, goods_id, qty, weg, weg_gross, mo_group, print_total,carton_size, suit_flag,lstItem))
                 {
                     MessageBox.Show("保存列印數據失败!", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }

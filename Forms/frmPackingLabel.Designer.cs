@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.chkSuit = new System.Windows.Forms.CheckBox();
             this.cmbCartonSize = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.chkBoth = new System.Windows.Forms.CheckBox();
@@ -75,11 +78,17 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.chkSuit = new DevExpress.XtraEditors.CheckEdit();
+            this.pnlSuit = new System.Windows.Forms.Panel();
+            this.dgvBom = new System.Windows.Forms.DataGridView();
+            this.chkSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.goods_id1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.primary_key1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.goods_desc1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chkSuit.Properties)).BeginInit();
+            this.pnlSuit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBom)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -115,6 +124,18 @@
             this.panel1.Size = new System.Drawing.Size(818, 264);
             this.panel1.TabIndex = 2;
             // 
+            // chkSuit
+            // 
+            this.chkSuit.AutoSize = true;
+            this.chkSuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkSuit.Location = new System.Drawing.Point(657, 159);
+            this.chkSuit.Name = "chkSuit";
+            this.chkSuit.Size = new System.Drawing.Size(152, 33);
+            this.chkSuit.TabIndex = 53;
+            this.chkSuit.Text = "底三件走貨";
+            this.chkSuit.UseVisualStyleBackColor = true;
+            this.chkSuit.MouseUp += new System.Windows.Forms.MouseEventHandler(this.chkSuit_MouseUp);
+            // 
             // cmbCartonSize
             // 
             this.cmbCartonSize.BackColor = System.Drawing.Color.GhostWhite;
@@ -145,7 +166,7 @@
             this.chkBoth.Checked = true;
             this.chkBoth.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkBoth.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.chkBoth.Location = new System.Drawing.Point(468, 55);
+            this.chkBoth.Location = new System.Drawing.Point(428, 55);
             this.chkBoth.Name = "chkBoth";
             this.chkBoth.Size = new System.Drawing.Size(344, 33);
             this.chkBoth.TabIndex = 49;
@@ -397,6 +418,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.pnlSuit);
             this.panel2.Controls.Add(this.lblMo_group);
             this.panel2.Controls.Add(this.lblDivision);
             this.panel2.Controls.Add(this.lblBrand_name);
@@ -644,15 +666,80 @@
             this.label5.Text = "CUST. CODE";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // chkSuit
+            // pnlSuit
             // 
-            this.chkSuit.Location = new System.Drawing.Point(650, 155);
-            this.chkSuit.Name = "chkSuit";
-            this.chkSuit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkSuit.Properties.Appearance.Options.UseFont = true;
-            this.chkSuit.Properties.Caption = "底三件走貨";
-            this.chkSuit.Size = new System.Drawing.Size(163, 37);
-            this.chkSuit.TabIndex = 52;
+            this.pnlSuit.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlSuit.Controls.Add(this.dgvBom);
+            this.pnlSuit.Location = new System.Drawing.Point(256, 2);
+            this.pnlSuit.Name = "pnlSuit";
+            this.pnlSuit.Size = new System.Drawing.Size(558, 210);
+            this.pnlSuit.TabIndex = 64;
+            this.pnlSuit.Visible = false;
+            // 
+            // dgvBom
+            // 
+            this.dgvBom.AllowUserToAddRows = false;
+            this.dgvBom.AllowUserToDeleteRows = false;
+            this.dgvBom.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvBom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBom.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.chkSelect,
+            this.goods_id1,
+            this.primary_key1,
+            this.goods_desc1});
+            this.dgvBom.Location = new System.Drawing.Point(4, 3);
+            this.dgvBom.Name = "dgvBom";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBom.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvBom.RowHeadersWidth = 30;
+            this.dgvBom.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("PMingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.dgvBom.RowTemplate.Height = 35;
+            this.dgvBom.Size = new System.Drawing.Size(549, 204);
+            this.dgvBom.TabIndex = 3;
+            // 
+            // chkSelect
+            // 
+            this.chkSelect.DataPropertyName = "flag_select";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle3.NullValue = false;
+            this.chkSelect.DefaultCellStyle = dataGridViewCellStyle3;
+            this.chkSelect.HeaderText = "   ";
+            this.chkSelect.Name = "chkSelect";
+            this.chkSelect.Width = 50;
+            // 
+            // goods_id1
+            // 
+            this.goods_id1.DataPropertyName = "goods_id";
+            this.goods_id1.HeaderText = "貨品編號";
+            this.goods_id1.Name = "goods_id1";
+            this.goods_id1.ReadOnly = true;
+            this.goods_id1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.goods_id1.Width = 250;
+            // 
+            // primary_key1
+            // 
+            this.primary_key1.DataPropertyName = "primary_key";
+            this.primary_key1.HeaderText = "";
+            this.primary_key1.Name = "primary_key1";
+            this.primary_key1.ReadOnly = true;
+            this.primary_key1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.primary_key1.Width = 30;
+            // 
+            // goods_desc1
+            // 
+            this.goods_desc1.DataPropertyName = "goods_desc";
+            this.goods_desc1.HeaderText = "貨品描述";
+            this.goods_desc1.Name = "goods_desc1";
+            this.goods_desc1.ReadOnly = true;
+            this.goods_desc1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.goods_desc1.Width = 230;
             // 
             // frmPackingLabel
             // 
@@ -670,7 +757,8 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chkSuit.Properties)).EndInit();
+            this.pnlSuit.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBom)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -724,6 +812,12 @@
         private System.Windows.Forms.Label lblMo_group;
         private System.Windows.Forms.ComboBox cmbCartonSize;
         private System.Windows.Forms.Label label8;
-        private DevExpress.XtraEditors.CheckEdit chkSuit;
+        private System.Windows.Forms.CheckBox chkSuit;
+        private System.Windows.Forms.Panel pnlSuit;
+        private System.Windows.Forms.DataGridView dgvBom;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn chkSelect;
+        private System.Windows.Forms.DataGridViewTextBoxColumn goods_id1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn primary_key1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn goods_desc1;
     }
 }
