@@ -32,7 +32,7 @@ namespace cf_pad
             //Application.Run(new frmProductQtyConfirm());
             //Application.Run(new frmGoodsTransferJx());
             //Application.Run(new frmIpqcSpray());
-            //Application.Run(new frmPacking());
+            //Application.Run(new frmPackingLabel());
             //Application.Run(new frmKeyboard());
 
             //student st = new student();

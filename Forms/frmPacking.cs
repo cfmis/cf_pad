@@ -19,8 +19,9 @@ namespace cf_pad.Forms
         int qty = 0;
         decimal weg = 0, weg_gross = 0;
         DataTable dtLabel = new DataTable();
-        //DataTable dtGet_Str_Date = new DataTable();
+        string strDate = "";
         DataTable dtReport = new DataTable();
+        List<string> lstItem = new List<string>();
 
 
         public frmPacking()
@@ -52,7 +53,9 @@ namespace cf_pad.Forms
         private void frmPacking_Load(object sender, EventArgs e)
         {
             txtBarCode.Focus();
-            //取當前服務器日期字串
+            //取當前服務器日期字串            
+            DataTable dt = clsPublicOfPad.ExecuteSqlReturnDataTable("SELECT convert(varchar(10),GETDATE(),112) As date");
+            strDate = dt.Rows[0]["date"].ToString();
             //dtGet_Str_Date = clsPublicOfPad.ExecuteSqlReturnDataTable("SELECT convert(varchar(10),GETDATE(),112) as str_date");
             //重量
             DataTable dtUnit = clsPublicOfGeo.ExecuteSqlReturnDataTable("SELECT id FROM cd_units WHERE kind='03'");       
@@ -88,8 +91,7 @@ namespace cf_pad.Forms
                 case Keys.Enter:
                     SqlParameter[] paras = new SqlParameter[] {
                         new SqlParameter("@mo_id", strBarCode),
-                        new SqlParameter("@lang", "EN")
-                        //txtBarCode.Text)
+                        new SqlParameter("@lang", "EN")                       
                     };
                     dtLabel = clsPublicOfPad.ExecuteProcedure("usp_packing_label_new", paras);
                     txtBarCode.Text = "";
@@ -97,7 +99,7 @@ namespace cf_pad.Forms
                     if (dtLabel.Rows.Count > 0)
                     {
                         cmbItems.Text = dtLabel.Rows[0]["goods_id"].ToString();
-                        Fill_Combox(dtLabel);
+                        this.FillCombox(dtLabel);
                         lblItem_total.Text = dtLabel.Rows.Count.ToString();
                                            
                         if (chkAutoPrint.Checked)
@@ -137,7 +139,7 @@ namespace cf_pad.Forms
             }
         }
 
-        private void Fill_Combox(DataTable dt)
+        private void FillCombox(DataTable dt)
         {
             cmbItems.Items.Clear();
             if (dt.Rows.Count > 0)
@@ -148,10 +150,10 @@ namespace cf_pad.Forms
                 }
                 cmbItems.Text = dt.Rows[0]["goods_id"].ToString();
             }
-            Select_Item(cmbItems.Text);              
+            SelectItem(cmbItems.Text);              
         }
 
-        private void Select_Item(string pGoods_id)
+        private void SelectItem(string pGoods_id)
         {
             DataRow[] dr = dtLabel.Select(string.Format("goods_id='{0}'", pGoods_id));
             lblIt_customer.Text = dr[0]["it_customer"].ToString();
@@ -168,14 +170,10 @@ namespace cf_pad.Forms
             lblMo_group.Text = dr[0]["mo_group"].ToString();
 
             //取訂單數量
-            Get_Order_Qty();
+            GetOrderQty();
             //查找已交到包装的数量和重量2025/03/11 allen
-            Get_Net_Weiht(lblMo_id.Text, lblgoods_id_f0.Text);
-
-            cmbQty.Text = "PCS";
-            //cmbNetUnit.Text = "KG";
-            //cmbCrossUnit.Text = "KG";
-
+            GetNetWeiht(lblMo_id.Text, lblgoods_id_f0.Text);
+            cmbQty.Text = "PCS";           
             lblBrand_id.Text = dr[0]["brand_id"].ToString();
             lblBrand_name.Text = dr[0]["brand_name_custom"].ToString();
             lblDivision.Text = dr[0]["division"].ToString();
@@ -183,7 +181,7 @@ namespace cf_pad.Forms
 
         private void cmbItems_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Select_Item(cmbItems.Text);
+            SelectItem(cmbItems.Text);
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -215,13 +213,14 @@ namespace cf_pad.Forms
                 {
                     txtPrints.Text="1";
                 }
-                int print_total= int.Parse(txtPrints.Text);
+                int print_total = int.Parse(txtPrints.Text);
                 if (print_total == 0)
                 {
                     print_total = 1;
                 }
 
-                if (!clsPacking.SavePrintData(mo_id, goods_id, qty, weg, weg_gross, mo_group, print_total,carton_size, suit_flag))
+                //存儲相關數據，以便為回港單提供數據來源
+                if (!clsPacking.SavePrintData(mo_id, goods_id, qty, weg, weg_gross, mo_group, print_total,carton_size, suit_flag,lstItem))
                 {
                     MessageBox.Show("保存列印數據失败!", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -251,26 +250,20 @@ namespace cf_pad.Forms
                 oRepot.CreateDocument();
                 oRepot.PrintingSystem.ShowMarginsWarning = false;
 
-                if (print_type == "P")
+                string sql_f = string.Format(
+                @"Select '1' FROM packing_print_list WHERE mo_id='{0}' And print_date='{1}' And print_qty='{2}'", lblMo_id.Text, strDate, txtQty.Text);
+                DataTable dt = clsPublicOfPad.ExecuteSqlReturnDataTable(sql_f);
+                if (dt.Rows.Count > 0)
                 {
+                    if (MessageBox.Show("此頁數當前走貨數量已有過列印記錄，是否繼續?", "系統提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                    {
+                        return;
+                    }
+                }
+                SavePrintInfo2(); //存儲816倉辦單的打印數據
+                if (print_type == "P")
+                {                   
                     oRepot.Print();
-                    /* cancel 2025/03/12 allen
-                    string sql_f = string.Format(@"Select '1' FROM packing_print_list WHERE mo_id='{0}' and print_date='{1}' and print_qty='{2}'", 
-                        lblMo_id.Text, dtGet_Str_Date.Rows[0]["str_date"], txtQty.Text);
-                    DataTable dt = clsPublicOfPad.ExecuteSqlReturnDataTable(sql_f);
-                    if (dt.Rows.Count > 0)
-                    {
-                        if (MessageBox.Show("此頁數當前走貨數量已有過列印記錄，是否繼續列印?", "系統提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                        {
-                            oRepot.Print();
-                        }
-                    }
-                    else
-                    {
-                        //oRepot.Print();
-                        Save_print_info();
-                    }
-                    */
                 }
                 else
                 {
@@ -279,7 +272,7 @@ namespace cf_pad.Forms
             }
             else
             {
-                MessageBox.Show("沒有要列印的數據!", "系統提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("沒有需要列印的數據!", "系統提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
      
@@ -362,37 +355,37 @@ namespace cf_pad.Forms
             }
         }
 
-        //private void Save_print_info()
-        //{
-        //    string sql_i = @"Insert into packing_print_list(mo_id,print_date,print_qty,crusr) Values(@mo_id,@print_date,@print_qty,@crusr)";            
-        //    SqlConnection myCon  = new SqlConnection(DBUtility.dgcf_pad_connectionString);
-        //    myCon.Open();            
-        //    try
-        //    {
-        //        using (SqlCommand myCommand = new SqlCommand() { Connection = myCon })
-        //        {
-        //            myCommand.Parameters.Clear();
-        //            myCommand.CommandText = sql_i;
-        //            myCommand.Parameters.AddWithValue("@mo_id", lblMo_id.Text);
-        //            myCommand.Parameters.AddWithValue("@print_date", dtGet_Str_Date.Rows[0]["str_date"].ToString());
-        //            myCommand.Parameters.AddWithValue("@print_qty", txtQty.Text);
-        //            myCommand.Parameters.AddWithValue("@crusr", DBUtility._user_id);
-        //            myCommand.ExecuteNonQuery();                                
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-        //    finally
-        //    {
-        //        myCon.Close();
-        //        myCon.Dispose();
-        //    }
-        //    txtBarCode.Focus();
-        //}
+        private void SavePrintInfo2()
+        {
+            string sql_i = @"Insert into packing_print_list(mo_id,print_date,print_qty,crusr) Values(@mo_id,@print_date,@print_qty,@crusr)";
+            SqlConnection myCon = new SqlConnection(DBUtility.dgcf_pad_connectionString);
+            myCon.Open();
+            try
+            {
+                using (SqlCommand myCommand = new SqlCommand() { Connection = myCon })
+                {
+                    myCommand.Parameters.Clear();
+                    myCommand.CommandText = sql_i;
+                    myCommand.Parameters.AddWithValue("@mo_id", lblMo_id.Text);
+                    myCommand.Parameters.AddWithValue("@print_date", strDate);
+                    myCommand.Parameters.AddWithValue("@print_qty", txtQty.Text);
+                    myCommand.Parameters.AddWithValue("@crusr", DBUtility._user_id);
+                    myCommand.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                myCon.Close();
+                myCon.Dispose();
+            }
+            txtBarCode.Focus();
+        }
 
-        private void Get_Order_Qty()
+        private void GetOrderQty()
         {
             string strSql = string.Format(
             @"Select Convert(int,B.order_qty*SS.rate) AS order_qty From so_order_manage A with(nolock)
@@ -401,39 +394,39 @@ namespace cf_pad.Forms
 	            ON B.goods_unit=SS.unit_code
             WHERE A.within_code='0000' AND A.state not IN ('2','V') AND B.mo_id = '{0}'", lblMo_id.Text);
             DataTable dt1 = clsPublicOfGeo.ExecuteSqlReturnDataTable(strSql);
-            int order_qty,send_qty,qty;
+            int orderQty,sendQty,qty;
             if (dt1.Rows.Count > 0)
             {
                 txtOrder_qty.Text = dt1.Rows[0]["order_qty"].ToString();
-                order_qty = int.Parse(dt1.Rows[0]["order_qty"].ToString());
+                orderQty = int.Parse(dt1.Rows[0]["order_qty"].ToString());
             }
             else
             {
                 txtOrder_qty.Text ="0";
-                order_qty = 0;
+                orderQty = 0;
             }
 
             //已走货数量
-            //strSql =string.Format(@"Select Sum(convert(int,print_qty)) as print_qty FROM packing_print_list with(nolock) WHERE mo_id='{0}'",lblMo_id.Text);
-            strSql = string.Format(@"Select Sum(qty) as print_qty FROM packing_mo_label with(nolock) WHERE mo_id='{0}'", lblMo_id.Text);
+            strSql = string.Format(@"Select Sum(Convert(int,print_qty)) As print_qty FROM packing_print_list with(nolock) WHERE mo_id='{0}'", lblMo_id.Text);
+            //strSql = string.Format(@"Select Sum(qty) as print_qty FROM packing_mo_label with(nolock) WHERE mo_id='{0}'", lblMo_id.Text);
             DataTable dt2 = clsPublicOfPad.ExecuteSqlReturnDataTable(strSql);
             if (dt2.Rows.Count > 0)
             {
                 txtSend_qty.Text = dt2.Rows[0]["print_qty"].ToString();
                 if (txtSend_qty.Text != "")
-                    send_qty = int.Parse(dt2.Rows[0]["print_qty"].ToString());
+                    sendQty = int.Parse(dt2.Rows[0]["print_qty"].ToString());
                 else
                 {
                     txtSend_qty.Text = "0";
-                    send_qty = 0;
+                    sendQty = 0;
                 }
             }
             else
             {
                 txtSend_qty.Text = "0";
-                send_qty = 0;
+                sendQty = 0;
             }
-            qty = order_qty - send_qty;
+            qty = orderQty - sendQty; //本次列印的數量
             if (qty < 0)
                 txtQty.Text = "0";
             else
@@ -453,7 +446,7 @@ namespace cf_pad.Forms
         }
 
 
-        private void Get_Net_Weiht(string mo_id, string goods_id)
+        private void GetNetWeiht(string mo_id, string goods_id)
         {
             DataTable dt = new DataTable();
             SqlParameter[] paras = new SqlParameter[]
