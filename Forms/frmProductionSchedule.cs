@@ -288,7 +288,7 @@ namespace cf_pad.Forms
                 sql = " Select a.*,rtrim(b.work_type_desc) as work_type_desc " +
                 " From product_records a with(nolock) " +
                 " Left outer join work_type b with(nolock) on a.prd_work_type=b.work_type_id ";
-                sql += " Where a.prd_dep = " + "'" + cmbProductDept.SelectedValue.ToString() + "'";
+                sql += " Where a.prd_dep = " + "'" + cmbProductDept.SelectedValue.ToString() + "' And a.prd_date>='2025/01/01'";
                 if (cmbProductDept.SelectedValue.ToString() == "302")//如果是合金部，則不顯示選貨的記錄
                     sql += " And a.prd_work_type <> " + "'" + "A03" + "'";
                 if (con_type == 1)//是否查找當日未完成標識

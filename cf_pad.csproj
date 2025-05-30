@@ -121,7 +121,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>DLL\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>DLL\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
@@ -165,6 +166,7 @@
     <Compile Include="CLS\clsCheckOutQty.cs" />
     <Compile Include="CLS\clsCommonUse.cs" />
     <Compile Include="CLS\clsGoodsTransferJx.cs" />
+    <Compile Include="CLS\clsInventory.cs" />
     <Compile Include="CLS\clsIpqcSpray.cs" />
     <Compile Include="CLS\clsMo_for_jx.cs" />
     <Compile Include="CLS\clsPacking.cs" />
@@ -206,6 +208,12 @@
     </Compile>
     <Compile Include="Forms\frmGoodsTransferJx.Designer.cs">
       <DependentUpon>frmGoodsTransferJx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmInventory.Designer.cs">
+      <DependentUpon>frmInventory.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmIpqcReport.cs">
       <SubType>Form</SubType>
@@ -284,12 +292,6 @@
     </Compile>
     <Compile Include="Forms\frmPackingMo.Designer.cs">
       <DependentUpon>frmPackingMo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\frmPackingMoRecords.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmPackingMoRecords.Designer.cs">
-      <DependentUpon>frmPackingMoRecords.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmPrdSchedule.cs">
       <SubType>Form</SubType>
@@ -484,6 +486,9 @@
     <EmbeddedResource Include="Forms\frmGoodsTransferJx.resx">
       <DependentUpon>frmGoodsTransferJx.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmInventory.resx">
+      <DependentUpon>frmInventory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmIpqcReport.resx">
       <DependentUpon>frmIpqcReport.cs</DependentUpon>
     </EmbeddedResource>
@@ -522,9 +527,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmPackingMo.resx">
       <DependentUpon>frmPackingMo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmPackingMoRecords.resx">
-      <DependentUpon>frmPackingMoRecords.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmPrdSchedule.resx">
       <DependentUpon>frmPrdSchedule.cs</DependentUpon>
@@ -591,6 +593,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Reports\rptGoodsTransferJx.rdlc" />
+    <EmbeddedResource Include="Reports\rptInventory.rdlc" />
     <EmbeddedResource Include="Reports\xrArtwork.resx">
       <DependentUpon>xrArtwork.cs</DependentUpon>
     </EmbeddedResource>

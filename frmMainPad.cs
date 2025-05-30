@@ -189,5 +189,10 @@ namespace cf_pad
         {
             RunNewForm("Forms.frmPackingMo");//翔龍頁數
         }
+
+        private void btnInventory_Click(object sender, EventArgs e)
+        {
+            RunNewForm("Forms.frmInventory");//盤點錄入
+        }
     }
 }

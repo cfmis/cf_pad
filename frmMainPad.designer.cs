@@ -30,6 +30,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainPad));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnInventory = new System.Windows.Forms.Button();
+            this.BTN15 = new System.Windows.Forms.Button();
             this.btnPrintArtwork = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnTransfer = new System.Windows.Forms.Button();
@@ -49,7 +51,6 @@
             this.BTNEXIT = new System.Windows.Forms.Button();
             this.BTN4 = new System.Windows.Forms.Button();
             this.BTN8 = new System.Windows.Forms.Button();
-            this.BTN15 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -67,6 +68,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnInventory);
             this.panel1.Controls.Add(this.BTN15);
             this.panel1.Controls.Add(this.btnPrintArtwork);
             this.panel1.Controls.Add(this.button1);
@@ -93,6 +95,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(831, 873);
             this.panel1.TabIndex = 6;
+            // 
+            // btnInventory
+            // 
+            this.btnInventory.Font = new System.Drawing.Font("Tahoma", 15.75F);
+            this.btnInventory.Location = new System.Drawing.Point(492, 8);
+            this.btnInventory.Name = "btnInventory";
+            this.btnInventory.Size = new System.Drawing.Size(224, 74);
+            this.btnInventory.TabIndex = 34;
+            this.btnInventory.Text = "盤點單錄入";
+            this.btnInventory.UseVisualStyleBackColor = true;
+            this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
+            // 
+            // BTN15
+            // 
+            this.BTN15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.BTN15.Location = new System.Drawing.Point(25, 713);
+            this.BTN15.Name = "BTN15";
+            this.BTN15.Size = new System.Drawing.Size(224, 74);
+            this.BTN15.TabIndex = 33;
+            this.BTN15.Text = "翔龍頁數";
+            this.BTN15.UseVisualStyleBackColor = true;
+            this.BTN15.Click += new System.EventHandler(this.BTN15_Click);
             // 
             // btnPrintArtwork
             // 
@@ -305,17 +329,6 @@
             this.BTN8.UseVisualStyleBackColor = true;
             this.BTN8.Click += new System.EventHandler(this.BTN8_Click);
             // 
-            // BTN15
-            // 
-            this.BTN15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.BTN15.Location = new System.Drawing.Point(25, 710);
-            this.BTN15.Name = "BTN15";
-            this.BTN15.Size = new System.Drawing.Size(224, 74);
-            this.BTN15.TabIndex = 33;
-            this.BTN15.Text = "翔龍頁數";
-            this.BTN15.UseVisualStyleBackColor = true;
-            this.BTN15.Click += new System.EventHandler(this.BTN15_Click);
-            // 
             // frmMainPad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -357,5 +370,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnPrintArtwork;
         private System.Windows.Forms.Button BTN15;
+        private System.Windows.Forms.Button btnInventory;
     }
 }
