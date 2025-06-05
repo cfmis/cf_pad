@@ -45,6 +45,9 @@
             this.btnPreview = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.btnPrint = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnExpToExcel = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.txtQty = new System.Windows.Forms.TextBox();
             this.lblQty = new System.Windows.Forms.Label();
             this.lblWeg = new System.Windows.Forms.Label();
@@ -55,6 +58,8 @@
             this.lblGoodsName = new System.Windows.Forms.Label();
             this.txtGoodsName = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbGroup = new System.Windows.Forms.ComboBox();
+            this.lblGroup = new System.Windows.Forms.Label();
             this.txtMonth = new System.Windows.Forms.MaskedTextBox();
             this.cmbDep = new System.Windows.Forms.ComboBox();
             this.lblDept = new System.Windows.Forms.Label();
@@ -65,26 +70,6 @@
             this.lblSeq = new System.Windows.Forms.Label();
             this.txtSeq = new System.Windows.Forms.TextBox();
             this.dgvInv = new System.Windows.Forms.DataGridView();
-            this.tc1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dgvInvFind = new System.Windows.Forms.DataGridView();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.txtIdFind = new System.Windows.Forms.TextBox();
-            this.txtMoFind = new System.Windows.Forms.TextBox();
-            this.lblMoFind = new System.Windows.Forms.Label();
-            this.lblIdFind = new System.Windows.Forms.Label();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.cmbGroup = new System.Windows.Forms.ComboBox();
-            this.lblGroup = new System.Windows.Forms.Label();
-            this.txtPackNum = new System.Windows.Forms.TextBox();
-            this.lblPackNum = new System.Windows.Forms.Label();
-            this.btnExpToExcel = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.txtLocShe = new System.Windows.Forms.TextBox();
-            this.lblLocShe = new System.Windows.Forms.Label();
             this.colMoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGoodsId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGoodsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -99,6 +84,14 @@
             this.colLocShe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUpdateUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUpdateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tc1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblLocShe = new System.Windows.Forms.Label();
+            this.lblPackNum = new System.Windows.Forms.Label();
+            this.txtPackNum = new System.Windows.Forms.TextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dgvInvFind = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -114,6 +107,15 @@
             this.colLocSheFind = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.txtIdFind = new System.Windows.Forms.TextBox();
+            this.txtMoFind = new System.Windows.Forms.TextBox();
+            this.lblMoFind = new System.Windows.Forms.Label();
+            this.lblIdFind = new System.Windows.Forms.Label();
+            this.cmbShe = new System.Windows.Forms.ComboBox();
+            this.cmbSheFind = new System.Windows.Forms.ComboBox();
+            this.lblSheFind = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInv)).BeginInit();
@@ -280,6 +282,27 @@
             this.btnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 38);
+            // 
+            // btnExpToExcel
+            // 
+            this.btnExpToExcel.AutoSize = false;
+            this.btnExpToExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExpToExcel.Image")));
+            this.btnExpToExcel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnExpToExcel.Name = "btnExpToExcel";
+            this.btnExpToExcel.Size = new System.Drawing.Size(65, 35);
+            this.btnExpToExcel.Text = "匯出(&E)";
+            this.btnExpToExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnExpToExcel.Click += new System.EventHandler(this.btnExpToExcel_Click);
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 38);
+            // 
             // txtQty
             // 
             this.txtQty.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -305,7 +328,7 @@
             this.lblWeg.AutoSize = true;
             this.lblWeg.Font = new System.Drawing.Font("新細明體", 12F);
             this.lblWeg.ForeColor = System.Drawing.Color.Black;
-            this.lblWeg.Location = new System.Drawing.Point(298, 149);
+            this.lblWeg.Location = new System.Drawing.Point(310, 149);
             this.lblWeg.Name = "lblWeg";
             this.lblWeg.Size = new System.Drawing.Size(44, 16);
             this.lblWeg.TabIndex = 8;
@@ -392,6 +415,28 @@
             this.panel1.Size = new System.Drawing.Size(947, 78);
             this.panel1.TabIndex = 11;
             // 
+            // cmbGroup
+            // 
+            this.cmbGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGroup.DropDownWidth = 150;
+            this.cmbGroup.Font = new System.Drawing.Font("新細明體", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.cmbGroup.FormattingEnabled = true;
+            this.cmbGroup.Location = new System.Drawing.Point(437, 5);
+            this.cmbGroup.Name = "cmbGroup";
+            this.cmbGroup.Size = new System.Drawing.Size(96, 27);
+            this.cmbGroup.TabIndex = 14;
+            // 
+            // lblGroup
+            // 
+            this.lblGroup.AutoSize = true;
+            this.lblGroup.Font = new System.Drawing.Font("新細明體", 12F);
+            this.lblGroup.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblGroup.Location = new System.Drawing.Point(392, 12);
+            this.lblGroup.Name = "lblGroup";
+            this.lblGroup.Size = new System.Drawing.Size(44, 16);
+            this.lblGroup.TabIndex = 15;
+            this.lblGroup.Text = "組別:";
+            // 
             // txtMonth
             // 
             this.txtMonth.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -410,6 +455,7 @@
             this.cmbDep.Name = "cmbDep";
             this.cmbDep.Size = new System.Drawing.Size(122, 27);
             this.cmbDep.TabIndex = 12;
+            this.cmbDep.Leave += new System.EventHandler(this.cmbDep_Leave);
             // 
             // lblDept
             // 
@@ -522,249 +568,6 @@
             this.dgvInv.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvInv_RowPostPaint);
             this.dgvInv.SelectionChanged += new System.EventHandler(this.dgvInv_SelectionChanged);
             // 
-            // tc1
-            // 
-            this.tc1.Controls.Add(this.tabPage1);
-            this.tc1.Controls.Add(this.tabPage2);
-            this.tc1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tc1.ItemSize = new System.Drawing.Size(60, 32);
-            this.tc1.Location = new System.Drawing.Point(0, 116);
-            this.tc1.Name = "tc1";
-            this.tc1.SelectedIndex = 0;
-            this.tc1.Size = new System.Drawing.Size(947, 419);
-            this.tc1.TabIndex = 14;
-            this.tc1.Click += new System.EventHandler(this.tc1_Click);
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.dgvInv);
-            this.tabPage1.Controls.Add(this.panel2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 36);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(939, 379);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "記錄編輯";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.txtId);
-            this.panel2.Controls.Add(this.txtQty);
-            this.panel2.Controls.Add(this.cmbGoodsId);
-            this.panel2.Controls.Add(this.lblGoodsId);
-            this.panel2.Controls.Add(this.lblMo);
-            this.panel2.Controls.Add(this.lblQty);
-            this.panel2.Controls.Add(this.lblLocShe);
-            this.panel2.Controls.Add(this.lblPackNum);
-            this.panel2.Controls.Add(this.lblWeg);
-            this.panel2.Controls.Add(this.txtLocShe);
-            this.panel2.Controls.Add(this.txtPackNum);
-            this.panel2.Controls.Add(this.txtWeg);
-            this.panel2.Controls.Add(this.lblGoodsName);
-            this.panel2.Controls.Add(this.lblId);
-            this.panel2.Controls.Add(this.txtSeq);
-            this.panel2.Controls.Add(this.lblSeq);
-            this.panel2.Controls.Add(this.txtMo);
-            this.panel2.Controls.Add(this.txtGoodsName);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(933, 221);
-            this.panel2.TabIndex = 13;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.dgvInvFind);
-            this.tabPage2.Controls.Add(this.reportViewer1);
-            this.tabPage2.Controls.Add(this.panel3);
-            this.tabPage2.Location = new System.Drawing.Point(4, 36);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(939, 379);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "記錄查詢";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // dgvInvFind
-            // 
-            this.dgvInvFind.AllowUserToAddRows = false;
-            this.dgvInvFind.ColumnHeadersHeight = 30;
-            this.dgvInvFind.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvInvFind.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.colIdFind,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.colPrdGroupFind,
-            this.colPackNumFind,
-            this.colGoodsType,
-            this.colLocSheFind,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11});
-            this.dgvInvFind.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvInvFind.Location = new System.Drawing.Point(3, 45);
-            this.dgvInvFind.Name = "dgvInvFind";
-            this.dgvInvFind.ReadOnly = true;
-            this.dgvInvFind.RowHeadersWidth = 35;
-            this.dgvInvFind.RowTemplate.Height = 30;
-            this.dgvInvFind.Size = new System.Drawing.Size(933, 331);
-            this.dgvInvFind.TabIndex = 18;
-            this.dgvInvFind.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvInvFind_RowPostPaint);
-            this.dgvInvFind.SelectionChanged += new System.EventHandler(this.dgvInvFind_SelectionChanged);
-            // 
-            // reportViewer1
-            // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer1.Location = new System.Drawing.Point(3, 45);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(933, 331);
-            this.reportViewer1.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.txtIdFind);
-            this.panel3.Controls.Add(this.txtMoFind);
-            this.panel3.Controls.Add(this.lblMoFind);
-            this.panel3.Controls.Add(this.lblIdFind);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(3, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(933, 42);
-            this.panel3.TabIndex = 17;
-            // 
-            // txtIdFind
-            // 
-            this.txtIdFind.BackColor = System.Drawing.Color.GhostWhite;
-            this.txtIdFind.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtIdFind.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtIdFind.Location = new System.Drawing.Point(424, 9);
-            this.txtIdFind.MaxLength = 20;
-            this.txtIdFind.Name = "txtIdFind";
-            this.txtIdFind.Size = new System.Drawing.Size(231, 27);
-            this.txtIdFind.TabIndex = 13;
-            // 
-            // txtMoFind
-            // 
-            this.txtMoFind.BackColor = System.Drawing.Color.GhostWhite;
-            this.txtMoFind.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtMoFind.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtMoFind.Location = new System.Drawing.Point(104, 9);
-            this.txtMoFind.MaxLength = 9;
-            this.txtMoFind.Name = "txtMoFind";
-            this.txtMoFind.Size = new System.Drawing.Size(231, 27);
-            this.txtMoFind.TabIndex = 14;
-            // 
-            // lblMoFind
-            // 
-            this.lblMoFind.AutoSize = true;
-            this.lblMoFind.Font = new System.Drawing.Font("新細明體", 12F);
-            this.lblMoFind.ForeColor = System.Drawing.Color.Black;
-            this.lblMoFind.Location = new System.Drawing.Point(26, 13);
-            this.lblMoFind.Name = "lblMoFind";
-            this.lblMoFind.Size = new System.Drawing.Size(76, 16);
-            this.lblMoFind.TabIndex = 15;
-            this.lblMoFind.Text = "制單編號:";
-            // 
-            // lblIdFind
-            // 
-            this.lblIdFind.AutoSize = true;
-            this.lblIdFind.Font = new System.Drawing.Font("新細明體", 12F);
-            this.lblIdFind.ForeColor = System.Drawing.Color.Black;
-            this.lblIdFind.Location = new System.Drawing.Point(346, 12);
-            this.lblIdFind.Name = "lblIdFind";
-            this.lblIdFind.Size = new System.Drawing.Size(76, 16);
-            this.lblIdFind.TabIndex = 16;
-            this.lblIdFind.Text = "盤點單號:";
-            // 
-            // toolStripSeparator7
-            // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 38);
-            // 
-            // cmbGroup
-            // 
-            this.cmbGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbGroup.DropDownWidth = 150;
-            this.cmbGroup.Font = new System.Drawing.Font("新細明體", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.cmbGroup.FormattingEnabled = true;
-            this.cmbGroup.Location = new System.Drawing.Point(437, 5);
-            this.cmbGroup.Name = "cmbGroup";
-            this.cmbGroup.Size = new System.Drawing.Size(96, 27);
-            this.cmbGroup.TabIndex = 14;
-            // 
-            // lblGroup
-            // 
-            this.lblGroup.AutoSize = true;
-            this.lblGroup.Font = new System.Drawing.Font("新細明體", 12F);
-            this.lblGroup.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblGroup.Location = new System.Drawing.Point(392, 12);
-            this.lblGroup.Name = "lblGroup";
-            this.lblGroup.Size = new System.Drawing.Size(44, 16);
-            this.lblGroup.TabIndex = 15;
-            this.lblGroup.Text = "組別:";
-            // 
-            // txtPackNum
-            // 
-            this.txtPackNum.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtPackNum.Location = new System.Drawing.Point(95, 176);
-            this.txtPackNum.Name = "txtPackNum";
-            this.txtPackNum.Size = new System.Drawing.Size(156, 27);
-            this.txtPackNum.TabIndex = 7;
-            this.txtPackNum.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtWeg_MouseDown);
-            // 
-            // lblPackNum
-            // 
-            this.lblPackNum.AutoSize = true;
-            this.lblPackNum.Font = new System.Drawing.Font("新細明體", 12F);
-            this.lblPackNum.ForeColor = System.Drawing.Color.Black;
-            this.lblPackNum.Location = new System.Drawing.Point(44, 181);
-            this.lblPackNum.Name = "lblPackNum";
-            this.lblPackNum.Size = new System.Drawing.Size(44, 16);
-            this.lblPackNum.TabIndex = 8;
-            this.lblPackNum.Text = "包數:";
-            // 
-            // btnExpToExcel
-            // 
-            this.btnExpToExcel.AutoSize = false;
-            this.btnExpToExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExpToExcel.Image")));
-            this.btnExpToExcel.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnExpToExcel.Name = "btnExpToExcel";
-            this.btnExpToExcel.Size = new System.Drawing.Size(65, 35);
-            this.btnExpToExcel.Text = "匯出(&E)";
-            this.btnExpToExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnExpToExcel.Click += new System.EventHandler(this.btnExpToExcel_Click);
-            // 
-            // toolStripSeparator8
-            // 
-            this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 38);
-            // 
-            // txtLocShe
-            // 
-            this.txtLocShe.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtLocShe.Location = new System.Drawing.Point(361, 176);
-            this.txtLocShe.Name = "txtLocShe";
-            this.txtLocShe.Size = new System.Drawing.Size(156, 27);
-            this.txtLocShe.TabIndex = 7;
-            this.txtLocShe.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtWeg_MouseDown);
-            // 
-            // lblLocShe
-            // 
-            this.lblLocShe.AutoSize = true;
-            this.lblLocShe.Font = new System.Drawing.Font("新細明體", 12F);
-            this.lblLocShe.ForeColor = System.Drawing.Color.Black;
-            this.lblLocShe.Location = new System.Drawing.Point(310, 181);
-            this.lblLocShe.Name = "lblLocShe";
-            this.lblLocShe.Size = new System.Drawing.Size(44, 16);
-            this.lblLocShe.TabIndex = 8;
-            this.lblLocShe.Text = "貨架:";
-            // 
             // colMoId
             // 
             this.colMoId.DataPropertyName = "mo_id";
@@ -872,6 +675,133 @@
             this.colUpdateTime.Name = "colUpdateTime";
             this.colUpdateTime.ReadOnly = true;
             this.colUpdateTime.Width = 120;
+            // 
+            // tc1
+            // 
+            this.tc1.Controls.Add(this.tabPage1);
+            this.tc1.Controls.Add(this.tabPage2);
+            this.tc1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tc1.ItemSize = new System.Drawing.Size(60, 32);
+            this.tc1.Location = new System.Drawing.Point(0, 116);
+            this.tc1.Name = "tc1";
+            this.tc1.SelectedIndex = 0;
+            this.tc1.Size = new System.Drawing.Size(947, 419);
+            this.tc1.TabIndex = 14;
+            this.tc1.Click += new System.EventHandler(this.tc1_Click);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.dgvInv);
+            this.tabPage1.Controls.Add(this.panel2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 36);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(939, 379);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "記錄編輯";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.cmbShe);
+            this.panel2.Controls.Add(this.txtId);
+            this.panel2.Controls.Add(this.txtQty);
+            this.panel2.Controls.Add(this.cmbGoodsId);
+            this.panel2.Controls.Add(this.lblGoodsId);
+            this.panel2.Controls.Add(this.lblMo);
+            this.panel2.Controls.Add(this.lblQty);
+            this.panel2.Controls.Add(this.lblLocShe);
+            this.panel2.Controls.Add(this.lblPackNum);
+            this.panel2.Controls.Add(this.lblWeg);
+            this.panel2.Controls.Add(this.txtPackNum);
+            this.panel2.Controls.Add(this.txtWeg);
+            this.panel2.Controls.Add(this.lblGoodsName);
+            this.panel2.Controls.Add(this.lblId);
+            this.panel2.Controls.Add(this.txtSeq);
+            this.panel2.Controls.Add(this.lblSeq);
+            this.panel2.Controls.Add(this.txtMo);
+            this.panel2.Controls.Add(this.txtGoodsName);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(933, 221);
+            this.panel2.TabIndex = 13;
+            // 
+            // lblLocShe
+            // 
+            this.lblLocShe.AutoSize = true;
+            this.lblLocShe.Font = new System.Drawing.Font("新細明體", 12F);
+            this.lblLocShe.ForeColor = System.Drawing.Color.Black;
+            this.lblLocShe.Location = new System.Drawing.Point(310, 181);
+            this.lblLocShe.Name = "lblLocShe";
+            this.lblLocShe.Size = new System.Drawing.Size(44, 16);
+            this.lblLocShe.TabIndex = 8;
+            this.lblLocShe.Text = "貨架:";
+            // 
+            // lblPackNum
+            // 
+            this.lblPackNum.AutoSize = true;
+            this.lblPackNum.Font = new System.Drawing.Font("新細明體", 12F);
+            this.lblPackNum.ForeColor = System.Drawing.Color.Black;
+            this.lblPackNum.Location = new System.Drawing.Point(44, 181);
+            this.lblPackNum.Name = "lblPackNum";
+            this.lblPackNum.Size = new System.Drawing.Size(44, 16);
+            this.lblPackNum.TabIndex = 8;
+            this.lblPackNum.Text = "包數:";
+            // 
+            // txtPackNum
+            // 
+            this.txtPackNum.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtPackNum.Location = new System.Drawing.Point(95, 176);
+            this.txtPackNum.Name = "txtPackNum";
+            this.txtPackNum.Size = new System.Drawing.Size(156, 27);
+            this.txtPackNum.TabIndex = 7;
+            this.txtPackNum.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtWeg_MouseDown);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.dgvInvFind);
+            this.tabPage2.Controls.Add(this.reportViewer1);
+            this.tabPage2.Controls.Add(this.panel3);
+            this.tabPage2.Location = new System.Drawing.Point(4, 36);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(939, 379);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "記錄查詢";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dgvInvFind
+            // 
+            this.dgvInvFind.AllowUserToAddRows = false;
+            this.dgvInvFind.ColumnHeadersHeight = 30;
+            this.dgvInvFind.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvInvFind.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.colIdFind,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.colPrdGroupFind,
+            this.colPackNumFind,
+            this.colGoodsType,
+            this.colLocSheFind,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11});
+            this.dgvInvFind.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvInvFind.Location = new System.Drawing.Point(3, 45);
+            this.dgvInvFind.Name = "dgvInvFind";
+            this.dgvInvFind.ReadOnly = true;
+            this.dgvInvFind.RowHeadersWidth = 35;
+            this.dgvInvFind.RowTemplate.Height = 30;
+            this.dgvInvFind.Size = new System.Drawing.Size(933, 331);
+            this.dgvInvFind.TabIndex = 18;
+            this.dgvInvFind.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvInvFind_RowPostPaint);
+            this.dgvInvFind.SelectionChanged += new System.EventHandler(this.dgvInvFind_SelectionChanged);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -989,6 +919,106 @@
             this.dataGridViewTextBoxColumn11.ReadOnly = true;
             this.dataGridViewTextBoxColumn11.Width = 120;
             // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.Location = new System.Drawing.Point(3, 45);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(933, 331);
+            this.reportViewer1.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.cmbSheFind);
+            this.panel3.Controls.Add(this.lblSheFind);
+            this.panel3.Controls.Add(this.txtIdFind);
+            this.panel3.Controls.Add(this.txtMoFind);
+            this.panel3.Controls.Add(this.lblMoFind);
+            this.panel3.Controls.Add(this.lblIdFind);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(933, 42);
+            this.panel3.TabIndex = 17;
+            // 
+            // txtIdFind
+            // 
+            this.txtIdFind.BackColor = System.Drawing.Color.GhostWhite;
+            this.txtIdFind.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtIdFind.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtIdFind.Location = new System.Drawing.Point(357, 9);
+            this.txtIdFind.MaxLength = 20;
+            this.txtIdFind.Name = "txtIdFind";
+            this.txtIdFind.Size = new System.Drawing.Size(231, 27);
+            this.txtIdFind.TabIndex = 13;
+            // 
+            // txtMoFind
+            // 
+            this.txtMoFind.BackColor = System.Drawing.Color.GhostWhite;
+            this.txtMoFind.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtMoFind.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtMoFind.Location = new System.Drawing.Point(104, 9);
+            this.txtMoFind.MaxLength = 9;
+            this.txtMoFind.Name = "txtMoFind";
+            this.txtMoFind.Size = new System.Drawing.Size(169, 27);
+            this.txtMoFind.TabIndex = 14;
+            // 
+            // lblMoFind
+            // 
+            this.lblMoFind.AutoSize = true;
+            this.lblMoFind.Font = new System.Drawing.Font("新細明體", 12F);
+            this.lblMoFind.ForeColor = System.Drawing.Color.Black;
+            this.lblMoFind.Location = new System.Drawing.Point(26, 13);
+            this.lblMoFind.Name = "lblMoFind";
+            this.lblMoFind.Size = new System.Drawing.Size(76, 16);
+            this.lblMoFind.TabIndex = 15;
+            this.lblMoFind.Text = "制單編號:";
+            // 
+            // lblIdFind
+            // 
+            this.lblIdFind.AutoSize = true;
+            this.lblIdFind.Font = new System.Drawing.Font("新細明體", 12F);
+            this.lblIdFind.ForeColor = System.Drawing.Color.Black;
+            this.lblIdFind.Location = new System.Drawing.Point(279, 12);
+            this.lblIdFind.Name = "lblIdFind";
+            this.lblIdFind.Size = new System.Drawing.Size(76, 16);
+            this.lblIdFind.TabIndex = 16;
+            this.lblIdFind.Text = "盤點單號:";
+            // 
+            // cmbShe
+            // 
+            this.cmbShe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbShe.DropDownWidth = 150;
+            this.cmbShe.Font = new System.Drawing.Font("新細明體", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.cmbShe.FormattingEnabled = true;
+            this.cmbShe.Location = new System.Drawing.Point(361, 176);
+            this.cmbShe.Name = "cmbShe";
+            this.cmbShe.Size = new System.Drawing.Size(156, 27);
+            this.cmbShe.TabIndex = 14;
+            this.cmbShe.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cmbShe_MouseDown);
+            // 
+            // cmbSheFind
+            // 
+            this.cmbSheFind.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSheFind.DropDownWidth = 150;
+            this.cmbSheFind.Font = new System.Drawing.Font("新細明體", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.cmbSheFind.FormattingEnabled = true;
+            this.cmbSheFind.Location = new System.Drawing.Point(649, 9);
+            this.cmbSheFind.Name = "cmbSheFind";
+            this.cmbSheFind.Size = new System.Drawing.Size(156, 27);
+            this.cmbSheFind.TabIndex = 18;
+            // 
+            // lblSheFind
+            // 
+            this.lblSheFind.AutoSize = true;
+            this.lblSheFind.Font = new System.Drawing.Font("新細明體", 12F);
+            this.lblSheFind.ForeColor = System.Drawing.Color.Black;
+            this.lblSheFind.Location = new System.Drawing.Point(598, 13);
+            this.lblSheFind.Name = "lblSheFind";
+            this.lblSheFind.Size = new System.Drawing.Size(44, 16);
+            this.lblSheFind.TabIndex = 17;
+            this.lblSheFind.Text = "貨架:";
+            // 
             // frmInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1076,7 +1106,6 @@
         private System.Windows.Forms.ToolStripButton btnExpToExcel;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.Label lblLocShe;
-        private System.Windows.Forms.TextBox txtLocShe;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMoId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGoodsId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGoodsName;
@@ -1106,5 +1135,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colLocSheFind;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.ComboBox cmbShe;
+        private System.Windows.Forms.ComboBox cmbSheFind;
+        private System.Windows.Forms.Label lblSheFind;
     }
 }

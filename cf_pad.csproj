@@ -165,6 +165,7 @@
     <Compile Include="CLS\clsBs_Dep.cs" />
     <Compile Include="CLS\clsCheckOutQty.cs" />
     <Compile Include="CLS\clsCommonUse.cs" />
+    <Compile Include="CLS\clsGetBaseData.cs" />
     <Compile Include="CLS\clsGoodsTransferJx.cs" />
     <Compile Include="CLS\clsInventory.cs" />
     <Compile Include="CLS\clsIpqcSpray.cs" />

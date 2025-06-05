@@ -53,7 +53,7 @@ namespace cf_pad.Forms
                     bool input_flag = true;
                     string mo_id= dtBarCode.Rows[0]["mo_id"].ToString();
                     string goods_id = dtBarCode.Rows[0]["goods_id"].ToString().Trim();
-                    DataTable dtInv = LoadData(1,cmbDep.SelectedValue.ToString(), txtMonth.Text.Trim(), "", mo_id, goods_id);
+                    DataTable dtInv = LoadData(1, cmbDep.SelectedValue.ToString(), txtMonth.Text.Trim(), "", mo_id, goods_id, "");
                     if (dtInv.Rows.Count > 0)
                     {
                         if (MessageBox.Show("已存在盤點記錄,確定繼續新增嗎?", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
@@ -178,7 +178,7 @@ namespace cf_pad.Forms
             string prd_group= cmbGroup.SelectedValue != null ? cmbGroup.SelectedValue.ToString() : "";
             string goods_id = cmbGoodsId.SelectedValue != null ? cmbGoodsId.SelectedValue.ToString() : "";
             string pack_num = txtPackNum.Text.Trim();
-            string loc_she = txtLocShe.Text.Trim();
+            string loc_she = cmbShe.SelectedValue != null ? cmbShe.SelectedValue.ToString().Trim() : "";
             decimal st_qty,st_weg = 0;
             st_qty = txtQty.Text != "" ? Convert.ToInt32(txtQty.Text.Trim()) :  0;
             st_weg = txtWeg.Text != "" ? Convert.ToDecimal(txtWeg.Text.Trim()) : 0;
@@ -271,57 +271,35 @@ namespace cf_pad.Forms
         }
         private void frmInventory_Load(object sender, EventArgs e)
         {
-            InitComBox();
-            InitValues();
-            this.reportViewer1.RefreshReport();
-            this.reportViewer1.RefreshReport();
-        }
-        private void InitComBox()
-        {
-            DataTable dtPrd_dept = clsProductionSchedule.GetAllPrd_dept();
+            DataTable dtPrd_dept = clsGetBaseData.GetPrdDep();
             //初始化生產部門
             cmbDep.DataSource = dtPrd_dept;
             cmbDep.DisplayMember = "int9loc";
             cmbDep.ValueMember = "int9loc";
-            cmbDep.SelectedValue = "105";
-            string strSql = "";
+            SetComBoxSource();
+            InitValues();
+            this.reportViewer1.RefreshReport();
+            this.reportViewer1.RefreshReport();
+        }
+        private void SetComBoxSource()
+        {
+            
             string dep = cmbDep.SelectedValue != null ? cmbDep.SelectedValue.ToString().Trim() : "";
-            strSql = " SELECT work_group,group_desc FROM work_group WHERE ( dep='" + dep + "'" + " AND group_type='" + "1" + "') " + " OR dep='" + "000" + "' ";
-            DataTable dtGroup = clsPublicOfPad.ExecuteSqlReturnDataTable(strSql);
-            if (dtGroup.Rows.Count > 0)
-            {
-                cmbGroup.DataSource = dtGroup;
-                cmbGroup.DisplayMember = "work_group";
-                cmbGroup.ValueMember = "work_group";
-            }
-            string _userid = DBUtility._user_id.ToUpper();
-            if (dep == "105")
-            {
-                if (_userid == "BLK01")
-                    cmbGroup.Text = "BC01";
-                else
-                {
-                    if (_userid == "BLK02")
-                        cmbGroup.Text = "BC02";
-                    else
-                    {
-                        if (_userid == "BLK03")
-                            cmbGroup.Text = "BC03";
-                        else
-                        {
-                            if (_userid == "BLK04")
-                                cmbGroup.Text = "BC04";
-                            else
-                            {
-                                if (_userid == "BLK05")
-                                {
-                                    cmbGroup.Text = "BC05";
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+            //部門組別
+            DataTable dtGroup = clsGetBaseData.GetDepGroup(dep, "1");
+            cmbGroup.DataSource = dtGroup;
+            cmbGroup.DisplayMember = "work_group";
+            cmbGroup.ValueMember = "work_group";
+            //部門貨架
+            DataTable dtShe = clsGetBaseData.GetDepGroup(dep, "3");
+            cmbShe.DataSource = dtShe;
+            cmbShe.DisplayMember = "work_group";
+            cmbShe.ValueMember = "work_group";
+            //部門貨架--查找
+            DataTable dtSheFind = clsGetBaseData.GetDepGroup(dep, "3");
+            cmbSheFind.DataSource = dtSheFind;
+            cmbSheFind.DisplayMember = "work_group";
+            cmbSheFind.ValueMember = "work_group";
         }
         private void InitValues()
         {
@@ -329,6 +307,22 @@ namespace cf_pad.Forms
             if (user_id.Substring(0, 3) == "BLK")
                 cmbDep.SelectedValue = "105";
             txtMonth.Text = System.DateTime.Now.ToString("yyyy/MM/dd").Substring(0, 7);
+            string dep = cmbDep.SelectedValue != null ? cmbDep.SelectedValue.ToString().Trim() : "";
+            if (dep == "105")
+            {
+                if (user_id == "BLK01")
+                    cmbGroup.SelectedValue = "BC01";
+                else if (user_id == "BLK02")
+                    cmbGroup.SelectedValue = "BC02";
+                else if (user_id == "BLK03")
+                    cmbGroup.SelectedValue = "BC03";
+                else if (user_id == "BLK04")
+                    cmbGroup.SelectedValue = "BC04";
+                else if (user_id == "BLK05")
+                    cmbGroup.SelectedValue = "BC05";
+                else if (user_id == "BLK06")
+                    cmbGroup.SelectedValue = "BC06";
+            }
             txtBarCode.Focus();
         }
         private void GetMoDataSource()//從生產表或排期表或流程中獲取記錄
@@ -390,20 +384,21 @@ namespace cf_pad.Forms
             if (tc1.SelectedIndex==0)
             {
                 string id = txtId.Text.Trim();
-                dtInv=LoadData(1,loc_id, st_month, id, "", "");
+                dtInv = LoadData(1, loc_id, st_month, id, "", "", "");
                 dgvInv.DataSource = dtInv;
             }
             else
             {
                 string id = txtIdFind.Text.Trim();
                 string mo_id = txtMoFind.Text.Trim();
-                dtInvView = LoadData(2,loc_id, st_month, id, mo_id, "");
+                string loc_she = cmbSheFind.SelectedValue != null ? cmbSheFind.SelectedValue.ToString() : "";
+                dtInvView = LoadData(2, loc_id, st_month, id, mo_id, "", loc_she);
                 dgvInvFind.DataSource = dtInvView;
                 dgvInvFind.Visible = true;
                 reportViewer1.Visible = false;
             }
         }
-        private DataTable LoadData(int rpt_type,string loc_id,string st_month,string id,string mo_id,string goods_id)
+        private DataTable LoadData(int rpt_type,string loc_id,string st_month,string id,string mo_id,string goods_id,string loc_she)
         {
             string strSql = "";
             string prd_group = cmbGroup.SelectedValue != null ? cmbGroup.SelectedValue.ToString().Trim() : "";
@@ -426,6 +421,8 @@ namespace cf_pad.Forms
                     strSql += " And a.goods_id='" + goods_id + "'";
                 if (prd_group != "")
                     strSql += " And a.prd_group='" + prd_group + "'";
+                if (loc_she != "")
+                    strSql += " And a.loc_she='" + loc_she + "'";
                 strSql += " Order By a.update_time Desc ";
             }
             else
@@ -449,6 +446,8 @@ namespace cf_pad.Forms
                     strSql += " And a.goods_id='" + goods_id + "'";
                 if (prd_group != "")
                     strSql += " And a.prd_group='" + prd_group + "'";
+                if (loc_she != "")
+                    strSql += " And a.loc_she='" + loc_she + "'";
                 strSql += " Update #tb_inv01 Set goods_type='1' Where goods_type<>'NEP0' ";
                 strSql += " Update #tb_inv01 Set goods_type='2' Where goods_type='NEP0' ";
                 strSql += " Select * From #tb_inv01 Order By loc_id,prd_group,goods_type,pack_num";
@@ -507,7 +506,7 @@ namespace cf_pad.Forms
                 txtWeg.Text = currentRow.Cells["colStWeg"].Value.ToString();
                 cmbGroup.SelectedValue = currentRow.Cells["colPrdGroup"].Value.ToString();
                 txtPackNum.Text = currentRow.Cells["colPackNum"].Value.ToString();
-                txtLocShe.Text = currentRow.Cells["colLocShe"].Value.ToString();
+                cmbShe.SelectedValue = currentRow.Cells["colLocShe"].Value.ToString().Trim();
                 GetMoItem();
                 cmbGoodsId.SelectedValue = currentRow.Cells["colGoodsId"].Value.ToString();
                 txtGoodsName.Text = currentRow.Cells["colGoodsName"].Value.ToString();
@@ -564,19 +563,30 @@ namespace cf_pad.Forms
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            if (dtInvView.Rows.Count == 0)
+            {
+                dgvInvFind.Visible = true;
+                reportViewer1.Visible = false;
+                MessageBox.Show("沒有找到符合條件的記錄!");
+                return;
+            }
             reportViewer1.PrintDialog();
         }
 
         private void btnPreview_Click(object sender, EventArgs e)
         {
-            dgvInvFind.Visible = false;
-            reportViewer1.Visible = true;
+            tc1.SelectedIndex = 1;
+            FindData();
+            txtBarCode.Focus();
             if (dtInvView.Rows.Count == 0)
             {
+                dgvInvFind.Visible = true;
+                reportViewer1.Visible = false;
                 MessageBox.Show("沒有找到符合條件的記錄!");
                 return;
             }
-
+            dgvInvFind.Visible = false;
+            reportViewer1.Visible = true;
             string strReportPath = "";
             strReportPath = Application.StartupPath;
             //MessageBox.Show(strReportPath);
@@ -704,5 +714,14 @@ namespace cf_pad.Forms
             }
         }
 
+        private void cmbDep_Leave(object sender, EventArgs e)
+        {
+            SetComBoxSource();
+        }
+
+        private void cmbShe_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtWeg.SelectAll();
+        }
     }
 }
