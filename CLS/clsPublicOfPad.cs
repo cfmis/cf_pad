@@ -291,7 +291,7 @@ namespace cf_pad.CLS
                     {
                         dr["doc_id"] = barcode.Substring(0, 11);//貨倉發貨：條形碼按單據編號查詢
                         dr["doc_seq"] = barcode.Substring(11, 4) + "h";
-                        if(barcode.Substring(0, 3) == "LAA"|| barcode.Substring(0, 3) == "LAB")//JX單的序號為0001l
+                        if (barcode.Substring(0, 3) == "LAA" || barcode.Substring(0, 3) == "LAB")//JX單的序號為0001l
                             dr["doc_seq"] = barcode.Substring(11, 4) + "l";
                         dr["barcode_type"] = "12";
                     }
@@ -319,31 +319,22 @@ namespace cf_pad.CLS
                                     " Inner Join " + remote_db + "jo_bill_materiel_details c ON b.within_code=c.within_code AND b.id=c.id AND b.ver=c.ver AND b.sequence_id=c.upper_sequence" +
                                     " WHERE a.within_code='" + "0000" + "' AND a.mo_id ='" + mo_id + "' " + " AND b.sequence_id='" + seq_id + "'" + " AND c.sequence_id='" + seq_id_part + "'";
                         }
-                        try
+                        dtItem = ExecuteSqlReturnDataTable(strSql);
+                        if (dtItem.Rows.Count == 0)
+                            MessageBox.Show("通過條碼提取的物料編號不存在!");
+                        else
                         {
-                            dtItem = ExecuteSqlReturnDataTable(strSql);
-                            if (dtItem.Rows.Count == 0)
-                                MessageBox.Show("通過條碼提取的物料編號不存在!");
-                            else
-                            {
-                                DataRow pdr = dtItem.Rows[0];
-                                dr["barcode_type"] = "2";//條形碼從計劃單中獲取制單資料
-                                dr["mo_id"] = pdr["mo_id"].ToString();
-                                dr["goods_id"] = pdr["goods_id"].ToString();
-                                dr["wp_id"] = pdr["wp_id"].ToString();
-                                dr["next_wp_id"] = pdr["next_wp_id"].ToString();
-                                dr["prod_qty"] = pdr["prod_qty"].ToString();
-                                dr["id"] = pdr["id"].ToString();
-                                dr["ver"] = Convert.ToInt32(pdr["ver"]);
-                                dr["sequence_id"] = pdr["sequence_id"].ToString();
-                            }
+                            DataRow pdr = dtItem.Rows[0];
+                            dr["barcode_type"] = "2";//條形碼從計劃單中獲取制單資料
+                            dr["mo_id"] = pdr["mo_id"].ToString();
+                            dr["goods_id"] = pdr["goods_id"].ToString();
+                            dr["wp_id"] = pdr["wp_id"].ToString();
+                            dr["next_wp_id"] = pdr["next_wp_id"].ToString();
+                            dr["prod_qty"] = pdr["prod_qty"].ToString();
+                            dr["id"] = pdr["id"].ToString();
+                            dr["ver"] = Convert.ToInt32(pdr["ver"]);
+                            dr["sequence_id"] = pdr["sequence_id"].ToString();
                         }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message);
-                        }
-
-                        
                     }
                 }
                 dtBarCode.Rows.Add(dr);

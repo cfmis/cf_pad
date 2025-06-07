@@ -87,6 +87,7 @@
             this.tc1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cmbShe = new System.Windows.Forms.ComboBox();
             this.lblLocShe = new System.Windows.Forms.Label();
             this.lblPackNum = new System.Windows.Forms.Label();
             this.txtPackNum = new System.Windows.Forms.TextBox();
@@ -109,13 +110,12 @@
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cmbSheFind = new System.Windows.Forms.ComboBox();
+            this.lblSheFind = new System.Windows.Forms.Label();
             this.txtIdFind = new System.Windows.Forms.TextBox();
             this.txtMoFind = new System.Windows.Forms.TextBox();
             this.lblMoFind = new System.Windows.Forms.Label();
             this.lblIdFind = new System.Windows.Forms.Label();
-            this.cmbShe = new System.Windows.Forms.ComboBox();
-            this.cmbSheFind = new System.Windows.Forms.ComboBox();
-            this.lblSheFind = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInv)).BeginInit();
@@ -306,7 +306,7 @@
             // txtQty
             // 
             this.txtQty.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtQty.Location = new System.Drawing.Point(95, 143);
+            this.txtQty.Location = new System.Drawing.Point(111, 143);
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(156, 27);
             this.txtQty.TabIndex = 7;
@@ -317,7 +317,7 @@
             this.lblQty.AutoSize = true;
             this.lblQty.Font = new System.Drawing.Font("新細明體", 12F);
             this.lblQty.ForeColor = System.Drawing.Color.Black;
-            this.lblQty.Location = new System.Drawing.Point(49, 149);
+            this.lblQty.Location = new System.Drawing.Point(58, 149);
             this.lblQty.Name = "lblQty";
             this.lblQty.Size = new System.Drawing.Size(44, 16);
             this.lblQty.TabIndex = 8;
@@ -328,7 +328,7 @@
             this.lblWeg.AutoSize = true;
             this.lblWeg.Font = new System.Drawing.Font("新細明體", 12F);
             this.lblWeg.ForeColor = System.Drawing.Color.Black;
-            this.lblWeg.Location = new System.Drawing.Point(310, 149);
+            this.lblWeg.Location = new System.Drawing.Point(324, 149);
             this.lblWeg.Name = "lblWeg";
             this.lblWeg.Size = new System.Drawing.Size(44, 16);
             this.lblWeg.TabIndex = 8;
@@ -337,7 +337,7 @@
             // txtWeg
             // 
             this.txtWeg.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtWeg.Location = new System.Drawing.Point(361, 143);
+            this.txtWeg.Location = new System.Drawing.Point(377, 143);
             this.txtWeg.Name = "txtWeg";
             this.txtWeg.Size = new System.Drawing.Size(156, 27);
             this.txtWeg.TabIndex = 7;
@@ -348,10 +348,10 @@
             this.txtMo.BackColor = System.Drawing.Color.GhostWhite;
             this.txtMo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtMo.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtMo.Location = new System.Drawing.Point(95, 43);
+            this.txtMo.Location = new System.Drawing.Point(111, 43);
             this.txtMo.MaxLength = 9;
             this.txtMo.Name = "txtMo";
-            this.txtMo.Size = new System.Drawing.Size(231, 27);
+            this.txtMo.Size = new System.Drawing.Size(207, 27);
             this.txtMo.TabIndex = 9;
             this.txtMo.Leave += new System.EventHandler(this.txtMo_Leave);
             // 
@@ -360,7 +360,7 @@
             this.lblMo.AutoSize = true;
             this.lblMo.Font = new System.Drawing.Font("新細明體", 12F);
             this.lblMo.ForeColor = System.Drawing.Color.Black;
-            this.lblMo.Location = new System.Drawing.Point(17, 47);
+            this.lblMo.Location = new System.Drawing.Point(26, 47);
             this.lblMo.Name = "lblMo";
             this.lblMo.Size = new System.Drawing.Size(76, 16);
             this.lblMo.TabIndex = 10;
@@ -371,7 +371,7 @@
             this.lblGoodsId.AutoSize = true;
             this.lblGoodsId.Font = new System.Drawing.Font("新細明體", 12F);
             this.lblGoodsId.ForeColor = System.Drawing.Color.Black;
-            this.lblGoodsId.Location = new System.Drawing.Point(17, 80);
+            this.lblGoodsId.Location = new System.Drawing.Point(26, 80);
             this.lblGoodsId.Name = "lblGoodsId";
             this.lblGoodsId.Size = new System.Drawing.Size(76, 16);
             this.lblGoodsId.TabIndex = 10;
@@ -382,7 +382,7 @@
             this.lblGoodsName.AutoSize = true;
             this.lblGoodsName.Font = new System.Drawing.Font("新細明體", 12F);
             this.lblGoodsName.ForeColor = System.Drawing.Color.Black;
-            this.lblGoodsName.Location = new System.Drawing.Point(17, 113);
+            this.lblGoodsName.Location = new System.Drawing.Point(26, 113);
             this.lblGoodsName.Name = "lblGoodsName";
             this.lblGoodsName.Size = new System.Drawing.Size(76, 16);
             this.lblGoodsName.TabIndex = 10;
@@ -393,7 +393,7 @@
             this.txtGoodsName.BackColor = System.Drawing.Color.GhostWhite;
             this.txtGoodsName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtGoodsName.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtGoodsName.Location = new System.Drawing.Point(95, 109);
+            this.txtGoodsName.Location = new System.Drawing.Point(111, 109);
             this.txtGoodsName.MaxLength = 9;
             this.txtGoodsName.Name = "txtGoodsName";
             this.txtGoodsName.Size = new System.Drawing.Size(422, 27);
@@ -484,7 +484,7 @@
             this.cmbGoodsId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGoodsId.DropDownWidth = 150;
             this.cmbGoodsId.Font = new System.Drawing.Font("新細明體", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.cmbGoodsId.Location = new System.Drawing.Point(95, 76);
+            this.cmbGoodsId.Location = new System.Drawing.Point(111, 76);
             this.cmbGoodsId.Name = "cmbGoodsId";
             this.cmbGoodsId.Size = new System.Drawing.Size(422, 27);
             this.cmbGoodsId.TabIndex = 12;
@@ -495,7 +495,7 @@
             this.lblId.AutoSize = true;
             this.lblId.Font = new System.Drawing.Font("新細明體", 12F);
             this.lblId.ForeColor = System.Drawing.Color.Black;
-            this.lblId.Location = new System.Drawing.Point(17, 17);
+            this.lblId.Location = new System.Drawing.Point(26, 17);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(76, 16);
             this.lblId.TabIndex = 10;
@@ -506,7 +506,7 @@
             this.txtId.BackColor = System.Drawing.Color.GhostWhite;
             this.txtId.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtId.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtId.Location = new System.Drawing.Point(95, 13);
+            this.txtId.Location = new System.Drawing.Point(111, 13);
             this.txtId.MaxLength = 20;
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
@@ -518,7 +518,7 @@
             this.lblSeq.AutoSize = true;
             this.lblSeq.Font = new System.Drawing.Font("新細明體", 12F);
             this.lblSeq.ForeColor = System.Drawing.Color.Black;
-            this.lblSeq.Location = new System.Drawing.Point(360, 47);
+            this.lblSeq.Location = new System.Drawing.Point(324, 47);
             this.lblSeq.Name = "lblSeq";
             this.lblSeq.Size = new System.Drawing.Size(44, 16);
             this.lblSeq.TabIndex = 10;
@@ -529,11 +529,11 @@
             this.txtSeq.BackColor = System.Drawing.Color.GhostWhite;
             this.txtSeq.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtSeq.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtSeq.Location = new System.Drawing.Point(411, 43);
+            this.txtSeq.Location = new System.Drawing.Point(377, 43);
             this.txtSeq.MaxLength = 20;
             this.txtSeq.Name = "txtSeq";
             this.txtSeq.ReadOnly = true;
-            this.txtSeq.Size = new System.Drawing.Size(106, 27);
+            this.txtSeq.Size = new System.Drawing.Size(156, 27);
             this.txtSeq.TabIndex = 9;
             this.txtSeq.Leave += new System.EventHandler(this.txtMo_Leave);
             // 
@@ -727,12 +727,24 @@
             this.panel2.Size = new System.Drawing.Size(933, 221);
             this.panel2.TabIndex = 13;
             // 
+            // cmbShe
+            // 
+            this.cmbShe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbShe.DropDownWidth = 150;
+            this.cmbShe.Font = new System.Drawing.Font("新細明體", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.cmbShe.FormattingEnabled = true;
+            this.cmbShe.Location = new System.Drawing.Point(377, 176);
+            this.cmbShe.Name = "cmbShe";
+            this.cmbShe.Size = new System.Drawing.Size(156, 27);
+            this.cmbShe.TabIndex = 14;
+            this.cmbShe.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cmbShe_MouseDown);
+            // 
             // lblLocShe
             // 
             this.lblLocShe.AutoSize = true;
             this.lblLocShe.Font = new System.Drawing.Font("新細明體", 12F);
             this.lblLocShe.ForeColor = System.Drawing.Color.Black;
-            this.lblLocShe.Location = new System.Drawing.Point(310, 181);
+            this.lblLocShe.Location = new System.Drawing.Point(324, 181);
             this.lblLocShe.Name = "lblLocShe";
             this.lblLocShe.Size = new System.Drawing.Size(44, 16);
             this.lblLocShe.TabIndex = 8;
@@ -743,7 +755,7 @@
             this.lblPackNum.AutoSize = true;
             this.lblPackNum.Font = new System.Drawing.Font("新細明體", 12F);
             this.lblPackNum.ForeColor = System.Drawing.Color.Black;
-            this.lblPackNum.Location = new System.Drawing.Point(44, 181);
+            this.lblPackNum.Location = new System.Drawing.Point(58, 181);
             this.lblPackNum.Name = "lblPackNum";
             this.lblPackNum.Size = new System.Drawing.Size(44, 16);
             this.lblPackNum.TabIndex = 8;
@@ -752,7 +764,7 @@
             // txtPackNum
             // 
             this.txtPackNum.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtPackNum.Location = new System.Drawing.Point(95, 176);
+            this.txtPackNum.Location = new System.Drawing.Point(111, 176);
             this.txtPackNum.Name = "txtPackNum";
             this.txtPackNum.Size = new System.Drawing.Size(156, 27);
             this.txtPackNum.TabIndex = 7;
@@ -941,6 +953,28 @@
             this.panel3.Size = new System.Drawing.Size(933, 42);
             this.panel3.TabIndex = 17;
             // 
+            // cmbSheFind
+            // 
+            this.cmbSheFind.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSheFind.DropDownWidth = 150;
+            this.cmbSheFind.Font = new System.Drawing.Font("新細明體", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.cmbSheFind.FormattingEnabled = true;
+            this.cmbSheFind.Location = new System.Drawing.Point(649, 9);
+            this.cmbSheFind.Name = "cmbSheFind";
+            this.cmbSheFind.Size = new System.Drawing.Size(156, 27);
+            this.cmbSheFind.TabIndex = 18;
+            // 
+            // lblSheFind
+            // 
+            this.lblSheFind.AutoSize = true;
+            this.lblSheFind.Font = new System.Drawing.Font("新細明體", 12F);
+            this.lblSheFind.ForeColor = System.Drawing.Color.Black;
+            this.lblSheFind.Location = new System.Drawing.Point(598, 13);
+            this.lblSheFind.Name = "lblSheFind";
+            this.lblSheFind.Size = new System.Drawing.Size(44, 16);
+            this.lblSheFind.TabIndex = 17;
+            this.lblSheFind.Text = "貨架:";
+            // 
             // txtIdFind
             // 
             this.txtIdFind.BackColor = System.Drawing.Color.GhostWhite;
@@ -984,40 +1018,6 @@
             this.lblIdFind.Size = new System.Drawing.Size(76, 16);
             this.lblIdFind.TabIndex = 16;
             this.lblIdFind.Text = "盤點單號:";
-            // 
-            // cmbShe
-            // 
-            this.cmbShe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbShe.DropDownWidth = 150;
-            this.cmbShe.Font = new System.Drawing.Font("新細明體", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.cmbShe.FormattingEnabled = true;
-            this.cmbShe.Location = new System.Drawing.Point(361, 176);
-            this.cmbShe.Name = "cmbShe";
-            this.cmbShe.Size = new System.Drawing.Size(156, 27);
-            this.cmbShe.TabIndex = 14;
-            this.cmbShe.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cmbShe_MouseDown);
-            // 
-            // cmbSheFind
-            // 
-            this.cmbSheFind.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSheFind.DropDownWidth = 150;
-            this.cmbSheFind.Font = new System.Drawing.Font("新細明體", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.cmbSheFind.FormattingEnabled = true;
-            this.cmbSheFind.Location = new System.Drawing.Point(649, 9);
-            this.cmbSheFind.Name = "cmbSheFind";
-            this.cmbSheFind.Size = new System.Drawing.Size(156, 27);
-            this.cmbSheFind.TabIndex = 18;
-            // 
-            // lblSheFind
-            // 
-            this.lblSheFind.AutoSize = true;
-            this.lblSheFind.Font = new System.Drawing.Font("新細明體", 12F);
-            this.lblSheFind.ForeColor = System.Drawing.Color.Black;
-            this.lblSheFind.Location = new System.Drawing.Point(598, 13);
-            this.lblSheFind.Name = "lblSheFind";
-            this.lblSheFind.Size = new System.Drawing.Size(44, 16);
-            this.lblSheFind.TabIndex = 17;
-            this.lblSheFind.Text = "貨架:";
             // 
             // frmInventory
             // 

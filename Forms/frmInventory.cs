@@ -19,6 +19,7 @@ namespace cf_pad.Forms
         DataTable dtMoItem = new DataTable();
         DataTable dtInvView = new DataTable();
         string remote_db = DBUtility.remote_db;
+        string user_id = DBUtility._user_id;
         private int BarCodeMinLength = 13;//這個為測試用，如果是正常的制單條碼，長度為10
         public frmInventory()
         {
@@ -164,6 +165,19 @@ namespace cf_pad.Forms
                 result = false;
                 MessageBox.Show("盤點月份不能為空!");
                 txtMonth.Focus();
+            }else if (!clsValidRule.IsNumeric(txtWeg.Text))
+            {
+                MessageBox.Show("重量格式有誤,請重新輸入!");
+                txtWeg.Focus();
+                txtWeg.SelectAll();
+                return false;
+            }
+            else if (!clsValidRule.IsNumeric(txtQty.Text))
+            {
+                MessageBox.Show("數量格式有誤,請重新輸入!");
+                txtQty.Focus();
+                txtQty.SelectAll();
+                return false;
             }
             return result;
         }
@@ -182,7 +196,6 @@ namespace cf_pad.Forms
             decimal st_qty,st_weg = 0;
             st_qty = txtQty.Text != "" ? Convert.ToInt32(txtQty.Text.Trim()) :  0;
             st_weg = txtWeg.Text != "" ? Convert.ToDecimal(txtWeg.Text.Trim()) : 0;
-            string user_id = DBUtility._user_id;
             if (!CheckInventoryID(id))//id=="" || 
             {
                 id = GetInventoryID(loc_id, st_month);
@@ -271,15 +284,18 @@ namespace cf_pad.Forms
         }
         private void frmInventory_Load(object sender, EventArgs e)
         {
+            dgvInv.AutoGenerateColumns = false;
+            dgvInvFind.AutoGenerateColumns = false;
             DataTable dtPrd_dept = clsGetBaseData.GetPrdDep();
             //初始化生產部門
             cmbDep.DataSource = dtPrd_dept;
             cmbDep.DisplayMember = "int9loc";
             cmbDep.ValueMember = "int9loc";
+            if (user_id.Substring(0, 3) == "BLK")
+                cmbDep.SelectedValue = "105";
+            txtMonth.Text = System.DateTime.Now.ToString("yyyy/MM/dd").Substring(0, 7);
             SetComBoxSource();
-            InitValues();
-            this.reportViewer1.RefreshReport();
-            this.reportViewer1.RefreshReport();
+            reportViewer1.RefreshReport();
         }
         private void SetComBoxSource()
         {
@@ -300,14 +316,7 @@ namespace cf_pad.Forms
             cmbSheFind.DataSource = dtSheFind;
             cmbSheFind.DisplayMember = "work_group";
             cmbSheFind.ValueMember = "work_group";
-        }
-        private void InitValues()
-        {
-            string user_id = DBUtility._user_id;
-            if (user_id.Substring(0, 3) == "BLK")
-                cmbDep.SelectedValue = "105";
-            txtMonth.Text = System.DateTime.Now.ToString("yyyy/MM/dd").Substring(0, 7);
-            string dep = cmbDep.SelectedValue != null ? cmbDep.SelectedValue.ToString().Trim() : "";
+
             if (dep == "105")
             {
                 if (user_id == "BLK01")
@@ -324,7 +333,9 @@ namespace cf_pad.Forms
                     cmbGroup.SelectedValue = "BC06";
             }
             txtBarCode.Focus();
+
         }
+
         private void GetMoDataSource()//從生產表或排期表或流程中獲取記錄
         {
             
@@ -402,55 +413,34 @@ namespace cf_pad.Forms
         {
             string strSql = "";
             string prd_group = cmbGroup.SelectedValue != null ? cmbGroup.SelectedValue.ToString().Trim() : "";
-            if (rpt_type == 1)
-            {
-                strSql = " Select a.id,a.seq,a.st_month,a.loc_id,a.mo_id,a.goods_id,b.name AS goods_name,a.st_qty,a.st_weg" +
+            strSql = " Select a.id,a.seq,a.st_month,a.loc_id,a.mo_id,a.goods_id,b.name AS goods_name,a.st_qty,a.st_weg" +
                     ",a.prd_group,a.pack_num,a.loc_she,a.update_user,Convert(Varchar(20),a.update_time,120) AS update_time" +
+                    ",Substring(a.goods_id,15,4) AS goods_type" +
                     " From product_inventory a" +
                     " Left Join dgcf_db.dbo.geo_it_goods b On a.goods_id=b.id COLLATE chinese_taiwan_stroke_CI_AS " +
                     " Where a.id>=''";
-                if (loc_id != "")
-                    strSql += " And a.loc_id='" + loc_id + "'";
-                if (st_month != "")
-                    strSql += " And a.st_month='" + st_month + "'";
-                if (id != "")
-                    strSql += " And a.id='" + id + "'";
-                if (mo_id != "")
-                    strSql += " And a.mo_id='" + mo_id + "'";
-                if (goods_id != "")
-                    strSql += " And a.goods_id='" + goods_id + "'";
-                if (prd_group != "")
-                    strSql += " And a.prd_group='" + prd_group + "'";
-                if (loc_she != "")
-                    strSql += " And a.loc_she='" + loc_she + "'";
+            if (loc_id != "")
+                strSql += " And a.loc_id='" + loc_id + "'";
+            if (st_month != "")
+                strSql += " And a.st_month='" + st_month + "'";
+            if (id.Trim() != "")
+                strSql += " And a.id='" + id + "'";
+            if (mo_id.Trim() != "")
+                strSql += " And a.mo_id='" + mo_id + "'";
+            if (goods_id.Trim() != "")
+                strSql += " And a.goods_id='" + goods_id + "'";
+            if (prd_group.Trim() != "")
+                strSql += " And a.prd_group='" + prd_group + "'";
+            if (loc_she.Trim() != "")
+                strSql += " And a.loc_she='" + loc_she + "'";
+            if (rpt_type == 1)
+            {
+                
                 strSql += " Order By a.update_time Desc ";
             }
             else
             {
-                strSql += " Select a.id,a.seq,a.st_month,a.loc_id,a.mo_id,a.goods_id,b.name AS goods_name,a.st_qty,a.st_weg" +
-                    ",a.prd_group,a.pack_num,a.loc_she,a.update_user,Convert(Varchar(20),a.update_time,120) AS update_time" +
-                    ",Substring(a.goods_id,15,4) AS goods_type" +
-                    " Into #tb_inv01 "+
-                    " From product_inventory a" +
-                    " Left Join dgcf_db.dbo.geo_it_goods b On a.goods_id=b.id COLLATE chinese_taiwan_stroke_CI_AS " +
-                    " Where a.id>=''";
-                if (loc_id != "")
-                    strSql += " And a.loc_id='" + loc_id + "'";
-                if (st_month != "")
-                    strSql += " And a.st_month='" + st_month + "'";
-                if (id != "")
-                    strSql += " And a.id='" + id + "'";
-                if (mo_id != "")
-                    strSql += " And a.mo_id='" + mo_id + "'";
-                if (goods_id != "")
-                    strSql += " And a.goods_id='" + goods_id + "'";
-                if (prd_group != "")
-                    strSql += " And a.prd_group='" + prd_group + "'";
-                if (loc_she != "")
-                    strSql += " And a.loc_she='" + loc_she + "'";
-                strSql += " Update #tb_inv01 Set goods_type='1' Where goods_type<>'NEP0' ";
-                strSql += " Update #tb_inv01 Set goods_type='2' Where goods_type='NEP0' ";
-                strSql += " Select * From #tb_inv01 Order By loc_id,prd_group,goods_type,pack_num";
+                strSql += " Order By loc_id,prd_group,loc_she,id,seq,update_time Desc";
                 //strSql += " Order By a.update_time Desc ";
                 //strSql += " Order By prd_group,prd_group,goods_type ";
             }
@@ -525,7 +515,7 @@ namespace cf_pad.Forms
                 int re = Delete();
                 if (re > 0)
                 {
-                    MessageBox.Show("刪除成功!");
+                    //MessageBox.Show("刪除成功!");
                     FindData();
 
                 }
@@ -597,9 +587,8 @@ namespace cf_pad.Forms
             this.reportViewer1.LocalReport.ReportPath = fileName;
             this.reportViewer1.LocalReport.DataSources.Clear();
             //向報表傳遞多個參數
-            string userId = DBUtility._user_id;
             List<ReportParameter> para1 = new List<ReportParameter>();            //这里是添加两个字段
-            para1.Add(new ReportParameter("userId", userId));
+            para1.Add(new ReportParameter("userId", user_id));
             reportViewer1.LocalReport.SetParameters(para1);
             this.reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("ds_inventory", dtInvView));
             this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.Percent;
