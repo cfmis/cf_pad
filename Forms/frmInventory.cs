@@ -67,6 +67,8 @@ namespace cf_pad.Forms
                         CleanTextPart();
                         txtMo.Text = mo_id;
                         dtMoItem = clsInventory.GetWipDataWithMo(mo_id, "", goods_id);
+                        if (dtMoItem.Rows.Count == 0)
+                            dtMoItem = clsInventory.GetWipDataWithMoMat(mo_id, cmbDep.SelectedValue.ToString().Trim(), goods_id);
                         SetCmbGoodsSource(1);
                         cmbGoodsId.SelectedValue = goods_id;
                         //if (dtMoItem.Rows.Count > 0)
