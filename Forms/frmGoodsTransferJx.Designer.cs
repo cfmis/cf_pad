@@ -141,7 +141,7 @@
             this.toolStripSeparator5});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(894, 69);
+            this.toolStrip1.Size = new System.Drawing.Size(888, 69);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -644,7 +644,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 69);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(894, 110);
+            this.panel2.Size = new System.Drawing.Size(888, 110);
             this.panel2.TabIndex = 42;
             // 
             // lblBarCode
@@ -807,7 +807,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(6, 80);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(894, 894);
+            this.tabControl1.Size = new System.Drawing.Size(888, 952);
             this.tabControl1.TabIndex = 45;
             // 
             // tbEdit
@@ -817,7 +817,7 @@
             this.tbEdit.Location = new System.Drawing.Point(4, 176);
             this.tbEdit.Name = "tbEdit";
             this.tbEdit.Padding = new System.Windows.Forms.Padding(3);
-            this.tbEdit.Size = new System.Drawing.Size(886, 714);
+            this.tbEdit.Size = new System.Drawing.Size(880, 772);
             this.tbEdit.TabIndex = 0;
             this.tbEdit.Text = "tabPage1";
             this.tbEdit.UseVisualStyleBackColor = true;
@@ -959,7 +959,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(894, 894);
+            this.ClientSize = new System.Drawing.Size(888, 952);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.toolStrip1);

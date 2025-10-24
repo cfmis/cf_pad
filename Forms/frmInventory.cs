@@ -49,11 +49,27 @@ namespace cf_pad.Forms
             if (dtBarCode.Rows.Count > 0)
             {
                 string barcode_type = dtBarCode.Rows[0]["barcode_type"].ToString();
-                if (barcode_type == "2")//從生產計劃中提取的條形碼
+                if (barcode_type == "2" || barcode_type == "12")//從生產計劃中提取的條形碼
                 {
                     bool input_flag = true;
-                    string mo_id= dtBarCode.Rows[0]["mo_id"].ToString();
-                    string goods_id = dtBarCode.Rows[0]["goods_id"].ToString().Trim();
+                    string mo_id = "";
+                    string goods_id = "";
+                    if (barcode_type == "12")
+                    {
+                        string id = dtBarCode.Rows[0]["doc_id"].ToString();//貨倉發貨：條形碼按單據編號查詢
+                        string seq = dtBarCode.Rows[0]["doc_seq"].ToString();
+                        DataTable dtGoodsSt = LoadGoodsFromSt(id, seq);
+                        if (dtGoodsSt.Rows.Count > 0)
+                        {
+                            mo_id = dtGoodsSt.Rows[0]["mo_id"].ToString();
+                            goods_id = dtGoodsSt.Rows[0]["goods_id"].ToString();
+                        }
+                    }
+                    else
+                    {
+                        mo_id = dtBarCode.Rows[0]["mo_id"].ToString();
+                        goods_id = dtBarCode.Rows[0]["goods_id"].ToString().Trim();
+                    }
                     DataTable dtInv = LoadData(1, cmbDep.SelectedValue.ToString(), txtMonth.Text.Trim(), "", mo_id, goods_id, "");
                     if (dtInv.Rows.Count > 0)
                     {
@@ -450,6 +466,17 @@ namespace cf_pad.Forms
             return dtInv;
         }
 
+        private DataTable LoadGoodsFromSt(string id,string seq)
+        {
+            string strSql = "";
+            string prd_group = cmbGroup.SelectedValue != null ? cmbGroup.SelectedValue.ToString().Trim() : "";
+            strSql = " Select a.mo_id,a.goods_id" +
+                    " From " + remote_db + "st_i_subordination a" +
+                    " Where a.within_code='0000'" + " And a.id='" + id + "' And a.sequence_id='" + seq + "'";
+            DataTable dtGoodsSt = clsPublicOfPad.ExecuteSqlReturnDataTable(strSql);
+            return dtGoodsSt;
+        }
+
         private void dgvInv_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             System.Drawing.Rectangle rectangle = new System.Drawing.Rectangle(e.RowBounds.Location.X,
@@ -562,7 +589,14 @@ namespace cf_pad.Forms
                 MessageBox.Show("沒有找到符合條件的記錄!");
                 return;
             }
-            reportViewer1.PrintDialog();
+            try
+            {
+                reportViewer1.PrintDialog();
+            }
+            catch
+            {
+                MessageBox.Show("請點擊預覽後再列印!");
+            }
         }
 
         private void btnPreview_Click(object sender, EventArgs e)
@@ -636,6 +670,21 @@ namespace cf_pad.Forms
                 MessageBox.Show("沒有找到符合條件的記錄!");
                 return;
             }
+            //DataTable dtExcel = dtInvView.Copy();
+            DataRow[] rowsToUpdate = dtInvView.Select("goods_type = 'NEP0'");
+            foreach (DataRow row in rowsToUpdate)
+            {
+                row["goods_type"] = "0";
+            }
+            rowsToUpdate = dtInvView.Select("goods_type <> 'NEP0' AND goods_type <> '0'");
+            foreach (DataRow row in rowsToUpdate)
+            {
+                row["goods_type"] = "1";
+            }
+            DataView view = new DataView(dtInvView);
+            view.Sort = "goods_type,goods_id"; // 或 "列名 DESC"
+
+            DataTable dtExcel = view.ToTable(); // 如果需要新的 DataTable
             SaveFileDialog saveFile = new SaveFileDialog();
             saveFile.Filter = "Excel files(*.xls)|*.xls";
             saveFile.FilterIndex = 0;
@@ -677,9 +726,9 @@ namespace cf_pad.Forms
                 //写内容
 
                 int excelNo = 1;
-                for (int rowNo = 0; rowNo < dtInvView.Rows.Count; rowNo++)
+                for (int rowNo = 0; rowNo < dtExcel.Rows.Count; rowNo++)
                 {
-                    DataRow drMo = dtInvView.Rows[rowNo];
+                    DataRow drMo = dtExcel.Rows[rowNo];
                     string tempstr = " ";
                     tempstr = "=\"" + excelNo.ToString() + "\"";//序號
                     tempstr += "\t" + drMo["mo_id"].ToString();

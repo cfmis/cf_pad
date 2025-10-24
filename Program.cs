@@ -27,10 +27,10 @@ namespace cf_pad
 
             //Application.Run(new frmDemoRS485());
             //Application.Run(new frmTransferRecords());
-            Application.Run(new frmInventory());
+            //Application.Run(new frmInventory());
             //Application.Run(new frmPrdSchedule());
             //Application.Run(new frmProductQtyConfirm());
-            //Application.Run(new frmGoodsTransferJx());
+            Application.Run(new frmGoodsTransferJx());
             //Application.Run(new frmIpqcSpray());
             //Application.Run(new frmPackingLabel());
             //Application.Run(new frmKeyboard());
