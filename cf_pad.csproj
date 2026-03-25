@@ -336,6 +336,12 @@
     <Compile Include="Forms\frmProductQtyConfirm.designer.cs">
       <DependentUpon>frmProductQtyConfirm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmProgress.designer.cs">
+      <DependentUpon>frmProgress.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmQcOut.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -549,6 +555,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmProductQtyConfirm.resx">
       <DependentUpon>frmProductQtyConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmProgress.resx">
+      <DependentUpon>frmProgress.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmQcOut.resx">
       <DependentUpon>frmQcOut.cs</DependentUpon>

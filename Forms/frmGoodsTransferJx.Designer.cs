@@ -95,8 +95,8 @@
             this.colTo_dep = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPrd_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tbEdit = new System.Windows.Forms.TabPage();
-            this.tpBrowse = new System.Windows.Forms.TabPage();
+            this.tabEdit = new System.Windows.Forms.TabPage();
+            this.tabBrowse = new System.Windows.Forms.TabPage();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel8 = new System.Windows.Forms.Panel();
             this.btnPrint = new System.Windows.Forms.Button();
@@ -108,6 +108,22 @@
             this.rdgAll = new System.Windows.Forms.RadioButton();
             this.rdgSent_f = new System.Windows.Forms.RadioButton();
             this.rdgReceive_f = new System.Windows.Forms.RadioButton();
+            this.tabToDG = new System.Windows.Forms.TabPage();
+            this.dgvToDgDetails = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.chkIsToDg = new System.Windows.Forms.CheckBox();
+            this.btnConfToDg = new System.Windows.Forms.Button();
+            this.dteToDG = new System.Windows.Forms.DateTimePicker();
+            this.lblToDgDate = new System.Windows.Forms.Label();
+            this.btnSelectAll = new System.Windows.Forms.Button();
+            this.colIsSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colPrd_mo_to = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrd_item_to = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colShipId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picItem)).BeginInit();
@@ -117,10 +133,13 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetails)).BeginInit();
             this.tabControl1.SuspendLayout();
-            this.tbEdit.SuspendLayout();
-            this.tpBrowse.SuspendLayout();
+            this.tabEdit.SuspendLayout();
+            this.tabBrowse.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.tabToDG.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvToDgDetails)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -141,7 +160,7 @@
             this.toolStripSeparator5});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(894, 69);
+            this.toolStrip1.Size = new System.Drawing.Size(888, 69);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -644,7 +663,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 69);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(894, 110);
+            this.panel2.Size = new System.Drawing.Size(888, 110);
             this.panel2.TabIndex = 42;
             // 
             // lblBarCode
@@ -800,46 +819,47 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tbEdit);
-            this.tabControl1.Controls.Add(this.tpBrowse);
+            this.tabControl1.Controls.Add(this.tabEdit);
+            this.tabControl1.Controls.Add(this.tabBrowse);
+            this.tabControl1.Controls.Add(this.tabToDG);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Location = new System.Drawing.Point(0, 179);
             this.tabControl1.Name = "tabControl1";
-            this.tabControl1.Padding = new System.Drawing.Point(6, 80);
+            this.tabControl1.Padding = new System.Drawing.Point(6, 20);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(894, 894);
+            this.tabControl1.Size = new System.Drawing.Size(888, 773);
             this.tabControl1.TabIndex = 45;
             // 
-            // tbEdit
+            // tabEdit
             // 
-            this.tbEdit.Controls.Add(this.panel7);
-            this.tbEdit.Controls.Add(this.dgvDetails);
-            this.tbEdit.Location = new System.Drawing.Point(4, 176);
-            this.tbEdit.Name = "tbEdit";
-            this.tbEdit.Padding = new System.Windows.Forms.Padding(3);
-            this.tbEdit.Size = new System.Drawing.Size(886, 714);
-            this.tbEdit.TabIndex = 0;
-            this.tbEdit.Text = "tabPage1";
-            this.tbEdit.UseVisualStyleBackColor = true;
+            this.tabEdit.Controls.Add(this.panel7);
+            this.tabEdit.Controls.Add(this.dgvDetails);
+            this.tabEdit.Location = new System.Drawing.Point(4, 56);
+            this.tabEdit.Name = "tabEdit";
+            this.tabEdit.Padding = new System.Windows.Forms.Padding(3);
+            this.tabEdit.Size = new System.Drawing.Size(880, 713);
+            this.tabEdit.TabIndex = 0;
+            this.tabEdit.Text = "編輯記錄";
+            this.tabEdit.UseVisualStyleBackColor = true;
             // 
-            // tpBrowse
+            // tabBrowse
             // 
-            this.tpBrowse.Controls.Add(this.reportViewer1);
-            this.tpBrowse.Controls.Add(this.panel8);
-            this.tpBrowse.Location = new System.Drawing.Point(4, 176);
-            this.tpBrowse.Name = "tpBrowse";
-            this.tpBrowse.Padding = new System.Windows.Forms.Padding(3);
-            this.tpBrowse.Size = new System.Drawing.Size(886, 714);
-            this.tpBrowse.TabIndex = 1;
-            this.tpBrowse.Text = "tabPage2";
-            this.tpBrowse.UseVisualStyleBackColor = true;
+            this.tabBrowse.Controls.Add(this.reportViewer1);
+            this.tabBrowse.Controls.Add(this.panel8);
+            this.tabBrowse.Location = new System.Drawing.Point(4, 56);
+            this.tabBrowse.Name = "tabBrowse";
+            this.tabBrowse.Padding = new System.Windows.Forms.Padding(3);
+            this.tabBrowse.Size = new System.Drawing.Size(880, 713);
+            this.tabBrowse.TabIndex = 1;
+            this.tabBrowse.Text = "明細表";
+            this.tabBrowse.UseVisualStyleBackColor = true;
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportViewer1.Location = new System.Drawing.Point(3, 193);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(880, 518);
+            this.reportViewer1.Size = new System.Drawing.Size(874, 517);
             this.reportViewer1.TabIndex = 56;
             // 
             // panel8
@@ -853,7 +873,7 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(3, 3);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(880, 190);
+            this.panel8.Size = new System.Drawing.Size(874, 190);
             this.panel8.TabIndex = 58;
             // 
             // btnPrint
@@ -955,15 +975,182 @@
             this.rdgReceive_f.Text = "收貨";
             this.rdgReceive_f.UseVisualStyleBackColor = true;
             // 
+            // tabToDG
+            // 
+            this.tabToDG.Controls.Add(this.btnSelectAll);
+            this.tabToDG.Controls.Add(this.dgvToDgDetails);
+            this.tabToDG.Controls.Add(this.panel1);
+            this.tabToDG.Location = new System.Drawing.Point(4, 56);
+            this.tabToDG.Name = "tabToDG";
+            this.tabToDG.Size = new System.Drawing.Size(880, 713);
+            this.tabToDG.TabIndex = 2;
+            this.tabToDG.Text = "確認發貨";
+            this.tabToDG.UseVisualStyleBackColor = true;
+            // 
+            // dgvToDgDetails
+            // 
+            this.dgvToDgDetails.AllowUserToAddRows = false;
+            this.dgvToDgDetails.ColumnHeadersHeight = 40;
+            this.dgvToDgDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvToDgDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colIsSelect,
+            this.colPrd_mo_to,
+            this.colPrd_item_to,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.colShipId});
+            this.dgvToDgDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvToDgDetails.Location = new System.Drawing.Point(0, 96);
+            this.dgvToDgDetails.Name = "dgvToDgDetails";
+            this.dgvToDgDetails.RowHeadersWidth = 40;
+            this.dgvToDgDetails.RowTemplate.Height = 80;
+            this.dgvToDgDetails.Size = new System.Drawing.Size(880, 617);
+            this.dgvToDgDetails.TabIndex = 51;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.chkIsToDg);
+            this.panel1.Controls.Add(this.btnConfToDg);
+            this.panel1.Controls.Add(this.dteToDG);
+            this.panel1.Controls.Add(this.lblToDgDate);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(880, 96);
+            this.panel1.TabIndex = 50;
+            // 
+            // chkIsToDg
+            // 
+            this.chkIsToDg.AutoSize = true;
+            this.chkIsToDg.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.chkIsToDg.Location = new System.Drawing.Point(21, 10);
+            this.chkIsToDg.Name = "chkIsToDg";
+            this.chkIsToDg.Size = new System.Drawing.Size(155, 20);
+            this.chkIsToDg.TabIndex = 50;
+            this.chkIsToDg.Text = "查找已發貨的記錄";
+            this.chkIsToDg.UseVisualStyleBackColor = true;
+            // 
+            // btnConfToDg
+            // 
+            this.btnConfToDg.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnConfToDg.Location = new System.Drawing.Point(649, 37);
+            this.btnConfToDg.Name = "btnConfToDg";
+            this.btnConfToDg.Size = new System.Drawing.Size(115, 43);
+            this.btnConfToDg.TabIndex = 49;
+            this.btnConfToDg.Text = "確認上車(&C)";
+            this.btnConfToDg.UseVisualStyleBackColor = true;
+            this.btnConfToDg.Click += new System.EventHandler(this.btnConfToDg_Click);
+            // 
+            // dteToDG
+            // 
+            this.dteToDG.CalendarFont = new System.Drawing.Font("新細明體", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.dteToDG.CustomFormat = "yyyy/MM/dd";
+            this.dteToDG.Font = new System.Drawing.Font("新細明體", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.dteToDG.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dteToDG.Location = new System.Drawing.Point(110, 37);
+            this.dteToDG.Name = "dteToDG";
+            this.dteToDG.Size = new System.Drawing.Size(514, 43);
+            this.dteToDG.TabIndex = 48;
+            this.dteToDG.Value = new System.DateTime(2019, 9, 26, 0, 0, 0, 0);
+            // 
+            // lblToDgDate
+            // 
+            this.lblToDgDate.AutoSize = true;
+            this.lblToDgDate.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblToDgDate.ForeColor = System.Drawing.Color.Black;
+            this.lblToDgDate.Location = new System.Drawing.Point(21, 54);
+            this.lblToDgDate.Name = "lblToDgDate";
+            this.lblToDgDate.Size = new System.Drawing.Size(78, 16);
+            this.lblToDgDate.TabIndex = 47;
+            this.lblToDgDate.Text = "回DG日期";
+            // 
+            // btnSelectAll
+            // 
+            this.btnSelectAll.Location = new System.Drawing.Point(43, 100);
+            this.btnSelectAll.Name = "btnSelectAll";
+            this.btnSelectAll.Size = new System.Drawing.Size(53, 34);
+            this.btnSelectAll.TabIndex = 51;
+            this.btnSelectAll.Text = "全選";
+            this.btnSelectAll.UseVisualStyleBackColor = true;
+            this.btnSelectAll.Click += new System.EventHandler(this.btnSelectAll_Click);
+            // 
+            // colIsSelect
+            // 
+            this.colIsSelect.DataPropertyName = "sel_flag";
+            this.colIsSelect.HeaderText = "";
+            this.colIsSelect.Name = "colIsSelect";
+            this.colIsSelect.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colIsSelect.Width = 60;
+            // 
+            // colPrd_mo_to
+            // 
+            this.colPrd_mo_to.DataPropertyName = "Prd_mo";
+            this.colPrd_mo_to.HeaderText = "制單編號";
+            this.colPrd_mo_to.Name = "colPrd_mo_to";
+            this.colPrd_mo_to.ReadOnly = true;
+            this.colPrd_mo_to.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colPrd_mo_to.Width = 120;
+            // 
+            // colPrd_item_to
+            // 
+            this.colPrd_item_to.DataPropertyName = "Prd_item";
+            this.colPrd_item_to.HeaderText = "物料編號";
+            this.colPrd_item_to.Name = "colPrd_item_to";
+            this.colPrd_item_to.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colPrd_item_to.Width = 260;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Transfer_qty";
+            this.Column4.HeaderText = "數量";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "Transfer_weg";
+            this.Column5.HeaderText = "重量";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "pack_num";
+            this.Column6.HeaderText = "包數";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "ship_date";
+            this.Column7.HeaderText = "已發JX日期";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column7.Width = 120;
+            // 
+            // colShipId
+            // 
+            this.colShipId.DataPropertyName = "prd_id";
+            this.colShipId.HeaderText = "單據編號";
+            this.colShipId.Name = "colShipId";
+            this.colShipId.ReadOnly = true;
+            this.colShipId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // frmGoodsTransferJx
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(894, 894);
+            this.ClientSize = new System.Drawing.Size(888, 952);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.tabControl1);
             this.Name = "frmGoodsTransferJx";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmGoodsTransferJx";
@@ -982,12 +1169,16 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetails)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            this.tbEdit.ResumeLayout(false);
-            this.tpBrowse.ResumeLayout(false);
+            this.tabEdit.ResumeLayout(false);
+            this.tabBrowse.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.tabToDG.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvToDgDetails)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1028,8 +1219,8 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblTransfer_flag;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tbEdit;
-        private System.Windows.Forms.TabPage tpBrowse;
+        private System.Windows.Forms.TabPage tabEdit;
+        private System.Windows.Forms.TabPage tabBrowse;
         private System.Windows.Forms.ToolStripButton btnDetails;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.Panel panel5;
@@ -1073,5 +1264,21 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.Button btnFindItem;
         private System.Windows.Forms.ComboBox cmbGoodsId;
+        private System.Windows.Forms.TabPage tabToDG;
+        private System.Windows.Forms.DataGridView dgvToDgDetails;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.CheckBox chkIsToDg;
+        private System.Windows.Forms.Button btnConfToDg;
+        private System.Windows.Forms.DateTimePicker dteToDG;
+        private System.Windows.Forms.Label lblToDgDate;
+        private System.Windows.Forms.Button btnSelectAll;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colIsSelect;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrd_mo_to;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrd_item_to;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colShipId;
     }
 }

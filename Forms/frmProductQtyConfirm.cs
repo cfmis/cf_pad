@@ -191,7 +191,7 @@ namespace cf_pad.Forms
                 return false;
             }
 
-            if (txtConf_flag.Text.Trim() == "Y")// && chk_insert_status() == true)
+            if (lblConf_flag.Text.Trim() == "Y")// && chk_insert_status() == true)
             {
                 MessageBox.Show("這筆記錄已收貨!");
                 return false;
@@ -286,7 +286,7 @@ namespace cf_pad.Forms
             }
             if (Result > 0)
             {
-                MessageBox.Show("儲存成功！", "系統信息");
+                //MessageBox.Show("儲存成功！", "系統信息");
                 find_data("");//不用物料編號
             }
             else
@@ -314,11 +314,11 @@ namespace cf_pad.Forms
             txtToDep.Text = dgvDetails.CurrentRow.Cells["colTo_dep"].Value.ToString();
             txtFdep.Text = dgvDetails.CurrentRow.Cells["colPrd_dep"].Value.ToString();
             txtQc_flag.Text = dgvDetails.CurrentRow.Cells["colQc_flag"].Value.ToString();
-            txtConf_flag.Text = dgvDetails.CurrentRow.Cells["colConf_flag"].Value.ToString();
-            txtConf_time.Text = dgvDetails.CurrentRow.Cells["colConf_time"].Value.ToString();
+            lblConf_flag.Text = dgvDetails.CurrentRow.Cells["colConf_flag"].Value.ToString();
+            lblConf_time.Text = dgvDetails.CurrentRow.Cells["colConf_time"].Value.ToString();
             txtSample_no.Text = (dgvDetails.CurrentRow.Cells["colSample_no"].Value.ToString() != "0" ? dgvDetails.CurrentRow.Cells["colSample_no"].Value.ToString() : "");
             txtSample_weg.Text = (dgvDetails.CurrentRow.Cells["colSample_weg"].Value.ToString() != "0" ? dgvDetails.CurrentRow.Cells["colSample_weg"].Value.ToString() : "");
-            if (txtConf_flag.Text.Trim() != "Y")
+            if (lblConf_flag.Text.Trim() != "Y")
             {
                 txtQty.Text = dgvDetails.CurrentRow.Cells["colPrd_qty"].Value.ToString();
                 txtWeg.Text = dgvDetails.CurrentRow.Cells["colPrd_weg"].Value.ToString();
@@ -349,7 +349,7 @@ namespace cf_pad.Forms
                 if (dtPrd.Rows.Count > 0)
                 {
                     txtToDep.Text = dtPrd.Rows[0]["next_wp_id"].ToString();
-                    if (txtConf_flag.Text.Trim() != "Y" && txtFdep.Text.Trim() == "302")//如果是合金部的，完成數量默認取計劃數量
+                    if (lblConf_flag.Text.Trim() != "Y" && txtFdep.Text.Trim() == "302")//如果是合金部的，完成數量默認取計劃數量
                     {
                         txtQty.Text = dtPrd.Rows[0]["prod_qty"].ToString();
                     }
@@ -613,13 +613,13 @@ namespace cf_pad.Forms
 
         private void btnMutRec_Click(object sender, EventArgs e)
         {
-            if (txtConf_flag.Text.Trim() == "")
+            if (lblConf_flag.Text.Trim() == "")
             {
                 MessageBox.Show("這筆記錄未收貨!");
                 return;
             }
-            txtConf_flag.Text = "";
-            txtConf_time.Text = "";
+            lblConf_flag.Text = "";
+            lblConf_time.Text = "";
             txtReq.Text = "";
             txtQty.Text = "";
             txtWeg.Text = "";

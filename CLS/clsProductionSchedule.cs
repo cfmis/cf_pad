@@ -60,12 +60,12 @@ namespace cf_pad.CLS
                 string strSql = @" SELECT a.mo_id,a.ver,b.sequence_id,b.wp_id,b.goods_id,c.name as goods_name,Convert(Int,b.prod_qty) AS prod_qty
                         ,b.next_wp_id,d.materiel_id AS mat_item,e.name AS mat_item_desc
                         ,(rtrim(b.wp_id)+'--'+rtrim(b.goods_id)+'--'+rtrim(c.name)) AS goods_cdesc
-                                   from jo_bill_mostly a 
-                                   INNER join jo_bill_goods_details b on a.within_code=b.within_code and a.id=b.id and a.ver=b.ver
-                                   INNER JOIN it_goods c on b.within_code=c.within_code and b.goods_id=c.id 
-                                   INNER JOIN jo_bill_materiel_details d ON b.within_code=d.within_code and b.id=d.id and b.ver=d.ver and b.sequence_id=d.upper_sequence
-                                   INNER JOIN it_goods e ON d.within_code=e.within_code and d.materiel_id=e.id
-                                   WHERE a.within_code='0000'  And a.mo_id = '" + mo_id + "'";
+                        from jo_bill_mostly a 
+                        INNER join jo_bill_goods_details b on a.within_code=b.within_code and a.id=b.id and a.ver=b.ver
+                        LEFT JOIN it_goods c on b.within_code=c.within_code and b.goods_id=c.id 
+                        LEFT JOIN jo_bill_materiel_details d ON b.within_code=d.within_code and b.id=d.id and b.ver=d.ver and b.sequence_id=d.upper_sequence
+                        LEFT JOIN it_goods e ON d.within_code=e.within_code and d.materiel_id=e.id
+                        WHERE a.within_code='0000'  And a.mo_id = '" + mo_id + "'";
                 if (prd_dept != "")
                     strSql += " And b.wp_id = '" + prd_dept + "' ";
                 if (item != "")

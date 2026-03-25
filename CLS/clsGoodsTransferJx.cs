@@ -13,8 +13,9 @@ namespace cf_pad.CLS
     {
         private static String strConn = DBUtility.dgcf_pad_connectionString;
         private static string remote_db = DBUtility.remote_db;
-
-        public static DataTable FindTransferData(string dep,string prd_date,string mo_id,bool transfer_type,int transfer_flag)
+        private static string within_code = DBUtility.within_code;
+        public static DataTable FindTransferData(string dep,string prd_date,string mo_id,bool transfer_type,int transfer_flag
+            , int isToDg)
         {
             string strSql = "Select a.*,b.name AS Prd_item_cdesc,Convert(Varchar(20),Crtim,120) AS crtim_str" +
                 " From product_transfer_jx_details a" +
@@ -24,6 +25,10 @@ namespace cf_pad.CLS
                 strSql += " AND a.Transfer_date='" + prd_date + "'";
             if (mo_id != "")
                 strSql += " AND a.Prd_mo Like " + "'%" + mo_id + "%'";
+            if (isToDg == 1)
+                strSql += " AND a.ship_date IS NOT NULL";
+            else if (isToDg == 0)
+                strSql += " AND a.ship_date IS NULL";
             //int Transfer_flag = 2;
             //if (transfer_type == true)
             //    Transfer_flag = 0;
@@ -33,6 +38,11 @@ namespace cf_pad.CLS
             //    strSql += " AND a.Transfer_flag='" + Transfer_flag + "'";
             strSql += " Order By a.crtim DESC";
             DataTable dtTran = clsPublicOfPad.ExecuteSqlReturnDataTable(strSql);
+            dtTran.Columns.Add("sel_flag", typeof(bool));
+            for (int i = 1; i < dtTran.Rows.Count; i++)
+            {
+                dtTran.Rows[i]["sel_flag"] = false;
+            }
             return dtTran;
         }
 
@@ -116,12 +126,40 @@ namespace cf_pad.CLS
                 "('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}')"
                 , Transfer_date, Prd_dep, Prd_item, Prd_mo, objModel.Transfer_flag, objModel.Transfer_qty, objModel.Transfer_weg
                 , objModel.wipId, objModel.To_dep, objModel.packNum, objModel.sentDate, objModel.Crusr, objModel.Crtim);
-
+            
+            
             strSql += string.Format(@" COMMIT TRANSACTION ");
 
             Result = clsPublicOfPad.ExecuteSqlUpdate(strSql);
+            //如果發貨到JX的，將發貨日期更新到Geo中的生產流程Remark
+            if (objModel.Transfer_flag == 0)
+            {
+                UpdateWipRemark(Prd_mo, objModel.wipId, Prd_item, Transfer_date);
+            }
             return Result;
 
+        }
+        private static void UpdateWipRemark(string Prd_mo,string Prd_dep,string Prd_item, string Transfer_date)
+        {
+            string jo_id = "";
+            string wip_remark = "";
+            string strSql = " Select a.id,b.Remark " +
+                " From jo_bill_mostly a" +
+                " Inner Join jo_bill_goods_details b On a.within_code=b.within_code And a.id=b.id And a.ver=b.ver " +
+                " Where a.within_code='" + within_code + "' And a.mo_id='" + Prd_mo + "' And b.wp_id='" + Prd_dep + "' And b.goods_id='" + Prd_item + "'";
+            DataTable dtWip = clsPublicOfGeo.ExecuteSqlReturnDataTable(strSql);
+            if (dtWip.Rows.Count > 0)
+            {
+                jo_id = dtWip.Rows[0]["id"].ToString().Trim();
+                wip_remark = dtWip.Rows[0]["Remark"].ToString().Trim();
+                if (wip_remark != "")
+                    wip_remark += "/外發工序:" + Transfer_date.Substring(5,5);
+                else
+                    wip_remark = "外發工序:" + Transfer_date.Substring(5, 5);
+                strSql = " Update jo_bill_goods_details Set Remark='" + wip_remark + "'" +
+                " Where within_code='" + within_code + "' And id='" + jo_id + "' And wp_id='" + Prd_dep + "' And goods_id='" + Prd_item + "'";
+                int Result = clsPublicOfGeo.ExecuteSqlUpdate(strSql);
+            }
         }
 
         //private static DataTable checkStore(string Prd_dep, string Prd_item, string Prd_mo)
@@ -152,6 +190,23 @@ namespace cf_pad.CLS
             result = clsPublicOfPad.ExecuteSqlUpdate(strSql);
             return result;
         }
+        public static int UpdateShipDate(List<product_transfer_jx_details> lsModel)
+        {
+            int Result = 0;
+            string strSql = "";
+            strSql += string.Format(@" SET XACT_ABORT  ON ");
+            strSql += string.Format(@" BEGIN TRANSACTION ");
+            for (int i = 0; i < lsModel.Count; i++)
+            {
+                strSql += string.Format(@" Update product_transfer_jx_details Set ship_date='{1}',ship_type='{2}',amusr='{3}',amtim='{4}' " +
+                    " Where prd_id='{0}'"
+                    , lsModel[i].prd_id, lsModel[i].ship_date, lsModel[i].ship_type, lsModel[i].Crusr, lsModel[i].Crtim);
+            }
+            strSql += string.Format(@" COMMIT TRANSACTION ");
 
+            Result = clsPublicOfPad.ExecuteSqlUpdate(strSql);
+            return Result;
+
+        }
     }
 }

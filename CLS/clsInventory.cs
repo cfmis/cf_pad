@@ -43,5 +43,23 @@ namespace cf_pad.CLS
             dtmo_data = clsPublicOfGeo.ExecuteSqlReturnDataTable(strSql);
             return dtmo_data;
         }
+
+        public static DataTable GetWipDataWithMoMat(string mo_id, string prd_dept, string goods_id)
+        {
+            DataTable dtmo_data = new DataTable();
+            string strSql = @" SELECT a.mo_id,a.ver,c.sequence_id,b.wp_id,c.materiel_id AS goods_id,d.name as goods_name
+                , Convert(Int, b.prod_qty) AS prod_qty, b.next_wp_id, Rtrim(b.wp_id) + '-' + Rtrim(c.materiel_id) As goods_dep
+                FROM jo_bill_mostly a
+                Inner Join jo_bill_goods_details b ON a.within_code=b.within_code AND a.id=b.id AND a.ver=b.ver
+                Inner Join jo_bill_materiel_details c ON b.within_code=c.within_code AND b.id=c.id AND b.ver=c.ver AND b.sequence_id=c.upper_sequence
+                INNER JOIN it_goods d on c.within_code=d.within_code and c.materiel_id=d.id
+                WHERE a.within_code='" + "0000" + "' AND a.mo_id ='" + mo_id + "'";
+            if (prd_dept != "")
+                strSql += " And b.wp_id = " + prd_dept + " ";
+            if (goods_id != "")
+                strSql += " And c.materiel_id='" + goods_id + "'";
+            dtmo_data = clsPublicOfGeo.ExecuteSqlReturnDataTable(strSql);
+            return dtmo_data;
+        }
     }
 }
