@@ -13,7 +13,7 @@ using cf_pad.MDL;
 using Microsoft.Reporting.WinForms;
 using System.Drawing.Printing;
 using System.Drawing.Imaging;
-
+using System.Threading;
 
 namespace cf_pad.Forms
 {
@@ -228,8 +228,10 @@ namespace cf_pad.Forms
             Font a = new Font("GB2312", 12);//GB2312为字体名称，1为字体大小dataGridView1.Font = a;
             dgvDetails.Font = a;
             dgvDetails.AutoGenerateColumns = false;
+            dgvToDgDetails.AutoGenerateColumns = false;
             dteSentDate.Text = clsUtility.changeDateFormat(DateTime.Now.AddDays(-1));
             dteTransferDate.Text = clsUtility.changeDateFormat(DateTime.Now);
+            dteToDG.Text = clsUtility.changeDateFormat(DateTime.Now);
             InitComBoxs();
             txtBarCode.Focus();
             this.reportViewer1.RefreshReport();
@@ -648,19 +650,31 @@ namespace cf_pad.Forms
                 Prd_date = "";
             }
             bool rdgReceive_f = false;
-            DataTable dt = clsGoodsTransferJx.FindTransferData(cmbPrdDep.SelectedValue.ToString(), Prd_date, mo_id, rdgReceive_f, Transfer_flag);
 
-            dgvDetails.DataSource = dt;
+            int isToDg = 2;
+            if (tabControl1.SelectedIndex == 2)
+            {
+                if (chkIsToDg.Checked)
+                    isToDg = 1;
+                else
+                    isToDg = 0;
+            }
+
+            DataTable dtTr = clsGoodsTransferJx.FindTransferData(cmbPrdDep.SelectedValue.ToString(), Prd_date, mo_id, rdgReceive_f, Transfer_flag, isToDg);
+
+            dgvDetails.DataSource = dtTr;
+            dgvToDgDetails.DataSource = dtTr;
             //btnDetails.Text = "瀏覽(&B)";
-            if (dt.Rows.Count == 0)
+            if (dtTr.Rows.Count == 0)
             {
                 MessageBox.Show("沒有找到符合條件的記錄!");
             }
-            else
-            {
-                tabControl1.SelectedIndex = 0;
-                btnDetails.Text = "明細(&P)";
-            }
+            //else
+            //{
+            //    tabControl1.SelectedIndex = 0;
+            //    btnDetails.Text = "明細(&P)";
+            //}
+            btnSelectAll.Text="全選";
             txtBarCode.Focus();
         }
 
@@ -714,6 +728,110 @@ namespace cf_pad.Forms
                 txtPackNum.Text = "";
                 txtQty.Text = "";
                 txtTo_dep.Text = "";
+            }
+        }
+
+        private void btnConfToDg_Click(object sender, EventArgs e)
+        {
+            if (!ValidToDgData())
+                return;
+
+            frmProgress wForm = new frmProgress();
+            wForm.Text = "正在更新記錄，請稍候！";
+            new Thread((ThreadStart)delegate
+            {
+                wForm.TopMost = true;
+                wForm.ShowDialog();
+            }).Start();
+
+            //**********************
+            int Result = UpdateShipDate();
+            //**********************
+            wForm.Invoke((EventHandler)delegate { wForm.Close(); });
+
+            if (Result > 0)
+            {
+                MessageBox.Show("更新上車記錄成功!");
+                FindDataByDate();
+            }
+            else
+                MessageBox.Show("更新上車記錄失敗!");
+
+        }
+
+        private int UpdateShipDate()
+        {
+            List<product_transfer_jx_details> lsModel = new List<product_transfer_jx_details>();
+            for (int i = 0; i < dgvToDgDetails.Rows.Count; i++)
+            {
+                DataGridViewRow dgr = dgvToDgDetails.Rows[i];
+                var value = dgr.Cells["colIsSelect"].Value;
+                bool isChecked = value != null && value is bool && (bool)value;
+
+                if (isChecked)
+                {
+                    product_transfer_jx_details objModel = new product_transfer_jx_details();//
+                    objModel.prd_id = Convert.ToInt32(dgr.Cells["colShipId"].Value);
+                    objModel.Prd_mo = dgr.Cells["colPrd_mo_to"].Value.ToString().Trim();
+                    objModel.Prd_item = dgr.Cells["colPrd_item_to"].Value.ToString().Trim();
+                    objModel.ship_date = dteToDG.Text.ToString();
+                    objModel.ship_type = "";
+                    objModel.Crusr = userId;
+                    objModel.Crtim = System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
+                    lsModel.Add(objModel);
+                }
+
+            }
+            int Result = clsGoodsTransferJx.UpdateShipDate(lsModel);
+            return Result;
+        }
+        private bool ValidToDgData()
+        {
+            bool selectFlag = false;
+            for (int i = 0; i < dgvToDgDetails.Rows.Count; i++)
+            {
+                DataGridViewRow dgr = dgvToDgDetails.Rows[i];
+                var cellValue = dgr.Cells["colIsSelect"].Value;
+                //bool isChecked = cellValue != null && (bool)cellValue;
+                if (dgr.IsNewRow) continue;
+
+                var value = dgr.Cells["colIsSelect"].Value;
+                bool isChecked = value != null && value is bool && (bool)value;
+
+                if (isChecked)
+                {
+                    selectFlag = true;
+                    break;
+                }
+
+                ////bool isChecked = Convert.ToBoolean(dgvToDgDetails.Rows[i].Cells["colIsSelect"].Value);
+                //var sel = dgr.Cells["colIsSelect"].Value;
+                //if (dgr.Cells["colIsSelect"].Value!=null && (bool)dgr.Cells["colIsSelect"].Value == true)
+                //{
+                //    selectFlag = true;
+                //    break;
+                //}
+            }
+            if (selectFlag == false)
+                MessageBox.Show("沒有選定需儲存的記錄!");
+            return selectFlag;
+        }
+
+        private void btnSelectAll_Click(object sender, EventArgs e)
+        {
+            bool isChecked = false;
+            if(btnSelectAll.Text=="全選")
+            {
+                isChecked = true;
+                btnSelectAll.Text = "取消";
+            }else
+            {
+                isChecked = false;
+                btnSelectAll.Text = "全選";
+            }
+            for (int i = 0; i < dgvToDgDetails.Rows.Count; i++)
+            {
+                dgvToDgDetails.Rows[i].Cells["colIsSelect"].Value = isChecked;
             }
         }
     }

@@ -337,6 +337,7 @@ namespace cf_pad.MDL
     }
     public class product_transfer_jx_details
     {
+        public int prd_id;
         public string Transfer_date;
         public string Prd_dep;
         public string Prd_item;
@@ -350,6 +351,8 @@ namespace cf_pad.MDL
         public string To_dep;
         public string Crusr;
         public string Crtim;
+        public string ship_date;
+        public string ship_type;
     }
 
     public class qc_report_spray

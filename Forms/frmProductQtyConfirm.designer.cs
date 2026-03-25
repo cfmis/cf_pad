@@ -32,9 +32,11 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.BTNEXIT = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnFind = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnSave = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnMutRec = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnFind = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.btnUndo = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
@@ -94,9 +96,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lblWegUnit = new System.Windows.Forms.Label();
             this.txtItemDesc = new System.Windows.Forms.TextBox();
-            this.txtConf_time = new System.Windows.Forms.TextBox();
             this.txtQc_flag = new System.Windows.Forms.TextBox();
-            this.txtConf_flag = new System.Windows.Forms.TextBox();
             this.txtMatLot = new System.Windows.Forms.TextBox();
             this.txtMatDesc = new System.Windows.Forms.TextBox();
             this.txtMatItem = new System.Windows.Forms.TextBox();
@@ -104,7 +104,7 @@
             this.txtWeg = new System.Windows.Forms.TextBox();
             this.txtQty = new System.Windows.Forms.TextBox();
             this.lblQc_flag = new System.Windows.Forms.Label();
-            this.lblConf_flag = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.lblMatLot = new System.Windows.Forms.Label();
             this.txtPrdItem = new System.Windows.Forms.TextBox();
             this.lblMatCode = new System.Windows.Forms.Label();
@@ -140,36 +140,36 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.lblTransfer_flag = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.rdgFromDep = new System.Windows.Forms.RadioButton();
+            this.lblShowMsg1 = new System.Windows.Forms.Label();
             this.rdgFromJx = new System.Windows.Forms.RadioButton();
-            this.lblTransfer_flag = new System.Windows.Forms.Label();
-            this.lblItemDesc = new System.Windows.Forms.Label();
             this.lblMatDesc = new System.Windows.Forms.Label();
+            this.lblItemDesc = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.dteSentDate = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btnSearch = new System.Windows.Forms.Button();
             this.lblBarCode = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.dteSentDate = new System.Windows.Forms.DateTimePicker();
-            this.lblShowMsg1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnMutRec = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.lblConf_flag = new System.Windows.Forms.Label();
+            this.lblConf_time = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetails)).BeginInit();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -210,6 +210,40 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 63);
             // 
+            // btnSave
+            // 
+            this.btnSave.AutoSize = false;
+            this.btnSave.Font = new System.Drawing.Font("新細明體", 16F);
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+            this.btnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(140, 60);
+            this.btnSave.Text = "儲存(&S)";
+            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 63);
+            // 
+            // btnMutRec
+            // 
+            this.btnMutRec.AutoSize = false;
+            this.btnMutRec.Font = new System.Drawing.Font("新細明體", 16F);
+            this.btnMutRec.Image = ((System.Drawing.Image)(resources.GetObject("btnMutRec.Image")));
+            this.btnMutRec.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnMutRec.Name = "btnMutRec";
+            this.btnMutRec.Size = new System.Drawing.Size(140, 60);
+            this.btnMutRec.Text = "多批次";
+            this.btnMutRec.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnMutRec.Click += new System.EventHandler(this.btnMutRec_Click);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 63);
+            // 
             // btnFind
             // 
             this.btnFind.AutoSize = false;
@@ -222,23 +256,6 @@
             this.btnFind.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnFind.ToolTipText = "查詢(&F)";
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 63);
-            // 
-            // btnSave
-            // 
-            this.btnSave.AutoSize = false;
-            this.btnSave.Font = new System.Drawing.Font("新細明體", 16F);
-            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(140, 60);
-            this.btnSave.Text = "儲存(&S)";
-            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
             // 
             // toolStripSeparator3
             // 
@@ -807,16 +824,6 @@
             this.txtItemDesc.Size = new System.Drawing.Size(692, 46);
             this.txtItemDesc.TabIndex = 1;
             // 
-            // txtConf_time
-            // 
-            this.txtConf_time.Font = new System.Drawing.Font("新細明體", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtConf_time.ForeColor = System.Drawing.Color.Red;
-            this.txtConf_time.Location = new System.Drawing.Point(419, 369);
-            this.txtConf_time.Name = "txtConf_time";
-            this.txtConf_time.ReadOnly = true;
-            this.txtConf_time.Size = new System.Drawing.Size(361, 46);
-            this.txtConf_time.TabIndex = 2;
-            // 
             // txtQc_flag
             // 
             this.txtQc_flag.Font = new System.Drawing.Font("新細明體", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -826,16 +833,6 @@
             this.txtQc_flag.ReadOnly = true;
             this.txtQc_flag.Size = new System.Drawing.Size(177, 46);
             this.txtQc_flag.TabIndex = 2;
-            // 
-            // txtConf_flag
-            // 
-            this.txtConf_flag.Font = new System.Drawing.Font("新細明體", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtConf_flag.ForeColor = System.Drawing.Color.Red;
-            this.txtConf_flag.Location = new System.Drawing.Point(351, 369);
-            this.txtConf_flag.Name = "txtConf_flag";
-            this.txtConf_flag.ReadOnly = true;
-            this.txtConf_flag.Size = new System.Drawing.Size(62, 46);
-            this.txtConf_flag.TabIndex = 2;
             // 
             // txtMatLot
             // 
@@ -897,15 +894,15 @@
             this.lblQc_flag.TabIndex = 0;
             this.lblQc_flag.Text = "QC";
             // 
-            // lblConf_flag
+            // label3
             // 
-            this.lblConf_flag.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblConf_flag.ForeColor = System.Drawing.Color.Red;
-            this.lblConf_flag.Location = new System.Drawing.Point(305, 376);
-            this.lblConf_flag.Name = "lblConf_flag";
-            this.lblConf_flag.Size = new System.Drawing.Size(43, 40);
-            this.lblConf_flag.TabIndex = 0;
-            this.lblConf_flag.Text = "磅貨標識";
+            this.label3.Font = new System.Drawing.Font("新細明體", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label3.ForeColor = System.Drawing.Color.Blue;
+            this.label3.Location = new System.Drawing.Point(305, 379);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(99, 30);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "已磅貨:";
             // 
             // lblMatLot
             // 
@@ -1015,6 +1012,7 @@
             this.txtReq.ReadOnly = true;
             this.txtReq.Size = new System.Drawing.Size(177, 46);
             this.txtReq.TabIndex = 1;
+            this.txtReq.Visible = false;
             // 
             // lblReq
             // 
@@ -1024,6 +1022,7 @@
             this.lblReq.Size = new System.Drawing.Size(43, 40);
             this.lblReq.TabIndex = 0;
             this.lblReq.Text = "記錄   號";
+            this.lblReq.Visible = false;
             // 
             // lblPrdMo
             // 
@@ -1198,6 +1197,55 @@
             this.panel2.Size = new System.Drawing.Size(1035, 486);
             this.panel2.TabIndex = 0;
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.lblTransfer_flag);
+            this.panel5.Controls.Add(this.panel4);
+            this.panel5.Controls.Add(this.lblMatCode);
+            this.panel5.Controls.Add(this.lblMatDesc);
+            this.panel5.Controls.Add(this.txtItemDesc);
+            this.panel5.Controls.Add(this.lblPrdMo);
+            this.panel5.Controls.Add(this.txtMatDesc);
+            this.panel5.Controls.Add(this.lblQty);
+            this.panel5.Controls.Add(this.txtReq);
+            this.panel5.Controls.Add(this.lblPrdItem);
+            this.panel5.Controls.Add(this.txtToDep);
+            this.panel5.Controls.Add(this.lblItemDesc);
+            this.panel5.Controls.Add(this.txtFdep);
+            this.panel5.Controls.Add(this.lblMatLot);
+            this.panel5.Controls.Add(this.txtActualPack);
+            this.panel5.Controls.Add(this.lblToDep);
+            this.panel5.Controls.Add(this.lblFdep);
+            this.panel5.Controls.Add(this.txtQc_flag);
+            this.panel5.Controls.Add(this.lblActualPack);
+            this.panel5.Controls.Add(this.txtMatLot);
+            this.panel5.Controls.Add(this.lblWeg);
+            this.panel5.Controls.Add(this.txtPrdItem);
+            this.panel5.Controls.Add(this.lblQc_flag);
+            this.panel5.Controls.Add(this.txtPrdMo);
+            this.panel5.Controls.Add(this.lblConf_time);
+            this.panel5.Controls.Add(this.lblConf_flag);
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Controls.Add(this.txtQty);
+            this.panel5.Controls.Add(this.txtMatItem);
+            this.panel5.Controls.Add(this.lblReq);
+            this.panel5.Controls.Add(this.txtWeg);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(0, 62);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1035, 424);
+            this.panel5.TabIndex = 47;
+            // 
+            // lblTransfer_flag
+            // 
+            this.lblTransfer_flag.AutoSize = true;
+            this.lblTransfer_flag.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblTransfer_flag.Location = new System.Drawing.Point(44, 21);
+            this.lblTransfer_flag.Name = "lblTransfer_flag";
+            this.lblTransfer_flag.Size = new System.Drawing.Size(40, 16);
+            this.lblTransfer_flag.TabIndex = 45;
+            this.lblTransfer_flag.Text = "來源";
+            // 
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1222,6 +1270,16 @@
             this.rdgFromDep.UseVisualStyleBackColor = true;
             this.rdgFromDep.Click += new System.EventHandler(this.rdgFromDep_Click);
             // 
+            // lblShowMsg1
+            // 
+            this.lblShowMsg1.Font = new System.Drawing.Font("新細明體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblShowMsg1.ForeColor = System.Drawing.Color.Red;
+            this.lblShowMsg1.Location = new System.Drawing.Point(348, 10);
+            this.lblShowMsg1.Name = "lblShowMsg1";
+            this.lblShowMsg1.Size = new System.Drawing.Size(336, 29);
+            this.lblShowMsg1.TabIndex = 47;
+            this.lblShowMsg1.Text = "收貨時,必須指定對方發貨的日期";
+            // 
             // rdgFromJx
             // 
             this.rdgFromJx.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -1233,15 +1291,15 @@
             this.rdgFromJx.UseVisualStyleBackColor = true;
             this.rdgFromJx.Click += new System.EventHandler(this.rdgFromJx_Click);
             // 
-            // lblTransfer_flag
+            // lblMatDesc
             // 
-            this.lblTransfer_flag.AutoSize = true;
-            this.lblTransfer_flag.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblTransfer_flag.Location = new System.Drawing.Point(44, 21);
-            this.lblTransfer_flag.Name = "lblTransfer_flag";
-            this.lblTransfer_flag.Size = new System.Drawing.Size(40, 16);
-            this.lblTransfer_flag.TabIndex = 45;
-            this.lblTransfer_flag.Text = "來源";
+            this.lblMatDesc.AutoSize = true;
+            this.lblMatDesc.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblMatDesc.Location = new System.Drawing.Point(12, 332);
+            this.lblMatDesc.Name = "lblMatDesc";
+            this.lblMatDesc.Size = new System.Drawing.Size(72, 16);
+            this.lblMatDesc.TabIndex = 0;
+            this.lblMatDesc.Text = "原料描述";
             // 
             // lblItemDesc
             // 
@@ -1253,15 +1311,39 @@
             this.lblItemDesc.TabIndex = 0;
             this.lblItemDesc.Text = "物料描述";
             // 
-            // lblMatDesc
+            // panel6
             // 
-            this.lblMatDesc.AutoSize = true;
-            this.lblMatDesc.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblMatDesc.Location = new System.Drawing.Point(12, 332);
-            this.lblMatDesc.Name = "lblMatDesc";
-            this.lblMatDesc.Size = new System.Drawing.Size(72, 16);
-            this.lblMatDesc.TabIndex = 0;
-            this.lblMatDesc.Text = "原料描述";
+            this.panel6.Controls.Add(this.dteSentDate);
+            this.panel6.Controls.Add(this.label2);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1035, 62);
+            this.panel6.TabIndex = 48;
+            this.panel6.Visible = false;
+            // 
+            // dteSentDate
+            // 
+            this.dteSentDate.CalendarFont = new System.Drawing.Font("新細明體", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.dteSentDate.CustomFormat = "yyyy/MM/dd";
+            this.dteSentDate.Font = new System.Drawing.Font("新細明體", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.dteSentDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dteSentDate.Location = new System.Drawing.Point(87, 10);
+            this.dteSentDate.Name = "dteSentDate";
+            this.dteSentDate.Size = new System.Drawing.Size(689, 43);
+            this.dteSentDate.TabIndex = 46;
+            this.dteSentDate.Value = new System.DateTime(2019, 9, 26, 0, 0, 0, 0);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(12, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 16);
+            this.label2.TabIndex = 39;
+            this.label2.Text = "發貨日期";
             // 
             // tabPage2
             // 
@@ -1336,105 +1418,27 @@
             this.panel3.Size = new System.Drawing.Size(1049, 54);
             this.panel3.TabIndex = 52;
             // 
-            // panel5
+            // lblConf_flag
             // 
-            this.panel5.Controls.Add(this.lblTransfer_flag);
-            this.panel5.Controls.Add(this.panel4);
-            this.panel5.Controls.Add(this.lblMatCode);
-            this.panel5.Controls.Add(this.lblMatDesc);
-            this.panel5.Controls.Add(this.txtItemDesc);
-            this.panel5.Controls.Add(this.lblPrdMo);
-            this.panel5.Controls.Add(this.txtMatDesc);
-            this.panel5.Controls.Add(this.lblQty);
-            this.panel5.Controls.Add(this.txtReq);
-            this.panel5.Controls.Add(this.lblPrdItem);
-            this.panel5.Controls.Add(this.txtToDep);
-            this.panel5.Controls.Add(this.lblItemDesc);
-            this.panel5.Controls.Add(this.txtFdep);
-            this.panel5.Controls.Add(this.lblMatLot);
-            this.panel5.Controls.Add(this.txtActualPack);
-            this.panel5.Controls.Add(this.lblToDep);
-            this.panel5.Controls.Add(this.txtConf_time);
-            this.panel5.Controls.Add(this.lblFdep);
-            this.panel5.Controls.Add(this.txtQc_flag);
-            this.panel5.Controls.Add(this.lblActualPack);
-            this.panel5.Controls.Add(this.txtMatLot);
-            this.panel5.Controls.Add(this.lblWeg);
-            this.panel5.Controls.Add(this.txtPrdItem);
-            this.panel5.Controls.Add(this.lblQc_flag);
-            this.panel5.Controls.Add(this.txtPrdMo);
-            this.panel5.Controls.Add(this.lblConf_flag);
-            this.panel5.Controls.Add(this.txtQty);
-            this.panel5.Controls.Add(this.txtConf_flag);
-            this.panel5.Controls.Add(this.txtMatItem);
-            this.panel5.Controls.Add(this.lblReq);
-            this.panel5.Controls.Add(this.txtWeg);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(0, 62);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1035, 424);
-            this.panel5.TabIndex = 47;
+            this.lblConf_flag.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblConf_flag.Font = new System.Drawing.Font("新細明體", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblConf_flag.ForeColor = System.Drawing.Color.Blue;
+            this.lblConf_flag.Location = new System.Drawing.Point(388, 369);
+            this.lblConf_flag.Name = "lblConf_flag";
+            this.lblConf_flag.Size = new System.Drawing.Size(43, 46);
+            this.lblConf_flag.TabIndex = 0;
+            this.lblConf_flag.Text = "磅貨標識";
             // 
-            // panel6
+            // lblConf_time
             // 
-            this.panel6.Controls.Add(this.dteSentDate);
-            this.panel6.Controls.Add(this.label2);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1035, 62);
-            this.panel6.TabIndex = 48;
-            this.panel6.Visible = false;
-            // 
-            // dteSentDate
-            // 
-            this.dteSentDate.CalendarFont = new System.Drawing.Font("新細明體", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.dteSentDate.CustomFormat = "yyyy/MM/dd";
-            this.dteSentDate.Font = new System.Drawing.Font("新細明體", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.dteSentDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dteSentDate.Location = new System.Drawing.Point(87, 10);
-            this.dteSentDate.Name = "dteSentDate";
-            this.dteSentDate.Size = new System.Drawing.Size(689, 43);
-            this.dteSentDate.TabIndex = 46;
-            this.dteSentDate.Value = new System.DateTime(2019, 9, 26, 0, 0, 0, 0);
-            // 
-            // lblShowMsg1
-            // 
-            this.lblShowMsg1.Font = new System.Drawing.Font("新細明體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblShowMsg1.ForeColor = System.Drawing.Color.Red;
-            this.lblShowMsg1.Location = new System.Drawing.Point(348, 10);
-            this.lblShowMsg1.Name = "lblShowMsg1";
-            this.lblShowMsg1.Size = new System.Drawing.Size(336, 29);
-            this.lblShowMsg1.TabIndex = 47;
-            this.lblShowMsg1.Text = "收貨時,必須指定對方發貨的日期";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(12, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 16);
-            this.label2.TabIndex = 39;
-            this.label2.Text = "發貨日期";
-            // 
-            // btnMutRec
-            // 
-            this.btnMutRec.AutoSize = false;
-            this.btnMutRec.Font = new System.Drawing.Font("新細明體", 16F);
-            this.btnMutRec.Image = ((System.Drawing.Image)(resources.GetObject("btnMutRec.Image")));
-            this.btnMutRec.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnMutRec.Name = "btnMutRec";
-            this.btnMutRec.Size = new System.Drawing.Size(140, 60);
-            this.btnMutRec.Text = "多批次";
-            this.btnMutRec.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnMutRec.Click += new System.EventHandler(this.btnMutRec_Click);
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 63);
+            this.lblConf_time.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblConf_time.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblConf_time.ForeColor = System.Drawing.Color.Blue;
+            this.lblConf_time.Location = new System.Drawing.Point(443, 369);
+            this.lblConf_time.Name = "lblConf_time";
+            this.lblConf_time.Size = new System.Drawing.Size(337, 46);
+            this.lblConf_time.TabIndex = 0;
+            this.lblConf_time.Text = "磅貨標識";
             // 
             // frmProductQtyConfirm
             // 
@@ -1455,17 +1459,17 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1533,9 +1537,7 @@
         private System.Windows.Forms.TextBox txtMatDesc;
         private System.Windows.Forms.TextBox txtFdep;
         private System.Windows.Forms.Label lblFdep;
-        private System.Windows.Forms.TextBox txtConf_time;
-        private System.Windows.Forms.TextBox txtConf_flag;
-        private System.Windows.Forms.Label lblConf_flag;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtQc_flag;
         private System.Windows.Forms.Label lblQc_flag;
         private System.Windows.Forms.DateTimePicker dtpStart;
@@ -1602,5 +1604,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripButton btnMutRec;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.Label lblConf_flag;
+        private System.Windows.Forms.Label lblConf_time;
     }
 }
