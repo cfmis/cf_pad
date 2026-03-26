@@ -77,14 +77,16 @@ namespace cf_pad.Forms
             dgvDetails_qc.DataSource = dtQC_Data;
             this.ActiveControl = txtBarCode;
             txtBarCode.Focus();
-
-            strSql = @" SELECT '' as defective_id,'' as defective_cdesc UNION SELECT defective_id,RTRIM(defective_id)+'--'+rtrim(defective_cdesc) 
+           
+            strSql = @" SELECT '' as defective_id,'' as defective_cdesc UNION SELECT defective_id,rtrim(defective_cdesc) 
                      FROM defective_tb 
                      Order By defective_id";
             DataTable dtDefective = clsPublicOfPad.ExecuteSqlReturnDataTable(strSql);
-            cmbDefective_id.DataSource = dtDefective;
-            cmbDefective_id.DisplayMember = "defective_cdesc";
-            cmbDefective_id.ValueMember = "defective_id";
+            lueDefective_id.Properties.DataSource = dtDefective;
+            lueDefective_id.Properties.DisplayMember = "defective_cdesc";
+            lueDefective_id.Properties.ValueMember = "defective_id";
+            //lueDefective_id.Properties.AppearanceDropDown.Font = new Font("Microsoft  Sans Serif", 20);
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -139,7 +141,7 @@ namespace cf_pad.Forms
             txtCurrentRow.Text = "";
             txtSate.Text = "";
             txtCheck_by.Text = "";
-            txtCheck_date.Text = "";          
+            txtCheck_date.Text = "";
             txtMo_id.Text = "";
             txtGoods_id.Text = "";
             txtGoods_name.Text = "";
@@ -148,9 +150,8 @@ namespace cf_pad.Forms
             txtSec_qty.Text = "";
             txtPackage_num.Text = "";
             txtIdqc.Text = "";
-            cmbDefective_id.Text = "";
+            lueDefective_id.EditValue = "";
             btnSave.Enabled = true;
-
             txtBarCode.Focus();
         }
         
@@ -174,7 +175,7 @@ namespace cf_pad.Forms
                 case Keys.Enter:
                     string strBarCode = txtBarCode.Text;
                     string mo_id;
-                    cmbDefective_id.Text = "";
+                    lueDefective_id.Text = "";
                     if (strBarCode.Length == 13)
                     {
                         mo_id = strBarCode.Substring(0, 9);
@@ -316,7 +317,7 @@ namespace cf_pad.Forms
                         dr["old_qty"] = dtStock.Rows[0]["old_qty"].ToString();
                         dr["old_sec_qty"] = dtStock.Rows[0]["old_sec_qty"].ToString();
                         dr["jo_id"] = dtStock.Rows[0]["jo_id"].ToString();
-                        dr["defective_id"] = cmbDefective_id.ValueMember;
+                        dr["defective_id"] = lueDefective_id.EditValue.ToString();
                         dr["jo_sequence_id"] = seq_id;
 
                         dtData.Rows.Add(dr);
@@ -341,9 +342,9 @@ namespace cf_pad.Forms
                         txtQty.Text = "";
                         txtSec_qty.Text = "";
                         txtPackage_num.Text = "";
-                        txtCurrentRow.Text = "";                       
+                        txtCurrentRow.Text = "";
                         picqc_result2.Visible = true;
-                        cmbDefective_id.ValueMember = "";
+                        lueDefective_id.EditValue = "";
                     }                   
                    break;
             }
@@ -414,6 +415,11 @@ namespace cf_pad.Forms
                 return;
             }
 
+            if (txtCurrentRow.Text == "")
+            {
+                MessageBox.Show("沒有選中要刪除的記錄！", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
             int curRow = int.Parse(txtCurrentRow.Text);
             if (txtSate.Text == "未批準")
             {
@@ -468,7 +474,7 @@ namespace cf_pad.Forms
                 txtQty.Text = dtData.Rows[dgvDetails.CurrentRow.Index]["con_qty"].ToString();
                 txtSec_qty.Text = dtData.Rows[dgvDetails.CurrentRow.Index]["sec_qty"].ToString();
                 txtPackage_num.Text = dtData.Rows[dgvDetails.CurrentRow.Index]["package_num"].ToString();
-                cmbDefective_id.ValueMember = dtData.Rows[dgvDetails.CurrentRow.Index]["defective_id"].ToString();
+                lueDefective_id.EditValue = dtData.Rows[dgvDetails.CurrentRow.Index]["defective_id"].ToString();
                 txtCurrentRow.Text = dgvDetails.CurrentRow.Index.ToString();
                 /*代碼取消于2019-11-21
                 if (dtData.Rows[dgvDetails.CurrentRow.Index]["qc_result"].ToString() == "1")
@@ -671,16 +677,16 @@ namespace cf_pad.Forms
                 (@within_code,@id,@con_date,@out_dept,@in_dept,@ransfers_state,@state,@bill_type_no,@con_type,@stock_type,@bill_origin,@user_id,getdate(),@user_id,getdate(),1,@servername,@user_id)";
 
                 string sql_h_u =
-                @"Update jo_materiel_con_mostly SET con_date=@con_date,update_by=@user_id,getdate(),update_count=Convert(nvarchar(5),Convert(int,update_count)+1)
+                @"Update jo_materiel_con_mostly SET con_date=@con_date,update_by=@user_id,update_date=getdate(),update_count=Convert(nvarchar(5),Convert(int,update_count)+1)
                 Where within_code=@within_code and id=@id";
                 //移交單明細表
                 const string sql_d_i =
-                @"INSERT INTO jo_materiel_con_details
+                @" INSERT INTO jo_materiel_con_details
                 (within_code,id,sequence_id,jo_id,jo_sequence_id,mo_id,goods_id,con_qty,unit_code,sec_qty,sec_unit,package_num,location,carton_code,lot_no,qc_result,defective_id) Values
                 (@within_code,@id,@sequence_id,@jo_id,@jo_sequence_id,@mo_id,@goods_id,@con_qty,'PCS',@sec_qty,'KG',@package_num,@location,@carton_code,@lot_no,@qc_result,@defective_id)";
 
                 string sql_d_u =
-                @"UPDATE jo_materiel_con_details SET jo_id=@jo_id,jo_sequence_id=@jo_sequence_id,mo_id=@mo_id,goods_id=@goods_id,con_qty=@con_qty,sec_qty=@sec_qty,package_num=@package_num,
+                @" UPDATE jo_materiel_con_details With(RowLock) SET jo_id=@jo_id,jo_sequence_id=@jo_sequence_id,mo_id=@mo_id,goods_id=@goods_id,con_qty=@con_qty,sec_qty=@sec_qty,package_num=@package_num,
                 location=@location,carton_code=@carton_code,lot_no=@lot_no,qc_result=@qc_result,defective_id=@defective_id 
                 WHERE within_code=@within_code AND id=@id AND sequence_id=@sequence_id";
                 //更新最大單據編號
@@ -744,8 +750,7 @@ namespace cf_pad.Forms
                             //明細表                                               
                             for (int i = 0; i < dtData.Rows.Count; i++)
                             {
-                                myCommand.Parameters.Clear();
-                                myCommand.CommandText = sql_d_i;
+                                myCommand.Parameters.Clear();                               
                                 myCommand.Parameters.AddWithValue("@within_code", "0000");
                                 myCommand.Parameters.AddWithValue("@id", strID);
                                 sequence_id = (i + 1).ToString("0000") + "h";
@@ -767,6 +772,7 @@ namespace cf_pad.Forms
                                 myCommand.Parameters.AddWithValue("@lot_no", dtData.Rows[i]["lot_no"].ToString());
                                 myCommand.Parameters.AddWithValue("@qc_result", dtData.Rows[i]["qc_result"].ToString());
                                 myCommand.Parameters.AddWithValue("@defective_id", dtData.Rows[i]["defective_id"].ToString());
+                                myCommand.CommandText = sql_d_i;
                                 myCommand.ExecuteNonQuery();
                             }
 
@@ -864,7 +870,7 @@ namespace cf_pad.Forms
                                     }
                                     else
                                     {
-                                        sequence_id = GetMax_Sequence_id(strID);
+                                        sequence_id = GetMaxSequenceId(strID);
                                         myCommand.CommandText = sql_d_i;
                                     }
                                 }
@@ -1050,12 +1056,12 @@ namespace cf_pad.Forms
             }
         }
 
-        private string GetMax_Sequence_id(string pID)
+        private string GetMaxSequenceId(string pID)
         {
             string seq_id;
             string sql = string.Format(@"Select max(Sequence_id) as Sequence_id From {0}jo_materiel_con_details with(nolock) Where within_code='0000' and id='{1}'",
-                DBUtility._user_id, pID);
-            DataTable dt=clsPublicOfPad.ExecuteSqlReturnDataTable(sql);
+                DBUtility.remote_db, pID);
+            DataTable dt = clsPublicOfPad.ExecuteSqlReturnDataTable(sql);
             seq_id=dt.Rows[0]["Sequence_id"].ToString();
             seq_id = (int.Parse(seq_id.Substring(0, seq_id.Length - 1)) + 1).ToString("0000") + "h";
             return seq_id;
@@ -1078,10 +1084,10 @@ namespace cf_pad.Forms
 
         private void btnFind_Click(object sender, EventArgs e)
         {
-            Find_Data();
+            FindData();
         }
 
-        private void Find_Data()
+        private void FindData()
         {
             if (txtDept1.Text == "" && txtDept2.Text == "" && txtMO1.Text == "" && txtMO2.Text == "")
             {
@@ -1091,7 +1097,8 @@ namespace cf_pad.Forms
             string strSql =
                 @"Select A.id,A.con_date,A.out_dept,A.in_dept,A.check_by,A.check_date,A.state,
                 B.sequence_id,B.mo_id,B.goods_id,Convert(int,B.con_qty) AS con_qty,Convert(decimal(12,2),B.sec_qty) AS sec_qty,B.lot_no,B.package_num,B.qc_result,
-                Convert(int,B.con_qty) as old_qty,Convert(decimal(12,2),B.sec_qty) as old_sec_qty,C.name as goods_name,B.jo_id,B.jo_sequence_id,B.defective_id
+                Convert(int,B.con_qty) as old_qty,Convert(decimal(12,2),B.sec_qty) as old_sec_qty,C.name as goods_name,B.jo_id,B.jo_sequence_id,
+                Isnull(B.defective_id,'') AS defective_id
                 From jo_materiel_con_mostly A with(nolock) 
                 INNER JOIN jo_materiel_con_details B with(nolock) ON A.within_code=B.within_code AND A.id=B.id
                 LEFT OUTER JOIN it_goods C with(nolock) ON B.within_code=C.within_code and B.goods_id=C.id 
@@ -1113,7 +1120,6 @@ namespace cf_pad.Forms
                 strSql += string.Format(" AND B.mo_id>='{0}'",txtMO1.Text);
             if (txtMO2.Text != "")
                 strSql += string.Format(" AND B.mo_id<='{0}'",txtMO2.Text);
-
             strSql += " ORDER BY A.id,B.sequence_id";
 
             dtFind = clsPublicOfGeo.ExecuteSqlReturnDataTable(strSql);
@@ -1126,8 +1132,7 @@ namespace cf_pad.Forms
             if (!btnSave.Enabled)
             {
                 btnSave.Enabled = true;
-            }
-                
+            }                
         }
 
         private void dgvDetails2_SelectionChanged(object sender, EventArgs e)
@@ -1168,7 +1173,7 @@ namespace cf_pad.Forms
                 cboOut_dept.Enabled = false;
                 cboIn_dept.Enabled = false;
 
-                DataRow[] rds= dtFind.Select(string.Format("id='{0}'",strid));
+                DataRow[] rds = dtFind.Select(string.Format("id='{0}'",strid));
                 DataRow new_row = null;
                 foreach (DataRow dr in rds)
                 {
@@ -1189,7 +1194,10 @@ namespace cf_pad.Forms
                     new_row["jo_sequence_id"] = dr["jo_sequence_id"].ToString();
                     new_row["defective_id"] = dr["defective_id"].ToString();
                     dtData.Rows.Add(new_row);
-                }              
+                }               
+                dtData.AcceptChanges();//恢復正常狀態，確保所有列都是 Unchanged
+                string ss1 = dtData.Rows[0].RowState.ToString();
+                string ss2 = dtData.Rows[1].RowState.ToString();
             }
         }
 
@@ -1309,14 +1317,26 @@ namespace cf_pad.Forms
             {
                 clsUtility.Call_imput();
             }
-        }
+        }     
 
-        private void cmbDefective_id_SelectedValueChanged(object sender, EventArgs e)
+        private void lueDefective_id_Leave(object sender, EventArgs e)
         {
             if (dgvDetails.RowCount > 0)
             {
-                int cur_row = int.Parse(txtCurrentRow.Text);
-                dtData.Rows[cur_row]["defective_id"] = cmbDefective_id.ValueMember;
+                int cur_row = 0;
+                if (dtData.Rows.Count == 1)
+                {
+                    cur_row = 0;
+                    dtData.Rows[cur_row]["defective_id"] = lueDefective_id.EditValue.ToString();
+                }
+                else
+                {
+                    if (txtCurrentRow.Text != "")
+                    {
+                        cur_row = int.Parse(txtCurrentRow.Text);
+                        dtData.Rows[cur_row]["defective_id"] = lueDefective_id.EditValue.ToString();
+                    }
+                }                
             }
         }
     }

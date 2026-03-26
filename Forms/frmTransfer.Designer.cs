@@ -41,6 +41,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lblMo_id_v = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
@@ -76,7 +77,6 @@
             this.tbcDetails = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.cmbDefective_id = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
             this.chkKeyBoard = new System.Windows.Forms.CheckBox();
             this.txtIn_dept_name = new System.Windows.Forms.TextBox();
@@ -147,12 +147,20 @@
             this.txtMO1 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.dgvDetails2 = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnDataList = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
             this.con_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.moid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.goodsid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.conqty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.secqty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.defective_id1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.out_dept = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.in_dept = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.check_by = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -167,13 +175,7 @@
             this.goodsname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.joid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.josequence_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnDataList = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnDel = new System.Windows.Forms.Button();
+            this.lueDefective_id = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetails)).BeginInit();
             this.tbcDetails.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -188,6 +190,7 @@
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetails2)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lueDefective_id.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // txtId
@@ -568,24 +571,12 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panel3.Controls.Add(this.cmbDefective_id);
+            this.panel3.Controls.Add(this.lueDefective_id);
             this.panel3.Controls.Add(this.label23);
             this.panel3.Location = new System.Drawing.Point(634, 101);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(194, 46);
             this.panel3.TabIndex = 0;
-            // 
-            // cmbDefective_id
-            // 
-            this.cmbDefective_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
-            this.cmbDefective_id.FormattingEnabled = true;
-            this.cmbDefective_id.Location = new System.Drawing.Point(59, 4);
-            this.cmbDefective_id.MaxDropDownItems = 18;
-            this.cmbDefective_id.MaxLength = 3;
-            this.cmbDefective_id.Name = "cmbDefective_id";
-            this.cmbDefective_id.Size = new System.Drawing.Size(132, 39);
-            this.cmbDefective_id.TabIndex = 35;
-            this.cmbDefective_id.SelectedValueChanged += new System.EventHandler(this.cmbDefective_id_SelectedValueChanged);
             // 
             // label23
             // 
@@ -888,7 +879,7 @@
             this.dgvDetails_qc.RowHeadersVisible = false;
             this.dgvDetails_qc.RowHeadersWidth = 20;
             this.dgvDetails_qc.RowTemplate.Height = 40;
-            this.dgvDetails_qc.Size = new System.Drawing.Size(819, 87);
+            this.dgvDetails_qc.Size = new System.Drawing.Size(819, 82);
             this.dgvDetails_qc.TabIndex = 23;
             this.dgvDetails_qc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetails_qc_CellContentClick);
             // 
@@ -1122,7 +1113,7 @@
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label10.Location = new System.Drawing.Point(681, 56);
+            this.label10.Location = new System.Drawing.Point(681, 60);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(63, 26);
             this.label10.TabIndex = 29;
@@ -1413,6 +1404,7 @@
             this.goodsid,
             this.conqty,
             this.secqty,
+            this.defective_id1,
             this.out_dept,
             this.in_dept,
             this.check_by,
@@ -1446,6 +1438,100 @@
             this.dgvDetails2.TabIndex = 54;
             this.dgvDetails2.SelectionChanged += new System.EventHandler(this.dgvDetails2_SelectionChanged);
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.btnEdit);
+            this.panel1.Controls.Add(this.btnAdd);
+            this.panel1.Controls.Add(this.btnDataList);
+            this.panel1.Controls.Add(this.btnExit);
+            this.panel1.Controls.Add(this.btnSave);
+            this.panel1.Controls.Add(this.btnDel);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(840, 91);
+            this.panel1.TabIndex = 23;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnEdit.Location = new System.Drawing.Point(400, 3);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(135, 84);
+            this.btnEdit.TabIndex = 14;
+            this.btnEdit.Text = "返回掃描畫面";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnAdd.ForeColor = System.Drawing.Color.Blue;
+            this.btnAdd.Location = new System.Drawing.Point(137, 3);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(121, 84);
+            this.btnAdd.TabIndex = 13;
+            this.btnAdd.Text = "新 增";
+            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnDataList
+            // 
+            this.btnDataList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnDataList.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnDataList.Location = new System.Drawing.Point(541, 3);
+            this.btnDataList.Name = "btnDataList";
+            this.btnDataList.Size = new System.Drawing.Size(145, 84);
+            this.btnDataList.TabIndex = 12;
+            this.btnDataList.Text = "查找畫面";
+            this.btnDataList.UseVisualStyleBackColor = false;
+            this.btnDataList.Click += new System.EventHandler(this.btnDataList_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnExit.ForeColor = System.Drawing.Color.Black;
+            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExit.Location = new System.Drawing.Point(9, 3);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(122, 84);
+            this.btnExit.TabIndex = 11;
+            this.btnExit.Text = "退出(&X)";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.LawnGreen;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+            this.btnSave.Location = new System.Drawing.Point(264, 3);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(131, 84);
+            this.btnSave.TabIndex = 10;
+            this.btnSave.Text = "保 存";
+            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnDel
+            // 
+            this.btnDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnDel.Image = ((System.Drawing.Image)(resources.GetObject("btnDel.Image")));
+            this.btnDel.Location = new System.Drawing.Point(692, 3);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(126, 84);
+            this.btnDel.TabIndex = 9;
+            this.btnDel.Text = "項 目 刪 除";
+            this.btnDel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDel.UseVisualStyleBackColor = false;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
             // con_date
             // 
             this.con_date.DataPropertyName = "con_date";
@@ -1478,6 +1564,7 @@
             this.goodsid.HeaderText = "貨品編號";
             this.goodsid.Name = "goodsid";
             this.goodsid.ReadOnly = true;
+            this.goodsid.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.goodsid.Width = 220;
             // 
             // conqty
@@ -1496,6 +1583,14 @@
             this.secqty.Name = "secqty";
             this.secqty.ReadOnly = true;
             this.secqty.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // defective_id1
+            // 
+            this.defective_id1.DataPropertyName = "defective_id";
+            this.defective_id1.HeaderText = "分選類別";
+            this.defective_id1.Name = "defective_id1";
+            this.defective_id1.ReadOnly = true;
+            this.defective_id1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // out_dept
             // 
@@ -1609,99 +1704,29 @@
             this.josequence_id.ReadOnly = true;
             this.josequence_id.Visible = false;
             // 
-            // panel1
+            // lueDefective_id
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.btnEdit);
-            this.panel1.Controls.Add(this.btnAdd);
-            this.panel1.Controls.Add(this.btnDataList);
-            this.panel1.Controls.Add(this.btnExit);
-            this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.btnDel);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(840, 91);
-            this.panel1.TabIndex = 23;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnEdit.Location = new System.Drawing.Point(400, 3);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(135, 84);
-            this.btnEdit.TabIndex = 14;
-            this.btnEdit.Text = "返回掃描畫面";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnAdd.ForeColor = System.Drawing.Color.Blue;
-            this.btnAdd.Location = new System.Drawing.Point(137, 3);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(121, 84);
-            this.btnAdd.TabIndex = 13;
-            this.btnAdd.Text = "新 增";
-            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnDataList
-            // 
-            this.btnDataList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnDataList.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnDataList.Location = new System.Drawing.Point(541, 3);
-            this.btnDataList.Name = "btnDataList";
-            this.btnDataList.Size = new System.Drawing.Size(145, 84);
-            this.btnDataList.TabIndex = 12;
-            this.btnDataList.Text = "查找畫面";
-            this.btnDataList.UseVisualStyleBackColor = false;
-            this.btnDataList.Click += new System.EventHandler(this.btnDataList_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnExit.ForeColor = System.Drawing.Color.Black;
-            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(9, 3);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(122, 84);
-            this.btnExit.TabIndex = 11;
-            this.btnExit.Text = "退出(&X)";
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.LawnGreen;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.Location = new System.Drawing.Point(264, 3);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(131, 84);
-            this.btnSave.TabIndex = 10;
-            this.btnSave.Text = "保 存";
-            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnDel
-            // 
-            this.btnDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnDel.Image = ((System.Drawing.Image)(resources.GetObject("btnDel.Image")));
-            this.btnDel.Location = new System.Drawing.Point(692, 3);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(126, 84);
-            this.btnDel.TabIndex = 9;
-            this.btnDel.Text = "項 目 刪 除";
-            this.btnDel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDel.UseVisualStyleBackColor = false;
-            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            this.lueDefective_id.EditValue = "";
+            this.lueDefective_id.Location = new System.Drawing.Point(58, 4);
+            this.lueDefective_id.Name = "lueDefective_id";
+            this.lueDefective_id.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.lueDefective_id.Properties.Appearance.Options.UseFont = true;
+            this.lueDefective_id.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lueDefective_id.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.lueDefective_id.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.lueDefective_id.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", 25, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            this.lueDefective_id.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.lueDefective_id.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("defective_id", "defective_id"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("defective_cdesc", 70, "defective_cdesc")});
+            this.lueDefective_id.Properties.DropDownRows = 18;
+            this.lueDefective_id.Properties.NullText = "";
+            this.lueDefective_id.Properties.PopupWidth = 90;
+            this.lueDefective_id.Properties.ShowHeader = false;
+            this.lueDefective_id.Size = new System.Drawing.Size(133, 38);
+            this.lueDefective_id.TabIndex = 39;
+            this.lueDefective_id.Leave += new System.EventHandler(this.lueDefective_id_Leave);
             // 
             // frmTransfer
             // 
@@ -1733,6 +1758,7 @@
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetails2)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lueDefective_id.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1833,28 +1859,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn package_num_qc;
         private System.Windows.Forms.DataGridViewTextBoxColumn jo_id_qc;
         private System.Windows.Forms.DataGridViewTextBoxColumn jo_sequence_id_qc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn con_date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn moid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn goodsid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn conqty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn secqty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn out_dept;
-        private System.Windows.Forms.DataGridViewTextBoxColumn in_dept;
-        private System.Windows.Forms.DataGridViewTextBoxColumn check_by;
-        private System.Windows.Forms.DataGridViewTextBoxColumn check_date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn state;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sequenceid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lotno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn packagenum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qcresult;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oldqty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oldsec_qty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn goodsname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn joid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn josequence_id;
         private System.Windows.Forms.CheckBox chkKeyBoard;
-        private System.Windows.Forms.ComboBox cmbDefective_id;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridViewTextBoxColumn mo_id;
@@ -1872,5 +1877,27 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn old_sec_qty;
         private System.Windows.Forms.DataGridViewTextBoxColumn jo_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn jo_sequence_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn con_date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn moid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn goodsid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn conqty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn secqty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn defective_id1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn out_dept;
+        private System.Windows.Forms.DataGridViewTextBoxColumn in_dept;
+        private System.Windows.Forms.DataGridViewTextBoxColumn check_by;
+        private System.Windows.Forms.DataGridViewTextBoxColumn check_date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn state;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sequenceid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lotno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn packagenum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qcresult;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oldqty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oldsec_qty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn goodsname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn joid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn josequence_id;
+        private DevExpress.XtraEditors.LookUpEdit lueDefective_id;
     }
 }
