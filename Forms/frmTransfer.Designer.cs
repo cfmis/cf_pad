@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTransfer));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -41,7 +42,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lblMo_id_v = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
@@ -76,7 +76,7 @@
             this.txtGoods_name = new System.Windows.Forms.TextBox();
             this.tbcDetails = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.lueDefective_id = new DevExpress.XtraEditors.LookUpEdit();
             this.label23 = new System.Windows.Forms.Label();
             this.chkKeyBoard = new System.Windows.Forms.CheckBox();
             this.txtIn_dept_name = new System.Windows.Forms.TextBox();
@@ -110,7 +110,6 @@
             this.jo_id_qc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jo_sequence_id_qc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label21 = new System.Windows.Forms.Label();
-            this.lblSaveinfo = new System.Windows.Forms.Label();
             this.picqc_result1 = new System.Windows.Forms.PictureBox();
             this.picqc_result2 = new System.Windows.Forms.PictureBox();
             this.txtSec_qty = new System.Windows.Forms.TextBox();
@@ -147,13 +146,6 @@
             this.txtMO1 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.dgvDetails2 = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnDataList = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnDel = new System.Windows.Forms.Button();
             this.con_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.moid = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -175,11 +167,18 @@
             this.goodsname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.joid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.josequence_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lueDefective_id = new DevExpress.XtraEditors.LookUpEdit();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnDataList = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.lblSaveinfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetails)).BeginInit();
             this.tbcDetails.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lueDefective_id.Properties)).BeginInit();
             this.panel2.SuspendLayout();
             this.pnlLot.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLotno)).BeginInit();
@@ -190,7 +189,6 @@
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetails2)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lueDefective_id.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // txtId
@@ -225,7 +223,7 @@
             // txtMo_id
             // 
             this.txtMo_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMo_id.Location = new System.Drawing.Point(467, 4);
+            this.txtMo_id.Location = new System.Drawing.Point(467, 46);
             this.txtMo_id.Name = "txtMo_id";
             this.txtMo_id.ReadOnly = true;
             this.txtMo_id.Size = new System.Drawing.Size(223, 47);
@@ -265,17 +263,17 @@
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.Location = new System.Drawing.Point(369, 55);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(369, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 53);
+            this.label2.Size = new System.Drawing.Size(56, 48);
             this.label2.TabIndex = 11;
             this.label2.Text = "收貨部門";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(369, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 53);
@@ -306,12 +304,12 @@
             this.old_sec_qty,
             this.jo_id,
             this.jo_sequence_id});
-            this.dgvDetails.Location = new System.Drawing.Point(0, 148);
+            this.dgvDetails.Location = new System.Drawing.Point(0, 189);
             this.dgvDetails.Name = "dgvDetails";
             this.dgvDetails.RowHeadersVisible = false;
             this.dgvDetails.RowHeadersWidth = 20;
             this.dgvDetails.RowTemplate.Height = 40;
-            this.dgvDetails.Size = new System.Drawing.Size(821, 370);
+            this.dgvDetails.Size = new System.Drawing.Size(821, 329);
             this.dgvDetails.TabIndex = 14;
             this.dgvDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetails_CellClick);
             // 
@@ -453,7 +451,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label4.Location = new System.Drawing.Point(407, 14);
+            this.label4.Location = new System.Drawing.Point(407, 56);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 26);
             this.label4.TabIndex = 15;
@@ -464,7 +462,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label5.Location = new System.Drawing.Point(1, 60);
+            this.label5.Location = new System.Drawing.Point(1, 102);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 26);
             this.label5.TabIndex = 16;
@@ -473,7 +471,7 @@
             // txtGoods_id
             // 
             this.txtGoods_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGoods_id.Location = new System.Drawing.Point(103, 54);
+            this.txtGoods_id.Location = new System.Drawing.Point(103, 96);
             this.txtGoods_id.Name = "txtGoods_id";
             this.txtGoods_id.ReadOnly = true;
             this.txtGoods_id.Size = new System.Drawing.Size(322, 38);
@@ -482,7 +480,7 @@
             // txtLot
             // 
             this.txtLot.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLot.Location = new System.Drawing.Point(103, 95);
+            this.txtLot.Location = new System.Drawing.Point(103, 137);
             this.txtLot.Name = "txtLot";
             this.txtLot.ReadOnly = true;
             this.txtLot.Size = new System.Drawing.Size(182, 47);
@@ -493,7 +491,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label6.Location = new System.Drawing.Point(331, 102);
+            this.label6.Location = new System.Drawing.Point(331, 144);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 26);
             this.label6.TabIndex = 20;
@@ -503,7 +501,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label7.Location = new System.Drawing.Point(38, 102);
+            this.label7.Location = new System.Drawing.Point(38, 144);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 26);
             this.label7.TabIndex = 19;
@@ -512,7 +510,7 @@
             // txtGoods_name
             // 
             this.txtGoods_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGoods_name.Location = new System.Drawing.Point(431, 55);
+            this.txtGoods_name.Location = new System.Drawing.Point(431, 97);
             this.txtGoods_name.Name = "txtGoods_name";
             this.txtGoods_name.ReadOnly = true;
             this.txtGoods_name.Size = new System.Drawing.Size(389, 38);
@@ -539,7 +537,6 @@
             // tabPage1
             // 
             this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tabPage1.Controls.Add(this.panel3);
             this.tabPage1.Controls.Add(this.chkKeyBoard);
             this.tabPage1.Controls.Add(this.txtIn_dept_name);
             this.tabPage1.Controls.Add(this.txtOut_dept_name);
@@ -568,25 +565,39 @@
             this.tabPage1.Text = "單據錄入";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // panel3
+            // lueDefective_id
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panel3.Controls.Add(this.lueDefective_id);
-            this.panel3.Controls.Add(this.label23);
-            this.panel3.Location = new System.Drawing.Point(634, 101);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(194, 46);
-            this.panel3.TabIndex = 0;
+            this.lueDefective_id.EditValue = "";
+            this.lueDefective_id.Location = new System.Drawing.Point(507, 3);
+            this.lueDefective_id.Name = "lueDefective_id";
+            this.lueDefective_id.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.lueDefective_id.Properties.Appearance.Options.UseFont = true;
+            this.lueDefective_id.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lueDefective_id.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.lueDefective_id.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.lueDefective_id.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", 25, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            this.lueDefective_id.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.lueDefective_id.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("defective_id", "defective_id"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("defective_cdesc", 70, "defective_cdesc")});
+            this.lueDefective_id.Properties.DropDownRows = 18;
+            this.lueDefective_id.Properties.NullText = "";
+            this.lueDefective_id.Properties.PopupWidth = 90;
+            this.lueDefective_id.Properties.ShowHeader = false;
+            this.lueDefective_id.Size = new System.Drawing.Size(183, 38);
+            this.lueDefective_id.TabIndex = 39;
+            this.lueDefective_id.Leave += new System.EventHandler(this.lueDefective_id_Leave);
             // 
             // label23
             // 
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(14, 3);
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(369, 7);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(42, 43);
+            this.label23.Size = new System.Drawing.Size(135, 30);
             this.label23.TabIndex = 36;
             this.label23.Text = "分選類別";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label23.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // chkKeyBoard
             // 
@@ -624,11 +635,13 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.lblSaveinfo);
+            this.panel2.Controls.Add(this.lueDefective_id);
             this.panel2.Controls.Add(this.txtBarCode);
+            this.panel2.Controls.Add(this.label23);
             this.panel2.Controls.Add(this.pnlLot);
             this.panel2.Controls.Add(this.btnLotNo);
             this.panel2.Controls.Add(this.pnlQc);
-            this.panel2.Controls.Add(this.lblSaveinfo);
             this.panel2.Controls.Add(this.picqc_result1);
             this.panel2.Controls.Add(this.picqc_result2);
             this.panel2.Controls.Add(this.txtSec_qty);
@@ -648,9 +661,9 @@
             this.panel2.Controls.Add(this.lblBarcode);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label13);
-            this.panel2.Location = new System.Drawing.Point(4, 146);
+            this.panel2.Location = new System.Drawing.Point(4, 103);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(824, 628);
+            this.panel2.Size = new System.Drawing.Size(824, 666);
             this.panel2.TabIndex = 30;
             // 
             // txtBarCode
@@ -658,7 +671,7 @@
             this.txtBarCode.BackColor = System.Drawing.Color.Plum;
             this.txtBarCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBarCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
-            this.txtBarCode.Location = new System.Drawing.Point(103, 3);
+            this.txtBarCode.Location = new System.Drawing.Point(103, 45);
             this.txtBarCode.Name = "txtBarCode";
             this.txtBarCode.Size = new System.Drawing.Size(294, 47);
             this.txtBarCode.TabIndex = 23;
@@ -671,7 +684,7 @@
             this.pnlLot.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlLot.Controls.Add(this.btnClose);
             this.pnlLot.Controls.Add(this.dgvLotno);
-            this.pnlLot.Location = new System.Drawing.Point(1, 148);
+            this.pnlLot.Location = new System.Drawing.Point(1, 185);
             this.pnlLot.Name = "pnlLot";
             this.pnlLot.Size = new System.Drawing.Size(746, 246);
             this.pnlLot.TabIndex = 38;
@@ -716,7 +729,7 @@
             this.dgvLotno.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvLotno.RowTemplate.Height = 40;
             this.dgvLotno.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLotno.Size = new System.Drawing.Size(743, 239);
+            this.dgvLotno.Size = new System.Drawing.Size(741, 239);
             this.dgvLotno.TabIndex = 33;
             this.dgvLotno.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLotno_CellContentClick);
             this.dgvLotno.DoubleClick += new System.EventHandler(this.dgvLotno_DoubleClick);
@@ -809,7 +822,7 @@
             // btnLotNo
             // 
             this.btnLotNo.Image = ((System.Drawing.Image)(resources.GetObject("btnLotNo.Image")));
-            this.btnLotNo.Location = new System.Drawing.Point(283, 95);
+            this.btnLotNo.Location = new System.Drawing.Point(283, 137);
             this.btnLotNo.Name = "btnLotNo";
             this.btnLotNo.Size = new System.Drawing.Size(47, 48);
             this.btnLotNo.TabIndex = 31;
@@ -829,7 +842,7 @@
             this.pnlQc.Controls.Add(this.label21);
             this.pnlQc.Location = new System.Drawing.Point(1, 519);
             this.pnlQc.Name = "pnlQc";
-            this.pnlQc.Size = new System.Drawing.Size(819, 112);
+            this.pnlQc.Size = new System.Drawing.Size(819, 150);
             this.pnlQc.TabIndex = 36;
             // 
             // txtIdqc
@@ -879,7 +892,7 @@
             this.dgvDetails_qc.RowHeadersVisible = false;
             this.dgvDetails_qc.RowHeadersWidth = 20;
             this.dgvDetails_qc.RowTemplate.Height = 40;
-            this.dgvDetails_qc.Size = new System.Drawing.Size(819, 82);
+            this.dgvDetails_qc.Size = new System.Drawing.Size(819, 120);
             this.dgvDetails_qc.TabIndex = 23;
             this.dgvDetails_qc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetails_qc_CellContentClick);
             // 
@@ -981,29 +994,13 @@
             this.label21.TabIndex = 22;
             this.label21.Text = "交QC測試單據編號：";
             // 
-            // lblSaveinfo
-            // 
-            this.lblSaveinfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSaveinfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.lblSaveinfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSaveinfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblSaveinfo.ForeColor = System.Drawing.Color.Blue;
-            this.lblSaveinfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblSaveinfo.Location = new System.Drawing.Point(338, 42);
-            this.lblSaveinfo.Name = "lblSaveinfo";
-            this.lblSaveinfo.Size = new System.Drawing.Size(311, 106);
-            this.lblSaveinfo.TabIndex = 35;
-            this.lblSaveinfo.Text = "數據保存成功！";
-            this.lblSaveinfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblSaveinfo.Visible = false;
-            // 
             // picqc_result1
             // 
             this.picqc_result1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.picqc_result1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picqc_result1.Enabled = false;
             this.picqc_result1.Image = ((System.Drawing.Image)(resources.GetObject("picqc_result1.Image")));
-            this.picqc_result1.Location = new System.Drawing.Point(742, 7);
+            this.picqc_result1.Location = new System.Drawing.Point(742, 49);
             this.picqc_result1.Name = "picqc_result1";
             this.picqc_result1.Size = new System.Drawing.Size(39, 44);
             this.picqc_result1.TabIndex = 32;
@@ -1015,7 +1012,7 @@
             this.picqc_result2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.picqc_result2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picqc_result2.Enabled = false;
-            this.picqc_result2.Location = new System.Drawing.Point(742, 7);
+            this.picqc_result2.Location = new System.Drawing.Point(742, 49);
             this.picqc_result2.Name = "picqc_result2";
             this.picqc_result2.Size = new System.Drawing.Size(39, 44);
             this.picqc_result2.TabIndex = 34;
@@ -1025,7 +1022,7 @@
             // txtSec_qty
             // 
             this.txtSec_qty.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSec_qty.Location = new System.Drawing.Point(590, 95);
+            this.txtSec_qty.Location = new System.Drawing.Point(590, 137);
             this.txtSec_qty.Name = "txtSec_qty";
             this.txtSec_qty.Size = new System.Drawing.Size(104, 47);
             this.txtSec_qty.TabIndex = 27;
@@ -1036,7 +1033,7 @@
             // txtIqc_result
             // 
             this.txtIqc_result.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
-            this.txtIqc_result.Location = new System.Drawing.Point(740, 5);
+            this.txtIqc_result.Location = new System.Drawing.Point(740, 47);
             this.txtIqc_result.Name = "txtIqc_result";
             this.txtIqc_result.ReadOnly = true;
             this.txtIqc_result.Size = new System.Drawing.Size(43, 47);
@@ -1047,7 +1044,7 @@
             // txtPackage_num
             // 
             this.txtPackage_num.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPackage_num.Location = new System.Drawing.Point(724, 95);
+            this.txtPackage_num.Location = new System.Drawing.Point(724, 137);
             this.txtPackage_num.Name = "txtPackage_num";
             this.txtPackage_num.Size = new System.Drawing.Size(50, 47);
             this.txtPackage_num.TabIndex = 29;
@@ -1059,7 +1056,7 @@
             // label12
             // 
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label12.Location = new System.Drawing.Point(695, 94);
+            this.label12.Location = new System.Drawing.Point(695, 136);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(31, 53);
             this.label12.TabIndex = 28;
@@ -1069,7 +1066,7 @@
             // txtQty
             // 
             this.txtQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQty.Location = new System.Drawing.Point(383, 95);
+            this.txtQty.Location = new System.Drawing.Point(383, 137);
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(152, 47);
             this.txtQty.TabIndex = 25;
@@ -1082,7 +1079,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label11.Location = new System.Drawing.Point(537, 102);
+            this.label11.Location = new System.Drawing.Point(537, 144);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(56, 26);
             this.label11.TabIndex = 26;
@@ -1093,7 +1090,7 @@
             this.lblBarcode.AutoSize = true;
             this.lblBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.lblBarcode.ForeColor = System.Drawing.Color.DarkViolet;
-            this.lblBarcode.Location = new System.Drawing.Point(3, 14);
+            this.lblBarcode.Location = new System.Drawing.Point(3, 56);
             this.lblBarcode.Name = "lblBarcode";
             this.lblBarcode.Size = new System.Drawing.Size(100, 26);
             this.lblBarcode.TabIndex = 24;
@@ -1102,7 +1099,7 @@
             // label13
             // 
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(693, 0);
+            this.label13.Location = new System.Drawing.Point(693, 42);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(50, 52);
             this.label13.TabIndex = 32;
@@ -1115,9 +1112,9 @@
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label10.Location = new System.Drawing.Point(681, 60);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(63, 26);
+            this.label10.Size = new System.Drawing.Size(57, 26);
             this.label10.TabIndex = 29;
-            this.label10.Text = "狀態:";
+            this.label10.Text = "狀態";
             // 
             // txtCheck_date
             // 
@@ -1125,7 +1122,7 @@
             this.txtCheck_date.Location = new System.Drawing.Point(427, 103);
             this.txtCheck_date.Name = "txtCheck_date";
             this.txtCheck_date.ReadOnly = true;
-            this.txtCheck_date.Size = new System.Drawing.Size(205, 38);
+            this.txtCheck_date.Size = new System.Drawing.Size(84, 38);
             this.txtCheck_date.TabIndex = 28;
             this.txtCheck_date.TabStop = false;
             // 
@@ -1135,13 +1132,13 @@
             this.txtCheck_by.Location = new System.Drawing.Point(109, 103);
             this.txtCheck_by.Name = "txtCheck_by";
             this.txtCheck_by.ReadOnly = true;
-            this.txtCheck_by.Size = new System.Drawing.Size(181, 38);
+            this.txtCheck_by.Size = new System.Drawing.Size(86, 38);
             this.txtCheck_by.TabIndex = 25;
             this.txtCheck_by.TabStop = false;
             // 
             // txtSate
             // 
-            this.txtSate.Location = new System.Drawing.Point(745, 56);
+            this.txtSate.Location = new System.Drawing.Point(739, 56);
             this.txtSate.Name = "txtSate";
             this.txtSate.ReadOnly = true;
             this.txtSate.Size = new System.Drawing.Size(79, 35);
@@ -1438,100 +1435,6 @@
             this.dgvDetails2.TabIndex = 54;
             this.dgvDetails2.SelectionChanged += new System.EventHandler(this.dgvDetails2_SelectionChanged);
             // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.btnEdit);
-            this.panel1.Controls.Add(this.btnAdd);
-            this.panel1.Controls.Add(this.btnDataList);
-            this.panel1.Controls.Add(this.btnExit);
-            this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.btnDel);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(840, 91);
-            this.panel1.TabIndex = 23;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnEdit.Location = new System.Drawing.Point(400, 3);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(135, 84);
-            this.btnEdit.TabIndex = 14;
-            this.btnEdit.Text = "返回掃描畫面";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnAdd.ForeColor = System.Drawing.Color.Blue;
-            this.btnAdd.Location = new System.Drawing.Point(137, 3);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(121, 84);
-            this.btnAdd.TabIndex = 13;
-            this.btnAdd.Text = "新 增";
-            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnDataList
-            // 
-            this.btnDataList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnDataList.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnDataList.Location = new System.Drawing.Point(541, 3);
-            this.btnDataList.Name = "btnDataList";
-            this.btnDataList.Size = new System.Drawing.Size(145, 84);
-            this.btnDataList.TabIndex = 12;
-            this.btnDataList.Text = "查找畫面";
-            this.btnDataList.UseVisualStyleBackColor = false;
-            this.btnDataList.Click += new System.EventHandler(this.btnDataList_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnExit.ForeColor = System.Drawing.Color.Black;
-            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(9, 3);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(122, 84);
-            this.btnExit.TabIndex = 11;
-            this.btnExit.Text = "退出(&X)";
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.LawnGreen;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.Location = new System.Drawing.Point(264, 3);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(131, 84);
-            this.btnSave.TabIndex = 10;
-            this.btnSave.Text = "保 存";
-            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnDel
-            // 
-            this.btnDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnDel.Image = ((System.Drawing.Image)(resources.GetObject("btnDel.Image")));
-            this.btnDel.Location = new System.Drawing.Point(692, 3);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(126, 84);
-            this.btnDel.TabIndex = 9;
-            this.btnDel.Text = "項 目 刪 除";
-            this.btnDel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDel.UseVisualStyleBackColor = false;
-            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
-            // 
             // con_date
             // 
             this.con_date.DataPropertyName = "con_date";
@@ -1704,29 +1607,115 @@
             this.josequence_id.ReadOnly = true;
             this.josequence_id.Visible = false;
             // 
-            // lueDefective_id
+            // panel1
             // 
-            this.lueDefective_id.EditValue = "";
-            this.lueDefective_id.Location = new System.Drawing.Point(58, 4);
-            this.lueDefective_id.Name = "lueDefective_id";
-            this.lueDefective_id.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
-            this.lueDefective_id.Properties.Appearance.Options.UseFont = true;
-            this.lueDefective_id.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lueDefective_id.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.lueDefective_id.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.lueDefective_id.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", 25, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
-            this.lueDefective_id.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
-            this.lueDefective_id.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("defective_id", "defective_id"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("defective_cdesc", 70, "defective_cdesc")});
-            this.lueDefective_id.Properties.DropDownRows = 18;
-            this.lueDefective_id.Properties.NullText = "";
-            this.lueDefective_id.Properties.PopupWidth = 90;
-            this.lueDefective_id.Properties.ShowHeader = false;
-            this.lueDefective_id.Size = new System.Drawing.Size(133, 38);
-            this.lueDefective_id.TabIndex = 39;
-            this.lueDefective_id.Leave += new System.EventHandler(this.lueDefective_id_Leave);
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.btnEdit);
+            this.panel1.Controls.Add(this.btnAdd);
+            this.panel1.Controls.Add(this.btnDataList);
+            this.panel1.Controls.Add(this.btnExit);
+            this.panel1.Controls.Add(this.btnSave);
+            this.panel1.Controls.Add(this.btnDel);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(840, 91);
+            this.panel1.TabIndex = 23;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnEdit.Location = new System.Drawing.Point(400, 3);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(135, 84);
+            this.btnEdit.TabIndex = 14;
+            this.btnEdit.Text = "返回掃描畫面";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnAdd.ForeColor = System.Drawing.Color.Blue;
+            this.btnAdd.Location = new System.Drawing.Point(137, 3);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(121, 84);
+            this.btnAdd.TabIndex = 13;
+            this.btnAdd.Text = "新 增";
+            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnDataList
+            // 
+            this.btnDataList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnDataList.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnDataList.Location = new System.Drawing.Point(541, 3);
+            this.btnDataList.Name = "btnDataList";
+            this.btnDataList.Size = new System.Drawing.Size(145, 84);
+            this.btnDataList.TabIndex = 12;
+            this.btnDataList.Text = "查找畫面";
+            this.btnDataList.UseVisualStyleBackColor = false;
+            this.btnDataList.Click += new System.EventHandler(this.btnDataList_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnExit.ForeColor = System.Drawing.Color.Black;
+            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExit.Location = new System.Drawing.Point(9, 3);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(122, 84);
+            this.btnExit.TabIndex = 11;
+            this.btnExit.Text = "退出(&X)";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.LawnGreen;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+            this.btnSave.Location = new System.Drawing.Point(264, 3);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(131, 84);
+            this.btnSave.TabIndex = 10;
+            this.btnSave.Text = "保 存";
+            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnDel
+            // 
+            this.btnDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnDel.Image = ((System.Drawing.Image)(resources.GetObject("btnDel.Image")));
+            this.btnDel.Location = new System.Drawing.Point(692, 3);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(126, 84);
+            this.btnDel.TabIndex = 9;
+            this.btnDel.Text = "項 目 刪 除";
+            this.btnDel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDel.UseVisualStyleBackColor = false;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
+            // lblSaveinfo
+            // 
+            this.lblSaveinfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSaveinfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblSaveinfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSaveinfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblSaveinfo.ForeColor = System.Drawing.Color.Blue;
+            this.lblSaveinfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblSaveinfo.Location = new System.Drawing.Point(383, 78);
+            this.lblSaveinfo.Name = "lblSaveinfo";
+            this.lblSaveinfo.Size = new System.Drawing.Size(311, 106);
+            this.lblSaveinfo.TabIndex = 40;
+            this.lblSaveinfo.Text = "數據保存成功！";
+            this.lblSaveinfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSaveinfo.Visible = false;
             // 
             // frmTransfer
             // 
@@ -1744,7 +1733,7 @@
             this.tbcDetails.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lueDefective_id.Properties)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.pnlLot.ResumeLayout(false);
@@ -1758,7 +1747,6 @@
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetails2)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.lueDefective_id.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1814,7 +1802,6 @@
         private System.Windows.Forms.PictureBox picqc_result2;
         private System.Windows.Forms.TextBox txtIn_dept_name;
         private System.Windows.Forms.TextBox txtOut_dept_name;
-        private System.Windows.Forms.Label lblSaveinfo;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnFind;
@@ -1861,7 +1848,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn jo_sequence_id_qc;
         private System.Windows.Forms.CheckBox chkKeyBoard;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridViewTextBoxColumn mo_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn goods_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn goods_name;
@@ -1899,5 +1885,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn joid;
         private System.Windows.Forms.DataGridViewTextBoxColumn josequence_id;
         private DevExpress.XtraEditors.LookUpEdit lueDefective_id;
+        private System.Windows.Forms.Label lblSaveinfo;
     }
 }

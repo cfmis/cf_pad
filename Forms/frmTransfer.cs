@@ -646,7 +646,7 @@ namespace cf_pad.Forms
             else
                 iMaxNo = 1;
             strMaxNo = iMaxNo.ToString("00000");
-            strMaxNo = String.Format("DT{0}{1}{2}", from_dept, to_dept, strMaxNo);
+            strMaxNo = string.Format("DT{0}{1}{2}", from_dept, to_dept, strMaxNo);
             return strMaxNo;
         }
      
