@@ -175,7 +175,7 @@ namespace cf_pad.Forms
                 case Keys.Enter:
                     string strBarCode = txtBarCode.Text;
                     string mo_id;
-                    lueDefective_id.Text = "";
+                    lueDefective_id.EditValue = "";
                     if (strBarCode.Length == 13)
                     {
                         mo_id = strBarCode.Substring(0, 9);
