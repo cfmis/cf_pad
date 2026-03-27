@@ -41,13 +41,11 @@ namespace cf_pad.Forms
                 {
                     cboOut_dept.Items.Add(dtDept.Rows[i]["id"].ToString());
                     cboIn_dept.Items.Add(dtDept.Rows[i]["id"].ToString());
-
                     txtDept1.Items.Add(dtDept.Rows[i]["id"].ToString());
                     txtDept2.Items.Add(dtDept.Rows[i]["id"].ToString());
                 }
                 cboOut_dept.Text = "501";
                 cboIn_dept.Text = "";
-
                 txtDept1.Text = "501";
                 txtDept2.Text = "501";
             }
@@ -73,7 +71,8 @@ namespace cf_pad.Forms
             dtQC_Data.Columns.Add("lot_no", typeof(string));
             dtQC_Data.Columns.Add("jo_id", typeof(string));
             dtQC_Data.Columns.Add("jo_sequence_id", typeof(string));
-            
+            dtQC_Data.Columns.Add("defective_id", typeof(string));
+
             dgvDetails_qc.DataSource = dtQC_Data;
             this.ActiveControl = txtBarCode;
             txtBarCode.Focus();
@@ -277,8 +276,8 @@ namespace cf_pad.Forms
                             if (int.Parse(dtQC.Rows[0]["prod_qty"].ToString()) > 0)
                             {
                                 //Operation_info("此頁數有要交QC測試的數據!", Color.Blue); // 提示信息取消于2019-11-21
-                                DataRow drwQC = dtData.NewRow();
-                                drwQC = dtQC_Data.NewRow();
+                                //DataRow drwQC = dtData.NewRow(); //old code 2026/03/27
+                                DataRow drwQC = dtQC_Data.NewRow();
                                 drwQC["mo_id"] = txtMo_id.Text;
                                 drwQC["goods_id"] = txtGoods_id.Text;
                                 drwQC["goods_name"] = txtGoods_name.Text;
