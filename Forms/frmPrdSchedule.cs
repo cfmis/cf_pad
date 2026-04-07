@@ -905,12 +905,12 @@ namespace cf_pad.Forms
                             return false;
                         }
                 }
-                if (chk_prd_worker(txtProductNo.Text.Trim()) == "")
-                {
-                    MessageBox.Show("生產工號不存在，請重新輸入!");
-                    txtProductNo.Focus();
-                    return false;
-                }
+                //if (chk_prd_worker(txtProductNo.Text.Trim()) == "")
+                //{
+                //    MessageBox.Show("生產工號不存在，請重新輸入!");
+                //    txtProductNo.Focus();
+                //    return false;
+                //}
                 if ((txtNormal_work.Text != ""?Convert.ToDecimal(txtNormal_work.Text):0)==0
                     && (txtAdd_work.Text != "" ? Convert.ToDecimal(txtAdd_work.Text) : 0) == 0)
                 {
@@ -1986,7 +1986,7 @@ namespace cf_pad.Forms
         {
             if (txtMachine.Text == "")
             {
-                if (cmbProductDept.Text == "102")
+                if (cmbProductDept.Text == "102" || cmbProductDept.Text == "122")
                 {
                     txtMachine.Text = "NBY-";
                     if (_userid == "BUT01")//萬能機
@@ -2418,13 +2418,18 @@ namespace cf_pad.Forms
             objModel.actual_weg = 0;
             objModel.conf_flag = "";
             objModel.conf_time = Convert.ToDateTime("1900/01/01");
-            if (objModel.prd_dep == "105" && objModel.prd_item.Substring(14, 4) == "NEP0"
-                && objModel.prd_start_time != "" && objModel.prd_end_time != "")//林口部，將NEP的直接加入磅貨中，當作組裝批量輸入
+            if (objModel.prd_start_time != "" && objModel.prd_end_time != "")
             {
-                objModel.conf_flag = "Y";
-                objModel.actual_qty = objModel.prd_qty;
-                objModel.actual_weg = objModel.prd_weg;
-                objModel.conf_time = DateTime.Now;
+                //林口部，將NEP的直接加入磅貨中，當作組裝批量輸入
+                //122交501的，直接加入磅貨中，當作組裝批量輸入
+                if ((objModel.prd_dep == "105" && objModel.prd_item.Substring(14, 4) == "NEP0")
+                    || (objModel.prd_dep == "122" && objModel.to_dep == "501"))
+                {
+                    objModel.conf_flag = "Y";
+                    objModel.actual_qty = objModel.prd_qty;
+                    objModel.actual_weg = objModel.prd_weg;
+                    objModel.conf_time = DateTime.Now;
+                }
             }
             if (record_id == -1)
             {
