@@ -113,8 +113,7 @@ namespace cf_pad.Forms
                     //getMoProduct();//從生產記錄中提取生產數量及重量
                     findData((cmbPrdDep.SelectedValue != null ? cmbPrdDep.SelectedValue.ToString().Trim() : ""), "", txtGoods_id.Text, txtMo_id.Text);
                     if (dgvDetails.Rows.Count == 0)
-                    {
-                        
+                    {                        
                         GetMoDataSource();//從生產表或排期表或流程中獲取記錄
                     }
                     else

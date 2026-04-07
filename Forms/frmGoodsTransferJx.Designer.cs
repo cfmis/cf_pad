@@ -109,13 +109,8 @@
             this.rdgSent_f = new System.Windows.Forms.RadioButton();
             this.rdgReceive_f = new System.Windows.Forms.RadioButton();
             this.tabToDG = new System.Windows.Forms.TabPage();
-            this.dgvToDgDetails = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.chkIsToDg = new System.Windows.Forms.CheckBox();
-            this.btnConfToDg = new System.Windows.Forms.Button();
-            this.dteToDG = new System.Windows.Forms.DateTimePicker();
-            this.lblToDgDate = new System.Windows.Forms.Label();
             this.btnSelectAll = new System.Windows.Forms.Button();
+            this.dgvToDgDetails = new System.Windows.Forms.DataGridView();
             this.colIsSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colPrd_mo_to = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPrd_item_to = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -124,6 +119,11 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colShipId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.chkIsToDg = new System.Windows.Forms.CheckBox();
+            this.btnConfToDg = new System.Windows.Forms.Button();
+            this.dteToDG = new System.Windows.Forms.DateTimePicker();
+            this.lblToDgDate = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picItem)).BeginInit();
@@ -167,11 +167,11 @@
             // btnExit
             // 
             this.btnExit.AutoSize = false;
-            this.btnExit.Font = new System.Drawing.Font("新細明體", 14F);
+            this.btnExit.Font = new System.Drawing.Font("PMingLiU", 14F);
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(130, 66);
+            this.btnExit.Size = new System.Drawing.Size(110, 66);
             this.btnExit.Text = "退出(&X)";
             this.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -184,11 +184,11 @@
             // btnConf
             // 
             this.btnConf.AutoSize = false;
-            this.btnConf.Font = new System.Drawing.Font("新細明體", 14F);
+            this.btnConf.Font = new System.Drawing.Font("PMingLiU", 14F);
             this.btnConf.Image = ((System.Drawing.Image)(resources.GetObject("btnConf.Image")));
             this.btnConf.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnConf.Name = "btnConf";
-            this.btnConf.Size = new System.Drawing.Size(130, 66);
+            this.btnConf.Size = new System.Drawing.Size(115, 66);
             this.btnConf.Text = "確認發貨(&S)";
             this.btnConf.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnConf.Click += new System.EventHandler(this.btnConf_Click);
@@ -201,11 +201,11 @@
             // btnMutRec
             // 
             this.btnMutRec.AutoSize = false;
-            this.btnMutRec.Font = new System.Drawing.Font("新細明體", 14F);
+            this.btnMutRec.Font = new System.Drawing.Font("PMingLiU", 14F);
             this.btnMutRec.Image = ((System.Drawing.Image)(resources.GetObject("btnMutRec.Image")));
             this.btnMutRec.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnMutRec.Name = "btnMutRec";
-            this.btnMutRec.Size = new System.Drawing.Size(130, 66);
+            this.btnMutRec.Size = new System.Drawing.Size(115, 66);
             this.btnMutRec.Text = "多批次(&B)";
             this.btnMutRec.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnMutRec.Click += new System.EventHandler(this.btnMutRec_Click);
@@ -218,11 +218,11 @@
             // btnSearch
             // 
             this.btnSearch.AutoSize = false;
-            this.btnSearch.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft JhengHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
             this.btnSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(130, 66);
+            this.btnSearch.Size = new System.Drawing.Size(110, 66);
             this.btnSearch.Text = "查詢(&F)";
             this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSearch.ToolTipText = "查詢已發貨的記錄";
@@ -236,11 +236,11 @@
             // btnDetails
             // 
             this.btnDetails.AutoSize = false;
-            this.btnDetails.Font = new System.Drawing.Font("新細明體", 14F);
+            this.btnDetails.Font = new System.Drawing.Font("PMingLiU", 14F);
             this.btnDetails.Image = ((System.Drawing.Image)(resources.GetObject("btnDetails.Image")));
             this.btnDetails.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDetails.Name = "btnDetails";
-            this.btnDetails.Size = new System.Drawing.Size(130, 66);
+            this.btnDetails.Size = new System.Drawing.Size(110, 66);
             this.btnDetails.Text = "明細(&P)";
             this.btnDetails.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
@@ -253,11 +253,11 @@
             // btnDelete
             // 
             this.btnDelete.AutoSize = false;
-            this.btnDelete.Font = new System.Drawing.Font("新細明體", 14F);
+            this.btnDelete.Font = new System.Drawing.Font("PMingLiU", 14F);
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(130, 66);
+            this.btnDelete.Size = new System.Drawing.Size(110, 66);
             this.btnDelete.Text = "刪除(&D)";
             this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -298,7 +298,7 @@
             // 
             // btnFindItem
             // 
-            this.btnFindItem.Font = new System.Drawing.Font("新細明體", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnFindItem.Font = new System.Drawing.Font("PMingLiU", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnFindItem.Location = new System.Drawing.Point(415, 8);
             this.btnFindItem.Name = "btnFindItem";
             this.btnFindItem.Size = new System.Drawing.Size(203, 44);
@@ -310,9 +310,9 @@
             // cmbPrdDep
             // 
             this.cmbPrdDep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPrdDep.Font = new System.Drawing.Font("新細明體", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.cmbPrdDep.Font = new System.Drawing.Font("PMingLiU", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cmbPrdDep.FormattingEnabled = true;
-            this.cmbPrdDep.Location = new System.Drawing.Point(713, 180);
+            this.cmbPrdDep.Location = new System.Drawing.Point(625, 177);
             this.cmbPrdDep.Name = "cmbPrdDep";
             this.cmbPrdDep.Size = new System.Drawing.Size(99, 43);
             this.cmbPrdDep.TabIndex = 46;
@@ -321,7 +321,7 @@
             // lblGoods_id
             // 
             this.lblGoods_id.AutoSize = true;
-            this.lblGoods_id.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblGoods_id.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblGoods_id.Location = new System.Drawing.Point(27, 79);
             this.lblGoods_id.Name = "lblGoods_id";
             this.lblGoods_id.Size = new System.Drawing.Size(72, 16);
@@ -331,7 +331,7 @@
             // lblWeg
             // 
             this.lblWeg.AutoSize = true;
-            this.lblWeg.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblWeg.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblWeg.Location = new System.Drawing.Point(59, 177);
             this.lblWeg.Name = "lblWeg";
             this.lblWeg.Size = new System.Drawing.Size(40, 16);
@@ -341,8 +341,8 @@
             // lblDep
             // 
             this.lblDep.AutoSize = true;
-            this.lblDep.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblDep.Location = new System.Drawing.Point(635, 196);
+            this.lblDep.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblDep.Location = new System.Drawing.Point(625, 158);
             this.lblDep.Name = "lblDep";
             this.lblDep.Size = new System.Drawing.Size(72, 16);
             this.lblDep.TabIndex = 35;
@@ -359,7 +359,7 @@
             // 
             // txtWeg
             // 
-            this.txtWeg.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtWeg.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtWeg.Location = new System.Drawing.Point(104, 163);
             this.txtWeg.Multiline = true;
             this.txtWeg.Name = "txtWeg";
@@ -370,7 +370,7 @@
             // lblToDep
             // 
             this.lblToDep.AutoSize = true;
-            this.lblToDep.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblToDep.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblToDep.Location = new System.Drawing.Point(43, 280);
             this.lblToDep.Name = "lblToDep";
             this.lblToDep.Size = new System.Drawing.Size(56, 16);
@@ -380,7 +380,7 @@
             // txtTo_dep
             // 
             this.txtTo_dep.BackColor = System.Drawing.SystemColors.Window;
-            this.txtTo_dep.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtTo_dep.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtTo_dep.Location = new System.Drawing.Point(104, 263);
             this.txtTo_dep.Multiline = true;
             this.txtTo_dep.Name = "txtTo_dep";
@@ -400,7 +400,7 @@
             // txtWipId
             // 
             this.txtWipId.BackColor = System.Drawing.SystemColors.Window;
-            this.txtWipId.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtWipId.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtWipId.Location = new System.Drawing.Point(404, 213);
             this.txtWipId.Multiline = true;
             this.txtWipId.Name = "txtWipId";
@@ -411,7 +411,7 @@
             // lblQty
             // 
             this.lblQty.AutoSize = true;
-            this.lblQty.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblQty.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblQty.Location = new System.Drawing.Point(358, 177);
             this.lblQty.Name = "lblQty";
             this.lblQty.Size = new System.Drawing.Size(40, 16);
@@ -420,7 +420,7 @@
             // 
             // txtPackNum
             // 
-            this.txtPackNum.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtPackNum.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtPackNum.Location = new System.Drawing.Point(104, 213);
             this.txtPackNum.Multiline = true;
             this.txtPackNum.Name = "txtPackNum";
@@ -431,7 +431,7 @@
             // lblPackNum
             // 
             this.lblPackNum.AutoSize = true;
-            this.lblPackNum.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblPackNum.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblPackNum.Location = new System.Drawing.Point(59, 227);
             this.lblPackNum.Name = "lblPackNum";
             this.lblPackNum.Size = new System.Drawing.Size(40, 16);
@@ -440,7 +440,7 @@
             // 
             // txtQty
             // 
-            this.txtQty.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtQty.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtQty.Location = new System.Drawing.Point(404, 163);
             this.txtQty.Multiline = true;
             this.txtQty.Name = "txtQty";
@@ -451,7 +451,7 @@
             // txtGoods_name
             // 
             this.txtGoods_name.BackColor = System.Drawing.SystemColors.Window;
-            this.txtGoods_name.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtGoods_name.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtGoods_name.Location = new System.Drawing.Point(104, 112);
             this.txtGoods_name.Multiline = true;
             this.txtGoods_name.Name = "txtGoods_name";
@@ -462,7 +462,7 @@
             // lblPGoods_name
             // 
             this.lblPGoods_name.AutoSize = true;
-            this.lblPGoods_name.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblPGoods_name.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblPGoods_name.Location = new System.Drawing.Point(27, 131);
             this.lblPGoods_name.Name = "lblPGoods_name";
             this.lblPGoods_name.Size = new System.Drawing.Size(72, 16);
@@ -472,7 +472,7 @@
             // lblWipId
             // 
             this.lblWipId.AutoSize = true;
-            this.lblWipId.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblWipId.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblWipId.Location = new System.Drawing.Point(327, 230);
             this.lblWipId.Name = "lblWipId";
             this.lblWipId.Size = new System.Drawing.Size(72, 16);
@@ -482,7 +482,7 @@
             // lblMo_id
             // 
             this.lblMo_id.AutoSize = true;
-            this.lblMo_id.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblMo_id.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblMo_id.Location = new System.Drawing.Point(27, 22);
             this.lblMo_id.Name = "lblMo_id";
             this.lblMo_id.Size = new System.Drawing.Size(72, 16);
@@ -491,7 +491,7 @@
             // 
             // txtMo_id
             // 
-            this.txtMo_id.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtMo_id.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtMo_id.Location = new System.Drawing.Point(104, 8);
             this.txtMo_id.Multiline = true;
             this.txtMo_id.Name = "txtMo_id";
@@ -501,7 +501,7 @@
             // cmbGoodsId
             // 
             this.cmbGoodsId.DropDownWidth = 700;
-            this.cmbGoodsId.Font = new System.Drawing.Font("新細明體", 26F);
+            this.cmbGoodsId.Font = new System.Drawing.Font("PMingLiU", 26F);
             this.cmbGoodsId.FormattingEnabled = true;
             this.cmbGoodsId.ItemHeight = 35;
             this.cmbGoodsId.Location = new System.Drawing.Point(104, 61);
@@ -513,7 +513,7 @@
             // txtGoods_id
             // 
             this.txtGoods_id.BackColor = System.Drawing.SystemColors.Window;
-            this.txtGoods_id.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtGoods_id.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtGoods_id.Location = new System.Drawing.Point(104, 60);
             this.txtGoods_id.Multiline = true;
             this.txtGoods_id.Name = "txtGoods_id";
@@ -524,7 +524,7 @@
             // lblTransfer_flag
             // 
             this.lblTransfer_flag.AutoSize = true;
-            this.lblTransfer_flag.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblTransfer_flag.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblTransfer_flag.Location = new System.Drawing.Point(444, 17);
             this.lblTransfer_flag.Name = "lblTransfer_flag";
             this.lblTransfer_flag.Size = new System.Drawing.Size(72, 16);
@@ -533,9 +533,9 @@
             // 
             // dteTransferDate
             // 
-            this.dteTransferDate.CalendarFont = new System.Drawing.Font("新細明體", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.dteTransferDate.CalendarFont = new System.Drawing.Font("PMingLiU", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.dteTransferDate.CustomFormat = "yyyy/MM/dd";
-            this.dteTransferDate.Font = new System.Drawing.Font("新細明體", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.dteTransferDate.Font = new System.Drawing.Font("PMingLiU", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.dteTransferDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dteTransferDate.Location = new System.Drawing.Point(110, 3);
             this.dteTransferDate.Name = "dteTransferDate";
@@ -547,14 +547,14 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Lime;
             this.panel3.Controls.Add(this.lblShowMsg);
-            this.panel3.Location = new System.Drawing.Point(639, 3);
+            this.panel3.Location = new System.Drawing.Point(629, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(225, 93);
             this.panel3.TabIndex = 2;
             // 
             // lblShowMsg
             // 
-            this.lblShowMsg.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblShowMsg.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblShowMsg.ForeColor = System.Drawing.Color.Red;
             this.lblShowMsg.Location = new System.Drawing.Point(46, 33);
             this.lblShowMsg.Name = "lblShowMsg";
@@ -576,7 +576,7 @@
             // rdgSent
             // 
             this.rdgSent.Checked = true;
-            this.rdgSent.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rdgSent.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rdgSent.Location = new System.Drawing.Point(42, 6);
             this.rdgSent.Name = "rdgSent";
             this.rdgSent.Size = new System.Drawing.Size(162, 31);
@@ -588,7 +588,7 @@
             // 
             // rdgReceive
             // 
-            this.rdgReceive.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rdgReceive.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rdgReceive.Location = new System.Drawing.Point(285, 6);
             this.rdgReceive.Name = "rdgReceive";
             this.rdgReceive.Size = new System.Drawing.Size(162, 31);
@@ -600,7 +600,7 @@
             // lblDat
             // 
             this.lblDat.AutoSize = true;
-            this.lblDat.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblDat.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblDat.Location = new System.Drawing.Point(27, 18);
             this.lblDat.Name = "lblDat";
             this.lblDat.Size = new System.Drawing.Size(72, 16);
@@ -621,9 +621,9 @@
             // 
             // dteSentDate
             // 
-            this.dteSentDate.CalendarFont = new System.Drawing.Font("新細明體", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.dteSentDate.CalendarFont = new System.Drawing.Font("PMingLiU", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.dteSentDate.CustomFormat = "yyyy/MM/dd";
-            this.dteSentDate.Font = new System.Drawing.Font("新細明體", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.dteSentDate.Font = new System.Drawing.Font("PMingLiU", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.dteSentDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dteSentDate.Location = new System.Drawing.Point(104, 10);
             this.dteSentDate.Name = "dteSentDate";
@@ -633,7 +633,7 @@
             // 
             // lblShowMsg1
             // 
-            this.lblShowMsg1.Font = new System.Drawing.Font("新細明體", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblShowMsg1.Font = new System.Drawing.Font("PMingLiU", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblShowMsg1.ForeColor = System.Drawing.Color.Red;
             this.lblShowMsg1.Location = new System.Drawing.Point(625, 15);
             this.lblShowMsg1.Name = "lblShowMsg1";
@@ -644,7 +644,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(27, 27);
             this.label1.Name = "label1";
@@ -669,7 +669,7 @@
             // lblBarCode
             // 
             this.lblBarCode.AutoSize = true;
-            this.lblBarCode.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblBarCode.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblBarCode.Location = new System.Drawing.Point(43, 69);
             this.lblBarCode.Name = "lblBarCode";
             this.lblBarCode.Size = new System.Drawing.Size(56, 16);
@@ -679,7 +679,7 @@
             // txtBarCode
             // 
             this.txtBarCode.BackColor = System.Drawing.Color.Pink;
-            this.txtBarCode.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtBarCode.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtBarCode.Location = new System.Drawing.Point(110, 52);
             this.txtBarCode.Multiline = true;
             this.txtBarCode.Name = "txtBarCode";
@@ -878,7 +878,7 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.Font = new System.Drawing.Font("新細明體", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnPrint.Font = new System.Drawing.Font("PMingLiU", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnPrint.Location = new System.Drawing.Point(390, 57);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(342, 66);
@@ -889,7 +889,7 @@
             // 
             // btnGenReport
             // 
-            this.btnGenReport.Font = new System.Drawing.Font("新細明體", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnGenReport.Font = new System.Drawing.Font("PMingLiU", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnGenReport.Location = new System.Drawing.Point(28, 57);
             this.btnGenReport.Name = "btnGenReport";
             this.btnGenReport.Size = new System.Drawing.Size(342, 66);
@@ -901,7 +901,7 @@
             // lblMo_id_f
             // 
             this.lblMo_id_f.AutoSize = true;
-            this.lblMo_id_f.Font = new System.Drawing.Font("新細明體", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblMo_id_f.Font = new System.Drawing.Font("PMingLiU", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblMo_id_f.Location = new System.Drawing.Point(19, 14);
             this.lblMo_id_f.Name = "lblMo_id_f";
             this.lblMo_id_f.Size = new System.Drawing.Size(351, 30);
@@ -910,7 +910,7 @@
             // 
             // txtMo_id_f
             // 
-            this.txtMo_id_f.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtMo_id_f.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtMo_id_f.Location = new System.Drawing.Point(390, 7);
             this.txtMo_id_f.Multiline = true;
             this.txtMo_id_f.Name = "txtMo_id_f";
@@ -920,7 +920,7 @@
             // lblTransfer_flag_f
             // 
             this.lblTransfer_flag_f.AutoSize = true;
-            this.lblTransfer_flag_f.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblTransfer_flag_f.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblTransfer_flag_f.Location = new System.Drawing.Point(45, 144);
             this.lblTransfer_flag_f.Name = "lblTransfer_flag_f";
             this.lblTransfer_flag_f.Size = new System.Drawing.Size(72, 16);
@@ -944,7 +944,7 @@
             // 
             this.rdgAll.AutoSize = true;
             this.rdgAll.Checked = true;
-            this.rdgAll.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rdgAll.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rdgAll.Location = new System.Drawing.Point(234, 4);
             this.rdgAll.Name = "rdgAll";
             this.rdgAll.Size = new System.Drawing.Size(84, 31);
@@ -956,7 +956,7 @@
             // rdgSent_f
             // 
             this.rdgSent_f.AutoSize = true;
-            this.rdgSent_f.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rdgSent_f.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rdgSent_f.Location = new System.Drawing.Point(21, 4);
             this.rdgSent_f.Name = "rdgSent_f";
             this.rdgSent_f.Size = new System.Drawing.Size(84, 31);
@@ -967,7 +967,7 @@
             // rdgReceive_f
             // 
             this.rdgReceive_f.AutoSize = true;
-            this.rdgReceive_f.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rdgReceive_f.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rdgReceive_f.Location = new System.Drawing.Point(129, 4);
             this.rdgReceive_f.Name = "rdgReceive_f";
             this.rdgReceive_f.Size = new System.Drawing.Size(84, 31);
@@ -986,6 +986,16 @@
             this.tabToDG.TabIndex = 2;
             this.tabToDG.Text = "確認發貨";
             this.tabToDG.UseVisualStyleBackColor = true;
+            // 
+            // btnSelectAll
+            // 
+            this.btnSelectAll.Location = new System.Drawing.Point(43, 100);
+            this.btnSelectAll.Name = "btnSelectAll";
+            this.btnSelectAll.Size = new System.Drawing.Size(53, 34);
+            this.btnSelectAll.TabIndex = 51;
+            this.btnSelectAll.Text = "全選";
+            this.btnSelectAll.UseVisualStyleBackColor = true;
+            this.btnSelectAll.Click += new System.EventHandler(this.btnSelectAll_Click);
             // 
             // dgvToDgDetails
             // 
@@ -1008,73 +1018,6 @@
             this.dgvToDgDetails.RowTemplate.Height = 80;
             this.dgvToDgDetails.Size = new System.Drawing.Size(880, 617);
             this.dgvToDgDetails.TabIndex = 51;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.chkIsToDg);
-            this.panel1.Controls.Add(this.btnConfToDg);
-            this.panel1.Controls.Add(this.dteToDG);
-            this.panel1.Controls.Add(this.lblToDgDate);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(880, 96);
-            this.panel1.TabIndex = 50;
-            // 
-            // chkIsToDg
-            // 
-            this.chkIsToDg.AutoSize = true;
-            this.chkIsToDg.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.chkIsToDg.Location = new System.Drawing.Point(21, 10);
-            this.chkIsToDg.Name = "chkIsToDg";
-            this.chkIsToDg.Size = new System.Drawing.Size(155, 20);
-            this.chkIsToDg.TabIndex = 50;
-            this.chkIsToDg.Text = "查找已發貨的記錄";
-            this.chkIsToDg.UseVisualStyleBackColor = true;
-            // 
-            // btnConfToDg
-            // 
-            this.btnConfToDg.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnConfToDg.Location = new System.Drawing.Point(649, 37);
-            this.btnConfToDg.Name = "btnConfToDg";
-            this.btnConfToDg.Size = new System.Drawing.Size(115, 43);
-            this.btnConfToDg.TabIndex = 49;
-            this.btnConfToDg.Text = "確認上車(&C)";
-            this.btnConfToDg.UseVisualStyleBackColor = true;
-            this.btnConfToDg.Click += new System.EventHandler(this.btnConfToDg_Click);
-            // 
-            // dteToDG
-            // 
-            this.dteToDG.CalendarFont = new System.Drawing.Font("新細明體", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.dteToDG.CustomFormat = "yyyy/MM/dd";
-            this.dteToDG.Font = new System.Drawing.Font("新細明體", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.dteToDG.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dteToDG.Location = new System.Drawing.Point(110, 37);
-            this.dteToDG.Name = "dteToDG";
-            this.dteToDG.Size = new System.Drawing.Size(514, 43);
-            this.dteToDG.TabIndex = 48;
-            this.dteToDG.Value = new System.DateTime(2019, 9, 26, 0, 0, 0, 0);
-            // 
-            // lblToDgDate
-            // 
-            this.lblToDgDate.AutoSize = true;
-            this.lblToDgDate.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblToDgDate.ForeColor = System.Drawing.Color.Black;
-            this.lblToDgDate.Location = new System.Drawing.Point(21, 54);
-            this.lblToDgDate.Name = "lblToDgDate";
-            this.lblToDgDate.Size = new System.Drawing.Size(78, 16);
-            this.lblToDgDate.TabIndex = 47;
-            this.lblToDgDate.Text = "回DG日期";
-            // 
-            // btnSelectAll
-            // 
-            this.btnSelectAll.Location = new System.Drawing.Point(43, 100);
-            this.btnSelectAll.Name = "btnSelectAll";
-            this.btnSelectAll.Size = new System.Drawing.Size(53, 34);
-            this.btnSelectAll.TabIndex = 51;
-            this.btnSelectAll.Text = "全選";
-            this.btnSelectAll.UseVisualStyleBackColor = true;
-            this.btnSelectAll.Click += new System.EventHandler(this.btnSelectAll_Click);
             // 
             // colIsSelect
             // 
@@ -1141,6 +1084,63 @@
             this.colShipId.Name = "colShipId";
             this.colShipId.ReadOnly = true;
             this.colShipId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.chkIsToDg);
+            this.panel1.Controls.Add(this.btnConfToDg);
+            this.panel1.Controls.Add(this.dteToDG);
+            this.panel1.Controls.Add(this.lblToDgDate);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(880, 96);
+            this.panel1.TabIndex = 50;
+            // 
+            // chkIsToDg
+            // 
+            this.chkIsToDg.AutoSize = true;
+            this.chkIsToDg.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.chkIsToDg.Location = new System.Drawing.Point(21, 10);
+            this.chkIsToDg.Name = "chkIsToDg";
+            this.chkIsToDg.Size = new System.Drawing.Size(155, 20);
+            this.chkIsToDg.TabIndex = 50;
+            this.chkIsToDg.Text = "查找已發貨的記錄";
+            this.chkIsToDg.UseVisualStyleBackColor = true;
+            // 
+            // btnConfToDg
+            // 
+            this.btnConfToDg.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnConfToDg.Location = new System.Drawing.Point(649, 37);
+            this.btnConfToDg.Name = "btnConfToDg";
+            this.btnConfToDg.Size = new System.Drawing.Size(115, 43);
+            this.btnConfToDg.TabIndex = 49;
+            this.btnConfToDg.Text = "確認上車(&C)";
+            this.btnConfToDg.UseVisualStyleBackColor = true;
+            this.btnConfToDg.Click += new System.EventHandler(this.btnConfToDg_Click);
+            // 
+            // dteToDG
+            // 
+            this.dteToDG.CalendarFont = new System.Drawing.Font("PMingLiU", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.dteToDG.CustomFormat = "yyyy/MM/dd";
+            this.dteToDG.Font = new System.Drawing.Font("PMingLiU", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.dteToDG.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dteToDG.Location = new System.Drawing.Point(110, 37);
+            this.dteToDG.Name = "dteToDG";
+            this.dteToDG.Size = new System.Drawing.Size(514, 43);
+            this.dteToDG.TabIndex = 48;
+            this.dteToDG.Value = new System.DateTime(2019, 9, 26, 0, 0, 0, 0);
+            // 
+            // lblToDgDate
+            // 
+            this.lblToDgDate.AutoSize = true;
+            this.lblToDgDate.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblToDgDate.ForeColor = System.Drawing.Color.Black;
+            this.lblToDgDate.Location = new System.Drawing.Point(21, 54);
+            this.lblToDgDate.Name = "lblToDgDate";
+            this.lblToDgDate.Size = new System.Drawing.Size(78, 16);
+            this.lblToDgDate.TabIndex = 47;
+            this.lblToDgDate.Text = "回DG日期";
             // 
             // frmGoodsTransferJx
             // 
