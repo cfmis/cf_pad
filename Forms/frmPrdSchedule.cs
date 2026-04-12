@@ -2421,10 +2421,9 @@ namespace cf_pad.Forms
             if (objModel.prd_start_time != "" && objModel.prd_end_time != "")
             {
                 //林口部，將NEP的直接加入磅貨中，當作組裝批量輸入
-                //122交501的，直接加入磅貨中，當作組裝批量輸入
+                //122交501的，直接加入磅貨中，當作組裝批量輸入 || (objModel.prd_dep == "102" && objModel.to_dep == "501")
                 if ((objModel.prd_dep == "105" && objModel.prd_item.Substring(14, 4) == "NEP0")
-                    || (objModel.prd_dep == "122" && objModel.to_dep == "501")
-                    || (objModel.prd_dep == "102" && objModel.to_dep == "501"))
+                    || (objModel.prd_dep == "122" && objModel.to_dep == "501"))
                 {
                     objModel.conf_flag = "Y";
                     objModel.actual_qty = objModel.prd_qty;

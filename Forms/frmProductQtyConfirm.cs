@@ -270,6 +270,7 @@ namespace cf_pad.Forms
                     //}
                     product_transfer_jx_details objModelJx = new product_transfer_jx_details();
                     objModelJx.Prd_dep = txtFdep.Text.Trim();
+                    objModelJx.wipId = txtFdep.Text.Trim();
                     objModelJx.Transfer_date = clsUtility.changeDateFormat(System.DateTime.Now);
                     objModelJx.sentDate = dteSentDate.Text;
                     objModelJx.Prd_item = txtPrdItem.Text.Trim();
@@ -625,5 +626,29 @@ namespace cf_pad.Forms
             txtWeg.Text = "";
         }
 
+        private void txtQty_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtQty.SelectAll();
+        }
+
+        private void txtWeg_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtWeg.SelectAll();
+        }
+
+        private void txtActualPack_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtActualPack.SelectAll();
+        }
+
+        private void textMo1_MouseDown(object sender, MouseEventArgs e)
+        {
+            textMo1.SelectAll();
+        }
+
+        private void textDep1_MouseDown(object sender, MouseEventArgs e)
+        {
+            textDep1.SelectAll();
+        }
     }
 }
