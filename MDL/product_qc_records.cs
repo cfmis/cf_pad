@@ -69,8 +69,8 @@ namespace cf_pad.MDL
         public string mat_item;
         public string mat_item_desc;
         public string mat_item_lot;
-        public float actual_qty;
-        public float actual_weg;
+        public decimal actual_qty;
+        public decimal actual_weg;
         public int actual_pack_num;
         public string conf_flag;
         public DateTime conf_time;
@@ -353,6 +353,7 @@ namespace cf_pad.MDL
         public string Crtim;
         public string ship_date;
         public string ship_type;
+        public string work_sort;
     }
 
     public class qc_report_spray

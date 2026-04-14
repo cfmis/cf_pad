@@ -213,8 +213,8 @@ namespace cf_pad.Forms
             objModel.conf_time = System.DateTime.Now;
             if (upd_type == "Y")
             {
-                objModel.actual_qty = Convert.ToSingle(txtQty.Text);
-                objModel.actual_weg = Convert.ToSingle(txtWeg.Text);
+                objModel.actual_qty = Math.Round(Convert.ToDecimal(txtQty.Text), 2);
+                objModel.actual_weg = Math.Round(Convert.ToDecimal(txtWeg.Text), 2);
                 objModel.conf_flag = "Y";
             }
             else

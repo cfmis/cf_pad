@@ -122,10 +122,11 @@ namespace cf_pad.CLS
             strSql += string.Format(@" SET XACT_ABORT  ON ");
             strSql += string.Format(@" BEGIN TRANSACTION ");
             strSql += string.Format(@"Insert Into product_transfer_jx_details (Transfer_date,Prd_dep,prd_item,prd_mo,Transfer_flag,transfer_qty,transfer_weg
-                ,wip_id,to_dep,pack_num,sent_date,crusr,crtim) Values " +
-                "('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}')"
+                ,wip_id,to_dep,pack_num,sent_date,work_sort,crusr,crtim) Values " +
+                "('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}')"
                 , Transfer_date, Prd_dep, Prd_item, Prd_mo, objModel.Transfer_flag, objModel.Transfer_qty, objModel.Transfer_weg
-                , objModel.wipId, objModel.To_dep, objModel.packNum, objModel.sentDate, objModel.Crusr, objModel.Crtim);
+                , objModel.wipId, objModel.To_dep, objModel.packNum, objModel.sentDate, objModel.work_sort
+                , objModel.Crusr, objModel.Crtim);
             
             
             strSql += string.Format(@" COMMIT TRANSACTION ");

@@ -81,19 +81,6 @@
             this.lblBarCode = new System.Windows.Forms.Label();
             this.txtBarCode = new System.Windows.Forms.TextBox();
             this.dgvDetails = new System.Windows.Forms.DataGridView();
-            this.colPrd_mo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrd_item_cdesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTransfer_qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTransfer_weg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPack_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTransfer_flag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCrtim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrd_item = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTransfer_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrd_dep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colWipId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTo_dep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrd_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabEdit = new System.Windows.Forms.TabPage();
             this.tabBrowse = new System.Windows.Forms.TabPage();
@@ -124,6 +111,22 @@
             this.btnConfToDg = new System.Windows.Forms.Button();
             this.dteToDG = new System.Windows.Forms.DateTimePicker();
             this.lblToDgDate = new System.Windows.Forms.Label();
+            this.cmbWorkSort = new System.Windows.Forms.ComboBox();
+            this.lblWorkSort = new System.Windows.Forms.Label();
+            this.colPrd_mo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrd_item_cdesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTransfer_qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTransfer_weg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPack_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTransfer_flag = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCrtim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrd_item = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTransfer_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrd_dep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colWipId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTo_dep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrd_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colWorkSort = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picItem)).BeginInit();
@@ -269,10 +272,12 @@
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.cmbWorkSort);
             this.panel7.Controls.Add(this.btnFindItem);
             this.panel7.Controls.Add(this.cmbPrdDep);
             this.panel7.Controls.Add(this.lblGoods_id);
             this.panel7.Controls.Add(this.lblWeg);
+            this.panel7.Controls.Add(this.lblWorkSort);
             this.panel7.Controls.Add(this.lblDep);
             this.panel7.Controls.Add(this.txtPrd_id);
             this.panel7.Controls.Add(this.txtWeg);
@@ -313,7 +318,7 @@
             this.cmbPrdDep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPrdDep.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cmbPrdDep.FormattingEnabled = true;
-            this.cmbPrdDep.Location = new System.Drawing.Point(625, 177);
+            this.cmbPrdDep.Location = new System.Drawing.Point(629, 187);
             this.cmbPrdDep.Name = "cmbPrdDep";
             this.cmbPrdDep.Size = new System.Drawing.Size(99, 47);
             this.cmbPrdDep.TabIndex = 46;
@@ -345,9 +350,9 @@
             this.lblDep.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblDep.Location = new System.Drawing.Point(625, 158);
             this.lblDep.Name = "lblDep";
-            this.lblDep.Size = new System.Drawing.Size(73, 20);
+            this.lblDep.Size = new System.Drawing.Size(41, 20);
             this.lblDep.TabIndex = 35;
-            this.lblDep.Text = "發貨部門";
+            this.lblDep.Text = "部門";
             this.lblDep.Visible = false;
             // 
             // txtPrd_id
@@ -707,7 +712,8 @@
             this.colPrd_dep,
             this.colWipId,
             this.colTo_dep,
-            this.colPrd_id});
+            this.colPrd_id,
+            this.colWorkSort});
             this.dgvDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDetails.Location = new System.Drawing.Point(3, 320);
             this.dgvDetails.Name = "dgvDetails";
@@ -718,107 +724,6 @@
             this.dgvDetails.TabIndex = 2;
             this.dgvDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetails_CellClick);
             this.dgvDetails.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvDetails_RowPostPaint);
-            // 
-            // colPrd_mo
-            // 
-            this.colPrd_mo.DataPropertyName = "Prd_mo";
-            this.colPrd_mo.HeaderText = "制單編號";
-            this.colPrd_mo.Name = "colPrd_mo";
-            this.colPrd_mo.ReadOnly = true;
-            this.colPrd_mo.Width = 120;
-            // 
-            // colPrd_item_cdesc
-            // 
-            this.colPrd_item_cdesc.DataPropertyName = "Prd_item_cdesc";
-            this.colPrd_item_cdesc.HeaderText = "物料描述";
-            this.colPrd_item_cdesc.Name = "colPrd_item_cdesc";
-            this.colPrd_item_cdesc.ReadOnly = true;
-            this.colPrd_item_cdesc.Width = 260;
-            // 
-            // colTransfer_qty
-            // 
-            this.colTransfer_qty.DataPropertyName = "Transfer_qty";
-            this.colTransfer_qty.HeaderText = "數量";
-            this.colTransfer_qty.Name = "colTransfer_qty";
-            this.colTransfer_qty.ReadOnly = true;
-            // 
-            // colTransfer_weg
-            // 
-            this.colTransfer_weg.DataPropertyName = "Transfer_weg";
-            this.colTransfer_weg.HeaderText = "重量";
-            this.colTransfer_weg.Name = "colTransfer_weg";
-            this.colTransfer_weg.ReadOnly = true;
-            // 
-            // colPack_num
-            // 
-            this.colPack_num.DataPropertyName = "pack_num";
-            this.colPack_num.HeaderText = "包數";
-            this.colPack_num.Name = "colPack_num";
-            this.colPack_num.ReadOnly = true;
-            this.colPack_num.Width = 80;
-            // 
-            // colTransfer_flag
-            // 
-            this.colTransfer_flag.DataPropertyName = "Transfer_flag";
-            this.colTransfer_flag.HeaderText = "標識";
-            this.colTransfer_flag.Name = "colTransfer_flag";
-            this.colTransfer_flag.ReadOnly = true;
-            this.colTransfer_flag.Width = 60;
-            // 
-            // colCrtim
-            // 
-            this.colCrtim.DataPropertyName = "crtim_str";
-            this.colCrtim.HeaderText = "錄入時間";
-            this.colCrtim.Name = "colCrtim";
-            this.colCrtim.ReadOnly = true;
-            this.colCrtim.Width = 160;
-            // 
-            // colPrd_item
-            // 
-            this.colPrd_item.DataPropertyName = "Prd_item";
-            this.colPrd_item.HeaderText = "物料編號";
-            this.colPrd_item.Name = "colPrd_item";
-            this.colPrd_item.ReadOnly = true;
-            this.colPrd_item.Width = 200;
-            // 
-            // colTransfer_date
-            // 
-            this.colTransfer_date.DataPropertyName = "Transfer_date";
-            this.colTransfer_date.HeaderText = "日期";
-            this.colTransfer_date.Name = "colTransfer_date";
-            this.colTransfer_date.ReadOnly = true;
-            // 
-            // colPrd_dep
-            // 
-            this.colPrd_dep.DataPropertyName = "Prd_dep";
-            this.colPrd_dep.HeaderText = "發發部門";
-            this.colPrd_dep.Name = "colPrd_dep";
-            this.colPrd_dep.ReadOnly = true;
-            this.colPrd_dep.Width = 80;
-            // 
-            // colWipId
-            // 
-            this.colWipId.DataPropertyName = "wip_id";
-            this.colWipId.HeaderText = "負責部門";
-            this.colWipId.Name = "colWipId";
-            this.colWipId.ReadOnly = true;
-            this.colWipId.Width = 80;
-            // 
-            // colTo_dep
-            // 
-            this.colTo_dep.DataPropertyName = "to_dep";
-            this.colTo_dep.HeaderText = "收貨部門";
-            this.colTo_dep.Name = "colTo_dep";
-            this.colTo_dep.ReadOnly = true;
-            this.colTo_dep.Width = 80;
-            // 
-            // colPrd_id
-            // 
-            this.colPrd_id.DataPropertyName = "Prd_id";
-            this.colPrd_id.HeaderText = "序號";
-            this.colPrd_id.Name = "colPrd_id";
-            this.colPrd_id.ReadOnly = true;
-            this.colPrd_id.Width = 80;
             // 
             // tabControl1
             // 
@@ -1145,6 +1050,134 @@
             this.lblToDgDate.TabIndex = 47;
             this.lblToDgDate.Text = "回DG日期";
             // 
+            // cmbWorkSort
+            // 
+            this.cmbWorkSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbWorkSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.cmbWorkSort.FormattingEnabled = true;
+            this.cmbWorkSort.Location = new System.Drawing.Point(404, 261);
+            this.cmbWorkSort.Name = "cmbWorkSort";
+            this.cmbWorkSort.Size = new System.Drawing.Size(214, 47);
+            this.cmbWorkSort.TabIndex = 49;
+            // 
+            // lblWorkSort
+            // 
+            this.lblWorkSort.AutoSize = true;
+            this.lblWorkSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblWorkSort.Location = new System.Drawing.Point(327, 280);
+            this.lblWorkSort.Name = "lblWorkSort";
+            this.lblWorkSort.Size = new System.Drawing.Size(73, 20);
+            this.lblWorkSort.TabIndex = 35;
+            this.lblWorkSort.Text = "工序分類";
+            // 
+            // colPrd_mo
+            // 
+            this.colPrd_mo.DataPropertyName = "Prd_mo";
+            this.colPrd_mo.HeaderText = "制單編號";
+            this.colPrd_mo.Name = "colPrd_mo";
+            this.colPrd_mo.ReadOnly = true;
+            this.colPrd_mo.Width = 120;
+            // 
+            // colPrd_item_cdesc
+            // 
+            this.colPrd_item_cdesc.DataPropertyName = "Prd_item_cdesc";
+            this.colPrd_item_cdesc.HeaderText = "物料描述";
+            this.colPrd_item_cdesc.Name = "colPrd_item_cdesc";
+            this.colPrd_item_cdesc.ReadOnly = true;
+            this.colPrd_item_cdesc.Width = 260;
+            // 
+            // colTransfer_qty
+            // 
+            this.colTransfer_qty.DataPropertyName = "Transfer_qty";
+            this.colTransfer_qty.HeaderText = "數量";
+            this.colTransfer_qty.Name = "colTransfer_qty";
+            this.colTransfer_qty.ReadOnly = true;
+            // 
+            // colTransfer_weg
+            // 
+            this.colTransfer_weg.DataPropertyName = "Transfer_weg";
+            this.colTransfer_weg.HeaderText = "重量";
+            this.colTransfer_weg.Name = "colTransfer_weg";
+            this.colTransfer_weg.ReadOnly = true;
+            // 
+            // colPack_num
+            // 
+            this.colPack_num.DataPropertyName = "pack_num";
+            this.colPack_num.HeaderText = "包數";
+            this.colPack_num.Name = "colPack_num";
+            this.colPack_num.ReadOnly = true;
+            this.colPack_num.Width = 80;
+            // 
+            // colTransfer_flag
+            // 
+            this.colTransfer_flag.DataPropertyName = "Transfer_flag";
+            this.colTransfer_flag.HeaderText = "標識";
+            this.colTransfer_flag.Name = "colTransfer_flag";
+            this.colTransfer_flag.ReadOnly = true;
+            this.colTransfer_flag.Width = 60;
+            // 
+            // colCrtim
+            // 
+            this.colCrtim.DataPropertyName = "crtim_str";
+            this.colCrtim.HeaderText = "錄入時間";
+            this.colCrtim.Name = "colCrtim";
+            this.colCrtim.ReadOnly = true;
+            this.colCrtim.Width = 160;
+            // 
+            // colPrd_item
+            // 
+            this.colPrd_item.DataPropertyName = "Prd_item";
+            this.colPrd_item.HeaderText = "物料編號";
+            this.colPrd_item.Name = "colPrd_item";
+            this.colPrd_item.ReadOnly = true;
+            this.colPrd_item.Width = 200;
+            // 
+            // colTransfer_date
+            // 
+            this.colTransfer_date.DataPropertyName = "Transfer_date";
+            this.colTransfer_date.HeaderText = "日期";
+            this.colTransfer_date.Name = "colTransfer_date";
+            this.colTransfer_date.ReadOnly = true;
+            // 
+            // colPrd_dep
+            // 
+            this.colPrd_dep.DataPropertyName = "Prd_dep";
+            this.colPrd_dep.HeaderText = "發發部門";
+            this.colPrd_dep.Name = "colPrd_dep";
+            this.colPrd_dep.ReadOnly = true;
+            this.colPrd_dep.Width = 80;
+            // 
+            // colWipId
+            // 
+            this.colWipId.DataPropertyName = "wip_id";
+            this.colWipId.HeaderText = "負責部門";
+            this.colWipId.Name = "colWipId";
+            this.colWipId.ReadOnly = true;
+            this.colWipId.Width = 80;
+            // 
+            // colTo_dep
+            // 
+            this.colTo_dep.DataPropertyName = "to_dep";
+            this.colTo_dep.HeaderText = "收貨部門";
+            this.colTo_dep.Name = "colTo_dep";
+            this.colTo_dep.ReadOnly = true;
+            this.colTo_dep.Width = 80;
+            // 
+            // colPrd_id
+            // 
+            this.colPrd_id.DataPropertyName = "Prd_id";
+            this.colPrd_id.HeaderText = "序號";
+            this.colPrd_id.Name = "colPrd_id";
+            this.colPrd_id.ReadOnly = true;
+            this.colPrd_id.Width = 80;
+            // 
+            // colWorkSort
+            // 
+            this.colWorkSort.DataPropertyName = "work_sort";
+            this.colWorkSort.HeaderText = "工序分類";
+            this.colWorkSort.Name = "colWorkSort";
+            this.colWorkSort.ReadOnly = true;
+            // 
             // frmGoodsTransferJx
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1246,19 +1279,6 @@
         private System.Windows.Forms.TextBox txtWipId;
         private System.Windows.Forms.Label lblWipId;
         private System.Windows.Forms.ComboBox cmbPrdDep;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPrd_mo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPrd_item_cdesc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTransfer_qty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTransfer_weg;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPack_num;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTransfer_flag;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCrtim;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPrd_item;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTransfer_date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPrd_dep;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colWipId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTo_dep;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPrd_id;
         private System.Windows.Forms.Button btnGenReport;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.Button btnPrint;
@@ -1283,5 +1303,21 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn colShipId;
+        private System.Windows.Forms.ComboBox cmbWorkSort;
+        private System.Windows.Forms.Label lblWorkSort;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrd_mo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrd_item_cdesc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTransfer_qty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTransfer_weg;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPack_num;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTransfer_flag;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCrtim;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrd_item;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTransfer_date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrd_dep;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colWipId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTo_dep;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrd_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colWorkSort;
     }
 }

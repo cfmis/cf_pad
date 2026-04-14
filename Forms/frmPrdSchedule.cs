@@ -2427,7 +2427,7 @@ namespace cf_pad.Forms
                 {
                     objModel.conf_flag = "Y";
                     objModel.actual_qty = objModel.prd_qty;
-                    objModel.actual_weg = objModel.prd_weg;
+                    objModel.actual_weg = Math.Round(Convert.ToDecimal(objModel.prd_weg), 2);
                     objModel.conf_time = DateTime.Now;
                 }
             }

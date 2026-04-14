@@ -161,6 +161,7 @@ namespace cf_pad.Forms
             txtPackNum.Text = "";
             lblShowMsg.Text = "信息提示";
             picItem.Image = null;
+            //cmbWorkSort.SelectedValue = "";
             //rdgSent.Checked = false;
             //rdgReceive.Checked = false;
             SetGoodsComboxVisible(0);
@@ -273,7 +274,16 @@ namespace cf_pad.Forms
             //        cmbPrdDep.SelectedValue = "203";
             //}
 
-
+            string strSql = "";
+            strSql = " SELECT work_group,Rtrim(work_group)+'--'+Rtrim(group_desc) AS group_desc" +
+                " FROM work_group WHERE ( dep='128'" + " AND group_type='" + "0" + "') " + " OR dep='" + "000" + "' ";
+            DataTable dtWorkSort = clsPublicOfPad.ExecuteSqlReturnDataTable(strSql);
+            if (dtWorkSort.Rows.Count > 0)
+            {
+                cmbWorkSort.DataSource = dtWorkSort;
+                cmbWorkSort.DisplayMember = "group_desc";
+                cmbWorkSort.ValueMember = "work_group";
+            }
         }
         private void btnConf_Click(object sender, EventArgs e)
         {
@@ -290,10 +300,11 @@ namespace cf_pad.Forms
             objModel.Prd_dep = cmbPrdDep.SelectedValue.ToString().Trim();
             objModel.Transfer_date = dteTransferDate.Text;
             objModel.sentDate = dteSentDate.Text;
-            if (cmbGoodsId.Visible == false)
+            if (cmbGoodsId.Visible == false) 
                 objModel.Prd_item = txtGoods_id.Text;
             else
                 objModel.Prd_item = cmbGoodsId.SelectedValue == null ? "" : cmbGoodsId.SelectedValue.ToString();
+            objModel.work_sort = cmbWorkSort.SelectedValue == null ? "" : cmbWorkSort.SelectedValue.ToString();
             objModel.Prd_mo = txtMo_id.Text;
             objModel.Transfer_flag = 0;
             if (rdgReceive.Checked == true)
@@ -391,6 +402,7 @@ namespace cf_pad.Forms
             txtWipId.Text = dr.Cells["colWipId"].Value.ToString();
             txtTo_dep.Text = dr.Cells["colTo_dep"].Value.ToString();
             txtPackNum.Text = dr.Cells["colPack_num"].Value.ToString();
+            cmbWorkSort.SelectedValue = dr.Cells["colWorkSort"].Value.ToString();
             rdgSent.Checked = false;
             rdgReceive.Checked = false;
             if (Convert.ToInt32(dr.Cells["colTransfer_flag"].Value.ToString()) == 1)
