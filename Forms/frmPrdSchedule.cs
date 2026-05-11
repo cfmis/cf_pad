@@ -1118,7 +1118,7 @@ namespace cf_pad.Forms
             string dep = cmbProductDept.SelectedValue.ToString().Trim();
             string machine_id = txtMachine.Text.Trim();;
             string machine_id_part=(machine_id.Length >=3 ? machine_id.Substring(0,3):"");
-            if (dep == "102" || dep == "104" || dep == "124" || dep == "122" || (dep == "105" && cmbGroup.Text != "BC01")
+            if (dep == "102" || dep == "104" || dep == "124" || dep == "122" || dep == "322" || (dep == "105" && cmbGroup.Text != "BC01")
                || (dep == "105" && cmbGroup.Text == "BC01" && machine_id_part == "NTR"))
             {
                 strSql = @" SELECT machine_id,machine_mul,machine_rate FROM machine_std 
@@ -2000,7 +2000,7 @@ namespace cf_pad.Forms
                 else
                 {
                     if (cmbProductDept.Text == "302" || cmbProductDept.Text == "322")//合金
-                        txtMachine.Text = "ABL-";
+                        txtMachine.Text = "ABY-";
                     else
                     {
                         if (cmbProductDept.Text == "203")//扣部--裝嵌
