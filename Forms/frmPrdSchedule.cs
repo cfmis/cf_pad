@@ -139,7 +139,7 @@ namespace cf_pad.Forms
             else
             {
                 if (userid_part == "ALY")
-                    cmbProductDept.Text = "302";
+                    cmbProductDept.Text = "322";
                 else
                 {
                     if (userid_part == "BLK")
