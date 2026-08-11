@@ -132,12 +132,12 @@ namespace cf_pad.Forms
             cmbProductDept.DisplayMember = "int9loc";
             cmbProductDept.ValueMember = "int9loc";
             string userid_part=_userid.Substring(0, 3);
-            if (userid_part == "BUT")
-            {
-                cmbProductDept.Text = "102";
-            }
-            else
-            {
+            //if (userid_part == "BUT")
+            //{
+            //    cmbProductDept.Text = "102";
+            //}
+            //else
+            //{
                 if (userid_part == "ALY")
                     cmbProductDept.Text = "322";
                 else
@@ -150,7 +150,7 @@ namespace cf_pad.Forms
                             cmbProductDept.Text = "107";
                     }
                 }
-            }
+            //}
             if (_userid == "BUK01")
                 cmbProductDept.Text = "202";
             else
@@ -158,6 +158,10 @@ namespace cf_pad.Forms
                 if (_userid == "BUK02")
                     cmbProductDept.Text = "203";
             }
+            if(_userid=="BUT01")
+                cmbProductDept.Text = "102";
+            if (_userid == "BUT02")
+                cmbProductDept.Text = "103";
             //初始化工作類型
             cmbWorkType.DataSource = dtWork_type;
             cmbWorkType.DisplayMember = "work_type_desc";
@@ -227,7 +231,7 @@ namespace cf_pad.Forms
                 }
             }
             else
-                if (cmbProductDept.Text == "102")
+                if (cmbProductDept.Text == "102" || cmbProductDept.Text == "103")
                     cmbGroup.Text = "BA01";
         }
         //檢查工種
@@ -1118,7 +1122,7 @@ namespace cf_pad.Forms
             string dep = cmbProductDept.SelectedValue.ToString().Trim();
             string machine_id = txtMachine.Text.Trim();;
             string machine_id_part=(machine_id.Length >=3 ? machine_id.Substring(0,3):"");
-            if (dep == "102" || dep == "104" || dep == "124" || dep == "122" || dep == "322" || (dep == "105" && cmbGroup.Text != "BC01")
+            if (dep == "102" || dep == "103" || dep == "104" || dep == "124" || dep == "122" || dep == "322" || (dep == "105" && cmbGroup.Text != "BC01")
                || (dep == "105" && cmbGroup.Text == "BC01" && machine_id_part == "NTR"))
             {
                 strSql = @" SELECT machine_id,machine_mul,machine_rate FROM machine_std 
@@ -1203,14 +1207,8 @@ namespace cf_pad.Forms
                     }
                 }
             }
-            try
-            {
-                dtMachine_std = clsPublicOfPad.ExecuteSqlReturnDataTable(strSql);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            dtMachine_std = clsPublicOfPad.ExecuteSqlReturnDataTable(strSql);
+
         }
 
 
@@ -1219,26 +1217,19 @@ namespace cf_pad.Forms
         {
             DataTable mac_tb;
             string strSql = " SELECT resource_id AS machine_id,standby2 FROM " + remote_db + "cd_resource" +
-                   " WHERE department_id='" + cmbProductDept.SelectedValue.ToString() + "' AND resource_id ='" + txtMachine.Text.Trim() + "' ";
-            try
+                   " WHERE resource_id ='" + txtMachine.Text.Trim() + "' ";
+            mac_tb = clsPublicOfPad.ExecuteSqlReturnDataTable(strSql);
+            if (mac_tb.Rows.Count == 0)
             {
-                mac_tb = clsPublicOfPad.ExecuteSqlReturnDataTable(strSql);
-                if (mac_tb.Rows.Count == 0)
-                {
-                    MessageBox.Show("機器代碼不存在,請重新輸入!");
-                    return false;
-                }
-                else
-                {
-                    if (replace_type==1)//獲取機器難度
-                        txtDifficulty_level.Text = mac_tb.Rows[0]["standby2"].ToString();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("機器代碼不存在,請重新輸入!");
                 return false;
             }
+            else
+            {
+                if (replace_type == 1)//獲取機器難度
+                    txtDifficulty_level.Text = mac_tb.Rows[0]["standby2"].ToString();
+            }
+            
             return true;
         }
 
@@ -1269,7 +1260,7 @@ namespace cf_pad.Forms
             {
                 GetMachine_std();//獲取機器的各項標準數據
                 fill_textbox_machine_std();//填充機器各項標準
-                if (cmbProductDept.Text == "102")
+                if (cmbProductDept.Text == "102" || cmbProductDept.Text == "103")
                 {
                     txtDifficulty_level.Text = "";
                     checkMachine(1);//獲取機器難度
@@ -2037,8 +2028,12 @@ namespace cf_pad.Forms
                         }
                     }
                 }
-                
-                    
+                if (cmbProductDept.Text == "103")
+                {
+                    txtMachine.Text = "NDG-";
+                }
+
+
                 txtMachine.SelectionStart = txtMachine.Text.Length;
             }
 
