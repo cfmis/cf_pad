@@ -51,10 +51,20 @@ namespace cf_pad.Forms
             dtReport.Columns.Add("brand_name_custom", typeof(string));
             dtReport.Columns.Add("division", typeof(string));
 
+            dtReport.Columns.Add("po", typeof(string));
+            dtReport.Columns.Add("do_color", typeof(string));
+            dtReport.Columns.Add("artwork", typeof(string));
+            dtReport.Columns.Add("name_goods_cn", typeof(string));
+
             dtBom.Columns.Add("flag_select", typeof(bool));
             dtBom.Columns.Add("goods_id", typeof(string));
             dtBom.Columns.Add("primary_key", typeof(string));
             dtBom.Columns.Add("goods_desc", typeof(string));
+
+            dtBom.Columns.Add("po", typeof(string));
+            dtBom.Columns.Add("do_color", typeof(string));
+            dtBom.Columns.Add("artwork", typeof(string));
+            dtBom.Columns.Add("name_goods_cn", typeof(string));
         }
 
         private void frmPackingLabel_Load(object sender, EventArgs e)
@@ -115,8 +125,7 @@ namespace cf_pad.Forms
                     if (dtLabel.Rows.Count > 0)
                     {
                         cmbItems.Text = dtLabel.Rows[0]["goods_id"].ToString();
-                        Fill_Combox(dtLabel);
-                                                                  
+                        FillCombox(dtLabel);                                                                  
                         if (chkAutoPrint.Checked)
                         {
                             Print("P");
@@ -149,13 +158,18 @@ namespace cf_pad.Forms
                         lblBrand_name.Text = "";
                         lblDivision.Text = "";
                         lblMo_group.Text = "";
+
+                        lblPo.Text = "";
+                        lblArtwork.Text = "";
+                        lblDo_color.Text = "";
+                        lblName_goods_cn.Text = "";
                         return;
                     }                    
                     break;
             }
         }
 
-        private void Fill_Combox(DataTable dt)
+        private void FillCombox(DataTable dt)
         {
             cmbItems.Items.Clear();
             cmbCartonSize.Text="";
@@ -176,10 +190,10 @@ namespace cf_pad.Forms
                     cmbItems.Text = dt.Rows[0]["goods_id"].ToString();
                     lblItem_total.Text = dt.Rows.Count.ToString();
                 }
-                Select_Item(cmbItems.Text);
+                SelectItem(cmbItems.Text);
             }                       
         }
-        private void Select_Item(string pGoods_id)
+        private void SelectItem(string pGoods_id)
         {
             DataRow[] dr ;
             if (chkIsFinish.Checked)
@@ -213,11 +227,16 @@ namespace cf_pad.Forms
             cmbQty.Text = "SET";// "PCS";
             cmbNetUnit.Text = "KG";
             cmbCrossUnit.Text = "KG";
+
+            lblPo.Text = dr[0]["po"].ToString();
+            lblArtwork.Text = dr[0]["artwork"].ToString();
+            lblDo_color.Text = dr[0]["do_color"].ToString();
+            lblName_goods_cn.Text = dr[0]["name_goods_cn"].ToString();
         }
 
         private void cmbItems_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Select_Item(cmbItems.Text);
+            SelectItem(cmbItems.Text);
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -296,10 +315,23 @@ namespace cf_pad.Forms
                     newRow["brand_name_custom"] = lblBrand_name.Text;
                     newRow["flag_both"] = chkBoth.Checked?"Y":"N";//紙箱正面,側面標簽列是否一起列印標識
                     newRow["division"] = lblDivision.Text;
+
+                    newRow["po"] = lblPo.Text;
+                    newRow["do_color"] = lblDo_color.Text;
+                    newRow["artwork"] = lblArtwork.Text;
+                    newRow["name_goods_cn"] = lblName_goods_cn.Text;
                     dtReport.Rows.Add(newRow);
                 }
-
-                xrPackingLabel oRepot = new xrPackingLabel() { DataSource = dtReport };
+                XtraReport oRepot;
+                if (dtReport.Rows[0]["it_customer"].ToString() != "DD-S0652")
+                {
+                    oRepot = new xrPackingLabel() { DataSource = dtReport };
+                }
+                else
+                {
+                    //H组要求跟回客人(DD-S0652)的标签格式
+                    oRepot = new xrPackingLabelSpc() { DataSource = dtReport }; 
+                }                
                 oRepot.CreateDocument();
                 oRepot.PrintingSystem.ShowMarginsWarning = false;
 
@@ -500,7 +532,7 @@ namespace cf_pad.Forms
 
         private void chkIsFinish_MouseUp(object sender, MouseEventArgs e)
         {
-            Fill_Combox(dtLabel);                        
+            FillCombox(dtLabel);                        
         }
 
         

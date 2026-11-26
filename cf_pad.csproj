@@ -454,6 +454,12 @@
     <Compile Include="Reports\xrPackingLabel.Designer.cs">
       <DependentUpon>xrPackingLabel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\xrPackingLabelSpc.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\xrPackingLabelSpc.designer.cs">
+      <DependentUpon>xrPackingLabelSpc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\xrPackingMo.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -624,6 +630,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\xrPackingLabel.resx">
       <DependentUpon>xrPackingLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\xrPackingLabelSpc.resx">
+      <DependentUpon>xrPackingLabelSpc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\xrPackingMo.resx">
       <DependentUpon>xrPackingMo.cs</DependentUpon>

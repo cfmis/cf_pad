@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.chkSuit = new System.Windows.Forms.CheckBox();
             this.cmbCartonSize = new System.Windows.Forms.ComboBox();
@@ -57,6 +57,12 @@
             this.lblRoss_weiht = new System.Windows.Forms.Label();
             this.lblNet_weiht = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlSuit = new System.Windows.Forms.Panel();
+            this.dgvBom = new System.Windows.Forms.DataGridView();
+            this.chkSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.goods_id1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.primary_key1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.goods_desc1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblMo_group = new System.Windows.Forms.Label();
             this.lblDivision = new System.Windows.Forms.Label();
             this.lblBrand_name = new System.Windows.Forms.Label();
@@ -78,12 +84,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.pnlSuit = new System.Windows.Forms.Panel();
-            this.dgvBom = new System.Windows.Forms.DataGridView();
-            this.chkSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.goods_id1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.primary_key1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.goods_desc1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblPo = new System.Windows.Forms.Label();
+            this.lblDo_color = new System.Windows.Forms.Label();
+            this.lblArtwork = new System.Windows.Forms.Label();
+            this.lblName_goods_cn = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -418,6 +422,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.lblName_goods_cn);
+            this.panel2.Controls.Add(this.lblArtwork);
+            this.panel2.Controls.Add(this.lblDo_color);
+            this.panel2.Controls.Add(this.lblPo);
             this.panel2.Controls.Add(this.pnlSuit);
             this.panel2.Controls.Add(this.lblMo_group);
             this.panel2.Controls.Add(this.lblDivision);
@@ -445,13 +453,88 @@
             this.panel2.Size = new System.Drawing.Size(818, 469);
             this.panel2.TabIndex = 3;
             // 
+            // pnlSuit
+            // 
+            this.pnlSuit.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlSuit.Controls.Add(this.dgvBom);
+            this.pnlSuit.Location = new System.Drawing.Point(256, 2);
+            this.pnlSuit.Name = "pnlSuit";
+            this.pnlSuit.Size = new System.Drawing.Size(558, 210);
+            this.pnlSuit.TabIndex = 64;
+            this.pnlSuit.Visible = false;
+            // 
+            // dgvBom
+            // 
+            this.dgvBom.AllowUserToAddRows = false;
+            this.dgvBom.AllowUserToDeleteRows = false;
+            this.dgvBom.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvBom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBom.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.chkSelect,
+            this.goods_id1,
+            this.primary_key1,
+            this.goods_desc1});
+            this.dgvBom.Location = new System.Drawing.Point(4, 3);
+            this.dgvBom.Name = "dgvBom";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBom.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvBom.RowHeadersWidth = 30;
+            this.dgvBom.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("PMingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.dgvBom.RowTemplate.Height = 35;
+            this.dgvBom.Size = new System.Drawing.Size(549, 204);
+            this.dgvBom.TabIndex = 3;
+            // 
+            // chkSelect
+            // 
+            this.chkSelect.DataPropertyName = "flag_select";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.NullValue = false;
+            this.chkSelect.DefaultCellStyle = dataGridViewCellStyle1;
+            this.chkSelect.HeaderText = "   ";
+            this.chkSelect.Name = "chkSelect";
+            this.chkSelect.Width = 50;
+            // 
+            // goods_id1
+            // 
+            this.goods_id1.DataPropertyName = "goods_id";
+            this.goods_id1.HeaderText = "貨品編號";
+            this.goods_id1.Name = "goods_id1";
+            this.goods_id1.ReadOnly = true;
+            this.goods_id1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.goods_id1.Width = 250;
+            // 
+            // primary_key1
+            // 
+            this.primary_key1.DataPropertyName = "primary_key";
+            this.primary_key1.HeaderText = "";
+            this.primary_key1.Name = "primary_key1";
+            this.primary_key1.ReadOnly = true;
+            this.primary_key1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.primary_key1.Width = 30;
+            // 
+            // goods_desc1
+            // 
+            this.goods_desc1.DataPropertyName = "goods_desc";
+            this.goods_desc1.HeaderText = "貨品描述";
+            this.goods_desc1.Name = "goods_desc1";
+            this.goods_desc1.ReadOnly = true;
+            this.goods_desc1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.goods_desc1.Width = 230;
+            // 
             // lblMo_group
             // 
             this.lblMo_group.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblMo_group.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblMo_group.Location = new System.Drawing.Point(135, 13);
+            this.lblMo_group.Location = new System.Drawing.Point(135, 6);
             this.lblMo_group.Name = "lblMo_group";
-            this.lblMo_group.Size = new System.Drawing.Size(88, 31);
+            this.lblMo_group.Size = new System.Drawing.Size(88, 18);
             this.lblMo_group.TabIndex = 63;
             this.lblMo_group.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblMo_group.Visible = false;
@@ -460,9 +543,9 @@
             // 
             this.lblDivision.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblDivision.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblDivision.Location = new System.Drawing.Point(135, 52);
+            this.lblDivision.Location = new System.Drawing.Point(135, 29);
             this.lblDivision.Name = "lblDivision";
-            this.lblDivision.Size = new System.Drawing.Size(88, 31);
+            this.lblDivision.Size = new System.Drawing.Size(88, 19);
             this.lblDivision.TabIndex = 62;
             this.lblDivision.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblDivision.Visible = false;
@@ -471,9 +554,9 @@
             // 
             this.lblBrand_name.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblBrand_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblBrand_name.Location = new System.Drawing.Point(9, 47);
+            this.lblBrand_name.Location = new System.Drawing.Point(9, 28);
             this.lblBrand_name.Name = "lblBrand_name";
-            this.lblBrand_name.Size = new System.Drawing.Size(120, 40);
+            this.lblBrand_name.Size = new System.Drawing.Size(120, 20);
             this.lblBrand_name.TabIndex = 61;
             this.lblBrand_name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblBrand_name.Visible = false;
@@ -484,7 +567,7 @@
             this.lblBrand_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblBrand_id.Location = new System.Drawing.Point(10, 4);
             this.lblBrand_id.Name = "lblBrand_id";
-            this.lblBrand_id.Size = new System.Drawing.Size(120, 40);
+            this.lblBrand_id.Size = new System.Drawing.Size(120, 20);
             this.lblBrand_id.TabIndex = 60;
             this.lblBrand_id.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblBrand_id.Visible = false;
@@ -493,9 +576,9 @@
             // 
             this.lblIt_customer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblIt_customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblIt_customer.Location = new System.Drawing.Point(59, 88);
+            this.lblIt_customer.Location = new System.Drawing.Point(59, 52);
             this.lblIt_customer.Name = "lblIt_customer";
-            this.lblIt_customer.Size = new System.Drawing.Size(172, 42);
+            this.lblIt_customer.Size = new System.Drawing.Size(172, 22);
             this.lblIt_customer.TabIndex = 59;
             this.lblIt_customer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblIt_customer.Visible = false;
@@ -666,80 +749,49 @@
             this.label5.Text = "CUST. CODE";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // pnlSuit
+            // lblPo
             // 
-            this.pnlSuit.BackColor = System.Drawing.SystemColors.Control;
-            this.pnlSuit.Controls.Add(this.dgvBom);
-            this.pnlSuit.Location = new System.Drawing.Point(256, 2);
-            this.pnlSuit.Name = "pnlSuit";
-            this.pnlSuit.Size = new System.Drawing.Size(558, 210);
-            this.pnlSuit.TabIndex = 64;
-            this.pnlSuit.Visible = false;
+            this.lblPo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblPo.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblPo.Location = new System.Drawing.Point(5, 83);
+            this.lblPo.Name = "lblPo";
+            this.lblPo.Size = new System.Drawing.Size(51, 22);
+            this.lblPo.TabIndex = 65;
+            this.lblPo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblPo.Visible = false;
             // 
-            // dgvBom
+            // lblDo_color
             // 
-            this.dgvBom.AllowUserToAddRows = false;
-            this.dgvBom.AllowUserToDeleteRows = false;
-            this.dgvBom.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvBom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBom.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.chkSelect,
-            this.goods_id1,
-            this.primary_key1,
-            this.goods_desc1});
-            this.dgvBom.Location = new System.Drawing.Point(4, 3);
-            this.dgvBom.Name = "dgvBom";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBom.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvBom.RowHeadersWidth = 30;
-            this.dgvBom.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("PMingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.dgvBom.RowTemplate.Height = 35;
-            this.dgvBom.Size = new System.Drawing.Size(549, 204);
-            this.dgvBom.TabIndex = 3;
+            this.lblDo_color.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblDo_color.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblDo_color.Location = new System.Drawing.Point(62, 83);
+            this.lblDo_color.Name = "lblDo_color";
+            this.lblDo_color.Size = new System.Drawing.Size(51, 22);
+            this.lblDo_color.TabIndex = 66;
+            this.lblDo_color.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDo_color.Visible = false;
             // 
-            // chkSelect
+            // lblArtwork
             // 
-            this.chkSelect.DataPropertyName = "flag_select";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle3.NullValue = false;
-            this.chkSelect.DefaultCellStyle = dataGridViewCellStyle3;
-            this.chkSelect.HeaderText = "   ";
-            this.chkSelect.Name = "chkSelect";
-            this.chkSelect.Width = 50;
+            this.lblArtwork.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblArtwork.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblArtwork.Location = new System.Drawing.Point(135, 83);
+            this.lblArtwork.Name = "lblArtwork";
+            this.lblArtwork.Size = new System.Drawing.Size(51, 22);
+            this.lblArtwork.TabIndex = 67;
+            this.lblArtwork.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblArtwork.Visible = false;
             // 
-            // goods_id1
+            // lblName_goods_cn
             // 
-            this.goods_id1.DataPropertyName = "goods_id";
-            this.goods_id1.HeaderText = "貨品編號";
-            this.goods_id1.Name = "goods_id1";
-            this.goods_id1.ReadOnly = true;
-            this.goods_id1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.goods_id1.Width = 250;
-            // 
-            // primary_key1
-            // 
-            this.primary_key1.DataPropertyName = "primary_key";
-            this.primary_key1.HeaderText = "";
-            this.primary_key1.Name = "primary_key1";
-            this.primary_key1.ReadOnly = true;
-            this.primary_key1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.primary_key1.Width = 30;
-            // 
-            // goods_desc1
-            // 
-            this.goods_desc1.DataPropertyName = "goods_desc";
-            this.goods_desc1.HeaderText = "貨品描述";
-            this.goods_desc1.Name = "goods_desc1";
-            this.goods_desc1.ReadOnly = true;
-            this.goods_desc1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.goods_desc1.Width = 230;
+            this.lblName_goods_cn.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblName_goods_cn.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblName_goods_cn.Location = new System.Drawing.Point(21, 112);
+            this.lblName_goods_cn.Name = "lblName_goods_cn";
+            this.lblName_goods_cn.Size = new System.Drawing.Size(172, 22);
+            this.lblName_goods_cn.TabIndex = 68;
+            this.lblName_goods_cn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblName_goods_cn.Visible = false;
             // 
             // frmPackingLabel
             // 
@@ -819,5 +871,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn goods_id1;
         private System.Windows.Forms.DataGridViewTextBoxColumn primary_key1;
         private System.Windows.Forms.DataGridViewTextBoxColumn goods_desc1;
+        private System.Windows.Forms.Label lblArtwork;
+        private System.Windows.Forms.Label lblDo_color;
+        private System.Windows.Forms.Label lblPo;
+        private System.Windows.Forms.Label lblName_goods_cn;
     }
 }
