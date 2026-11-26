@@ -81,19 +81,6 @@
             this.lblBarCode = new System.Windows.Forms.Label();
             this.txtBarCode = new System.Windows.Forms.TextBox();
             this.dgvDetails = new System.Windows.Forms.DataGridView();
-            this.colPrd_mo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrd_item_cdesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTransfer_qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTransfer_weg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPack_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTransfer_flag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCrtim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrd_item = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTransfer_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrd_dep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colWipId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTo_dep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrd_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabEdit = new System.Windows.Forms.TabPage();
             this.tabBrowse = new System.Windows.Forms.TabPage();
@@ -124,6 +111,22 @@
             this.btnConfToDg = new System.Windows.Forms.Button();
             this.dteToDG = new System.Windows.Forms.DateTimePicker();
             this.lblToDgDate = new System.Windows.Forms.Label();
+            this.cmbWorkSort = new System.Windows.Forms.ComboBox();
+            this.lblWorkSort = new System.Windows.Forms.Label();
+            this.colPrd_mo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrd_item_cdesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTransfer_qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTransfer_weg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPack_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTransfer_flag = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCrtim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrd_item = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTransfer_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrd_dep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colWipId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTo_dep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrd_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colWorkSort = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picItem)).BeginInit();
@@ -167,7 +170,7 @@
             // btnExit
             // 
             this.btnExit.AutoSize = false;
-            this.btnExit.Font = new System.Drawing.Font("PMingLiU", 14F);
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnExit.Name = "btnExit";
@@ -184,7 +187,7 @@
             // btnConf
             // 
             this.btnConf.AutoSize = false;
-            this.btnConf.Font = new System.Drawing.Font("PMingLiU", 14F);
+            this.btnConf.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.btnConf.Image = ((System.Drawing.Image)(resources.GetObject("btnConf.Image")));
             this.btnConf.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnConf.Name = "btnConf";
@@ -201,7 +204,7 @@
             // btnMutRec
             // 
             this.btnMutRec.AutoSize = false;
-            this.btnMutRec.Font = new System.Drawing.Font("PMingLiU", 14F);
+            this.btnMutRec.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.btnMutRec.Image = ((System.Drawing.Image)(resources.GetObject("btnMutRec.Image")));
             this.btnMutRec.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnMutRec.Name = "btnMutRec";
@@ -218,7 +221,7 @@
             // btnSearch
             // 
             this.btnSearch.AutoSize = false;
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft JhengHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
             this.btnSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSearch.Name = "btnSearch";
@@ -236,7 +239,7 @@
             // btnDetails
             // 
             this.btnDetails.AutoSize = false;
-            this.btnDetails.Font = new System.Drawing.Font("PMingLiU", 14F);
+            this.btnDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.btnDetails.Image = ((System.Drawing.Image)(resources.GetObject("btnDetails.Image")));
             this.btnDetails.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDetails.Name = "btnDetails";
@@ -253,7 +256,7 @@
             // btnDelete
             // 
             this.btnDelete.AutoSize = false;
-            this.btnDelete.Font = new System.Drawing.Font("PMingLiU", 14F);
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDelete.Name = "btnDelete";
@@ -269,10 +272,12 @@
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.cmbWorkSort);
             this.panel7.Controls.Add(this.btnFindItem);
             this.panel7.Controls.Add(this.cmbPrdDep);
             this.panel7.Controls.Add(this.lblGoods_id);
             this.panel7.Controls.Add(this.lblWeg);
+            this.panel7.Controls.Add(this.lblWorkSort);
             this.panel7.Controls.Add(this.lblDep);
             this.panel7.Controls.Add(this.txtPrd_id);
             this.panel7.Controls.Add(this.txtWeg);
@@ -291,14 +296,15 @@
             this.panel7.Controls.Add(this.txtMo_id);
             this.panel7.Controls.Add(this.cmbGoodsId);
             this.panel7.Controls.Add(this.txtGoods_id);
-            this.panel7.Location = new System.Drawing.Point(6, 3);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(3, 3);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(872, 317);
+            this.panel7.Size = new System.Drawing.Size(874, 317);
             this.panel7.TabIndex = 48;
             // 
             // btnFindItem
             // 
-            this.btnFindItem.Font = new System.Drawing.Font("PMingLiU", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnFindItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnFindItem.Location = new System.Drawing.Point(415, 8);
             this.btnFindItem.Name = "btnFindItem";
             this.btnFindItem.Size = new System.Drawing.Size(203, 44);
@@ -310,43 +316,43 @@
             // cmbPrdDep
             // 
             this.cmbPrdDep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPrdDep.Font = new System.Drawing.Font("PMingLiU", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.cmbPrdDep.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cmbPrdDep.FormattingEnabled = true;
-            this.cmbPrdDep.Location = new System.Drawing.Point(625, 177);
+            this.cmbPrdDep.Location = new System.Drawing.Point(629, 187);
             this.cmbPrdDep.Name = "cmbPrdDep";
-            this.cmbPrdDep.Size = new System.Drawing.Size(99, 43);
+            this.cmbPrdDep.Size = new System.Drawing.Size(99, 47);
             this.cmbPrdDep.TabIndex = 46;
             this.cmbPrdDep.Visible = false;
             // 
             // lblGoods_id
             // 
             this.lblGoods_id.AutoSize = true;
-            this.lblGoods_id.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblGoods_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblGoods_id.Location = new System.Drawing.Point(27, 79);
             this.lblGoods_id.Name = "lblGoods_id";
-            this.lblGoods_id.Size = new System.Drawing.Size(72, 16);
+            this.lblGoods_id.Size = new System.Drawing.Size(73, 20);
             this.lblGoods_id.TabIndex = 38;
             this.lblGoods_id.Text = "物料編號";
             // 
             // lblWeg
             // 
             this.lblWeg.AutoSize = true;
-            this.lblWeg.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblWeg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblWeg.Location = new System.Drawing.Point(59, 177);
             this.lblWeg.Name = "lblWeg";
-            this.lblWeg.Size = new System.Drawing.Size(40, 16);
+            this.lblWeg.Size = new System.Drawing.Size(41, 20);
             this.lblWeg.TabIndex = 35;
             this.lblWeg.Text = "重量";
             // 
             // lblDep
             // 
             this.lblDep.AutoSize = true;
-            this.lblDep.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblDep.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblDep.Location = new System.Drawing.Point(625, 158);
             this.lblDep.Name = "lblDep";
-            this.lblDep.Size = new System.Drawing.Size(72, 16);
+            this.lblDep.Size = new System.Drawing.Size(41, 20);
             this.lblDep.TabIndex = 35;
-            this.lblDep.Text = "發貨部門";
+            this.lblDep.Text = "部門";
             this.lblDep.Visible = false;
             // 
             // txtPrd_id
@@ -359,7 +365,7 @@
             // 
             // txtWeg
             // 
-            this.txtWeg.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtWeg.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtWeg.Location = new System.Drawing.Point(104, 163);
             this.txtWeg.Multiline = true;
             this.txtWeg.Name = "txtWeg";
@@ -370,17 +376,17 @@
             // lblToDep
             // 
             this.lblToDep.AutoSize = true;
-            this.lblToDep.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblToDep.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblToDep.Location = new System.Drawing.Point(43, 280);
             this.lblToDep.Name = "lblToDep";
-            this.lblToDep.Size = new System.Drawing.Size(56, 16);
+            this.lblToDep.Size = new System.Drawing.Size(57, 20);
             this.lblToDep.TabIndex = 35;
             this.lblToDep.Text = "下部門";
             // 
             // txtTo_dep
             // 
             this.txtTo_dep.BackColor = System.Drawing.SystemColors.Window;
-            this.txtTo_dep.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtTo_dep.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtTo_dep.Location = new System.Drawing.Point(104, 263);
             this.txtTo_dep.Multiline = true;
             this.txtTo_dep.Name = "txtTo_dep";
@@ -390,7 +396,7 @@
             // 
             // picItem
             // 
-            this.picItem.Location = new System.Drawing.Point(685, 3);
+            this.picItem.Location = new System.Drawing.Point(638, 3);
             this.picItem.Name = "picItem";
             this.picItem.Size = new System.Drawing.Size(150, 148);
             this.picItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -400,7 +406,7 @@
             // txtWipId
             // 
             this.txtWipId.BackColor = System.Drawing.SystemColors.Window;
-            this.txtWipId.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtWipId.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtWipId.Location = new System.Drawing.Point(404, 213);
             this.txtWipId.Multiline = true;
             this.txtWipId.Name = "txtWipId";
@@ -411,36 +417,36 @@
             // lblQty
             // 
             this.lblQty.AutoSize = true;
-            this.lblQty.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblQty.Location = new System.Drawing.Point(358, 177);
             this.lblQty.Name = "lblQty";
-            this.lblQty.Size = new System.Drawing.Size(40, 16);
+            this.lblQty.Size = new System.Drawing.Size(41, 20);
             this.lblQty.TabIndex = 35;
             this.lblQty.Text = "數量";
             // 
             // txtPackNum
             // 
-            this.txtPackNum.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtPackNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtPackNum.Location = new System.Drawing.Point(104, 213);
             this.txtPackNum.Multiline = true;
             this.txtPackNum.Name = "txtPackNum";
             this.txtPackNum.Size = new System.Drawing.Size(215, 44);
             this.txtPackNum.TabIndex = 6;
-            this.txtPackNum.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtQty_MouseDown);
+            this.txtPackNum.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtPackNum_MouseDown);
             // 
             // lblPackNum
             // 
             this.lblPackNum.AutoSize = true;
-            this.lblPackNum.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblPackNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblPackNum.Location = new System.Drawing.Point(59, 227);
             this.lblPackNum.Name = "lblPackNum";
-            this.lblPackNum.Size = new System.Drawing.Size(40, 16);
+            this.lblPackNum.Size = new System.Drawing.Size(41, 20);
             this.lblPackNum.TabIndex = 35;
             this.lblPackNum.Text = "包數";
             // 
             // txtQty
             // 
-            this.txtQty.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtQty.Location = new System.Drawing.Point(404, 163);
             this.txtQty.Multiline = true;
             this.txtQty.Name = "txtQty";
@@ -451,7 +457,7 @@
             // txtGoods_name
             // 
             this.txtGoods_name.BackColor = System.Drawing.SystemColors.Window;
-            this.txtGoods_name.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtGoods_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtGoods_name.Location = new System.Drawing.Point(104, 112);
             this.txtGoods_name.Multiline = true;
             this.txtGoods_name.Name = "txtGoods_name";
@@ -462,58 +468,59 @@
             // lblPGoods_name
             // 
             this.lblPGoods_name.AutoSize = true;
-            this.lblPGoods_name.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblPGoods_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblPGoods_name.Location = new System.Drawing.Point(27, 131);
             this.lblPGoods_name.Name = "lblPGoods_name";
-            this.lblPGoods_name.Size = new System.Drawing.Size(72, 16);
+            this.lblPGoods_name.Size = new System.Drawing.Size(73, 20);
             this.lblPGoods_name.TabIndex = 33;
             this.lblPGoods_name.Text = "物料描述";
             // 
             // lblWipId
             // 
             this.lblWipId.AutoSize = true;
-            this.lblWipId.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblWipId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblWipId.Location = new System.Drawing.Point(327, 230);
             this.lblWipId.Name = "lblWipId";
-            this.lblWipId.Size = new System.Drawing.Size(72, 16);
+            this.lblWipId.Size = new System.Drawing.Size(73, 20);
             this.lblWipId.TabIndex = 35;
             this.lblWipId.Text = "負責部門";
             // 
             // lblMo_id
             // 
             this.lblMo_id.AutoSize = true;
-            this.lblMo_id.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblMo_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblMo_id.Location = new System.Drawing.Point(27, 22);
             this.lblMo_id.Name = "lblMo_id";
-            this.lblMo_id.Size = new System.Drawing.Size(72, 16);
+            this.lblMo_id.Size = new System.Drawing.Size(73, 20);
             this.lblMo_id.TabIndex = 35;
             this.lblMo_id.Text = "制單編號";
             // 
             // txtMo_id
             // 
-            this.txtMo_id.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtMo_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtMo_id.Location = new System.Drawing.Point(104, 8);
             this.txtMo_id.Multiline = true;
             this.txtMo_id.Name = "txtMo_id";
             this.txtMo_id.Size = new System.Drawing.Size(295, 44);
             this.txtMo_id.TabIndex = 7;
+            this.txtMo_id.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtMo_id_MouseDown);
             // 
             // cmbGoodsId
             // 
             this.cmbGoodsId.DropDownWidth = 700;
-            this.cmbGoodsId.Font = new System.Drawing.Font("PMingLiU", 26F);
+            this.cmbGoodsId.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F);
             this.cmbGoodsId.FormattingEnabled = true;
-            this.cmbGoodsId.ItemHeight = 35;
+            this.cmbGoodsId.ItemHeight = 39;
             this.cmbGoodsId.Location = new System.Drawing.Point(104, 61);
             this.cmbGoodsId.Name = "cmbGoodsId";
-            this.cmbGoodsId.Size = new System.Drawing.Size(514, 43);
+            this.cmbGoodsId.Size = new System.Drawing.Size(514, 47);
             this.cmbGoodsId.TabIndex = 47;
             this.cmbGoodsId.Leave += new System.EventHandler(this.cmbGoodsId_Leave);
             // 
             // txtGoods_id
             // 
             this.txtGoods_id.BackColor = System.Drawing.SystemColors.Window;
-            this.txtGoods_id.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtGoods_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtGoods_id.Location = new System.Drawing.Point(104, 60);
             this.txtGoods_id.Multiline = true;
             this.txtGoods_id.Name = "txtGoods_id";
@@ -524,22 +531,22 @@
             // lblTransfer_flag
             // 
             this.lblTransfer_flag.AutoSize = true;
-            this.lblTransfer_flag.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblTransfer_flag.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblTransfer_flag.Location = new System.Drawing.Point(444, 17);
             this.lblTransfer_flag.Name = "lblTransfer_flag";
-            this.lblTransfer_flag.Size = new System.Drawing.Size(72, 16);
+            this.lblTransfer_flag.Size = new System.Drawing.Size(73, 20);
             this.lblTransfer_flag.TabIndex = 33;
             this.lblTransfer_flag.Text = "收發類型";
             // 
             // dteTransferDate
             // 
-            this.dteTransferDate.CalendarFont = new System.Drawing.Font("PMingLiU", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.dteTransferDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.dteTransferDate.CustomFormat = "yyyy/MM/dd";
-            this.dteTransferDate.Font = new System.Drawing.Font("PMingLiU", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.dteTransferDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.dteTransferDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dteTransferDate.Location = new System.Drawing.Point(110, 3);
             this.dteTransferDate.Name = "dteTransferDate";
-            this.dteTransferDate.Size = new System.Drawing.Size(514, 43);
+            this.dteTransferDate.Size = new System.Drawing.Size(514, 41);
             this.dteTransferDate.TabIndex = 45;
             this.dteTransferDate.Value = new System.DateTime(2019, 9, 26, 0, 0, 0, 0);
             // 
@@ -554,7 +561,7 @@
             // 
             // lblShowMsg
             // 
-            this.lblShowMsg.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblShowMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblShowMsg.ForeColor = System.Drawing.Color.Red;
             this.lblShowMsg.Location = new System.Drawing.Point(46, 33);
             this.lblShowMsg.Name = "lblShowMsg";
@@ -576,7 +583,7 @@
             // rdgSent
             // 
             this.rdgSent.Checked = true;
-            this.rdgSent.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rdgSent.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rdgSent.Location = new System.Drawing.Point(42, 6);
             this.rdgSent.Name = "rdgSent";
             this.rdgSent.Size = new System.Drawing.Size(162, 31);
@@ -588,7 +595,7 @@
             // 
             // rdgReceive
             // 
-            this.rdgReceive.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rdgReceive.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rdgReceive.Location = new System.Drawing.Point(285, 6);
             this.rdgReceive.Name = "rdgReceive";
             this.rdgReceive.Size = new System.Drawing.Size(162, 31);
@@ -600,10 +607,10 @@
             // lblDat
             // 
             this.lblDat.AutoSize = true;
-            this.lblDat.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblDat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblDat.Location = new System.Drawing.Point(27, 18);
             this.lblDat.Name = "lblDat";
-            this.lblDat.Size = new System.Drawing.Size(72, 16);
+            this.lblDat.Size = new System.Drawing.Size(73, 20);
             this.lblDat.TabIndex = 39;
             this.lblDat.Text = "發貨日期";
             // 
@@ -621,19 +628,19 @@
             // 
             // dteSentDate
             // 
-            this.dteSentDate.CalendarFont = new System.Drawing.Font("PMingLiU", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.dteSentDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.dteSentDate.CustomFormat = "yyyy/MM/dd";
-            this.dteSentDate.Font = new System.Drawing.Font("PMingLiU", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.dteSentDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.dteSentDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dteSentDate.Location = new System.Drawing.Point(104, 10);
             this.dteSentDate.Name = "dteSentDate";
-            this.dteSentDate.Size = new System.Drawing.Size(514, 43);
+            this.dteSentDate.Size = new System.Drawing.Size(514, 41);
             this.dteSentDate.TabIndex = 46;
             this.dteSentDate.Value = new System.DateTime(2019, 9, 26, 0, 0, 0, 0);
             // 
             // lblShowMsg1
             // 
-            this.lblShowMsg1.Font = new System.Drawing.Font("PMingLiU", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblShowMsg1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblShowMsg1.ForeColor = System.Drawing.Color.Red;
             this.lblShowMsg1.Location = new System.Drawing.Point(625, 15);
             this.lblShowMsg1.Name = "lblShowMsg1";
@@ -644,11 +651,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(27, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 16);
+            this.label1.Size = new System.Drawing.Size(73, 20);
             this.label1.TabIndex = 39;
             this.label1.Text = "發貨日期";
             // 
@@ -669,17 +676,17 @@
             // lblBarCode
             // 
             this.lblBarCode.AutoSize = true;
-            this.lblBarCode.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblBarCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblBarCode.Location = new System.Drawing.Point(43, 69);
             this.lblBarCode.Name = "lblBarCode";
-            this.lblBarCode.Size = new System.Drawing.Size(56, 16);
+            this.lblBarCode.Size = new System.Drawing.Size(57, 20);
             this.lblBarCode.TabIndex = 31;
             this.lblBarCode.Text = "條碼區";
             // 
             // txtBarCode
             // 
             this.txtBarCode.BackColor = System.Drawing.Color.Pink;
-            this.txtBarCode.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtBarCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtBarCode.Location = new System.Drawing.Point(110, 52);
             this.txtBarCode.Multiline = true;
             this.txtBarCode.Name = "txtBarCode";
@@ -705,117 +712,18 @@
             this.colPrd_dep,
             this.colWipId,
             this.colTo_dep,
-            this.colPrd_id});
-            this.dgvDetails.Location = new System.Drawing.Point(6, 340);
+            this.colPrd_id,
+            this.colWorkSort});
+            this.dgvDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDetails.Location = new System.Drawing.Point(3, 320);
             this.dgvDetails.Name = "dgvDetails";
             this.dgvDetails.ReadOnly = true;
             this.dgvDetails.RowHeadersWidth = 40;
             this.dgvDetails.RowTemplate.Height = 80;
-            this.dgvDetails.Size = new System.Drawing.Size(867, 343);
+            this.dgvDetails.Size = new System.Drawing.Size(874, 390);
             this.dgvDetails.TabIndex = 2;
             this.dgvDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetails_CellClick);
             this.dgvDetails.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvDetails_RowPostPaint);
-            // 
-            // colPrd_mo
-            // 
-            this.colPrd_mo.DataPropertyName = "Prd_mo";
-            this.colPrd_mo.HeaderText = "制單編號";
-            this.colPrd_mo.Name = "colPrd_mo";
-            this.colPrd_mo.ReadOnly = true;
-            this.colPrd_mo.Width = 120;
-            // 
-            // colPrd_item_cdesc
-            // 
-            this.colPrd_item_cdesc.DataPropertyName = "Prd_item_cdesc";
-            this.colPrd_item_cdesc.HeaderText = "物料描述";
-            this.colPrd_item_cdesc.Name = "colPrd_item_cdesc";
-            this.colPrd_item_cdesc.ReadOnly = true;
-            this.colPrd_item_cdesc.Width = 260;
-            // 
-            // colTransfer_qty
-            // 
-            this.colTransfer_qty.DataPropertyName = "Transfer_qty";
-            this.colTransfer_qty.HeaderText = "數量";
-            this.colTransfer_qty.Name = "colTransfer_qty";
-            this.colTransfer_qty.ReadOnly = true;
-            // 
-            // colTransfer_weg
-            // 
-            this.colTransfer_weg.DataPropertyName = "Transfer_weg";
-            this.colTransfer_weg.HeaderText = "重量";
-            this.colTransfer_weg.Name = "colTransfer_weg";
-            this.colTransfer_weg.ReadOnly = true;
-            // 
-            // colPack_num
-            // 
-            this.colPack_num.DataPropertyName = "pack_num";
-            this.colPack_num.HeaderText = "包數";
-            this.colPack_num.Name = "colPack_num";
-            this.colPack_num.ReadOnly = true;
-            this.colPack_num.Width = 80;
-            // 
-            // colTransfer_flag
-            // 
-            this.colTransfer_flag.DataPropertyName = "Transfer_flag";
-            this.colTransfer_flag.HeaderText = "標識";
-            this.colTransfer_flag.Name = "colTransfer_flag";
-            this.colTransfer_flag.ReadOnly = true;
-            this.colTransfer_flag.Width = 60;
-            // 
-            // colCrtim
-            // 
-            this.colCrtim.DataPropertyName = "crtim_str";
-            this.colCrtim.HeaderText = "錄入時間";
-            this.colCrtim.Name = "colCrtim";
-            this.colCrtim.ReadOnly = true;
-            this.colCrtim.Width = 160;
-            // 
-            // colPrd_item
-            // 
-            this.colPrd_item.DataPropertyName = "Prd_item";
-            this.colPrd_item.HeaderText = "物料編號";
-            this.colPrd_item.Name = "colPrd_item";
-            this.colPrd_item.ReadOnly = true;
-            this.colPrd_item.Width = 200;
-            // 
-            // colTransfer_date
-            // 
-            this.colTransfer_date.DataPropertyName = "Transfer_date";
-            this.colTransfer_date.HeaderText = "日期";
-            this.colTransfer_date.Name = "colTransfer_date";
-            this.colTransfer_date.ReadOnly = true;
-            // 
-            // colPrd_dep
-            // 
-            this.colPrd_dep.DataPropertyName = "Prd_dep";
-            this.colPrd_dep.HeaderText = "發發部門";
-            this.colPrd_dep.Name = "colPrd_dep";
-            this.colPrd_dep.ReadOnly = true;
-            this.colPrd_dep.Width = 80;
-            // 
-            // colWipId
-            // 
-            this.colWipId.DataPropertyName = "wip_id";
-            this.colWipId.HeaderText = "負責部門";
-            this.colWipId.Name = "colWipId";
-            this.colWipId.ReadOnly = true;
-            this.colWipId.Width = 80;
-            // 
-            // colTo_dep
-            // 
-            this.colTo_dep.DataPropertyName = "to_dep";
-            this.colTo_dep.HeaderText = "收貨部門";
-            this.colTo_dep.Name = "colTo_dep";
-            this.colTo_dep.ReadOnly = true;
-            this.colTo_dep.Width = 80;
-            // 
-            // colPrd_id
-            // 
-            this.colPrd_id.DataPropertyName = "Prd_id";
-            this.colPrd_id.HeaderText = "序號";
-            this.colPrd_id.Name = "colPrd_id";
-            this.colPrd_id.ReadOnly = true;
-            this.colPrd_id.Width = 80;
             // 
             // tabControl1
             // 
@@ -832,8 +740,8 @@
             // 
             // tabEdit
             // 
-            this.tabEdit.Controls.Add(this.panel7);
             this.tabEdit.Controls.Add(this.dgvDetails);
+            this.tabEdit.Controls.Add(this.panel7);
             this.tabEdit.Location = new System.Drawing.Point(4, 56);
             this.tabEdit.Name = "tabEdit";
             this.tabEdit.Padding = new System.Windows.Forms.Padding(3);
@@ -878,7 +786,7 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.Font = new System.Drawing.Font("PMingLiU", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnPrint.Location = new System.Drawing.Point(390, 57);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(342, 66);
@@ -889,7 +797,7 @@
             // 
             // btnGenReport
             // 
-            this.btnGenReport.Font = new System.Drawing.Font("PMingLiU", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnGenReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnGenReport.Location = new System.Drawing.Point(28, 57);
             this.btnGenReport.Name = "btnGenReport";
             this.btnGenReport.Size = new System.Drawing.Size(342, 66);
@@ -901,16 +809,16 @@
             // lblMo_id_f
             // 
             this.lblMo_id_f.AutoSize = true;
-            this.lblMo_id_f.Font = new System.Drawing.Font("PMingLiU", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblMo_id_f.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblMo_id_f.Location = new System.Drawing.Point(19, 14);
             this.lblMo_id_f.Name = "lblMo_id_f";
-            this.lblMo_id_f.Size = new System.Drawing.Size(351, 30);
+            this.lblMo_id_f.Size = new System.Drawing.Size(353, 36);
             this.lblMo_id_f.TabIndex = 48;
             this.lblMo_id_f.Text = "可輸入制單編號點擊查找:";
             // 
             // txtMo_id_f
             // 
-            this.txtMo_id_f.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtMo_id_f.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtMo_id_f.Location = new System.Drawing.Point(390, 7);
             this.txtMo_id_f.Multiline = true;
             this.txtMo_id_f.Name = "txtMo_id_f";
@@ -920,10 +828,10 @@
             // lblTransfer_flag_f
             // 
             this.lblTransfer_flag_f.AutoSize = true;
-            this.lblTransfer_flag_f.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblTransfer_flag_f.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblTransfer_flag_f.Location = new System.Drawing.Point(45, 144);
             this.lblTransfer_flag_f.Name = "lblTransfer_flag_f";
-            this.lblTransfer_flag_f.Size = new System.Drawing.Size(72, 16);
+            this.lblTransfer_flag_f.Size = new System.Drawing.Size(73, 20);
             this.lblTransfer_flag_f.TabIndex = 47;
             this.lblTransfer_flag_f.Text = "收發類型";
             this.lblTransfer_flag_f.Visible = false;
@@ -944,10 +852,10 @@
             // 
             this.rdgAll.AutoSize = true;
             this.rdgAll.Checked = true;
-            this.rdgAll.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rdgAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rdgAll.Location = new System.Drawing.Point(234, 4);
             this.rdgAll.Name = "rdgAll";
-            this.rdgAll.Size = new System.Drawing.Size(84, 31);
+            this.rdgAll.Size = new System.Drawing.Size(86, 35);
             this.rdgAll.TabIndex = 3;
             this.rdgAll.TabStop = true;
             this.rdgAll.Text = "不管";
@@ -956,10 +864,10 @@
             // rdgSent_f
             // 
             this.rdgSent_f.AutoSize = true;
-            this.rdgSent_f.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rdgSent_f.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rdgSent_f.Location = new System.Drawing.Point(21, 4);
             this.rdgSent_f.Name = "rdgSent_f";
-            this.rdgSent_f.Size = new System.Drawing.Size(84, 31);
+            this.rdgSent_f.Size = new System.Drawing.Size(86, 35);
             this.rdgSent_f.TabIndex = 1;
             this.rdgSent_f.Text = "發貨";
             this.rdgSent_f.UseVisualStyleBackColor = true;
@@ -967,10 +875,10 @@
             // rdgReceive_f
             // 
             this.rdgReceive_f.AutoSize = true;
-            this.rdgReceive_f.Font = new System.Drawing.Font("PMingLiU", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rdgReceive_f.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rdgReceive_f.Location = new System.Drawing.Point(129, 4);
             this.rdgReceive_f.Name = "rdgReceive_f";
-            this.rdgReceive_f.Size = new System.Drawing.Size(84, 31);
+            this.rdgReceive_f.Size = new System.Drawing.Size(86, 35);
             this.rdgReceive_f.TabIndex = 2;
             this.rdgReceive_f.Text = "收貨";
             this.rdgReceive_f.UseVisualStyleBackColor = true;
@@ -1100,17 +1008,17 @@
             // chkIsToDg
             // 
             this.chkIsToDg.AutoSize = true;
-            this.chkIsToDg.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.chkIsToDg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.chkIsToDg.Location = new System.Drawing.Point(21, 10);
             this.chkIsToDg.Name = "chkIsToDg";
-            this.chkIsToDg.Size = new System.Drawing.Size(155, 20);
+            this.chkIsToDg.Size = new System.Drawing.Size(156, 24);
             this.chkIsToDg.TabIndex = 50;
             this.chkIsToDg.Text = "查找已發貨的記錄";
             this.chkIsToDg.UseVisualStyleBackColor = true;
             // 
             // btnConfToDg
             // 
-            this.btnConfToDg.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnConfToDg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnConfToDg.Location = new System.Drawing.Point(649, 37);
             this.btnConfToDg.Name = "btnConfToDg";
             this.btnConfToDg.Size = new System.Drawing.Size(115, 43);
@@ -1121,26 +1029,154 @@
             // 
             // dteToDG
             // 
-            this.dteToDG.CalendarFont = new System.Drawing.Font("PMingLiU", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.dteToDG.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.dteToDG.CustomFormat = "yyyy/MM/dd";
-            this.dteToDG.Font = new System.Drawing.Font("PMingLiU", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.dteToDG.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.dteToDG.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dteToDG.Location = new System.Drawing.Point(110, 37);
             this.dteToDG.Name = "dteToDG";
-            this.dteToDG.Size = new System.Drawing.Size(514, 43);
+            this.dteToDG.Size = new System.Drawing.Size(514, 41);
             this.dteToDG.TabIndex = 48;
             this.dteToDG.Value = new System.DateTime(2019, 9, 26, 0, 0, 0, 0);
             // 
             // lblToDgDate
             // 
             this.lblToDgDate.AutoSize = true;
-            this.lblToDgDate.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblToDgDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblToDgDate.ForeColor = System.Drawing.Color.Black;
             this.lblToDgDate.Location = new System.Drawing.Point(21, 54);
             this.lblToDgDate.Name = "lblToDgDate";
-            this.lblToDgDate.Size = new System.Drawing.Size(78, 16);
+            this.lblToDgDate.Size = new System.Drawing.Size(82, 20);
             this.lblToDgDate.TabIndex = 47;
             this.lblToDgDate.Text = "回DG日期";
+            // 
+            // cmbWorkSort
+            // 
+            this.cmbWorkSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbWorkSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.cmbWorkSort.FormattingEnabled = true;
+            this.cmbWorkSort.Location = new System.Drawing.Point(404, 261);
+            this.cmbWorkSort.Name = "cmbWorkSort";
+            this.cmbWorkSort.Size = new System.Drawing.Size(214, 47);
+            this.cmbWorkSort.TabIndex = 49;
+            // 
+            // lblWorkSort
+            // 
+            this.lblWorkSort.AutoSize = true;
+            this.lblWorkSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblWorkSort.Location = new System.Drawing.Point(327, 280);
+            this.lblWorkSort.Name = "lblWorkSort";
+            this.lblWorkSort.Size = new System.Drawing.Size(73, 20);
+            this.lblWorkSort.TabIndex = 35;
+            this.lblWorkSort.Text = "工序分類";
+            // 
+            // colPrd_mo
+            // 
+            this.colPrd_mo.DataPropertyName = "Prd_mo";
+            this.colPrd_mo.HeaderText = "制單編號";
+            this.colPrd_mo.Name = "colPrd_mo";
+            this.colPrd_mo.ReadOnly = true;
+            this.colPrd_mo.Width = 120;
+            // 
+            // colPrd_item_cdesc
+            // 
+            this.colPrd_item_cdesc.DataPropertyName = "Prd_item_cdesc";
+            this.colPrd_item_cdesc.HeaderText = "物料描述";
+            this.colPrd_item_cdesc.Name = "colPrd_item_cdesc";
+            this.colPrd_item_cdesc.ReadOnly = true;
+            this.colPrd_item_cdesc.Width = 260;
+            // 
+            // colTransfer_qty
+            // 
+            this.colTransfer_qty.DataPropertyName = "Transfer_qty";
+            this.colTransfer_qty.HeaderText = "數量";
+            this.colTransfer_qty.Name = "colTransfer_qty";
+            this.colTransfer_qty.ReadOnly = true;
+            // 
+            // colTransfer_weg
+            // 
+            this.colTransfer_weg.DataPropertyName = "Transfer_weg";
+            this.colTransfer_weg.HeaderText = "重量";
+            this.colTransfer_weg.Name = "colTransfer_weg";
+            this.colTransfer_weg.ReadOnly = true;
+            // 
+            // colPack_num
+            // 
+            this.colPack_num.DataPropertyName = "pack_num";
+            this.colPack_num.HeaderText = "包數";
+            this.colPack_num.Name = "colPack_num";
+            this.colPack_num.ReadOnly = true;
+            this.colPack_num.Width = 80;
+            // 
+            // colTransfer_flag
+            // 
+            this.colTransfer_flag.DataPropertyName = "Transfer_flag";
+            this.colTransfer_flag.HeaderText = "標識";
+            this.colTransfer_flag.Name = "colTransfer_flag";
+            this.colTransfer_flag.ReadOnly = true;
+            this.colTransfer_flag.Width = 60;
+            // 
+            // colCrtim
+            // 
+            this.colCrtim.DataPropertyName = "crtim_str";
+            this.colCrtim.HeaderText = "錄入時間";
+            this.colCrtim.Name = "colCrtim";
+            this.colCrtim.ReadOnly = true;
+            this.colCrtim.Width = 160;
+            // 
+            // colPrd_item
+            // 
+            this.colPrd_item.DataPropertyName = "Prd_item";
+            this.colPrd_item.HeaderText = "物料編號";
+            this.colPrd_item.Name = "colPrd_item";
+            this.colPrd_item.ReadOnly = true;
+            this.colPrd_item.Width = 200;
+            // 
+            // colTransfer_date
+            // 
+            this.colTransfer_date.DataPropertyName = "Transfer_date";
+            this.colTransfer_date.HeaderText = "日期";
+            this.colTransfer_date.Name = "colTransfer_date";
+            this.colTransfer_date.ReadOnly = true;
+            // 
+            // colPrd_dep
+            // 
+            this.colPrd_dep.DataPropertyName = "Prd_dep";
+            this.colPrd_dep.HeaderText = "發發部門";
+            this.colPrd_dep.Name = "colPrd_dep";
+            this.colPrd_dep.ReadOnly = true;
+            this.colPrd_dep.Width = 80;
+            // 
+            // colWipId
+            // 
+            this.colWipId.DataPropertyName = "wip_id";
+            this.colWipId.HeaderText = "負責部門";
+            this.colWipId.Name = "colWipId";
+            this.colWipId.ReadOnly = true;
+            this.colWipId.Width = 80;
+            // 
+            // colTo_dep
+            // 
+            this.colTo_dep.DataPropertyName = "to_dep";
+            this.colTo_dep.HeaderText = "收貨部門";
+            this.colTo_dep.Name = "colTo_dep";
+            this.colTo_dep.ReadOnly = true;
+            this.colTo_dep.Width = 80;
+            // 
+            // colPrd_id
+            // 
+            this.colPrd_id.DataPropertyName = "Prd_id";
+            this.colPrd_id.HeaderText = "序號";
+            this.colPrd_id.Name = "colPrd_id";
+            this.colPrd_id.ReadOnly = true;
+            this.colPrd_id.Width = 80;
+            // 
+            // colWorkSort
+            // 
+            this.colWorkSort.DataPropertyName = "work_sort";
+            this.colWorkSort.HeaderText = "工序分類";
+            this.colWorkSort.Name = "colWorkSort";
+            this.colWorkSort.ReadOnly = true;
             // 
             // frmGoodsTransferJx
             // 
@@ -1243,19 +1279,6 @@
         private System.Windows.Forms.TextBox txtWipId;
         private System.Windows.Forms.Label lblWipId;
         private System.Windows.Forms.ComboBox cmbPrdDep;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPrd_mo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPrd_item_cdesc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTransfer_qty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTransfer_weg;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPack_num;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTransfer_flag;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCrtim;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPrd_item;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTransfer_date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPrd_dep;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colWipId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTo_dep;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPrd_id;
         private System.Windows.Forms.Button btnGenReport;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.Button btnPrint;
@@ -1280,5 +1303,21 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn colShipId;
+        private System.Windows.Forms.ComboBox cmbWorkSort;
+        private System.Windows.Forms.Label lblWorkSort;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrd_mo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrd_item_cdesc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTransfer_qty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTransfer_weg;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPack_num;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTransfer_flag;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCrtim;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrd_item;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTransfer_date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrd_dep;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colWipId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTo_dep;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrd_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colWorkSort;
     }
 }

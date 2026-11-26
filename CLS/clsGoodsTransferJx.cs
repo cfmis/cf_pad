@@ -122,10 +122,11 @@ namespace cf_pad.CLS
             strSql += string.Format(@" SET XACT_ABORT  ON ");
             strSql += string.Format(@" BEGIN TRANSACTION ");
             strSql += string.Format(@"Insert Into product_transfer_jx_details (Transfer_date,Prd_dep,prd_item,prd_mo,Transfer_flag,transfer_qty,transfer_weg
-                ,wip_id,to_dep,pack_num,sent_date,crusr,crtim) Values " +
-                "('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}')"
+                ,wip_id,to_dep,pack_num,sent_date,work_sort,crusr,crtim) Values " +
+                "('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}')"
                 , Transfer_date, Prd_dep, Prd_item, Prd_mo, objModel.Transfer_flag, objModel.Transfer_qty, objModel.Transfer_weg
-                , objModel.wipId, objModel.To_dep, objModel.packNum, objModel.sentDate, objModel.Crusr, objModel.Crtim);
+                , objModel.wipId, objModel.To_dep, objModel.packNum, objModel.sentDate, objModel.work_sort
+                , objModel.Crusr, objModel.Crtim);
             
             
             strSql += string.Format(@" COMMIT TRANSACTION ");
@@ -207,6 +208,41 @@ namespace cf_pad.CLS
             Result = clsPublicOfPad.ExecuteSqlUpdate(strSql);
             return Result;
 
+        }
+
+
+        public static DataTable GetMo_dataById(string mo_id, string prd_dept, string item)
+        {
+            string strSql = "";
+            strSql = "Select a.prd_mo AS mo_id,a.prd_item AS goods_id,a.prd_qty AS prod_qty,a.prd_weg" +
+                ",a.to_dep AS next_wp_id,a.prd_dep AS wp_id,b.name AS goods_name" +
+                ",(rtrim(a.prd_dep)+'--'+rtrim(a.prd_item)) AS goods_cdesc"+
+                " From product_records a" +
+                " Left Join dgcf_db.dbo.geo_it_goods b ON a.prd_item COLLATE chinese_taiwan_stroke_CI_AS=b.id " +
+                " Where a.prd_mo='" + mo_id + "'";
+            if (prd_dept != "")
+                strSql += " And a.prd_dep = '" + prd_dept + "' ";
+            if (item != "")
+                strSql += " And a.prd_item ='" + item + "'";
+            strSql += " And a.prd_work_type='A02' ";
+            DataTable dt = clsPublicOfPad.ExecuteSqlReturnDataTable(strSql);
+
+            if (dt.Rows.Count==0)
+            {
+                strSql = @" SELECT a.mo_id,a.ver,b.sequence_id,b.wp_id,b.goods_id,c.name as goods_name,Convert(Int,b.prod_qty) AS prod_qty
+                        ,b.next_wp_id,0 AS prd_weg
+                        ,(rtrim(b.wp_id)+'--'+rtrim(b.goods_id)+'--'+rtrim(c.name)) AS goods_cdesc
+                        from jo_bill_mostly a 
+                        INNER join jo_bill_goods_details b on a.within_code=b.within_code and a.id=b.id and a.ver=b.ver
+                        LEFT JOIN it_goods c on b.within_code=c.within_code and b.goods_id=c.id 
+                        WHERE a.within_code='0000'  And a.mo_id = '" + mo_id + "'";
+                if (prd_dept != "")
+                    strSql += " And b.wp_id = '" + prd_dept + "' ";
+                if (item != "")
+                    strSql += " And b.goods_id ='" + item + "'";
+                dt = clsPublicOfGeo.ExecuteSqlReturnDataTable(strSql);
+            }
+            return dt;
         }
     }
 }

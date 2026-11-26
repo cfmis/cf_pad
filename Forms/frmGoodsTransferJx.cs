@@ -110,10 +110,10 @@ namespace cf_pad.Forms
                     txtWipId.Text = dtBarCode.Rows[0]["wp_id"].ToString();
                     //cmbPrdDepFind.SelectedValue = cmbPrdDep.SelectedValue.ToString().Trim();
 
-                    //getMoProduct();//從生產記錄中提取生產數量及重量
+                    //////getMoProduct();//從生產記錄中提取生產數量及重量
                     findData((cmbPrdDep.SelectedValue != null ? cmbPrdDep.SelectedValue.ToString().Trim() : ""), "", txtGoods_id.Text, txtMo_id.Text);
                     if (dgvDetails.Rows.Count == 0)
-                    {                        
+                    {
                         GetMoDataSource();//從生產表或排期表或流程中獲取記錄
                     }
                     else
@@ -161,6 +161,7 @@ namespace cf_pad.Forms
             txtPackNum.Text = "";
             lblShowMsg.Text = "信息提示";
             picItem.Image = null;
+            //cmbWorkSort.SelectedValue = "";
             //rdgSent.Checked = false;
             //rdgReceive.Checked = false;
             SetGoodsComboxVisible(0);
@@ -168,14 +169,15 @@ namespace cf_pad.Forms
         private void GetMoDataSource()
         {
             //從流程中提取物料描述、原料描述
-            DataTable dtItem = clsProductionSchedule.GetMo_dataById(txtMo_id.Text.Trim(), txtWipId.Text.Trim(), txtGoods_id.Text);
+            DataTable dtItem = clsGoodsTransferJx.GetMo_dataById(txtMo_id.Text.Trim(), txtWipId.Text.Trim(), txtGoods_id.Text);
             DataRow drItem = dtItem.Rows[0];
             txtMo_id.Text = drItem["mo_id"].ToString();
             txtQty.Text = drItem["prod_qty"].ToString();
+            txtWeg.Text = drItem["prd_weg"].ToString();
             txtGoods_id.Text = drItem["goods_id"].ToString();
             txtGoods_name.Text = drItem["goods_name"].ToString();
-            txtWipId.Text = drItem["wp_id"].ToString();
-            txtTo_dep.Text = drItem["next_wp_id"].ToString();
+            txtWipId.Text = drItem["wp_id"].ToString().Trim();
+            txtTo_dep.Text = drItem["next_wp_id"].ToString().Trim();
             txtPackNum.Text = "1";
             dteTransferDate.Text = clsUtility.changeDateFormat(DateTime.Now);
         }
@@ -272,7 +274,16 @@ namespace cf_pad.Forms
             //        cmbPrdDep.SelectedValue = "203";
             //}
 
-
+            string strSql = "";
+            strSql = " SELECT work_group,Rtrim(work_group)+'--'+Rtrim(group_desc) AS group_desc" +
+                " FROM work_group WHERE ( dep='128'" + " AND group_type='" + "0" + "') " + " OR dep='" + "000" + "' ";
+            DataTable dtWorkSort = clsPublicOfPad.ExecuteSqlReturnDataTable(strSql);
+            if (dtWorkSort.Rows.Count > 0)
+            {
+                cmbWorkSort.DataSource = dtWorkSort;
+                cmbWorkSort.DisplayMember = "group_desc";
+                cmbWorkSort.ValueMember = "work_group";
+            }
         }
         private void btnConf_Click(object sender, EventArgs e)
         {
@@ -289,10 +300,11 @@ namespace cf_pad.Forms
             objModel.Prd_dep = cmbPrdDep.SelectedValue.ToString().Trim();
             objModel.Transfer_date = dteTransferDate.Text;
             objModel.sentDate = dteSentDate.Text;
-            if (cmbGoodsId.Visible == false)
+            if (cmbGoodsId.Visible == false) 
                 objModel.Prd_item = txtGoods_id.Text;
             else
                 objModel.Prd_item = cmbGoodsId.SelectedValue == null ? "" : cmbGoodsId.SelectedValue.ToString();
+            objModel.work_sort = cmbWorkSort.SelectedValue == null ? "" : cmbWorkSort.SelectedValue.ToString();
             objModel.Prd_mo = txtMo_id.Text;
             objModel.Transfer_flag = 0;
             if (rdgReceive.Checked == true)
@@ -390,6 +402,7 @@ namespace cf_pad.Forms
             txtWipId.Text = dr.Cells["colWipId"].Value.ToString();
             txtTo_dep.Text = dr.Cells["colTo_dep"].Value.ToString();
             txtPackNum.Text = dr.Cells["colPack_num"].Value.ToString();
+            cmbWorkSort.SelectedValue = dr.Cells["colWorkSort"].Value.ToString();
             rdgSent.Checked = false;
             rdgReceive.Checked = false;
             if (Convert.ToInt32(dr.Cells["colTransfer_flag"].Value.ToString()) == 1)
@@ -527,11 +540,13 @@ namespace cf_pad.Forms
 
         private void txtWeg_MouseDown(object sender, MouseEventArgs e)
         {
+            txtWeg.SelectAll();
             clsUtility.Call_imput(); 
         }
 
         private void txtQty_MouseDown(object sender, MouseEventArgs e)
         {
+            txtQty.SelectAll();
             clsUtility.Call_imput(); 
         }
 
@@ -687,7 +702,7 @@ namespace cf_pad.Forms
             txtGoods_id.Text = "";
             txtGoods_name.Text = "";
             SetGoodsComboxVisible(1);
-            DataTable dtItem = clsProductionSchedule.GetMo_dataById(txtMo_id.Text.Trim(), "", "");
+            DataTable dtItem = clsGoodsTransferJx.GetMo_dataById(txtMo_id.Text.Trim(), "", "");
             cmbGoodsId.DataSource = dtItem;
             cmbGoodsId.DisplayMember = "goods_cdesc";
             cmbGoodsId.ValueMember = "goods_id";
@@ -712,13 +727,14 @@ namespace cf_pad.Forms
             if (cmbGoodsId.Text.Trim().Length > 3)
                 prd_dep = cmbGoodsId.Text.Substring(0, 3);
             string goods_id = cmbGoodsId.SelectedValue != null ? cmbGoodsId.SelectedValue.ToString() : "";
-            DataTable dtItem = clsProductionSchedule.GetMo_dataById(txtMo_id.Text.Trim(), prd_dep, goods_id);
+            DataTable dtItem = clsGoodsTransferJx.GetMo_dataById(txtMo_id.Text.Trim(), prd_dep, goods_id);
             if(dtItem.Rows.Count>0)
             {
                 txtWipId.Text = prd_dep;
                 DataRow dr = dtItem.Rows[0];
                 txtPackNum.Text = "1";
                 txtQty.Text = dr["prod_qty"].ToString();
+                txtWeg.Text = dr["prd_weg"].ToString();
                 txtTo_dep.Text = dr["next_wp_id"].ToString();
             }
             else
@@ -726,6 +742,7 @@ namespace cf_pad.Forms
                 txtWipId.Text = "";
                 txtPackNum.Text = "";
                 txtQty.Text = "";
+                txtWeg.Text = "";
                 txtTo_dep.Text = "";
             }
         }
@@ -832,6 +849,17 @@ namespace cf_pad.Forms
             {
                 dgvToDgDetails.Rows[i].Cells["colIsSelect"].Value = isChecked;
             }
+        }
+
+        private void txtMo_id_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtMo_id.SelectAll();
+        }
+
+        private void txtPackNum_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtPackNum.SelectAll();
+            clsUtility.Call_imput();
         }
     }
 }

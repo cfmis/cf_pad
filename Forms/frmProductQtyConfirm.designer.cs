@@ -148,6 +148,8 @@
             this.rdgFromJx = new System.Windows.Forms.RadioButton();
             this.lblMatDesc = new System.Windows.Forms.Label();
             this.lblItemDesc = new System.Windows.Forms.Label();
+            this.lblConf_time = new System.Windows.Forms.Label();
+            this.lblConf_flag = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.dteSentDate = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
@@ -156,8 +158,6 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.lblBarCode = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lblConf_flag = new System.Windows.Forms.Label();
-            this.lblConf_time = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetails)).BeginInit();
             this.panel1.SuspendLayout();
@@ -441,6 +441,7 @@
             this.textMo1.TabIndex = 4;
             this.textMo1.TextChanged += new System.EventHandler(this.textMo1_TextChanged);
             this.textMo1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textMo1_KeyPress);
+            this.textMo1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textMo1_MouseDown);
             // 
             // textDep1
             // 
@@ -451,6 +452,7 @@
             this.textDep1.Name = "textDep1";
             this.textDep1.Size = new System.Drawing.Size(233, 46);
             this.textDep1.TabIndex = 0;
+            this.textDep1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textDep1_MouseDown);
             // 
             // label1
             // 
@@ -866,6 +868,7 @@
             this.txtActualPack.Name = "txtActualPack";
             this.txtActualPack.Size = new System.Drawing.Size(177, 46);
             this.txtActualPack.TabIndex = 1;
+            this.txtActualPack.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtActualPack_MouseDown);
             // 
             // txtWeg
             // 
@@ -874,6 +877,7 @@
             this.txtWeg.Name = "txtWeg";
             this.txtWeg.Size = new System.Drawing.Size(193, 46);
             this.txtWeg.TabIndex = 1;
+            this.txtWeg.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtWeg_MouseDown);
             // 
             // txtQty
             // 
@@ -882,6 +886,7 @@
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(206, 46);
             this.txtQty.TabIndex = 0;
+            this.txtQty.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtQty_MouseDown);
             // 
             // lblQc_flag
             // 
@@ -1285,9 +1290,9 @@
             this.rdgFromJx.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rdgFromJx.Location = new System.Drawing.Point(188, 4);
             this.rdgFromJx.Name = "rdgFromJx";
-            this.rdgFromJx.Size = new System.Drawing.Size(154, 31);
+            this.rdgFromJx.Size = new System.Drawing.Size(175, 31);
             this.rdgFromJx.TabIndex = 2;
-            this.rdgFromJx.Text = "從JX收貨";
+            this.rdgFromJx.Text = "從外部收貨";
             this.rdgFromJx.UseVisualStyleBackColor = true;
             this.rdgFromJx.Click += new System.EventHandler(this.rdgFromJx_Click);
             // 
@@ -1310,6 +1315,28 @@
             this.lblItemDesc.Size = new System.Drawing.Size(72, 16);
             this.lblItemDesc.TabIndex = 0;
             this.lblItemDesc.Text = "物料描述";
+            // 
+            // lblConf_time
+            // 
+            this.lblConf_time.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblConf_time.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblConf_time.ForeColor = System.Drawing.Color.Blue;
+            this.lblConf_time.Location = new System.Drawing.Point(443, 369);
+            this.lblConf_time.Name = "lblConf_time";
+            this.lblConf_time.Size = new System.Drawing.Size(337, 46);
+            this.lblConf_time.TabIndex = 0;
+            this.lblConf_time.Text = "磅貨標識";
+            // 
+            // lblConf_flag
+            // 
+            this.lblConf_flag.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblConf_flag.Font = new System.Drawing.Font("新細明體", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblConf_flag.ForeColor = System.Drawing.Color.Blue;
+            this.lblConf_flag.Location = new System.Drawing.Point(388, 369);
+            this.lblConf_flag.Name = "lblConf_flag";
+            this.lblConf_flag.Size = new System.Drawing.Size(43, 46);
+            this.lblConf_flag.TabIndex = 0;
+            this.lblConf_flag.Text = "磅貨標識";
             // 
             // panel6
             // 
@@ -1417,28 +1444,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1049, 54);
             this.panel3.TabIndex = 52;
-            // 
-            // lblConf_flag
-            // 
-            this.lblConf_flag.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblConf_flag.Font = new System.Drawing.Font("新細明體", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblConf_flag.ForeColor = System.Drawing.Color.Blue;
-            this.lblConf_flag.Location = new System.Drawing.Point(388, 369);
-            this.lblConf_flag.Name = "lblConf_flag";
-            this.lblConf_flag.Size = new System.Drawing.Size(43, 46);
-            this.lblConf_flag.TabIndex = 0;
-            this.lblConf_flag.Text = "磅貨標識";
-            // 
-            // lblConf_time
-            // 
-            this.lblConf_time.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblConf_time.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblConf_time.ForeColor = System.Drawing.Color.Blue;
-            this.lblConf_time.Location = new System.Drawing.Point(443, 369);
-            this.lblConf_time.Name = "lblConf_time";
-            this.lblConf_time.Size = new System.Drawing.Size(337, 46);
-            this.lblConf_time.TabIndex = 0;
-            this.lblConf_time.Text = "磅貨標識";
             // 
             // frmProductQtyConfirm
             // 

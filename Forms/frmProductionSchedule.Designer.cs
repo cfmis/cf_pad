@@ -109,6 +109,7 @@
             this.txtTotalQty = new System.Windows.Forms.TextBox();
             this.grpBase = new System.Windows.Forms.GroupBox();
             this.grpTime = new System.Windows.Forms.GroupBox();
+            this.btnKgPcs = new System.Windows.Forms.Button();
             this.pnlKgPcs = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.txtSample_weg = new System.Windows.Forms.TextBox();
@@ -116,7 +117,6 @@
             this.lblSample_no = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblWegUnit = new System.Windows.Forms.Label();
-            this.btnKgPcs = new System.Windows.Forms.Button();
             this.dgvAndSingle = new System.Windows.Forms.DataGridView();
             this.colprd_mo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colprd_item = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -604,6 +604,7 @@
             // 
             // txtgoods_desc
             // 
+            this.txtgoods_desc.BackColor = System.Drawing.Color.GhostWhite;
             this.txtgoods_desc.Font = new System.Drawing.Font("新細明體", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtgoods_desc.Location = new System.Drawing.Point(61, 71);
             this.txtgoods_desc.Name = "txtgoods_desc";
@@ -1156,6 +1157,19 @@
             this.grpTime.TabStop = false;
             this.grpTime.Text = "生產時間";
             // 
+            // btnKgPcs
+            // 
+            this.btnKgPcs.BackColor = System.Drawing.Color.Tomato;
+            this.btnKgPcs.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnKgPcs.ForeColor = System.Drawing.Color.Black;
+            this.btnKgPcs.Location = new System.Drawing.Point(692, 15);
+            this.btnKgPcs.Name = "btnKgPcs";
+            this.btnKgPcs.Size = new System.Drawing.Size(75, 129);
+            this.btnKgPcs.TabIndex = 2;
+            this.btnKgPcs.Text = "數量換算";
+            this.btnKgPcs.UseVisualStyleBackColor = false;
+            this.btnKgPcs.Click += new System.EventHandler(this.btnKgPcs_Click);
+            // 
             // pnlKgPcs
             // 
             this.pnlKgPcs.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1239,19 +1253,6 @@
             this.lblWegUnit.Size = new System.Drawing.Size(59, 31);
             this.lblWegUnit.TabIndex = 38;
             this.lblWegUnit.Text = "(克)";
-            // 
-            // btnKgPcs
-            // 
-            this.btnKgPcs.BackColor = System.Drawing.Color.Tomato;
-            this.btnKgPcs.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnKgPcs.ForeColor = System.Drawing.Color.Black;
-            this.btnKgPcs.Location = new System.Drawing.Point(692, 15);
-            this.btnKgPcs.Name = "btnKgPcs";
-            this.btnKgPcs.Size = new System.Drawing.Size(75, 129);
-            this.btnKgPcs.TabIndex = 2;
-            this.btnKgPcs.Text = "數量換算";
-            this.btnKgPcs.UseVisualStyleBackColor = false;
-            this.btnKgPcs.Click += new System.EventHandler(this.btnKgPcs_Click);
             // 
             // dgvAndSingle
             // 

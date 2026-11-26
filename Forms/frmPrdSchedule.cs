@@ -132,14 +132,14 @@ namespace cf_pad.Forms
             cmbProductDept.DisplayMember = "int9loc";
             cmbProductDept.ValueMember = "int9loc";
             string userid_part=_userid.Substring(0, 3);
-            if (userid_part == "BUT")
-            {
-                cmbProductDept.Text = "102";
-            }
-            else
-            {
+            //if (userid_part == "BUT")
+            //{
+            //    cmbProductDept.Text = "102";
+            //}
+            //else
+            //{
                 if (userid_part == "ALY")
-                    cmbProductDept.Text = "302";
+                    cmbProductDept.Text = "322";
                 else
                 {
                     if (userid_part == "BLK")
@@ -150,7 +150,7 @@ namespace cf_pad.Forms
                             cmbProductDept.Text = "107";
                     }
                 }
-            }
+            //}
             if (_userid == "BUK01")
                 cmbProductDept.Text = "202";
             else
@@ -158,6 +158,10 @@ namespace cf_pad.Forms
                 if (_userid == "BUK02")
                     cmbProductDept.Text = "203";
             }
+            if(_userid=="BUT01")
+                cmbProductDept.Text = "102";
+            if (_userid == "BUT02")
+                cmbProductDept.Text = "103";
             //初始化工作類型
             cmbWorkType.DataSource = dtWork_type;
             cmbWorkType.DisplayMember = "work_type_desc";
@@ -227,7 +231,7 @@ namespace cf_pad.Forms
                 }
             }
             else
-                if (cmbProductDept.Text == "102")
+                if (cmbProductDept.Text == "102" || cmbProductDept.Text == "103")
                     cmbGroup.Text = "BA01";
         }
         //檢查工種
@@ -905,12 +909,12 @@ namespace cf_pad.Forms
                             return false;
                         }
                 }
-                if (chk_prd_worker(txtProductNo.Text.Trim()) == "")
-                {
-                    MessageBox.Show("生產工號不存在，請重新輸入!");
-                    txtProductNo.Focus();
-                    return false;
-                }
+                //if (chk_prd_worker(txtProductNo.Text.Trim()) == "")
+                //{
+                //    MessageBox.Show("生產工號不存在，請重新輸入!");
+                //    txtProductNo.Focus();
+                //    return false;
+                //}
                 if ((txtNormal_work.Text != ""?Convert.ToDecimal(txtNormal_work.Text):0)==0
                     && (txtAdd_work.Text != "" ? Convert.ToDecimal(txtAdd_work.Text) : 0) == 0)
                 {
@@ -1118,7 +1122,7 @@ namespace cf_pad.Forms
             string dep = cmbProductDept.SelectedValue.ToString().Trim();
             string machine_id = txtMachine.Text.Trim();;
             string machine_id_part=(machine_id.Length >=3 ? machine_id.Substring(0,3):"");
-            if (dep == "102" || dep == "104" || dep == "124" || dep == "122" || (dep == "105" && cmbGroup.Text != "BC01")
+            if (dep == "102" || dep == "103" || dep == "104" || dep == "124" || dep == "122" || dep == "322" || (dep == "105" && cmbGroup.Text != "BC01")
                || (dep == "105" && cmbGroup.Text == "BC01" && machine_id_part == "NTR"))
             {
                 strSql = @" SELECT machine_id,machine_mul,machine_rate FROM machine_std 
@@ -1203,14 +1207,8 @@ namespace cf_pad.Forms
                     }
                 }
             }
-            try
-            {
-                dtMachine_std = clsPublicOfPad.ExecuteSqlReturnDataTable(strSql);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            dtMachine_std = clsPublicOfPad.ExecuteSqlReturnDataTable(strSql);
+
         }
 
 
@@ -1219,26 +1217,19 @@ namespace cf_pad.Forms
         {
             DataTable mac_tb;
             string strSql = " SELECT resource_id AS machine_id,standby2 FROM " + remote_db + "cd_resource" +
-                   " WHERE department_id='" + cmbProductDept.SelectedValue.ToString() + "' AND resource_id ='" + txtMachine.Text.Trim() + "' ";
-            try
+                   " WHERE resource_id ='" + txtMachine.Text.Trim() + "' ";
+            mac_tb = clsPublicOfPad.ExecuteSqlReturnDataTable(strSql);
+            if (mac_tb.Rows.Count == 0)
             {
-                mac_tb = clsPublicOfPad.ExecuteSqlReturnDataTable(strSql);
-                if (mac_tb.Rows.Count == 0)
-                {
-                    MessageBox.Show("機器代碼不存在,請重新輸入!");
-                    return false;
-                }
-                else
-                {
-                    if (replace_type==1)//獲取機器難度
-                        txtDifficulty_level.Text = mac_tb.Rows[0]["standby2"].ToString();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("機器代碼不存在,請重新輸入!");
                 return false;
             }
+            else
+            {
+                if (replace_type == 1)//獲取機器難度
+                    txtDifficulty_level.Text = mac_tb.Rows[0]["standby2"].ToString();
+            }
+            
             return true;
         }
 
@@ -1269,7 +1260,7 @@ namespace cf_pad.Forms
             {
                 GetMachine_std();//獲取機器的各項標準數據
                 fill_textbox_machine_std();//填充機器各項標準
-                if (cmbProductDept.Text == "102")
+                if (cmbProductDept.Text == "102" || cmbProductDept.Text == "103")
                 {
                     txtDifficulty_level.Text = "";
                     checkMachine(1);//獲取機器難度
@@ -1986,7 +1977,7 @@ namespace cf_pad.Forms
         {
             if (txtMachine.Text == "")
             {
-                if (cmbProductDept.Text == "102")
+                if (cmbProductDept.Text == "102" || cmbProductDept.Text == "122")
                 {
                     txtMachine.Text = "NBY-";
                     if (_userid == "BUT01")//萬能機
@@ -2000,7 +1991,7 @@ namespace cf_pad.Forms
                 else
                 {
                     if (cmbProductDept.Text == "302" || cmbProductDept.Text == "322")//合金
-                        txtMachine.Text = "ABL-";
+                        txtMachine.Text = "ABY-";
                     else
                     {
                         if (cmbProductDept.Text == "203")//扣部--裝嵌
@@ -2037,8 +2028,12 @@ namespace cf_pad.Forms
                         }
                     }
                 }
-                
-                    
+                if (cmbProductDept.Text == "103")
+                {
+                    txtMachine.Text = "NDG-";
+                }
+
+
                 txtMachine.SelectionStart = txtMachine.Text.Length;
             }
 
@@ -2418,13 +2413,18 @@ namespace cf_pad.Forms
             objModel.actual_weg = 0;
             objModel.conf_flag = "";
             objModel.conf_time = Convert.ToDateTime("1900/01/01");
-            if (objModel.prd_dep == "105" && objModel.prd_item.Substring(14, 4) == "NEP0"
-                && objModel.prd_start_time != "" && objModel.prd_end_time != "")//林口部，將NEP的直接加入磅貨中，當作組裝批量輸入
+            if (objModel.prd_start_time != "" && objModel.prd_end_time != "")
             {
-                objModel.conf_flag = "Y";
-                objModel.actual_qty = objModel.prd_qty;
-                objModel.actual_weg = objModel.prd_weg;
-                objModel.conf_time = DateTime.Now;
+                //林口部，將NEP的直接加入磅貨中，當作組裝批量輸入
+                //122交501的，直接加入磅貨中，當作組裝批量輸入 || (objModel.prd_dep == "102" && objModel.to_dep == "501")
+                if ((objModel.prd_dep == "105" && objModel.prd_item.Substring(14, 4) == "NEP0")
+                    || (objModel.prd_dep == "122" && objModel.to_dep == "501"))
+                {
+                    objModel.conf_flag = "Y";
+                    objModel.actual_qty = objModel.prd_qty;
+                    objModel.actual_weg = Math.Round(Convert.ToDecimal(objModel.prd_weg), 2);
+                    objModel.conf_time = DateTime.Now;
+                }
             }
             if (record_id == -1)
             {

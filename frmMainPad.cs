@@ -95,8 +95,8 @@ namespace cf_pad
 
         private void BTN4_Click(object sender, EventArgs e)
         {
-            RunNewForm("Forms.frmProductQtyConfirm");//磅貨登記
-            //RunNewForm("Forms.frmKeyboard");//磅貨登記
+            MessageBox.Show("舊系統已停用，請轉入新系統!");
+            //RunNewForm("Forms.frmProductQtyConfirm");//磅貨登記
         }
 
         private void BTN5_Click(object sender, EventArgs e)
@@ -114,8 +114,8 @@ namespace cf_pad
 
         private void BTN7_Click(object sender, EventArgs e)
         {
-            //RunNewForm("Forms.frmModulePlace");//模具存放位置
-            RunNewForm("Forms.frmGoodsTransferJx");//收、發貨到JX
+            MessageBox.Show("舊系統已停用，請轉入新系統!");
+            //RunNewForm("Forms.frmGoodsTransferJx");//收、發貨到JX
         }        
 
         private void BTN8_Click(object sender, EventArgs e)
